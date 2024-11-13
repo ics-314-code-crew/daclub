@@ -30,7 +30,7 @@ An sign page form to sign in.
 
 <h2>Landing page</h2>
 An Landing page after you have signed in.
-<img src="doc/da-club-landing.png">
+<img src="doc/da-club-landing-2.png">
 
 <h2>Add club</h2>
 <p>An add form to add a club as a club admin. Filling out the respective prompts.</p>
