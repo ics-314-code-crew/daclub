@@ -34,13 +34,13 @@ An Landing page after you have signed in.
 
 <h2>Add club</h2>
 <p>An add form to add a club as a club admin. Filling out the respective prompts.</p>
-<img src="doc/add-club.png">
+<img src="doc/image_2024-11-13_010140973.png">
 
 <h2>List club</h2>
 <p>A page that lists all of the clubs in a compact manner.</p>
-<img src="doc/list-club.png">
+<img src="doc/image_2024-11-13_010223216.png">
 
 Future Features: 
 <h2>Friends List</h2>
 <p>A page that shows other users who have been added as members</p>
-<img src="doc/friends-list.png">
+<img src="doc/image_2024-11-13_010012253.png">
