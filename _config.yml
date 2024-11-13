@@ -1,8 +1,10 @@
 title: Da Club
 description: A Club Hub Website
 google_analytics:
-show_downloads: true
+show_downloads: false
 theme: jekyll-theme-cayman
-
+github:
+  is_project_page: true
+  repository_url: https://github.com/ics-314-code-crew
 gems:
   - jekyll-mentions
