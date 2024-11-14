@@ -12,6 +12,7 @@ const Home = () => (
         <Col xs={8} className="d-flex flex-column justify-content-center">
           <h1>Stuff</h1>
           <p>more stuff</p>
+          <p>more more stuff</p>
         </Col>
       </Row>
     </Container>
