@@ -45,6 +45,20 @@ async function main() {
       },
     });
   });
+  config.defaultClubData.forEach(async (club, index) => {
+    console.log(`  Adding club: ${club.name}`);
+    await prisma.club.upsert({
+      where: { id: index },
+      update: {},
+      create: {
+        name: club.name,
+        image: club.image,
+        description: club.description,
+        email: club.email,
+        owner: club.owner,
+      },
+    });
+  });
 }
 main()
   .then(() => prisma.$disconnect())

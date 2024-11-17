@@ -43,3 +43,12 @@ model Stuff {
   condition Condition
   owner     String
 }
+
+model Club {
+  id    Int    @id @default(autoincrement())
+  image String
+  name  String
+  email String
+  description String
+  owner String
+}
