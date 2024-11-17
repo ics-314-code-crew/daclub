@@ -1,7 +1,10 @@
 {
   "defaultAccounts": [
-    { "email": "admin@foo.com", "password": "changeme", "role": "ADMIN" },
-    { "email": "john@foo.com", "password": "changeme"}
+    { "email": "admin@foo.com", "password": "changeme", "role": "CLUB_ADMIN", "uhId": "12345678" },
+    { "email": "john@foo.com", "password": "changeme", "uhId": "123456"},
+    { "email": "supadmin@foo.com", "password": "changeme", "role": "SUPER_ADMIN", "uhId": "7892872"},
+    { "email": "clubadmin@example.com", "password": "changeme", "role": "CLUB_ADMIN", "uhId": "11223344" },
+    { "email": "clubadmin1@foo.com", "password": "changeme", "role": "CLUB_ADMIN", "uhId": "56382729" }
   ],
 
   "defaultData": [
@@ -11,18 +14,24 @@
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
   ],
 
+  "defaultInterests" : [
+    { "name": "Sports" },
+    { "name": "Art" },
+    { "name": "Technology" }
+  ],
+
   "defaultClubsData": [
     {
-      "name": "Basketball Club",
-      "description": "A club for basketball enthusiasts to play and watch games together.",
-      "meetingTime": "Fridays at 5 PM",
-      "location": "Gymnasium",
-      "website": "https://basketballclub.example.com",
-      "contactEmail": "contact@basketballclub.example.com",
-      "photos": ["basketball1.jpg", "basketball2.jpg"],
-      "categories": ["Sports"],
-      "admins": ["clubadmin1@foo.com"],
-      "expiration": "2025-05-01T00:00:00.000Z"
+      "name": "Tech Club",
+      "description": "A club for tech enthusiasts",
+      "meetingTime": "Every Tuesday at 5 PM",
+      "location": "Computer Science Building",
+      "website": "https://techclub.example.com",
+      "contactEmail": "tech@example.com",
+      "photos": [],
+      "expiration": "2025-12-31",
+      "categories": ["Technology"],
+      "admins": ["clubadmin@example.com"]
     },
     {
       "name": "Photography Club",
@@ -31,22 +40,10 @@
       "location": "Room 101",
       "website": "https://photographyclub.example.com",
       "contactEmail": "contact@photographyclub.example.com",
-      "photos": ["photo1.jpg", "photo2.jpg"],
+      "photos": [],
+      "expiration": "2025-12-25",
       "categories": ["Art"],
-      "admins": ["clubadmin1@foo.com"],
-      "expiration": "2025-05-01T00:00:00.000Z"
-    },
-    {
-      "name": "Coding Club",
-      "description": "A club for students interested in programming and software development.",
-      "meetingTime": "Mondays at 6 PM",
-      "location": "Computer Lab",
-      "website": "https://codingclub.example.com",
-      "contactEmail": "contact@codingclub.example.com",
-      "photos": ["code1.jpg", "code2.jpg"],
-      "categories": ["Technology"],
-      "admins": ["clubadmin1@foo.com"],
-      "expiration": "2025-05-01T00:00:00.000Z"
+      "admins": ["clubadmin1@foo.com"]
     }
   ]
   
