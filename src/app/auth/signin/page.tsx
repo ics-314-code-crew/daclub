@@ -8,14 +8,20 @@ const SignIn = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const target = e.target as typeof e.target & {
-      email: { value: string };
+      uhid: { value: string };
       password: { value: string };
     };
-    const email = target.email.value;
+    const uhid = target.uhid.value;
     const password = target.password.value;
+
+    // Validate the UHID
+    if (!/^\d{1,8}$/.test(uhid)) {
+      console.error('UHID must be an integer between 0 and 99999999');
+      return;
+    }
     const result = await signIn('credentials', {
       callbackUrl: '/list',
-      email,
+      uhid,
       password,
     });
 
@@ -33,13 +39,25 @@ const SignIn = () => {
             <Card>
               <Card.Body>
                 <Form method="post" onSubmit={handleSubmit}>
-                  <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Email</Form.Label>
-                    <input name="email" type="text" className="form-control" />
+                  <Form.Group>
+                    <Form.Label>UH ID</Form.Label>
+                    <Form.Control
+                      name="uhid"
+                      type="text"
+                      pattern="\d{1,8}"
+                      placeholder="UH ID"
+                      required
+                    />
                   </Form.Group>
                   <Form.Group>
                     <Form.Label>Password</Form.Label>
-                    <input name="password" type="password" className="form-control" />
+                    <Form.Control
+                      name="password"
+                      type="password"
+                      className="form-control"
+                      placeholder="Password"
+                      required
+                    />
                   </Form.Group>
                   <Button type="submit" className="mt-3">
                     Signin

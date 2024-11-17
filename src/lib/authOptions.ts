@@ -10,22 +10,24 @@ const authOptions: NextAuthOptions = {
   },
   providers: [
     CredentialsProvider({
-      name: 'Email and Password',
+      name: 'UHID and Password',
       credentials: {
-        email: {
-          label: 'Email',
-          type: 'email',
-          placeholder: 'john@foo.com',
+        uhid: {
+          label: 'UHID',
+          type: 'text',
         },
-        password: { label: 'Password', type: 'password' },
+        password: {
+          label: 'Password',
+          type: 'password',
+        },
       },
       async authorize(credentials) {
-        if (!credentials?.email || !credentials.password) {
+        if (!credentials?.uhid || !credentials.password) {
           return null;
         }
         const user = await prisma.user.findUnique({
           where: {
-            email: credentials.email,
+            uhid: credentials.uhid,
           },
         });
         if (!user) {
@@ -39,8 +41,9 @@ const authOptions: NextAuthOptions = {
 
         return {
           id: `${user.id}`,
+          uhid: user.uhid,
           email: user.email,
-          randomKey: user.role,
+          role: user.role,
         };
       },
     }),
@@ -54,24 +57,28 @@ const authOptions: NextAuthOptions = {
   },
   callbacks: {
     session: ({ session, token }) => {
-      // console.log('Session Callback', { session, token })
+      // console.log('Session Callback', { session, token });
       return {
         ...session,
         user: {
           ...session.user,
           id: token.id,
-          randomKey: token.randomKey,
+          email: token.email,
+          uhid: token.uhid,
+          role: token.role,
         },
       };
     },
     jwt: ({ token, user }) => {
-      // console.log('JWT Callback', { token, user })
+      // console.log('JWT Callback', { token, user });
       if (user) {
         const u = user as unknown as any;
         return {
           ...token,
           id: u.id,
-          randomKey: u.randomKey,
+          email: u.email,
+          uhid: u.uhid,
+          role: u.role,
         };
       }
       return token;

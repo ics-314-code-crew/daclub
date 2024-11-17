@@ -65,28 +65,34 @@ export async function deleteStuff(id: number) {
 
 /**
  * Creates a new user in the database.
- * @param credentials, an object with the following properties: email, password.
+ * @param credentials, an object with the following properties: UHID , password.
  */
-export async function createUser(credentials: { email: string; password: string }) {
+export async function createUser({ credentials, user }:
+{ credentials: { uhid: string; password: string };
+  user: { firstName: string; lastName: string; email: string }
+}): Promise<void> {
   // console.log(`createUser data: ${JSON.stringify(credentials, null, 2)}`);
   const password = await hash(credentials.password, 10);
   await prisma.user.create({
     data: {
-      email: credentials.email,
+      uhid: credentials.uhid,
       password,
+      firstName: user.firstName, // Replace with actual first name
+      lastName: user.lastName, // Replace with actual last name
+      email: user.email, // Replace with actual email
     },
   });
 }
 
 /**
  * Changes the password of an existing user in the database.
- * @param credentials, an object with the following properties: email, password.
+ * @param credentials, an object with the following properties: UHID , password.
  */
-export async function changePassword(credentials: { email: string; password: string }) {
+export async function changePassword(credentials: { uhid: string; password: string }) {
   // console.log(`changePassword data: ${JSON.stringify(credentials, null, 2)}`);
   const password = await hash(credentials.password, 10);
   await prisma.user.update({
-    where: { email: credentials.email },
+    where: { uhid: credentials.uhid },
     data: {
       password,
     },

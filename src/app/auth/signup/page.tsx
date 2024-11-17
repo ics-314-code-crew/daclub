@@ -8,6 +8,9 @@ import { Card, Col, Container, Button, Form, Row } from 'react-bootstrap';
 import { createUser } from '@/lib/dbActions';
 
 type SignUpForm = {
+  firstName: string;
+  lastName: string;
+  uhid: string;
   email: string;
   password: string;
   confirmPassword: string;
@@ -17,6 +20,9 @@ type SignUpForm = {
 /** The sign up page. */
 const SignUp = () => {
   const validationSchema = Yup.object().shape({
+    firstName: Yup.string().required('First Name is required'),
+    lastName: Yup.string().required('Last Name is required'),
+    uhid: Yup.string().required('UH ID is required').matches(/^\d{8}$/, 'UH ID must be 8 digits'),
     email: Yup.string().required('Email is required').email('Email is invalid'),
     password: Yup.string()
       .required('Password is required')
@@ -38,7 +44,17 @@ const SignUp = () => {
 
   const onSubmit = async (data: SignUpForm) => {
     // console.log(JSON.stringify(data, null, 2));
-    await createUser(data);
+    await createUser({
+      credentials: {
+        uhid: data.uhid,
+        password: data.password,
+      },
+      user: {
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email,
+      },
+    });
     // After creating, signIn with redirect to the add page
     await signIn('credentials', { callbackUrl: '/add', ...data });
   };
@@ -52,16 +68,54 @@ const SignUp = () => {
             <Card>
               <Card.Body>
                 <Form onSubmit={handleSubmit(onSubmit)}>
-                  <Form.Group className="form-group">
-                    <Form.Label>Email</Form.Label>
-                    <input
-                      type="text"
-                      {...register('email')}
-                      className={`form-control ${errors.email ? 'is-invalid' : ''}`}
-                    />
-                    <div className="invalid-feedback">{errors.email?.message}</div>
-                  </Form.Group>
-
+                  <Row>
+                    <Col>
+                      <Form.Group className="form-group">
+                        <Form.Label>First Name</Form.Label>
+                        <input
+                          type="text"
+                          {...register('firstName')}
+                          className={`form-control ${errors.firstName ? 'is-invalid' : ''}`}
+                        />
+                        <div className="invalid-feedback">{errors.firstName?.message}</div>
+                      </Form.Group>
+                    </Col>
+                    <Col>
+                      <Form.Group className="form-group">
+                        <Form.Label>Last Name</Form.Label>
+                        <input
+                          type="text"
+                          {...register('lastName')}
+                          className={`form-control ${errors.lastName ? 'is-invalid' : ''}`}
+                        />
+                        <div className="invalid-feedback">{errors.lastName?.message}</div>
+                      </Form.Group>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <Form.Group className="form-group">
+                        <Form.Label>UH ID</Form.Label>
+                        <input
+                          type="text"
+                          {...register('uhid')}
+                          className={`form-control ${errors.uhid ? 'is-invalid' : ''}`}
+                        />
+                        <div className="invalid-feedback">{errors.uhid?.message}</div>
+                      </Form.Group>
+                    </Col>
+                    <Col>
+                      <Form.Group className="form-group">
+                        <Form.Label>UH Email</Form.Label>
+                        <input
+                          type="text"
+                          {...register('email')}
+                          className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+                        />
+                        <div className="invalid-feedback">{errors.email?.message}</div>
+                      </Form.Group>
+                    </Col>
+                  </Row>
                   <Form.Group className="form-group">
                     <Form.Label>Password</Form.Label>
                     <input
