@@ -9,5 +9,45 @@
     { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
     { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
+  ],
+
+  "defaultClubsData": [
+    {
+      "name": "Basketball Club",
+      "description": "A club for basketball enthusiasts to play and watch games together.",
+      "meetingTime": "Fridays at 5 PM",
+      "location": "Gymnasium",
+      "website": "https://basketballclub.example.com",
+      "contactEmail": "contact@basketballclub.example.com",
+      "photos": ["basketball1.jpg", "basketball2.jpg"],
+      "categories": ["Sports"],
+      "admins": ["clubadmin1@foo.com"],
+      "expiration": "2025-05-01T00:00:00.000Z"
+    },
+    {
+      "name": "Photography Club",
+      "description": "A club for aspiring photographers to learn and practice photography.",
+      "meetingTime": "Wednesdays at 3 PM",
+      "location": "Room 101",
+      "website": "https://photographyclub.example.com",
+      "contactEmail": "contact@photographyclub.example.com",
+      "photos": ["photo1.jpg", "photo2.jpg"],
+      "categories": ["Art"],
+      "admins": ["clubadmin1@foo.com"],
+      "expiration": "2025-05-01T00:00:00.000Z"
+    },
+    {
+      "name": "Coding Club",
+      "description": "A club for students interested in programming and software development.",
+      "meetingTime": "Mondays at 6 PM",
+      "location": "Computer Lab",
+      "website": "https://codingclub.example.com",
+      "contactEmail": "contact@codingclub.example.com",
+      "photos": ["code1.jpg", "code2.jpg"],
+      "categories": ["Technology"],
+      "admins": ["clubadmin1@foo.com"],
+      "expiration": "2025-05-01T00:00:00.000Z"
+    }
   ]
+  
 }
