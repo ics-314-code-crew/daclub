@@ -1,13 +1,12 @@
 import { getServerSession } from 'next-auth';
-// import { notFound } from 'next/navigation';
-// import { Club } from '@prisma/client';
-import authOptions from '@/lib/authOptions';
-import { loggedInProtectedPage } from '@/lib/page-protection';
+// import { Col, Container, Row, Table } from 'react-bootstrap';
 // import { prisma } from '@/lib/prisma';
+import { loggedInProtectedPage } from '@/lib/page-protection';
+import authOptions from '@/lib/authOptions';
 
-export default async function EditClubPage({ params }: { params: { id: string | string[] } }) {
+/** Render a list of friends for the logged in user. */
+const FriendsPage = async () => {
   // Protect the page, only logged in users can access it.
-  console.log(params);
   const session = await getServerSession(authOptions);
   loggedInProtectedPage(
     session as {
@@ -15,10 +14,12 @@ export default async function EditClubPage({ params }: { params: { id: string | 
       // eslint-disable-next-line @typescript-eslint/comma-dangle
     } | null,
   );
-
+  // const owner = (session && session.user && session.user.email) || '';
   return (
     <main>
-      Placeholder for EditClubForm
+      Placeholder for the Friend list.
     </main>
   );
-}
+};
+
+export default FriendsPage;

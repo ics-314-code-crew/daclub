@@ -16,22 +16,25 @@ const NavBar: React.FC = () => {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="/">Next.js Application Template</Navbar.Brand>
+        <Navbar.Brand href="/">Da Club</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto justify-content-start">
             {currentUser
               ? [
-                  <Nav.Link id="add-stuff-nav" href="/add" key="add" active={pathName === '/add'}>
-                    Add Stuff
+                  <Nav.Link id="add-club-nav" href="/add" key="add" active={pathName === '/add'}>
+                    Add Club
                   </Nav.Link>,
-                  <Nav.Link id="list-stuff-nav" href="/list" key="list" active={pathName === '/list'}>
-                    List Stuff
+                  <Nav.Link id="list-club-nav" href="/list" key="list" active={pathName === '/list'}>
+                    Club List
+                  </Nav.Link>,
+                  <Nav.Link id="list-friend-nav" href="/friends" key="friends" active={pathName === '/friends'}>
+                    Friend List
                   </Nav.Link>,
                 ]
               : ''}
             {currentUser && role === 'ADMIN' ? (
-              <Nav.Link id="admin-stuff-nav" href="/admin" key="admin" active={pathName === '/admin'}>
+              <Nav.Link id="admin-club-nav" href="/admin" key="admin" active={pathName === '/admin'}>
                 Admin
               </Nav.Link>
             ) : (
@@ -54,11 +57,11 @@ const NavBar: React.FC = () => {
               <NavDropdown id="login-dropdown" title="Login">
                 <NavDropdown.Item id="login-dropdown-sign-in" href="/auth/signin">
                   <PersonFill />
-                  Sign in
+                  Sign In
                 </NavDropdown.Item>
                 <NavDropdown.Item id="login-dropdown-sign-up" href="/auth/signup">
                   <PersonPlusFill />
-                  Sign up
+                  Sign Up
                 </NavDropdown.Item>
               </NavDropdown>
             )}
