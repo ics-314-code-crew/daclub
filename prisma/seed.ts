@@ -12,14 +12,20 @@ async function main() {
     if (account.role === 'ADMIN') {
       role = 'ADMIN';
     }
+    // Valaidate Email
+    if (!account.email.endsWith('@hawaii.edu')) {
+      console.error(`Invalid email: ${account.email}`);
+      console.error('Email must end with @hawaii.edu');
+      process.exit(1);
+    }
+
     console.log(`  Creating user: ${account.firstName} + ${account.lastName} with role: ${role}`);
     await prisma.user.upsert({
-      where: { uhid: account.uhid },
+      where: { email: account.email },
       update: {},
       create: {
         firstName: account.firstName,
         lastName: account.lastName,
-        uhid: account.uhid,
         email: account.email,
         password,
         role,

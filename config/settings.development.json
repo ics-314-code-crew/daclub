@@ -3,16 +3,14 @@
     { 
     "firstName": "Admin",
     "lastName": "Foo",
-    "uhid": "00000000",
-    "email": "admin@foo.com", 
+    "email": "admin@hawaii.edu", 
     "password": "changeme", 
     "role": "ADMIN" 
   },
   { 
     "firstName": "John",
     "lastName": "Foo",
-    "uhid": "00000001",
-    "email": "john@foo.com", 
+    "email": "john@hawaii.edu", 
     "password": "changeme",
     "role": "USER" 
   }

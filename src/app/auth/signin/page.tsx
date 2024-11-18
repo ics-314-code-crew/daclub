@@ -1,32 +1,48 @@
 'use client';
 
+import { useState } from 'react';
 import { signIn } from 'next-auth/react';
-import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
+import { Button, Card, Col, Container, Form, Row, Alert } from 'react-bootstrap';
 
 /** The sign in page. */
 const SignIn = () => {
+  const [error, setError] = useState<string | null>(null);
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const target = e.target as typeof e.target & {
-      uhid: { value: string };
+      email: { value: string };
       password: { value: string };
     };
-    const uhid = target.uhid.value;
+    const email = target.email.value;
     const password = target.password.value;
-
-    // Validate the UHID
-    if (!/^\d{1,8}$/.test(uhid)) {
-      console.error('UHID must be an integer between 0 and 99999999');
+    console.log(email, password);
+    // Validate email and password
+    if (!email.endsWith('@hawaii.edu')) {
+      setError(`Invalid email: ${email}... Email must end with '@hawaii.edu'`);
+      return;
+    }
+    if (!password) {
+      setError('Password cannot be empty');
       return;
     }
     const result = await signIn('credentials', {
-      callbackUrl: '/list',
-      uhid,
+      redirect: false,
+      email,
       password,
     });
 
     if (result?.error) {
-      console.error('Sign in failed: ', result.error);
+      if (result.error === 'No user found with the provided email') {
+        setError('No user found with the provided email');
+      } else if (result.error === 'Invalid password') {
+        setError('Invalid password for the provided email');
+      } else {
+        setError('Invalid email or password');
+      }
+    } else {
+      setError(null);
+      window.location.href = '/';
     }
   };
 
@@ -38,14 +54,14 @@ const SignIn = () => {
             <h1 className="text-center">Sign In</h1>
             <Card>
               <Card.Body>
+                {error && <Alert variant="danger">{error}</Alert>}
                 <Form method="post" onSubmit={handleSubmit}>
                   <Form.Group>
-                    <Form.Label>UH ID</Form.Label>
+                    <Form.Label>Email</Form.Label>
                     <Form.Control
-                      name="uhid"
-                      type="text"
-                      pattern="\d{1,8}"
-                      placeholder="UH ID"
+                      name="email"
+                      type="email"
+                      placeholder="Email"
                       required
                     />
                   </Form.Group>
@@ -54,7 +70,6 @@ const SignIn = () => {
                     <Form.Control
                       name="password"
                       type="password"
-                      className="form-control"
                       placeholder="Password"
                       required
                     />

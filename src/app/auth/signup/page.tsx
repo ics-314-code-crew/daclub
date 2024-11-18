@@ -10,7 +10,6 @@ import { createUser } from '@/lib/dbActions';
 type SignUpForm = {
   firstName: string;
   lastName: string;
-  uhid: string;
   email: string;
   password: string;
   confirmPassword: string;
@@ -22,7 +21,6 @@ const SignUp = () => {
   const validationSchema = Yup.object().shape({
     firstName: Yup.string().required('First Name is required'),
     lastName: Yup.string().required('Last Name is required'),
-    uhid: Yup.string().required('UH ID is required').matches(/^\d{8}$/, 'UH ID must be 8 digits'),
     email: Yup.string().required('Email is required').email('Email is invalid'),
     password: Yup.string()
       .required('Password is required')
@@ -46,7 +44,7 @@ const SignUp = () => {
     // console.log(JSON.stringify(data, null, 2));
     await createUser({
       credentials: {
-        uhid: data.uhid,
+        email: data.email,
         password: data.password,
       },
       user: {
@@ -93,17 +91,6 @@ const SignUp = () => {
                     </Col>
                   </Row>
                   <Row>
-                    <Col>
-                      <Form.Group className="form-group">
-                        <Form.Label>UH ID</Form.Label>
-                        <input
-                          type="text"
-                          {...register('uhid')}
-                          className={`form-control ${errors.uhid ? 'is-invalid' : ''}`}
-                        />
-                        <div className="invalid-feedback">{errors.uhid?.message}</div>
-                      </Form.Group>
-                    </Col>
                     <Col>
                       <Form.Group className="form-group">
                         <Form.Label>UH Email</Form.Label>

@@ -9,7 +9,7 @@ const AdminPage = async () => {
   const session = await getServerSession(authOptions);
   adminProtectedPage(
     session as {
-      user: { id: string; uhid: string; role: string };
+      user: { id: string; email: string; role: string };
     } | null,
   );
   const stuff = await prisma.stuff.findMany({});
@@ -45,14 +45,14 @@ const AdminPage = async () => {
             <Table striped bordered hover>
               <thead>
                 <tr>
-                  <th>UHID</th>
+                  <th>Email</th>
                   <th>Role</th>
                 </tr>
               </thead>
               <tbody>
                 {users.map((user) => (
                   <tr key={user.id}>
-                    <td>{user.uhid}</td>
+                    <td>{user.email}</td>
                     <td>{user.role}</td>
                   </tr>
                 ))}

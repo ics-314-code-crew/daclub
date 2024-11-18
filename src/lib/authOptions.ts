@@ -10,11 +10,11 @@ const authOptions: NextAuthOptions = {
   },
   providers: [
     CredentialsProvider({
-      name: 'UHID and Password',
+      name: 'Email and Password',
       credentials: {
-        uhid: {
-          label: 'UHID',
-          type: 'text',
+        email: {
+          label: 'Email',
+          type: 'email',
         },
         password: {
           label: 'Password',
@@ -22,26 +22,25 @@ const authOptions: NextAuthOptions = {
         },
       },
       async authorize(credentials) {
-        if (!credentials?.uhid || !credentials.password) {
-          return null;
+        if (!credentials?.email || !credentials.password) {
+          throw new Error('Invalid credentials');
         }
         const user = await prisma.user.findUnique({
           where: {
-            uhid: credentials.uhid,
+            email: credentials.email,
           },
         });
         if (!user) {
-          return null;
+          throw new Error('No user found');
         }
 
         const isPasswordValid = await compare(credentials.password, user.password);
         if (!isPasswordValid) {
-          return null;
+          throw new Error('Invalid password');
         }
 
         return {
           id: `${user.id}`,
-          uhid: user.uhid,
           email: user.email,
           role: user.role,
         };
@@ -64,7 +63,6 @@ const authOptions: NextAuthOptions = {
           ...session.user,
           id: token.id,
           email: token.email,
-          uhid: token.uhid,
           role: token.role,
         },
       };
@@ -77,7 +75,6 @@ const authOptions: NextAuthOptions = {
           ...token,
           id: u.id,
           email: u.email,
-          uhid: u.uhid,
           role: u.role,
         };
       }

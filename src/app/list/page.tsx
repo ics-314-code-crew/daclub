@@ -11,7 +11,7 @@ const ListPage = async () => {
   const session = await getServerSession(authOptions);
   loggedInProtectedPage(
     session as {
-      user: { uhid: string; id: string; role: string };
+      user: { email: string; id: string; role: string };
       // eslint-disable-next-line @typescript-eslint/comma-dangle
     } | null,
   );
