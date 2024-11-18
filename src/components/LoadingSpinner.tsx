@@ -4,7 +4,7 @@ const LoadingSpinner = () => (
   <Container>
     <Row className="justify-content-md-center">
       <Spinner animation="border" />
-      Getting data
+      Getting Data
     </Row>
   </Container>
 );
