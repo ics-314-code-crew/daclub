@@ -15,18 +15,21 @@ const Home = () => {
       id: 1,
       name: 'Club 1',
       logo: 'logoTest.png', // Replace with an actual image path or URL
+      interests: ['Interest 1', 'Interest 2', 'Interest 3'],
       description: 'Insert description here.',
     },
     {
       id: 2,
       name: 'Club 2',
       logo: 'logoTest.png', // Replace with an actual image path or URL
+      interests: ['Interest 1', 'Interest 2', 'Interest 3'],
       description: 'Insert description here.',
     },
     {
       id: 3,
       name: 'Club 3',
       logo: 'logoTest.png', // Replace with an actual image path or URL
+      interests: ['Interest 1', 'Interest 2', 'Interest 3'],
       description: 'Insert description here.',
     },
   ];
@@ -61,6 +64,11 @@ const Home = () => {
                   className="p-3"
                 />
                 <Card.Body>
+                  <Card.Text>
+                    Interest area(s):
+                    {' '}
+                    {club.interests.join(', ')}
+                  </Card.Text>
                   <Card.Text>{club.description}</Card.Text>
                 </Card.Body>
               </Card>
