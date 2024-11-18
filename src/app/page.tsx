@@ -1,10 +1,12 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation'; // Import useRouter for navigation
 import { Col, Container, Row, Card, Button, Modal } from 'react-bootstrap';
 
 const Home = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const router = useRouter(); // Initialize the useRouter hook
+  const [isLoggedIn] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
 
   // Example club data
@@ -38,8 +40,8 @@ const Home = () => {
   };
 
   const handleLogin = () => {
-    setIsLoggedIn(true);
     setShowLoginModal(false);
+    router.push('/auth/signin'); // Redirect to the sign-in page
   };
 
   return (
