@@ -4,7 +4,7 @@
 
 import { useSession } from 'next-auth/react';
 import { usePathname } from 'next/navigation';
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Container, Nav, Navbar, NavDropdown, Image } from 'react-bootstrap';
 import { BoxArrowRight, Lock, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
 
 const NavBar: React.FC = () => {
@@ -14,9 +14,18 @@ const NavBar: React.FC = () => {
   const role = userWithRole?.randomKey;
   const pathName = usePathname();
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar style={{ backgroundColor: '#59ce5a' }} expand="lg">
       <Container>
-        <Navbar.Brand href="/">Da Club</Navbar.Brand>
+        <Navbar.Brand href="/" className="w-100 d-flex justify-content-center">
+        <Image
+          src="/daClubLogo.png"
+          className="logo fs-2"
+          width={190}
+          height={65}
+          alt="Da Club Logo"
+          style={{ marginLeft: '100px' }} // Adjust the value as needed
+        />
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto justify-content-start">
