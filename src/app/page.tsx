@@ -46,16 +46,10 @@ const Home = () => {
 
   return (
     <main>
-      <Container id="landing-page" fluid className="py-3">
-        <Row className="align-middle text-center">
-          <Col xs={4} />
-          <Col xs={8} className="d-flex flex-column justify-content-center">
-            <h1>Welcome to Da Club!</h1>
-          </Col>
-        </Row>
-        <Row>
+      <Container id="landing-page" fluid className="py-5">
+        <Row className="justify-content-center">
           {clubs.map((club) => (
-            <Col key={club.id}>
+            <Col key={club.id} xs={12} md={6} lg={4} className="mb-4">
               <Card onClick={handleCardClick}>
                 <Card.Header className="text-center" style={{ backgroundColor: '#41d538' }}>
                   {club.name}
