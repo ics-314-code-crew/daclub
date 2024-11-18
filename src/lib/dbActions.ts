@@ -69,7 +69,7 @@ export async function deleteStuff(id: number) {
  */
 export async function createUser({ credentials, user }:
 { credentials: { email: string; password: string };
-  user: { firstName: string; lastName: string; email: string }
+  user: { firstName: string; lastName: string; email: string; name: string; }
 }): Promise<void> {
   // console.log(`createUser data: ${JSON.stringify(credentials, null, 2)}`);
   const password = await hash(credentials.password, 10);
