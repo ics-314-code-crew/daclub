@@ -1,7 +1,10 @@
 {
   "defaultAccounts": [
-    { "email": "admin@foo.com", "password": "changeme", "role": "ADMIN" },
-    { "email": "john@foo.com", "password": "changeme" }
+    { "email": "admin@foo.com", "password": "changeme", "role": "CLUB_ADMIN", "uhId": "12345678" },
+    { "email": "john@foo.com", "password": "changeme", "uhId": "123456"},
+    { "email": "supadmin@foo.com", "password": "changeme", "role": "SUPER_ADMIN", "uhId": "7892872"},
+    { "email": "clubadmin@example.com", "password": "changeme", "role": "CLUB_ADMIN", "uhId": "11223344" },
+    { "email": "clubadmin1@foo.com", "password": "changeme", "role": "CLUB_ADMIN", "uhId": "56382729" }
   ],
 
   "defaultData": [
@@ -9,5 +12,39 @@
     { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
     { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
+  ],
+
+  "defaultInterests" : [
+    { "name": "Sports" },
+    { "name": "Art" },
+    { "name": "Technology" }
+  ],
+
+  "defaultClubsData": [
+    {
+      "name": "Tech Club",
+      "description": "A club for tech enthusiasts",
+      "meetingTime": "Every Tuesday at 5 PM",
+      "location": "Computer Science Building",
+      "website": "https://techclub.example.com",
+      "contactEmail": "tech@example.com",
+      "photos": [],
+      "expiration": "2025-12-31",
+      "categories": ["Technology"],
+      "admins": ["clubadmin@example.com"]
+    },
+    {
+      "name": "Photography Club",
+      "description": "A club for aspiring photographers to learn and practice photography.",
+      "meetingTime": "Wednesdays at 3 PM",
+      "location": "Room 101",
+      "website": "https://photographyclub.example.com",
+      "contactEmail": "contact@photographyclub.example.com",
+      "photos": [],
+      "expiration": "2025-12-25",
+      "categories": ["Art"],
+      "admins": ["clubadmin1@foo.com"]
+    }
   ]
+  
 }
