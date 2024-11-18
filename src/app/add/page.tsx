@@ -8,7 +8,7 @@ const AddStuff = async () => {
   const session = await getServerSession(authOptions);
   loggedInProtectedPage(
     session as {
-      user: { email: string; id: string; randomKey: string };
+      user: { uhid: string; id: string; role: string };
     } | null,
   );
   return (
