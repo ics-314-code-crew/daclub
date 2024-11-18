@@ -1,10 +1,10 @@
 {
   "defaultAccounts": [
-    { "email": "admin@foo.com", "password": "changeme", "role": "CLUB_ADMIN", "uhId": "12345678" },
-    { "email": "john@foo.com", "password": "changeme", "uhId": "123456"},
-    { "email": "supadmin@foo.com", "password": "changeme", "role": "SUPER_ADMIN", "uhId": "7892872"},
-    { "email": "clubadmin@example.com", "password": "changeme", "role": "CLUB_ADMIN", "uhId": "11223344" },
-    { "email": "clubadmin1@foo.com", "password": "changeme", "role": "CLUB_ADMIN", "uhId": "56382729" }
+    { "email": "admin@hawaii.edu", "password": "changeme", "role": "SUPER_ADMIN"},
+    { "email": "john@hawaii.edu", "password": "changeme" },
+    { "email": "godmode@hawaii.edu", "password": "changeme", "role": "SUPER_ADMIN"},
+    { "email": "hello@hawaii.edu", "password": "changeme", "role": "CLUB_ADMIN" },
+    { "email": "wassup@hawaii.edu", "password": "changeme", "role": "CLUB_ADMIN" }
   ],
 
   "defaultData": [
@@ -31,7 +31,7 @@
       "photos": [],
       "expiration": "2025-12-31",
       "categories": ["Technology"],
-      "admins": ["clubadmin@example.com"]
+      "admins": ["hello@hawaii.edu"]
     },
     {
       "name": "Photography Club",
@@ -43,7 +43,7 @@
       "photos": [],
       "expiration": "2025-12-25",
       "categories": ["Art"],
-      "admins": ["clubadmin1@foo.com"]
+      "admins": ["wassup@hawaii.edu"]
     }
   ]
   

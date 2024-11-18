@@ -23,7 +23,6 @@ async function main() {
         email: account.email,
         password,
         role,
-        uhId: account.uhId ?? null,
       },
     });
   }
