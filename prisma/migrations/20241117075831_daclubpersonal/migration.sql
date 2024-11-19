@@ -17,9 +17,6 @@ DROP TYPE "Role_old";
 ALTER TABLE "User" ALTER COLUMN "role" SET DEFAULT 'USER';
 COMMIT;
 
--- AlterTable
-ALTER TABLE "User" ADD COLUMN     "uhId" TEXT;
-
 -- DropTable
 DROP TABLE "Stuff";
 
@@ -103,8 +100,6 @@ CREATE UNIQUE INDEX "_UserInterests_AB_unique" ON "_UserInterests"("A", "B");
 -- CreateIndex
 CREATE INDEX "_UserInterests_B_index" ON "_UserInterests"("B");
 
--- CreateIndex
-CREATE UNIQUE INDEX "User_uhId_key" ON "User"("uhId");
 
 -- AddForeignKey
 ALTER TABLE "Notification" ADD CONSTRAINT "Notification_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
