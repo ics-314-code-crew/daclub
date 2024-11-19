@@ -1,10 +1,10 @@
 {
   "defaultAccounts": [
-    { "email": "admin@hawaii.edu", "password": "changeme", "role": "SUPER_ADMIN"},
-    { "email": "john@hawaii.edu", "password": "changeme" },
-    { "email": "godmode@hawaii.edu", "password": "changeme", "role": "SUPER_ADMIN"},
-    { "email": "hello@hawaii.edu", "password": "changeme", "role": "CLUB_ADMIN" },
-    { "email": "wassup@hawaii.edu", "password": "changeme", "role": "CLUB_ADMIN" }
+    { "firstName": "Admin", "lastName": "Foo", "email": "admin@hawaii.edu", "password": "changeme", "role": "SUPER_ADMIN"},
+    { "firstName": "john", "lastName": "Foo", "email": "john@hawaii.edu", "password": "changeme" },
+    { "firstName": "God", "lastName": "Mode", "email": "godmode@hawaii.edu", "password": "changeme", "role": "SUPER_ADMIN"},
+    { "firstName": "Hello", "lastName": "Kitty", "email": "hello@hawaii.edu", "password": "changeme", "role": "CLUB_ADMIN" },
+    { "firstName": "Wassup", "lastName": "Fool", "email": "wassup@hawaii.edu", "password": "changeme", "role": "CLUB_ADMIN" }
   ],
 
   "defaultData": [
