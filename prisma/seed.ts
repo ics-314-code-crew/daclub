@@ -71,12 +71,6 @@ async function main() {
         contactEmail: data.contactEmail || 'example@gmail.com',
         photos: data.photos || [],
         expiration: new Date(data.expiration || '2025-01-01'),
-        categories: {
-          connect: categories.map((category) => ({ id: category.id })),
-        },
-        admins: {
-          connect: admins.map((admin) => ({ id: admin.id })),
-        },
       },
     });
   });
