@@ -22,9 +22,7 @@
       "website": "https://techclub.example.com",
       "contactEmail": "tech@example.com",
       "photos": [],
-      "expiration": "2025-12-31",
-      "categories": ["Technology"],
-      "admins": ["hello@hawaii.edu"]
+      "expiration": "2025-12-31"
     },
     {
       "name": "Photography Club",
@@ -34,9 +32,7 @@
       "website": "https://photographyclub.example.com",
       "contactEmail": "contact@photographyclub.example.com",
       "photos": [],
-      "expiration": "2025-12-25",
-      "categories": ["Art"],
-      "admins": ["wassup@hawaii.edu"]
+      "expiration": "2025-12-25"
     }
   ]
   

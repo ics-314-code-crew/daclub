@@ -42,19 +42,20 @@ async function main() {
   config.defaultClubsData.forEach(async (data) => {
     console.log(`Adding club: ${data.name}`);
 
-    // Ensure categories exist
-    const categories = await prisma.interest.findMany({
-      where: { name: { in: data.categories } },
-    });
+    // For Later use.......
+    // // Ensure categories exist
+    // const categories = await prisma.interest.findMany({
+    //   where: { name: { in: data.categories } },
+    // });
 
-    // Ensure admins exist
-    const admins = await prisma.user.findMany({
-      where: { email: { in: data.admins } },
-    });
+    // // Ensure admins exist
+    // const admins = await prisma.user.findMany({
+    //   where: { email: { in: data.admins } },
+    // });
 
-    if (categories.length !== data.categories.length || admins.length !== data.admins.length) {
-      console.warn(`Skipping club: ${data.name} due to missing categories or admins.`);
-    }
+    // if (categories.length !== data.categories.length || admins.length !== data.admins.length) {
+    //   console.warn(`Skipping club: ${data.name} due to missing categories or admins.`);
+    // }
   });
 
   config.defaultClubsData.forEach(async (data) => {
