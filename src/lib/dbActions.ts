@@ -21,7 +21,6 @@ export async function createUser(details:
     data: {
       email: details.email,
       password,
-      uhId: details.uhId,
       role: details.role || 'USER',
     },
   });
@@ -44,7 +43,6 @@ export async function updateUser(details:
     where: { id: details.id },
     data: {
       email: details.email,
-      uhId: details.uhId,
       role: details.role,
     },
   });
