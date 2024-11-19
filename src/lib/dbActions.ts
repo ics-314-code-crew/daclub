@@ -13,7 +13,6 @@ export async function createUser(details:
 {
   email: string;
   password: string;
-  uhId?: string;
   role?: Role;
 }) {
   const password = await hash(details.password, 10);
@@ -21,7 +20,6 @@ export async function createUser(details:
     data: {
       email: details.email,
       password,
-      uhId: details.uhId,
       role: details.role || 'USER',
     },
   });
@@ -37,14 +35,12 @@ export async function updateUser(details:
 {
   id: number;
   email?: string;
-  uhId?: string;
   role?: Role;
 }) {
   await prisma.user.update({
     where: { id: details.id },
     data: {
       email: details.email,
-      uhId: details.uhId,
       role: details.role,
     },
   });
