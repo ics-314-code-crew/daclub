@@ -15,13 +15,15 @@ const authOptions: NextAuthOptions = {
         email: {
           label: 'Email',
           type: 'email',
-          placeholder: 'john@foo.com',
         },
-        password: { label: 'Password', type: 'password' },
+        password: {
+          label: 'Password',
+          type: 'password',
+        },
       },
       async authorize(credentials) {
         if (!credentials?.email || !credentials.password) {
-          return null;
+          throw new Error('Invalid credentials');
         }
         const user = await prisma.user.findUnique({
           where: {
@@ -29,18 +31,19 @@ const authOptions: NextAuthOptions = {
           },
         });
         if (!user) {
-          return null;
+          throw new Error('No user found');
         }
 
         const isPasswordValid = await compare(credentials.password, user.password);
         if (!isPasswordValid) {
-          return null;
+          throw new Error('Invalid password');
         }
 
         return {
           id: `${user.id}`,
           email: user.email,
-          randomKey: user.role,
+          name: `${user.firstName} ${user.lastName}`,
+          role: user.role,
         };
       },
     }),
@@ -54,24 +57,28 @@ const authOptions: NextAuthOptions = {
   },
   callbacks: {
     session: ({ session, token }) => {
-      // console.log('Session Callback', { session, token })
+      // console.log('Session Callback', { session, token });
       return {
         ...session,
         user: {
           ...session.user,
           id: token.id,
-          randomKey: token.randomKey,
+          email: token.email,
+          name: token.name,
+          role: token.role,
         },
       };
     },
     jwt: ({ token, user }) => {
-      // console.log('JWT Callback', { token, user })
+      // console.log('JWT Callback', { token, user });
       if (user) {
         const u = user as unknown as any;
         return {
           ...token,
           id: u.id,
-          randomKey: u.randomKey,
+          email: u.email,
+          name: u.name,
+          role: u.role,
         };
       }
       return token;

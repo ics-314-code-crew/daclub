@@ -7,20 +7,20 @@ import { prisma } from './prisma';
 
 /**
  * Creates a new user in the database.
- * @param details, an object with the following properties: email, password, uhId, role.
+ * @param credentials, an object with the following properties: Email , password.
  */
-export async function createUser(details:
-{
-  email: string;
-  password: string;
-  role?: Role;
-}) {
-  const password = await hash(details.password, 10);
+export async function createUser({ credentials, user }:
+{ credentials: { email: string; password: string };
+  user: { firstName: string; lastName: string; email: string; }
+}): Promise<void> {
+  // console.log(`createUser data: ${JSON.stringify(credentials, null, 2)}`);
+  const password = await hash(credentials.password, 10);
   await prisma.user.create({
     data: {
-      email: details.email,
+      email: user.email,
       password,
-      role: details.role || 'USER',
+      firstName: user.firstName, // Replace with actual first name
+      lastName: user.lastName, // Replace with actual last name
     },
   });
 
@@ -209,7 +209,7 @@ export async function deleteNotification(id: number) {
 
 /**
  * Changes the password of an existing user in the database.
- * @param credentials, an object with the following properties: email, password.
+ * @param credentials, an object with the following properties: Email, password.
  */
 export async function changePassword(credentials: { email: string; password: string }) {
   const password = await hash(credentials.password, 10);
