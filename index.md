@@ -49,5 +49,11 @@ Future Features:
 Da Club is designed, implemented, and maintained by <a href="https://github.com/Dodie-Mad">Dodie Madriaga</a>, <a href="https://github.com/edenkp">Eden K. Parungao</a>, <a href="https://github.com/jaked332">Jake Dickinson</a>, <a href="https://github.com/JaySaga22">Jayden Sagayaga</a>, and <a href="https://github.com/Nate2389">Nathan Chee</a>.
 <h2>Team Contract</h2>
 Our team has developed a <a href="https://docs.google.com/document/d/1PiApV3qOrppXNGaRf1kudZ24YolmkLwuc0Uw49lqp0w/edit?usp=sharing">Team Contract</a> to establish clear expectations within the group. The contract outlines several criteria, such as each member’s contributions and behaviors, and includes solutions to conflicts that may arise during our time as a group. If a member fails to meet the agreed-upon terms, there will be a process to attempt to de-escalate the situation. If that does not work, it will be escalated to the instructor.
+<h2>Milestones</h2>
+<ul>
+  <li><a href="https://github.com/orgs/ics-314-code-crew/projects/1">Milestone 1</a></li>
+  <li><a href="https://github.com/orgs/ics-314-code-crew/projects/5">Milestone 2</a></li>
+  <li>Milestone 3</li>
+</ul>
 <h2>Vercel</h2>
 Link to running <a href="https://daclub-ruddy.vercel.app/">Vervel</a>.
