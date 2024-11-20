@@ -16,28 +16,7 @@ const ListPage = async () => {
       // eslint-disable-next-line @typescript-eslint/comma-dangle
     } | null,
   );
-  // Check if the user has the required role
-  const userRole = session?.user?.role;
-  if (!userRole || !['USER', 'CLUB_ADMIN', 'SUPER_ADMIN'].includes(userRole)) {
-    return (
-      <main>
-        <Container id="list" fluid className="py-3">
-          <Row>
-            <Col>
-              <h1 className="text-center">Access Denied</h1>
-              <p className="text-center">You do not have permission to view this page.</p>
-            </Col>
-          </Row>
-        </Container>
-      </main>
-    );
-  }
-  const clubs: Club[] = await prisma.club.findMany({
-    where: {
-
-    },
-  });
-
+  const clubs: Club[] = await prisma.club.findMany({});
   return (
     <main>
       <Container id="list" fluid className="py-3">
