@@ -5,6 +5,9 @@ import { hash } from 'bcrypt';
 import { redirect } from 'next/navigation';
 import { prisma } from './prisma';
 
+/*
+DELETE *****
+
 export async function addClub(club: {
   name: string;
   image: string;
@@ -21,9 +24,11 @@ export async function addClub(club: {
       owner: club.owner,
     },
   });
-  // After adding, redirect to the list page
+
   redirect('/list');
 }
+*/
+
 /**
  * Creates a new user in the database.
  * @param credentials, an object with the following properties: Email , password.
@@ -38,8 +43,8 @@ export async function createUser({ credentials, user }:
     data: {
       email: user.email,
       password,
-      firstName: user.firstName, // Replace with actual first name
-      lastName: user.lastName, // Replace with actual last name
+      firstName: user.firstName,
+      lastName: user.lastName,
     },
   });
 
@@ -106,7 +111,7 @@ export async function createClub(details: {
     },
   });
 
-  redirect('/');
+  redirect('/list');
 }
 
 /**
@@ -138,7 +143,7 @@ export async function updateClub(details: {
     },
   });
 
-  redirect('/');
+  redirect('/list');
 }
 
 /**
@@ -150,7 +155,7 @@ export async function deleteClub(id: number) {
     where: { id },
   });
 
-  redirect('/');
+  redirect('/list');
 }
 
 /**
@@ -196,7 +201,7 @@ export async function createNotification(details: {
     },
   });
 
-  redirect('/');
+  redirect('/notifications');
 }
 
 /**
@@ -211,7 +216,7 @@ export async function markNotificationAsRead(id: number) {
     },
   });
 
-  redirect('/');
+  redirect('/notifications');
 }
 
 /**
@@ -223,7 +228,7 @@ export async function deleteNotification(id: number) {
     where: { id },
   });
 
-  redirect('/');
+  redirect('/notifications');
 }
 
 /**
