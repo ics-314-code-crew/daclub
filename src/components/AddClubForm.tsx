@@ -120,7 +120,7 @@ const AddClubForm: React.FC = () => {
                   />
                   <div className="invalid-feedback">{errors.contactEmail?.message}</div>
                 </Form.Group>
-                <Form.Group>
+                {/* <Form.Group>
                   <Form.Label>Club Photos</Form.Label>
                   <input
                     type="text"
@@ -128,8 +128,8 @@ const AddClubForm: React.FC = () => {
                     className={`form-control ${errors.photos ? 'is-invalid' : ''}`}
                   />
                   <div className="invalid-feedback">{errors.photos?.message}</div>
-                </Form.Group>
-                <Form.Group>
+                </Form.Group> */}
+                {/* <Form.Group>
                   <Form.Label>Categories</Form.Label>
                   <input
                     type="Interest"
@@ -137,8 +137,8 @@ const AddClubForm: React.FC = () => {
                     className={`form-control ${errors.categories ? 'is-invalid' : ''}`}
                   />
                   <div className="invalid-feedback">{errors.categories?.message}</div>
-                </Form.Group>
-                <Form.Group>
+                </Form.Group> */}
+                {/* <Form.Group>
                   <Form.Label>Admins</Form.Label>
                   <input
                     type="User"
@@ -146,7 +146,7 @@ const AddClubForm: React.FC = () => {
                     className={`form-control ${errors.admins ? 'is-invalid' : ''}`}
                   />
                   <div className="invalid-feedback">{errors.admins?.message}</div>
-                </Form.Group>
+                </Form.Group> */}
                 {/* <Form.Group>
                   <Form.Label>Notifications</Form.Label>
                   <input
