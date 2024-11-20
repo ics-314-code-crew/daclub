@@ -47,8 +47,6 @@ async function main() {
   });
 
   config.defaultClubsData.forEach(async (data) => {
-    console.log(`Adding club: ${data.name}`);
-
     // For Later use.......
     // // Ensure categories exist
     // const categories = await prisma.interest.findMany({
@@ -63,39 +61,26 @@ async function main() {
     // if (categories.length !== data.categories.length || admins.length !== data.admins.length) {
     //   console.warn(`Skipping club: ${data.name} due to missing categories or admins.`);
     // }
-  });
-
-  config.defaultClubsData.forEach(async (data) => {
-    console.log(`Adding club: ${data.name}`);
+    console.log(`  Adding club: ${data.name}`);
     await prisma.club.upsert({
       where: { name: data.name },
       update: {},
       create: {
         name: data.name,
-        description: data.description || 'Default description',
-        meetingTime: data.meetingTime || 'Default meeting time',
-        location: data.location || 'Default location',
-        website: data.website || null,
-        contactEmail: data.contactEmail || 'example@gmail.com',
-        photos: data.photos || [],
-        expiration: new Date(data.expiration || '2025-01-01'),
-      },
-    });
-  });
-  config.defaultClubsData.forEach(async (club, index) => {
-    console.log(`  Adding club: ${club.name}`);
-    await prisma.club.upsert({
-      where: { id: index },
-      update: {},
-      create: {
-        name: club.name,
-        photos: club.photos,
-        description: club.description,
-        contactEmail: club.contactEmail,
-        website: club.website,
-        location: club.location,
-        meetingTime: club.meetingTime,
-        expiration: new Date(club.expiration),
+        description: data.description,
+        meetingTime: data.meetingTime,
+        location: data.location,
+        website: data.website,
+        contactEmail: data.contactEmail,
+        photos: { set: data.photos },
+        logo: data.logo,
+        expiration: new Date(data.expiration),
+        admins: {
+          connect: data.admins.map((email) => ({ email })),
+        },
+        categories: {
+          connect: data.categories.map((name) => ({ name })),
+        },
       },
     });
   });
