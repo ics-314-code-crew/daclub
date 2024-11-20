@@ -67,3 +67,12 @@ model Notification {
   createdAt   DateTime @default(now())
   isRead      Boolean  @default(false)
 }
+
+model Club {
+  id    Int    @id @default(autoincrement())
+  image String
+  name  String
+  email String
+  description String
+  owner String
+}

@@ -5,6 +5,25 @@ import { hash } from 'bcrypt';
 import { redirect } from 'next/navigation';
 import { prisma } from './prisma';
 
+export async function addClub(club: {
+  name: string;
+  image: string;
+  description: string;
+  email: string;
+  owner: string
+}) {
+  await prisma.club.create({
+    data: {
+      name: club.name,
+      image: club.image,
+      description: club.description,
+      email: club.email,
+      owner: club.owner,
+    },
+  });
+  // After adding, redirect to the list page
+  redirect('/list');
+}
 /**
  * Creates a new user in the database.
  * @param credentials, an object with the following properties: Email , password.

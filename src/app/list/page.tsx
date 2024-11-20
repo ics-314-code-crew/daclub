@@ -1,8 +1,10 @@
 import { getServerSession } from 'next-auth';
-// import { Col, Container, Row, Table } from 'react-bootstrap';
-// import { prisma } from '@/lib/prisma';
+import { Col, Container, Row } from 'react-bootstrap';
+import { prisma } from '@/lib/prisma';
 import { loggedInProtectedPage } from '@/lib/page-protection';
 import authOptions from '@/lib/authOptions';
+import ClubCard from '@/components/ClubCard';
+import { Club } from '@prisma/client';
 
 /** Render a list of clubs for the logged in user. */
 const ListPage = async () => {
@@ -14,10 +16,31 @@ const ListPage = async () => {
       // eslint-disable-next-line @typescript-eslint/comma-dangle
     } | null,
   );
-  // const owner = (session && session.user && session.user.email) || '';
+  const owner = (session && session.user && session.user.email) || '';
+  const clubs: Club[] = await prisma.club.findMany({
+    where: {
+      owner,
+    },
+  });
+
   return (
     <main>
-      Placeholder for the club list.
+      <Container id="list" fluid className="py-3">
+        <Row>
+          <Col>
+            <h1 className="text-center">Club List</h1>
+            <Row xs={1} md={2} lg={3} className="g-4">
+              {clubs.map((club) => (
+                <Col key={club.name}>
+                  <ClubCard
+                    club={club}
+                  />
+                </Col>
+              ))}
+            </Row>
+          </Col>
+        </Row>
+      </Container>
     </main>
   );
 };
