@@ -112,7 +112,10 @@ export async function createClub(details: {
   website?: string;
   contactEmail?: string;
   photos?: string[];
+  logo?: string
   expiration: Date;
+  categories?: string[];
+  admins?: string[];
 }) {
   await prisma.club.create({
     data: {
@@ -123,7 +126,14 @@ export async function createClub(details: {
       website: details.website,
       contactEmail: details.contactEmail,
       photos: details.photos || [],
+      logo: details.logo || '',
       expiration: details.expiration,
+      categories: {
+        connect: details.categories?.map((name) => ({ name })),
+      },
+      admins: {
+        connect: details.admins?.map((email) => ({ email })),
+      },
     },
   });
 
@@ -143,7 +153,10 @@ export async function updateClub(details: {
   website?: string;
   contactEmail?: string;
   photos?: string[];
+  logo?: string;
   expiration?: Date;
+  categories?: string[];
+  admins?: string[];
 }) {
   await prisma.club.update({
     where: { id: details.id },
@@ -155,7 +168,14 @@ export async function updateClub(details: {
       website: details.website,
       contactEmail: details.contactEmail,
       photos: details.photos,
+      logo: details.logo,
       expiration: details.expiration,
+      admins: {
+        set: (details.admins?.map((email) => ({ email })) || []),
+      },
+      categories: {
+        set: details.categories?.map((name) => ({ name })),
+      },
     },
   });
 
