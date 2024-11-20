@@ -15,7 +15,7 @@ export async function addClub(club: {
   await prisma.club.create({
     data: {
       name: club.name,
-      image: club.image,
+      images: club.image,
       description: club.description,
       email: club.email,
       owner: club.owner,
