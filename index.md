@@ -50,4 +50,4 @@ Da Club is designed, implemented, and maintained by <a href="https://github.com/
 <h2>Team Contract</h2>
 Our team has developed a <a href="https://docs.google.com/document/d/1PiApV3qOrppXNGaRf1kudZ24YolmkLwuc0Uw49lqp0w/edit?usp=sharing">Team Contract</a> to establish clear expectations within the group. The contract outlines several criteria, such as each member’s contributions and behaviors, and includes solutions to conflicts that may arise during our time as a group. If a member fails to meet the agreed-upon terms, there will be a process to attempt to de-escalate the situation. If that does not work, it will be escalated to the instructor.
 <h2>Vercel</h2>
-Link to running <a href="https://daclub-ruddy.vercel.app/">
+Link to running <a href="https://daclub-ruddy.vercel.app/">Vervel</a>.
