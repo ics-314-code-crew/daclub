@@ -28,12 +28,6 @@ const onSubmit = async (data: {
   // console.log(`onSubmit data: ${JSON.stringify(data, null, 2)}`);
   await createClub({
     ...data,
-    name: data.name,
-    description: data.description,
-    meetingTime: data.meetingTime,
-    location: data.location,
-    website: data.website,
-    contactEmail: data.contactEmail,
     photos: data.photos.filter((photo): photo is string => photo !== undefined),
     categories: data.categories.filter((category): category is string => category !== undefined),
     admins: data.admins.filter((admin): admin is string => admin !== undefined),
@@ -120,48 +114,12 @@ const AddClubForm: React.FC = () => {
                 <Form.Group>
                   <Form.Label>Contact Email</Form.Label>
                   <input
-                    type="text"
+                    type="email"
                     {...register('contactEmail')}
                     className={`form-control ${errors.contactEmail ? 'is-invalid' : ''}`}
                   />
                   <div className="invalid-feedback">{errors.contactEmail?.message}</div>
                 </Form.Group>
-                {/* <Form.Group>
-                  <Form.Label>Club Photos</Form.Label>
-                  <input
-                    type="text"
-                    {...register('photos')}
-                    className={`form-control ${errors.photos ? 'is-invalid' : ''}`}
-                  />
-                  <div className="invalid-feedback">{errors.photos?.message}</div>
-                </Form.Group> */}
-                {/* <Form.Group>
-                  <Form.Label>Categories</Form.Label>
-                  <input
-                    type="Interest"
-                    {...register('categories')}
-                    className={`form-control ${errors.categories ? 'is-invalid' : ''}`}
-                  />
-                  <div className="invalid-feedback">{errors.categories?.message}</div>
-                </Form.Group> */}
-                {/* <Form.Group>
-                  <Form.Label>Admins</Form.Label>
-                  <input
-                    type="User"
-                    {...register('admins')}
-                    className={`form-control ${errors.admins ? 'is-invalid' : ''}`}
-                  />
-                  <div className="invalid-feedback">{errors.admins?.message}</div>
-                </Form.Group> */}
-                {/* <Form.Group>
-                  <Form.Label>Notifications</Form.Label>
-                  <input
-                    type="Notification"
-                    {...register('notifications')}
-                    className={`form-control ${errors.notifications ? 'is-invalid' : ''}`}
-                  />
-                  <div className="invalid-feedback">{errors.notifications?.message}</div>
-                </Form.Group> */}
                 <input type="hidden" {...register('admins')} value={currentUser} />
                 <Form.Group className="form-group">
                   <Row className="pt-3">
