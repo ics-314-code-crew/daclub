@@ -1,9 +1,5 @@
-#landing-page {
-  background-image: url('/bg-landing.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh; /* Adjust the height as needed */
+#text-box {
+  background-color: white;
 }
 
 #sign-in-page {
