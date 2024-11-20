@@ -28,6 +28,12 @@ const onSubmit = async (data: {
   // console.log(`onSubmit data: ${JSON.stringify(data, null, 2)}`);
   await createClub({
     ...data,
+    name: data.name,
+    description: data.description,
+    meetingTime: data.meetingTime,
+    location: data.location,
+    website: data.website,
+    contactEmail: data.contactEmail,
     photos: data.photos.filter((photo): photo is string => photo !== undefined),
     categories: data.categories.filter((category): category is string => category !== undefined),
     admins: data.admins.filter((admin): admin is string => admin !== undefined),
