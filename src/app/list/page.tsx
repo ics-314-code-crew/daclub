@@ -16,10 +16,14 @@ const ListPage = async () => {
       // eslint-disable-next-line @typescript-eslint/comma-dangle
     } | null,
   );
-  const owner = (session && session.user && session.user.email) || '';
+  const admins = (session && session.user && session.user.email) || '';
   const clubs: Club[] = await prisma.club.findMany({
     where: {
-      owner,
+      admins: {
+        some: {
+          email: admins,
+        },
+      },
     },
   });
 

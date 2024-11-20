@@ -1,29 +1,39 @@
 {
   "defaultAccounts": [
-    { "email": "admin@foo.com", "password": "changeme", "role": "ADMIN" },
-    { "email": "john@foo.com", "password": "changeme" }
+    { "firstName": "Admin", "lastName": "Foo", "email": "admin@hawaii.edu", "password": "changeme", "role": "SUPER_ADMIN"},
+    { "firstName": "john", "lastName": "Foo", "email": "john@hawaii.edu", "password": "changeme" },
+    { "firstName": "God", "lastName": "Mode", "email": "godmode@hawaii.edu", "password": "changeme", "role": "SUPER_ADMIN"},
+    { "firstName": "Hello", "lastName": "Kitty", "email": "hello@hawaii.edu", "password": "changeme", "role": "CLUB_ADMIN" },
+    { "firstName": "Wassup", "lastName": "Fool", "email": "wassup@hawaii.edu", "password": "changeme", "role": "CLUB_ADMIN" }
   ],
 
-  "defaultData": [
-    { "name": "Basket", "quantity": 3, "owner": "john@foo.com", "condition": "excellent" },
-    { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
-    { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
-    { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
+  "defaultInterests" : [
+    { "name": "Sports" },
+    { "name": "Art" },
+    { "name": "Technology" }
   ],
-  "defaultClubData": [
+
+  "defaultClubsData": [
     {
-      "name": "Panda Club",
-      "photos": "Panda.png",
-      "description": "PANDA (Programming AND Algorithms) is a special interest group of ACM Mānoa dedicated to studying and applying algorithms. We aim to help students develop the algorithmic problem-solving skills needed to succeed in the field of computer science. We hold weekly meetings that involves our mentors (Big Pandas) guiding students at various levels of programming experience to solve algorithmic problems similar to ones given in technical interviews. Additionally, we hold presentations aimed to educate students about career-related topics such as resumes, internships, and more!",
-      "email":"uhmpanda@gmail.com",
-      "owner": "john@foo.com"
+      "name": "Tech Club",
+      "description": "A club for tech enthusiasts",
+      "meetingTime": "Every Tuesday at 5 PM",
+      "location": "Computer Science Building",
+      "website": "https://techclub.example.com/",
+      "contactEmail": "tech@example.com",
+      "photos": [],
+      "expiration": "2025-12-31"
     },
     {
-      "name": "Switch Club",
-      "image": "switchlogo.png",
-      "description": "SWITCH is the culmination of efforts of the awesome students, faculty, and working professionals supporting social change in the ICS department. Established in Fall 2019, we are officially a UH Manoa RIO, ACM-W Chapter, and Girls Who Code College Loops Chapter. We strive to provide useful resources from these organizations to improve your professional, technical, and personal development.",
-      "email":"switch@hawaii.edu",
-      "owner": "admin@foo.com"
+      "name": "Photography Club",
+      "description": "A club for aspiring photographers to learn and practice photography.",
+      "meetingTime": "Wednesdays at 3 PM",
+      "location": "Room 101",
+      "website": "https://photographyclub.example.com/",
+      "contactEmail": "contact@photographyclub.example.com",
+      "photos": [],
+      "expiration": "2025-12-25"
     }
   ]
+
 }

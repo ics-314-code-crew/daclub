@@ -1,69 +1,109 @@
-import { PrismaClient, Role, Condition } from '@prisma/client';
+import { PrismaClient, Role } from '@prisma/client';
 import { hash } from 'bcrypt';
 import * as config from '../config/settings.development.json';
 
 const prisma = new PrismaClient();
-
 async function main() {
   console.log('Seeding the database');
   const password = await hash('changeme', 10);
+
   config.defaultAccounts.forEach(async (account) => {
     let role: Role = 'USER';
-    if (account.role === 'ADMIN') {
-      role = 'ADMIN';
+    if (account.role === 'CLUB_ADMIN') {
+      role = 'CLUB_ADMIN';
+    } else if (account.role === 'SUPER_ADMIN') {
+      role = 'SUPER_ADMIN';
     }
-    console.log(`  Creating user: ${account.email} with role: ${role}`);
+    // Valaidate Email
+    if (!account.email.endsWith('@hawaii.edu')) {
+      console.error(`Invalid email: ${account.email}`);
+      console.error('Email must end with @hawaii.edu');
+      process.exit(1);
+    }
+
+    console.log(`  Creating user: ${account.firstName} + ${account.lastName} with role: ${role}`);
     await prisma.user.upsert({
       where: { email: account.email },
       update: {},
       create: {
+        firstName: account.firstName,
+        lastName: account.lastName,
         email: account.email,
         password,
         role,
       },
     });
-    // console.log(`  Created user: ${user.email} with role: ${user.role}`);
   });
-  config.defaultData.forEach(async (data, index) => {
-    let condition: Condition = 'good';
-    if (data.condition === 'poor') {
-      condition = 'poor';
-    } else if (data.condition === 'excellent') {
-      condition = 'excellent';
-    } else {
-      condition = 'fair';
-    }
-    console.log(`  Adding stuff: ${data.name} (${data.owner})`);
-    await prisma.stuff.upsert({
-      where: { id: index + 1 },
+
+  config.defaultInterests.forEach(async (interest) => {
+    console.log(`Creating interest: ${interest.name}`);
+    await prisma.interest.upsert({
+      where: { name: interest.name },
       update: {},
       create: {
-        name: data.name,
-        quantity: data.quantity,
-        owner: data.owner,
-        condition,
+        name: interest.name,
       },
     });
   });
-  config.defaultClubData.forEach(async (club, index) => {
+
+  config.defaultClubsData.forEach(async (data) => {
+    console.log(`Adding club: ${data.name}`);
+
+    // For Later use.......
+    // // Ensure categories exist
+    // const categories = await prisma.interest.findMany({
+    //   where: { name: { in: data.categories } },
+    // });
+
+    // // Ensure admins exist
+    // const admins = await prisma.user.findMany({
+    //   where: { email: { in: data.admins } },
+    // });
+
+    // if (categories.length !== data.categories.length || admins.length !== data.admins.length) {
+    //   console.warn(`Skipping club: ${data.name} due to missing categories or admins.`);
+    // }
+  });
+
+  config.defaultClubsData.forEach(async (data) => {
+    console.log(`Adding club: ${data.name}`);
+    await prisma.club.upsert({
+      where: { name: data.name },
+      update: {},
+      create: {
+        name: data.name,
+        description: data.description || 'Default description',
+        meetingTime: data.meetingTime || 'Default meeting time',
+        location: data.location || 'Default location',
+        website: data.website || null,
+        contactEmail: data.contactEmail || 'example@gmail.com',
+        photos: data.photos || [],
+        expiration: new Date(data.expiration || '2025-01-01'),
+      },
+    });
+  });
+  config.defaultClubsData.forEach(async (club, index) => {
     console.log(`  Adding club: ${club.name}`);
     await prisma.club.upsert({
       where: { id: index },
       update: {},
       create: {
         name: club.name,
-        image: club.image,
+        photos: club.photos,
         description: club.description,
-        email: club.email,
-        owner: club.owner,
+        contactEmail: club.contactEmail,
+        website: club.website,
+        location: club.location,
+        meetingTime: club.meetingTime,
+        expiration: new Date(club.expiration),
       },
     });
   });
 }
-main()
-  .then(() => prisma.$disconnect())
-  .catch(async (e) => {
-    console.error(e);
-    await prisma.$disconnect();
-    process.exit(1);
-  });
+
+main().catch((e) => {
+  console.error(e);
+  process.exit(1);
+}).finally(async () => {
+  await prisma.$disconnect();
+});
