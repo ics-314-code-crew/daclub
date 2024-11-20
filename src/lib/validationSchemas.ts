@@ -22,15 +22,23 @@ export const EditUserSchema = Yup.object({
   ),
 });
 
-export const EditClubSchema = Yup.object({
+export const AddClubSchema = Yup.object({
   id: Yup.number().required(),
   name: Yup.string().required(),
-  quantity: Yup.number().positive().required(),
-  condition: Yup.string().oneOf(['excellent', 'good', 'fair', 'poor']).required(),
-  owner: Yup.string().required(),
+  description: Yup.string().required(),
+  meetingTime: Yup.string().required(),
+  location: Yup.string().required(),
+  website: Yup.string().url().required(),
+  contactEmail: Yup.string().email().required(),
+  photos: Yup.array().of(Yup.string().url()).required(),
+  logo: Yup.string().url().required(),
+  categories: Yup.array().of(Yup.string()).required(),
+  admins: Yup.array().of(Yup.string()).required(),
+  expiration: Yup.date().required(),
+  notification: Yup.boolean().required(),
 });
 
-export const AddClubSchema = Yup.object({
+export const EditClubSchema = Yup.object({
   id: Yup.number().required(),
   name: Yup.string().required(),
   description: Yup.string().required(),

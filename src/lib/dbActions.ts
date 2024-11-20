@@ -70,8 +70,8 @@ export async function createClub(club: {
   photos?: string[];
   logo?: string
   expiration: Date;
-  categories?: string[];
-  admins?: string[];
+  // categories?: string[];
+  // admins: string[];
 }) {
   await prisma.club.create({
     data: {
@@ -85,12 +85,12 @@ export async function createClub(club: {
       photos: club.photos || [],
       logo: club.logo || '',
       expiration: club.expiration,
-      categories: {
-        connect: club.categories?.map((name) => ({ name })),
-      },
-      admins: {
-        connect: club.admins?.map((email) => ({ email })),
-      },
+      // categories: {
+      //   connect: club.categories?.map((name) => ({ name })),
+      // },
+      // admins: {
+      //   connect: club.admins?.map((email) => ({ email })),
+      // },
     },
   });
 
@@ -101,7 +101,7 @@ export async function createClub(club: {
  * Updates a club in the database.
  * @param club, the club club.
  */
-export async function updateClub(club: Club) {
+export async function editClub(club: Club) {
   await prisma.club.update({
     where: { id: club.id },
     data: {
