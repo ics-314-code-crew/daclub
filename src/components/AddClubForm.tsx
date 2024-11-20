@@ -21,7 +21,7 @@ const onSubmit = async (data: {
   // photos: (string | undefined)[];
   logo: string;
   // categories: (string | undefined)[];
-  // admins: (string | undefined)[];
+  admins: string;
   expiration: Date;
   notification: boolean;
 }) => {
@@ -115,7 +115,7 @@ const AddClubForm: React.FC = () => {
                   />
                   <div className="invalid-feedback">{errors.contactEmail?.message}</div>
                 </Form.Group>
-                <input type="hidden" {...register('admins')} value={currentUser} />
+                <input type="hidden" {...register('admins')} value={[currentUser]} />
                 <Form.Group className="form-group">
                   <Row className="pt-3">
                     <Col>

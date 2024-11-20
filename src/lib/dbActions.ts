@@ -71,7 +71,7 @@ export async function createClub(club: {
   logo?: string
   expiration: Date;
   // categories?: string[];
-  // admins: string[];
+  admins: string;
 }) {
   await prisma.club.create({
     data: {
@@ -88,9 +88,9 @@ export async function createClub(club: {
       // categories: {
       //   connect: club.categories?.map((name) => ({ name })),
       // },
-      // admins: {
-      //   connect: club.admins?.map((email) => ({ email })),
-      // },
+      admins: {
+        connect: { email: club.admins },
+      },
     },
   });
 
