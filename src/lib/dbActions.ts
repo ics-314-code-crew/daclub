@@ -16,6 +16,7 @@ export async function addClub(club: {
   website: string;
   contactEmail: string;
   photos: string[];
+  logo: string;
   categories: string[];
   admins: string[];
   expiration: string;
@@ -29,6 +30,7 @@ export async function addClub(club: {
       website: club.website,
       contactEmail: club.contactEmail,
       photos: club.photos,
+      logo: club.logo,
       categories: {
         connect: club.categories.map((name) => ({ name })),
       },
