@@ -13,8 +13,6 @@ type SignUpForm = {
   email: string;
   password: string;
   confirmPassword: string;
-  firstName: string;
-  lastName: string;
   // acceptTerms: boolean;
 };
 
@@ -31,8 +29,6 @@ const SignUp = () => {
     confirmPassword: Yup.string()
       .required('Confirm Password is required')
       .oneOf([Yup.ref('password'), ''], 'Confirm Password does not match'),
-    firstName: Yup.string().required('First Name is required'),
-    lastName: Yup.string().required('Last Name is required'),
   });
 
   const {
