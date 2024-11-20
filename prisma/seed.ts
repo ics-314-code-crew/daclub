@@ -75,7 +75,7 @@ async function main() {
         logo: data.logo,
         expiration: new Date(data.expiration),
         admins: {
-          connect: data.admins.map((email) => ({ email })),
+          connect: Array.isArray(data.admins) ? data.admins.map((email) => ({ email })) : [],
         },
         categories: {
           connect: Array.isArray(data.categories) ? data.categories.map((name) => ({ name })) : [],
