@@ -16,18 +16,21 @@ const Home = () => {
       name: 'Club 1',
       logo: 'logoTest.png', // Replace with an actual image path or URL
       description: 'Insert description here.',
+      interestArea: 'Athletic',
     },
     {
       id: 2,
       name: 'Club 2',
       logo: 'logoTest.png', // Replace with an actual image path or URL
       description: 'Insert description here.',
+      interestArea: 'Art',
     },
     {
       id: 3,
       name: 'Club 3',
       logo: 'logoTest.png', // Replace with an actual image path or URL
       description: 'Insert description here.',
+      interestArea: 'Athletic',
     },
   ];
 
@@ -44,11 +47,20 @@ const Home = () => {
     router.push('/auth/signin'); // Redirect to the sign-in page
   };
 
+  // Group clubs by interest areas
+  const groupedClubs: Record<string, typeof clubs[0][]> = clubs.reduce((acc, club) => {
+    if (!acc[club.interestArea]) {
+      acc[club.interestArea] = [];
+    }
+    acc[club.interestArea].push(club);
+    return acc;
+  }, {} as Record<string, typeof clubs[0][]>);
+
   return (
     <main>
       <Container id="landing-page" fluid className="py-5">
         <Row className="justify-content-center">
-          {clubs.map((club) => (
+          {Object.keys(groupedClubs).map((interestArea) => groupedClubs[interestArea].map((club) => (
             <Col key={club.id} xs={12} md={6} lg={4} className="mb-4">
               <Card onClick={handleCardClick}>
                 <Card.Header className="text-center" style={{ backgroundColor: '#41d538' }}>
@@ -61,11 +73,16 @@ const Home = () => {
                   className="p-3"
                 />
                 <Card.Body>
+                  <Card.Text>
+                    Interest Area:
+                    {' '}
+                    {club.interestArea}
+                  </Card.Text>
                   <Card.Text>{club.description}</Card.Text>
                 </Card.Body>
               </Card>
             </Col>
-          ))}
+          )))}
         </Row>
       </Container>
 
