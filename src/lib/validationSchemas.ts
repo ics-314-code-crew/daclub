@@ -22,17 +22,6 @@ export const EditUserSchema = Yup.object({
   ),
 });
 
-export const CreateClubSchema = Yup.object({
-  name: Yup.string().required(),
-  description: Yup.string().required(),
-  meetingTime: Yup.string().required(),
-  location: Yup.string().required(),
-  website: Yup.string().url(),
-  contactEmail: Yup.string().email(),
-  photos: Yup.array().of(Yup.string().url()),
-  expiration: Yup.date().required(),
-});
-
 export const EditClubSchema = Yup.object({
   id: Yup.number().required(),
   name: Yup.string().required(),
@@ -55,4 +44,5 @@ export const AddClubSchema = Yup.object({
   admins: Yup.array().of(Yup.string().email()).required(),
   expiration: Yup.date().required(),
   notification: Yup.boolean().required(),
+
 });
