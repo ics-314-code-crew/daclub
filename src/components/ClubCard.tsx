@@ -5,7 +5,7 @@ import { Card, Image } from 'react-bootstrap';
 /* Renders a single row in the List Stuff table. See list/page.tsx. */
 const ClubCard = ({ club }: { club: Club }) => (
   <Card className="h-100 text-center">
-    <Image src={club.image} className="club-image" />
+    <Image src="" className="club-image" />
     <Card.Body>
       <Card.Title>{club.name}</Card.Title>
     </Card.Body>

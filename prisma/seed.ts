@@ -82,17 +82,57 @@ async function main() {
       },
     });
   });
-  config.defaultClubData.forEach(async (club, index) => {
+
+  config.defaultClubsData.forEach(async (data) => {
+    console.log(`Adding club: ${data.name}`);
+
+    // For Later use.......
+    // // Ensure categories exist
+    // const categories = await prisma.interest.findMany({
+    //   where: { name: { in: data.categories } },
+    // });
+
+    // // Ensure admins exist
+    // const admins = await prisma.user.findMany({
+    //   where: { email: { in: data.admins } },
+    // });
+
+    // if (categories.length !== data.categories.length || admins.length !== data.admins.length) {
+    //   console.warn(`Skipping club: ${data.name} due to missing categories or admins.`);
+    // }
+  });
+
+  config.defaultClubsData.forEach(async (data) => {
+    console.log(`Adding club: ${data.name}`);
+    await prisma.club.upsert({
+      where: { name: data.name },
+      update: {},
+      create: {
+        name: data.name,
+        description: data.description || 'Default description',
+        meetingTime: data.meetingTime || 'Default meeting time',
+        location: data.location || 'Default location',
+        website: data.website || null,
+        contactEmail: data.contactEmail || 'example@gmail.com',
+        photos: data.photos || [],
+        expiration: new Date(data.expiration || '2025-01-01'),
+      },
+    });
+  });
+  config.defaultClubsData.forEach(async (club, index) => {
     console.log(`  Adding club: ${club.name}`);
     await prisma.club.upsert({
       where: { id: index },
       update: {},
       create: {
         name: club.name,
-        image: club.image,
+        photos: club.photos,
         description: club.description,
-        email: club.email,
-        owner: club.owner,
+        contactEmail: club.contactEmail,
+        website: club.website,
+        location: club.location,
+        meetingTime: club.meetingTime,
+        expiration: new Date(club.expiration),
       },
     });
   });

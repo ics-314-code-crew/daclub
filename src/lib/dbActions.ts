@@ -10,18 +10,32 @@ DELETE *****
 
 export async function addClub(club: {
   name: string;
-  image: string;
   description: string;
-  email: string;
-  owner: string
+  meetingTime: string;
+  location: string;
+  website: string;
+  contactEmail: string;
+  photos: string[];
+  categories: string[];
+  admins: string[];
+  expiration: string;
 }) {
   await prisma.club.create({
     data: {
       name: club.name,
-      images: club.image,
       description: club.description,
-      email: club.email,
-      owner: club.owner,
+      meetingTime: club.meetingTime,
+      location: club.location,
+      website: club.website,
+      contactEmail: club.contactEmail,
+      photos: club.photos,
+      categories: {
+        connect: club.categories.map((name) => ({ name })),
+      },
+      admins: {
+        connect: club.admins.map((email) => ({ email })),
+      },
+      expiration: new Date(club.expiration),
     },
   });
 
