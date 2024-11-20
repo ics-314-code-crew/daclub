@@ -46,7 +46,7 @@ model Club {
   photos       String[]
   logo         String
   categories   Interest[]   @relation("ClubInterests")
-  admins      User[]       @relation("admins")
+  admins      User[]        @relation("admins")
   expiration   DateTime
   notifications Notification[]
 }
