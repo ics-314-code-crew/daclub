@@ -17,7 +17,6 @@ const ListPage = async () => {
     } | null,
   );
   const clubs: Club[] = await prisma.club.findMany({});
-
   return (
     <main>
       <Container id="list" fluid className="py-3">
