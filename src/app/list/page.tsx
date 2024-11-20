@@ -17,8 +17,8 @@ const ListPage = async () => {
     } | null,
   );
   // Check if the user has the required role
-  const userRole = session?.user?.role;
-  if (!userRole || !['USER', 'CLUB_ADMIN', 'SUPER_ADMIN'].includes(userRole)) {
+  const user = session?.user!.email ? session.user.email : '';
+  if (user !== 'CLUB_ADMIN' && user !== 'SUPER_ADMIN' && user !== 'USER') {
     return (
       <main>
         <Container id="list" fluid className="py-3">
@@ -32,11 +32,7 @@ const ListPage = async () => {
       </main>
     );
   }
-  const clubs: Club[] = await prisma.club.findMany({
-    where: {
-
-    },
-  });
+  const clubs: Club[] = await prisma.club.findMany({});
 
   return (
     <main>
