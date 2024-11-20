@@ -35,11 +35,7 @@ const ListPage = async () => {
             <h1 className="text-center">Club List</h1>
             <Row xs={1} md={2} lg={3} className="g-4">
               {clubs.map((club) => (
-                <Col key={club.name}>
-                  <ClubCard
-                    club={club}
-                  />
-                </Col>
+                <ClubCard key={club.id} club={club} />
               ))}
             </Row>
           </Col>
