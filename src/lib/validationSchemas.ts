@@ -1,4 +1,3 @@
-import { log } from 'console';
 import * as Yup from 'yup';
 
 export const CreateUserSchema = Yup.object({
