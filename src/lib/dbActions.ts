@@ -88,9 +88,7 @@ export async function createClub(club: {
       // categories: {
       //   connect: club.categories?.map((name) => ({ name })),
       // },
-      admins: {
-        connect: { email: club.admins },
-      },
+      admins: club.admins,
     },
   });
 

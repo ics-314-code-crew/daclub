@@ -49,7 +49,7 @@ export const EditClubSchema = Yup.object({
   photos: Yup.array().of(Yup.string().url()).required(),
   logo: Yup.string().url().required(),
   categories: Yup.array().of(Yup.string()).required(),
-  admins: Yup.array().of(Yup.string()).required(),
+  admins: Yup.string().required(),
   expiration: Yup.date().required(),
   notification: Yup.boolean().required(),
 });

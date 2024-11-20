@@ -30,9 +30,6 @@ model User {
   email        String       @unique
   password     String
   role         Role         @default(USER)
-  clubs        Club[]       @relation("admins")
-  interests    Interest[]   @relation("UserInterests")
-  notifications Notification[]
 }
 
 model Club {
@@ -46,7 +43,7 @@ model Club {
   photos       String[]
   logo         String
   categories   Interest[]   @relation("ClubInterests")
-  admins      User[]        @relation("admins")
+  admins String
   expiration   DateTime
   notifications Notification[]
 }
@@ -54,14 +51,12 @@ model Club {
 model Interest {
   id       Int       @id @default(autoincrement())
   name     String    @unique
-  users    User[]    @relation("UserInterests")
   clubs    Club[]    @relation("ClubInterests")
 }
 
 model Notification {
   id          Int      @id @default(autoincrement())
   userId      Int
-  user        User     @relation(fields: [userId], references: [id])
   clubId      Int?
   club        Club?    @relation(fields: [clubId], references: [id])
   message     String

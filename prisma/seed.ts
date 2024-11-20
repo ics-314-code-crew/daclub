@@ -61,6 +61,7 @@ async function main() {
     //   console.warn(`Skipping club: ${data.name} due to missing categories or admins.`);
     // }
     console.log(`  Adding club: ${data.name}`);
+    console.log(data);
     await prisma.club.upsert({
       where: { name: data.name },
       update: {},
@@ -74,9 +75,7 @@ async function main() {
         photos: { set: data.photos },
         logo: data.logo,
         expiration: new Date(data.expiration),
-        admins: {
-          connect: Array.isArray(data.admins) ? data.admins.map((email) => ({ email })) : [],
-        },
+        admins: data.admins,
         categories: {
           connect: Array.isArray(data.categories) ? data.categories.map((name) => ({ name })) : [],
         },
