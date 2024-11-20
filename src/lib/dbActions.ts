@@ -1,6 +1,6 @@
 'use server';
 
-import { Role } from '@prisma/client';
+import { Role, Club } from '@prisma/client';
 import { hash } from 'bcrypt';
 import { redirect } from 'next/navigation';
 import { prisma } from './prisma';
@@ -69,19 +69,19 @@ export async function createUser({ credentials, user }:
 
 /**
  * Updates an existing user in the database.
- * @param details, an object with the following properties: id, email, uhId, role.
+ * @param club, an object with the following properties: id, email, uhId, role.
  */
-export async function updateUser(details:
+export async function updateUser(club:
 {
   id: number;
   email?: string;
   role?: Role;
 }) {
   await prisma.user.update({
-    where: { id: details.id },
+    where: { id: club.id },
     data: {
-      email: details.email,
-      role: details.role,
+      email: club.email,
+      role: club.role,
     },
   });
 
@@ -102,9 +102,9 @@ export async function deleteUser(id: number) {
 
 /**
  * Creates a new club in the database.
- * @param details, the club identifier.
+ * @param club, the club identifier.
  */
-export async function createClub(details: {
+export async function createClub(club: {
   name: string;
   description: string;
   meetingTime: string;
@@ -119,20 +119,20 @@ export async function createClub(details: {
 }) {
   await prisma.club.create({
     data: {
-      name: details.name,
-      description: details.description,
-      meetingTime: details.meetingTime,
-      location: details.location,
-      website: details.website,
-      contactEmail: details.contactEmail,
-      photos: details.photos || [],
-      logo: details.logo || '',
-      expiration: details.expiration,
+      name: club.name,
+      description: club.description,
+      meetingTime: club.meetingTime,
+      location: club.location,
+      website: club.website,
+      contactEmail: club.contactEmail,
+      photos: club.photos || [],
+      logo: club.logo || '',
+      expiration: club.expiration,
       categories: {
-        connect: details.categories?.map((name) => ({ name })),
+        connect: club.categories?.map((name) => ({ name })),
       },
       admins: {
-        connect: details.admins?.map((email) => ({ email })),
+        connect: club.admins?.map((email) => ({ email })),
       },
     },
   });
@@ -142,40 +142,27 @@ export async function createClub(details: {
 
 /**
  * Updates a club in the database.
- * @param details, the club details.
+ * @param club, the club club.
  */
-export async function updateClub(details: {
-  id: number;
-  name?: string;
-  description?: string;
-  meetingTime?: string;
-  location?: string;
-  website?: string;
-  contactEmail?: string;
-  photos?: string[];
-  logo?: string;
-  expiration?: Date;
-  categories?: string[];
-  admins?: string[];
-}) {
+export async function updateClub(club: Club) {
   await prisma.club.update({
-    where: { id: details.id },
+    where: { id: club.id },
     data: {
-      name: details.name,
-      description: details.description,
-      meetingTime: details.meetingTime,
-      location: details.location,
-      website: details.website,
-      contactEmail: details.contactEmail,
-      photos: details.photos,
-      logo: details.logo,
-      expiration: details.expiration,
-      admins: {
-        set: (details.admins?.map((email) => ({ email })) || []),
-      },
-      categories: {
-        set: details.categories?.map((name) => ({ name })),
-      },
+      name: club.name,
+      description: club.description,
+      meetingTime: club.meetingTime,
+      location: club.location,
+      website: club.website,
+      contactEmail: club.contactEmail,
+      photos: club.photos,
+      logo: club.logo,
+      expiration: club.expiration,
+      // admins: {
+      //   set: (club.admins?.map((email) => ({ email })) || []),
+      // },
+      // categories: {
+      //   set: club.categories?.map((name) => ({ name })),
+      // },
     },
   });
 
@@ -220,9 +207,9 @@ export async function deleteInterest(id: number) {
 
 /**
  * Creates a new notification in the database.
- * @param id, the notification details.
+ * @param id, the notification club.
  */
-export async function createNotification(details: {
+export async function createNotification(club: {
   userId: number;
   clubId?: number;
   message: string;
@@ -230,10 +217,10 @@ export async function createNotification(details: {
 }) {
   await prisma.notification.create({
     data: {
-      userId: details.userId,
-      clubId: details.clubId,
-      message: details.message,
-      isRead: details.isRead || false,
+      userId: club.userId,
+      clubId: club.clubId,
+      message: club.message,
+      isRead: club.isRead || false,
     },
   });
 
