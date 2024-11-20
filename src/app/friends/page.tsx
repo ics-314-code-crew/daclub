@@ -10,7 +10,7 @@ const FriendsPage = async () => {
   const session = await getServerSession(authOptions);
   loggedInProtectedPage(
     session as {
-      user: { email: string; id: string; randomKey: string };
+      user: { email: string; id: string; role: string };
       // eslint-disable-next-line @typescript-eslint/comma-dangle
     } | null,
   );

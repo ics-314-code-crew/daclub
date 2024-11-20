@@ -14,7 +14,14 @@ async function main() {
     } else if (account.role === 'SUPER_ADMIN') {
       role = 'SUPER_ADMIN';
     }
-    console.log(`Creating user: ${account.email} with role: ${role}`);
+    // Valaidate Email
+    if (!account.email.endsWith('@hawaii.edu')) {
+      console.error(`Invalid email: ${account.email}`);
+      console.error('Email must end with @hawaii.edu');
+      process.exit(1);
+    }
+
+    console.log(`  Creating user: ${account.firstName} + ${account.lastName} with role: ${role}`);
     await prisma.user.upsert({
       where: { email: account.email },
       update: {},
@@ -40,24 +47,18 @@ async function main() {
   });
 
   config.defaultClubsData.forEach(async (data) => {
-    console.log(`Adding club: ${data.name}`);
-
     // Ensure categories exist
-    const categories = await prisma.interest.findMany({
-      where: { name: { in: data.categories } },
-    });
+    // const categories = await prisma.interest.findMany({
+    //   where: { name: { in: Array.isArray(data.categories) ? data.categories : [data.categories] } },
+    // });
 
-    // Ensure admins exist
-    const admins = await prisma.user.findMany({
-      where: { email: { in: data.admins } },
-    });
-
-    if (categories.length !== data.categories.length || admins.length !== data.admins.length) {
-      console.warn(`Skipping club: ${data.name} due to missing categories or admins.`);
-    }
-  });
-
-  config.defaultClubsData.forEach(async (data) => {
+    // // Ensure admins exist
+    // const admins = await prisma.user.findMany({
+    //   where: { email: { in: data.admins } },
+    // });
+    // if (categories.length !== data.categories.length || admins.length !== data.admins.length) {
+    //   console.warn(`Skipping club: ${data.name} due to missing categories or admins.`);
+    // }
     console.log(`Adding club: ${data.name}`);
     await prisma.club.upsert({
       where: { name: data.name },
@@ -71,11 +72,11 @@ async function main() {
         contactEmail: data.contactEmail || 'example@gmail.com',
         photos: data.photos || [],
         expiration: new Date(data.expiration || '2025-01-01'),
-        categories: {
-          connect: categories.map((category) => ({ id: category.id })),
-        },
         admins: {
-          connect: admins.map((admin) => ({ id: admin.id })),
+          connect: data.admins.map((email) => ({ email })),
+        },
+        categories: {
+          connect: Array.isArray(data.categories) ? data.categories.map((name) => ({ name })) : [],
         },
       },
     });

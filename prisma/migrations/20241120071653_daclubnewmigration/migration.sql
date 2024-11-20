@@ -1,30 +1,17 @@
-/*
-  Warnings:
+-- CreateEnum
+CREATE TYPE "Role" AS ENUM ('USER', 'CLUB_ADMIN', 'SUPER_ADMIN');
 
-  - The values [ADMIN] on the enum `Role` will be removed. If these variants are still used in the database, this will fail.
-  - You are about to drop the `Stuff` table. If the table is not empty, all the data it contains will be lost.
-  - A unique constraint covering the columns `[uhId]` on the table `User` will be added. If there are existing duplicate values, this will fail.
+-- CreateTable
+CREATE TABLE "User" (
+    "id" SERIAL NOT NULL,
+    "firstName" TEXT NOT NULL,
+    "lastName" TEXT NOT NULL,
+    "email" TEXT NOT NULL,
+    "password" TEXT NOT NULL,
+    "role" "Role" NOT NULL DEFAULT 'USER',
 
-*/
--- AlterEnum
-BEGIN;
-CREATE TYPE "Role_new" AS ENUM ('USER', 'CLUB_ADMIN', 'SUPER_ADMIN');
-ALTER TABLE "User" ALTER COLUMN "role" DROP DEFAULT;
-ALTER TABLE "User" ALTER COLUMN "role" TYPE "Role_new" USING ("role"::text::"Role_new");
-ALTER TYPE "Role" RENAME TO "Role_old";
-ALTER TYPE "Role_new" RENAME TO "Role";
-DROP TYPE "Role_old";
-ALTER TABLE "User" ALTER COLUMN "role" SET DEFAULT 'USER';
-COMMIT;
-
--- AlterTable
-ALTER TABLE "User" ADD COLUMN     "uhId" TEXT;
-
--- DropTable
-DROP TABLE "Stuff";
-
--- DropEnum
-DROP TYPE "Condition";
+    CONSTRAINT "User_pkey" PRIMARY KEY ("id")
+);
 
 -- CreateTable
 CREATE TABLE "Club" (
@@ -34,7 +21,7 @@ CREATE TABLE "Club" (
     "meetingTime" TEXT NOT NULL,
     "location" TEXT NOT NULL,
     "website" TEXT,
-    "contactEmail" TEXT NOT NULL,
+    "contactEmail" TEXT,
     "photos" TEXT[],
     "expiration" TIMESTAMP(3) NOT NULL,
 
@@ -80,6 +67,9 @@ CREATE TABLE "_UserInterests" (
 );
 
 -- CreateIndex
+CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
+
+-- CreateIndex
 CREATE UNIQUE INDEX "Club_name_key" ON "Club"("name");
 
 -- CreateIndex
@@ -102,9 +92,6 @@ CREATE UNIQUE INDEX "_UserInterests_AB_unique" ON "_UserInterests"("A", "B");
 
 -- CreateIndex
 CREATE INDEX "_UserInterests_B_index" ON "_UserInterests"("B");
-
--- CreateIndex
-CREATE UNIQUE INDEX "User_uhId_key" ON "User"("uhId");
 
 -- AddForeignKey
 ALTER TABLE "Notification" ADD CONSTRAINT "Notification_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
