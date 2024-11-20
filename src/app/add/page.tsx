@@ -1,6 +1,7 @@
 import { getServerSession } from 'next-auth';
 import authOptions from '@/lib/authOptions';
 import { loggedInProtectedPage } from '@/lib/page-protection';
+import AddClubForm from '@/components/AddClubForm';
 
 const AddClub = async () => {
   // Protect the page, only logged in users can access it.
@@ -14,7 +15,7 @@ const AddClub = async () => {
   return (
     // Add your form here
     <main>
-      Placeholder for AddClubForm.
+      <AddClubForm />
     </main>
   );
 };
