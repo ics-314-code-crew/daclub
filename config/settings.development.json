@@ -13,7 +13,7 @@
   "defaultClubData": [
     {
       "name": "Panda Club",
-      "image": "Panda.png",
+      "photos": "Panda.png",
       "description": "PANDA (Programming AND Algorithms) is a special interest group of ACM Mānoa dedicated to studying and applying algorithms. We aim to help students develop the algorithmic problem-solving skills needed to succeed in the field of computer science. We hold weekly meetings that involves our mentors (Big Pandas) guiding students at various levels of programming experience to solve algorithmic problems similar to ones given in technical interviews. Additionally, we hold presentations aimed to educate students about career-related topics such as resumes, internships, and more!",
       "email":"uhmpanda@gmail.com",
       "owner": "john@foo.com"
