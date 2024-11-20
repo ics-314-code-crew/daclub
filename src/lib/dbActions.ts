@@ -5,46 +5,6 @@ import { hash } from 'bcrypt';
 import { redirect } from 'next/navigation';
 import { prisma } from './prisma';
 
-/*
-DELETE *****
-
-export async function addClub(club: {
-  name: string;
-  description: string;
-  meetingTime: string;
-  location: string;
-  website: string;
-  contactEmail: string;
-  photos: string[];
-  logo: string;
-  categories: string[];
-  admins: string[];
-  expiration: string;
-}) {
-  await prisma.club.create({
-    data: {
-      name: club.name,
-      description: club.description,
-      meetingTime: club.meetingTime,
-      location: club.location,
-      website: club.website,
-      contactEmail: club.contactEmail,
-      photos: club.photos,
-      logo: club.logo,
-      categories: {
-        connect: club.categories.map((name) => ({ name })),
-      },
-      admins: {
-        connect: club.admins.map((email) => ({ email })),
-      },
-      expiration: new Date(club.expiration),
-    },
-  });
-
-  redirect('/list');
-}
-*/
-
 /**
  * Creates a new user in the database.
  * @param credentials, an object with the following properties: Email , password.
@@ -69,19 +29,14 @@ export async function createUser({ credentials, user }:
 
 /**
  * Updates an existing user in the database.
- * @param club, an object with the following properties: id, email, uhId, role.
+ * Confused on those...who made this?
+ * @param club, an object with the following properties: id, email, role.
  */
-export async function updateUser(club:
-{
-  id: number;
-  email?: string;
-  role?: Role;
-}) {
+export async function updateUser(id: number) {
   await prisma.user.update({
-    where: { id: club.id },
+    where: { id },
     data: {
-      email: club.email,
-      role: club.role,
+      role: Role.USER,
     },
   });
 
@@ -105,6 +60,7 @@ export async function deleteUser(id: number) {
  * @param club, the club identifier.
  */
 export async function createClub(club: {
+  id: number;
   name: string;
   description: string;
   meetingTime: string;
@@ -119,6 +75,7 @@ export async function createClub(club: {
 }) {
   await prisma.club.create({
     data: {
+      id: club.id,
       name: club.name,
       description: club.description,
       meetingTime: club.meetingTime,

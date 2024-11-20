@@ -18,20 +18,15 @@ const onSubmit = async (data: {
   location: string;
   website?: string;
   contactEmail: string;
-  photos: (string | undefined)[];
+  // photos: (string | undefined)[];
   logo: string;
-  categories: (string | undefined)[];
-  admins: (string | undefined)[];
+  // categories: (string | undefined)[];
+  /// admins: (string | undefined)[];
   expiration: Date;
   notification: boolean;
 }) => {
   // console.log(`onSubmit data: ${JSON.stringify(data, null, 2)}`);
-  await createClub({
-    ...data,
-    photos: data.photos.filter((photo): photo is string => photo !== undefined),
-    categories: data.categories.filter((category): category is string => category !== undefined),
-    admins: data.admins.filter((admin): admin is string => admin !== undefined),
-  });
+  await createClub(data);
   swal('Success', 'Your item has been added', 'success', {
     timer: 2000,
   });
