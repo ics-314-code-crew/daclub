@@ -44,6 +44,7 @@ model Club {
   website      String?
   contactEmail String?
   photos       String[]
+  logo         String
   categories   Interest[]   @relation("ClubInterests")
   admins       User[]       @relation("ClubAdmins")
   expiration   DateTime
