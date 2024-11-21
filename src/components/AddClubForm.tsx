@@ -20,6 +20,7 @@ interface ClubFormData {
   logo: string;
   admins: string;
   expiration: Date;
+  id: number;
 }
 
 const AddClubForm: React.FC = () => {
