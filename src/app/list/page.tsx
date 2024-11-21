@@ -16,8 +16,18 @@ const ListPage = async () => {
   );
   // const owner = (session && session.user && session.user.email) || '';
   return (
-    <main>
-      Placeholder for the club list.
+    <main id="landing-page">
+      <div
+        style={{
+          backgroundColor: 'white',
+          padding: '20px',
+          borderRadius: '10px',
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+          maxWidth: '300px',
+        }}
+      >
+        Placeholder for the club list.
+      </div>
     </main>
   );
 };
