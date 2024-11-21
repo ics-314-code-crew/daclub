@@ -3,6 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { prisma } from '@/lib/prisma';
 import { loggedInProtectedPage } from '@/lib/page-protection';
 import authOptions from '@/lib/authOptions';
+import ClubCard from '@/components/ClubCard';
 import { Club } from '@prisma/client';
 
 /** Render a list of clubs for the logged in user. */
