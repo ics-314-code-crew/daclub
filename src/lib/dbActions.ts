@@ -5,7 +5,6 @@ import { hash } from 'bcrypt';
 import { redirect } from 'next/navigation';
 import { prisma } from './prisma';
 
-console.log('HELLO');
 /**
  * Creates a new user in the database.
  * @param credentials, an object with the following properties: Email , password.
@@ -79,6 +78,7 @@ export async function createClub(data: {
 
   redirect('/list');
 }
+
 /**
  * Creates a new club in the database.
  * @param club, the club identifier.

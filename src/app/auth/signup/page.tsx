@@ -6,6 +6,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import { Card, Col, Container, Button, Form, Row } from 'react-bootstrap';
 import { createUser } from '@/lib/dbActions';
+import Link from 'next/link';
 
 type SignUpForm = {
   firstName: string;
@@ -140,7 +141,7 @@ const SignUp = () => {
                 </Card.Body>
                 <Card.Footer>
                   Already have an account?
-                  <a href="/auth/signin">Sign in</a>
+                  <Link href="/auth/signin">Sign in</Link>
                 </Card.Footer>
               </Card>
             </Col>

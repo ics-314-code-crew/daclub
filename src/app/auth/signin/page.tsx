@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { signIn } from 'next-auth/react';
 import { Button, Card, Col, Container, Form, Row, Alert } from 'react-bootstrap';
+import Link from 'next/link';
 
 /** The sign in page. */
 const SignIn = () => {
@@ -82,7 +83,7 @@ const SignIn = () => {
                 </Card.Body>
                 <Card.Footer>
                   Don&apos;t have an account?
-                  <a href="/auth/signup">Sign up</a>
+                  <Link href="/auth/signup">Sign up</Link>
                 </Card.Footer>
               </Card>
             </Col>
