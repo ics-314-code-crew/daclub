@@ -2,6 +2,14 @@
   background-color: white;
 }
 
+#landing-page {
+  background-image: url('/bg-landing.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* Adjust the height as needed */
+}
+
 #sign-in-page {
   background-image: url('/sign-in-bg.jpg');
   background-size: cover;
@@ -14,6 +22,17 @@
 }
 
 #sign-up-page {
+  background-image: url('/sign-in-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* Adjust the height as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#signout-page {
   background-image: url('/sign-in-bg.jpg');
   background-size: cover;
   background-position: center;

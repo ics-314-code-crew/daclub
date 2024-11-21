@@ -1,5 +1,5 @@
 import { getServerSession } from 'next-auth';
-import { Col, Container, Row } from 'react-bootstrap';
+// import { Col, Container, Row } from 'react-bootstrap';
 import { prisma } from '@/lib/prisma';
 import { loggedInProtectedPage } from '@/lib/page-protection';
 import authOptions from '@/lib/authOptions';
@@ -18,19 +18,18 @@ const ListPage = async () => {
   );
   const clubs: Club[] = await prisma.club.findMany({});
   return (
-    <main>
-      <Container id="list" fluid className="py-3">
-        <Row>
-          <Col>
-            <h1 className="text-center">Club List</h1>
-            <Row xs={1} md={2} lg={3} className="g-4">
-              {clubs.map((club) => (
-                <ClubCard key={club.id} club={club} />
-              ))}
-            </Row>
-          </Col>
-        </Row>
-      </Container>
+    <main id="landing-page">
+      <div
+        style={{
+          backgroundColor: 'white',
+          padding: '20px',
+          borderRadius: '10px',
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+          maxWidth: '300px',
+        }}
+      >
+        Placeholder for the club list.
+      </div>
     </main>
   );
 };
