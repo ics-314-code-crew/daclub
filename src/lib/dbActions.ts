@@ -5,6 +5,7 @@ import { hash } from 'bcrypt';
 import { redirect } from 'next/navigation';
 import { prisma } from './prisma';
 
+console.log('HELLO');
 /**
  * Creates a new user in the database.
  * @param credentials, an object with the following properties: Email , password.
@@ -55,45 +56,66 @@ export async function deleteUser(id: number) {
   redirect('/');
 }
 
-/**
- * Creates a new club in the database.
- * @param club, the club identifier.
- */
-export async function createClub(club: {
-  id: number;
+export async function createClub(data: {
   name: string;
   description: string;
   meetingTime: string;
   location: string;
-  website?: string;
-  contactEmail?: string;
-  photos?: string[];
-  logo?: string
+  logo: string;
   expiration: Date;
-  // categories?: string[];
   admins: string;
-}) {
+}): Promise<void> {
   await prisma.club.create({
     data: {
-      id: club.id,
-      name: club.name,
-      description: club.description,
-      meetingTime: club.meetingTime,
-      location: club.location,
-      website: club.website,
-      contactEmail: club.contactEmail,
-      photos: club.photos || [],
-      logo: club.logo || '',
-      expiration: club.expiration,
-      // categories: {
-      //   connect: club.categories?.map((name) => ({ name })),
-      // },
-      admins: club.admins,
+      name: data.name,
+      description: data.description,
+      meetingTime: data.meetingTime,
+      location: data.location,
+      logo: data.logo,
+      expiration: data.expiration,
+      admins: data.admins,
     },
   });
 
   redirect('/list');
 }
+/**
+ * Creates a new club in the database.
+ * @param club, the club identifier.
+ */
+// export async function createClub(club: {
+//   id: number;
+//   name: string;
+//   description: string;
+//   meetingTime: string;
+//   location: string;
+//   website?: string;
+//   contactEmail?: string;
+//   photos?: string[];
+//   logo?: string
+//   expiration: Date;
+//   // categories?: string[];
+//   admins: string;
+// }) {
+//   console.log('createClub');
+//   console.log(club);
+//   await prisma.club.create({
+//     data: {
+//       id: club.id,
+//       name: club.name,
+//       description: club.description,
+//       meetingTime: club.meetingTime,
+//       location: club.location,
+//       website: club.website,
+//       contactEmail: club.contactEmail,
+//       photos: club.photos || [],
+//       logo: club.logo || '',
+//       expiration: club.expiration,
+//       admins: club.admins,
+//     },
+//   });
+//   redirect('/list');
+// }
 
 /**
  * Updates a club in the database.

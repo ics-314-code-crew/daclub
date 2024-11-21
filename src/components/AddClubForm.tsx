@@ -16,25 +16,26 @@ const onSubmit = async (data: {
   description: string;
   meetingTime: string;
   location: string;
-  website?: string;
+  website: string;
   contactEmail: string;
-  // photos: (string | undefined)[];
   logo: string;
-  // categories: (string | undefined)[];
   admins: string;
   expiration: Date;
-  notification: boolean;
+  // xpiration: string;
+  // notification: boolean;
+  // categories: string[];
+  // photos: string[];
 }) => {
-  // console.log(`onSubmit data: ${JSON.stringify(data, null, 2)}`);
+  await createClub({ ...data, expiration: new Date() });
   await createClub(data);
-  swal('Success', 'Your item has been added', 'success', {
+  swal('Success', 'Your contact has been added', 'success', {
     timer: 2000,
   });
 };
 
-const AddClubForm: React.FC = () => {
+const AddContactForm: React.FC = () => {
   const { data: session, status } = useSession();
-  // console.log('AddClubForm', status, session);
+  // console.log('AddContactForm', status, session);
   const currentUser = session?.user?.email || '';
   const {
     register,
@@ -54,9 +55,9 @@ const AddClubForm: React.FC = () => {
   return (
     <Container className="py-3">
       <Row className="justify-content-center">
-        <Col xs={5}>
+        <Col xs={10}>
           <Col className="text-center">
-            <h2>Add CLub</h2>
+            <h2>Add Contact</h2>
           </Col>
           <Card>
             <Card.Body>
@@ -69,51 +70,6 @@ const AddClubForm: React.FC = () => {
                     className={`form-control ${errors.name ? 'is-invalid' : ''}`}
                   />
                   <div className="invalid-feedback">{errors.name?.message}</div>
-                </Form.Group>
-                <Form.Group>
-                  <Form.Label>Description</Form.Label>
-                  <input
-                    type="text"
-                    {...register('description')}
-                    className={`form-control ${errors.description ? 'is-invalid' : ''}`}
-                  />
-                  <div className="invalid-feedback">{errors.description?.message}</div>
-                </Form.Group>
-                <Form.Group>
-                  <Form.Label>Meeting Time</Form.Label>
-                  <input
-                    type="text"
-                    {...register('meetingTime')}
-                    className={`form-control ${errors.meetingTime ? 'is-invalid' : ''}`}
-                  />
-                  <div className="invalid-feedback">{errors.meetingTime?.message}</div>
-                </Form.Group>
-                <Form.Group>
-                  <Form.Label>Location</Form.Label>
-                  <input
-                    type="text"
-                    {...register('location')}
-                    className={`form-control ${errors.location ? 'is-invalid' : ''}`}
-                  />
-                  <div className="invalid-feedback">{errors.location?.message}</div>
-                </Form.Group>
-                <Form.Group>
-                  <Form.Label>Website URL</Form.Label>
-                  <input
-                    type="text"
-                    {...register('website')}
-                    className={`form-control ${errors.website ? 'is-invalid' : ''}`}
-                  />
-                  <div className="invalid-feedback">{errors.website?.message}</div>
-                </Form.Group>
-                <Form.Group>
-                  <Form.Label>Contact Email</Form.Label>
-                  <input
-                    type="email"
-                    {...register('contactEmail')}
-                    className={`form-control ${errors.contactEmail ? 'is-invalid' : ''}`}
-                  />
-                  <div className="invalid-feedback">{errors.contactEmail?.message}</div>
                 </Form.Group>
                 <input type="hidden" {...register('admins')} value={currentUser} />
                 <Form.Group className="form-group">
@@ -139,4 +95,4 @@ const AddClubForm: React.FC = () => {
   );
 };
 
-export default AddClubForm;
+export default AddContactForm;
