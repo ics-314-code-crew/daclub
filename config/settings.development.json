@@ -1,39 +1,46 @@
 {
   "defaultAccounts": [
-    { "firstName": "Admin", "lastName": "Foo", "email": "admin@hawaii.edu", "password": "changeme", "role": "SUPER_ADMIN"},
-    { "firstName": "john", "lastName": "Foo", "email": "john@hawaii.edu", "password": "changeme", "role": "USER"},
-    { "firstName": "God", "lastName": "Mode", "email": "godmode@hawaii.edu", "password": "changeme", "role": "SUPER_ADMIN"},
-    { "firstName": "Hello", "lastName": "Kitty", "email": "hello@hawaii.edu", "password": "changeme", "role": "CLUB_ADMIN" },
-    { "firstName": "Wassup", "lastName": "Fool", "email": "wassup@hawaii.edu", "password": "changeme", "role": "CLUB_ADMIN" }
+    {
+      "firstName": "Admin",
+      "lastName": "Foo",
+      "email": "admin@hawaii.edu",
+      "password": "changeme",
+      "role": "SUPER_ADMIN"
+    },
+    { "firstName": "john", "lastName": "Foo", "email": "john@hawaii.edu", "password": "changeme", "role": "USER" },
+    {
+      "firstName": "God",
+      "lastName": "Mode",
+      "email": "godmode@hawaii.edu",
+      "password": "changeme",
+      "role": "SUPER_ADMIN"
+    },
+    {
+      "firstName": "Hello",
+      "lastName": "Kitty",
+      "email": "hello@hawaii.edu",
+      "password": "changeme",
+      "role": "CLUB_ADMIN"
+    },
+    {
+      "firstName": "Wassup",
+      "lastName": "Fool",
+      "email": "wassup@hawaii.edu",
+      "password": "changeme",
+      "role": "CLUB_ADMIN"
+    }
   ],
 
   "defaultClubsData": [
     {
       "name": "Tech Club",
-      "description": "A club for tech enthusiasts",
-      "meetingTime": "Every Tuesday at 5 PM",
-      "location": "Computer Science Building",
-      "website": "https://techclub.example.com",
-      "contactEmail": "tech@example.com",
-      "photos": [],
       "logo": "techlogo.png",
-      "expiration": "2025-12-31",
-      "admins": "hello@hawaii.edu",
-      "categories": ["Technology", "Computer Science"]
+      "admins": "john@hawaii.edu"
     },
     {
       "name": "Photography Club",
-      "description": "A club for aspiring photographers to learn and practice photography.",
-      "meetingTime": "Wednesdays at 3 PM",
-      "location": "Room 101",
-      "website": "https://photographyclub.example.com",
-      "contactEmail": "contact@photographyclub.example.com",
-      "photos": [],
       "logo": "photographylogo.png",
-      "expiration": "2025-12-25",
-      "admins": "wassup@hawaii.edu",
-      "categories": ["Photography", "Art"]
+      "admins": "admin@hawaii.edu"
     }
   ]
-  
 }
