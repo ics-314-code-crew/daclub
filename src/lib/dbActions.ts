@@ -1,6 +1,6 @@
 'use server';
 
-import { Role, Club } from '@prisma/client';
+import { Role } from '@prisma/client';
 import { hash } from 'bcrypt';
 import { redirect } from 'next/navigation';
 import { prisma } from './prisma';
