@@ -34,13 +34,27 @@
   "defaultClubsData": [
     {
       "name": "Tech Club",
+      "description": "A club for tech enthusiasts",
+      "meetingTime": "Every Tuesday at 5 PM",
+      "location": "Computer Science Building",
+      "website": "https://techclub.example.com/",
+      "contactEmail": "tech@example.com",
       "logo": "techlogo.png",
-      "admins": "john@hawaii.edu"
+      "startDate": "2021-01-01",
+      "expirationDate": "2025-12-31",
+      "admins": "hello@hawaii.edu"
     },
     {
       "name": "Photography Club",
+      "description": "A club for aspiring photographers to learn and practice photography.",
+      "meetingTime": "Wednesdays at 3 PM",
+      "location": "Room 101",
+      "website": "https://photographyclub.example.com/",
+      "contactEmail": "contact@photographyclub.example.com",
       "logo": "photographylogo.png",
-      "admins": "admin@hawaii.edu"
+      "startDate": "2021-01-01",
+      "expirationDate": "2025-12-25",
+      "admins": "wassup@hawaii.edu"
     }
   ]
 }
