@@ -33,9 +33,6 @@ export const AddClubSchema = Yup.object({
   logo: Yup.string().url().required(),
   admins: Yup.string().required(),
   expiration: Yup.date().required(),
-  // notification: Yup.boolean().required(),
-  // categories: Yup.array().of(Yup.string()).required(),
-  // photos: Yup.array().of(Yup.string().url()).required(),
 });
 
 export const EditClubSchema = Yup.object({
@@ -48,8 +45,6 @@ export const EditClubSchema = Yup.object({
   contactEmail: Yup.string().email().required(),
   photos: Yup.array().of(Yup.string().url()).required(),
   logo: Yup.string().url().required(),
-  categories: Yup.array().of(Yup.string()).required(),
   admins: Yup.string().required(),
   expiration: Yup.date().required(),
-  notification: Yup.boolean().required(),
 });

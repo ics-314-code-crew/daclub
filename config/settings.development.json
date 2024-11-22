@@ -7,12 +7,6 @@
     { "firstName": "Wassup", "lastName": "Fool", "email": "wassup@hawaii.edu", "password": "changeme", "role": "CLUB_ADMIN" }
   ],
 
-  "defaultInterests" : [
-    { "name": "Sports" },
-    { "name": "Art" },
-    { "name": "Technology" }
-  ],
-
   "defaultClubsData": [
     {
       "name": "Tech Club",
@@ -24,7 +18,6 @@
       "photos": [],
       "logo": "techlogo.png",
       "expiration": "2025-12-31",
-      "categories": ["Technology"],
       "admins": "hello@hawaii.edu"
     },
     {
@@ -37,7 +30,6 @@
       "photos": [],
       "logo": "photographylogo.png",
       "expiration": "2025-12-25",
-      "categories": ["Art"],
       "admins": "wassup@hawaii.edu"
     }
   ]

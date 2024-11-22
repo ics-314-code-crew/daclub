@@ -137,9 +137,6 @@ export async function editClub(club: Club) {
       // admins: {
       //   set: (club.admins?.map((email) => ({ email })) || []),
       // },
-      // categories: {
-      //   set: club.categories?.map((name) => ({ name })),
-      // },
     },
   });
 
@@ -162,74 +159,26 @@ export async function deleteClub(id: number) {
  * Create a new interest in the database.
  * @param id, the interest name.
  */
-export async function createInterest(name: string) {
-  await prisma.interest.create({
-    data: { name },
-  });
-
-  redirect('/');
-}
 
 /**
  * Deletes an interest from the database.
  * @param id, the interest identifier.
  */
-export async function deleteInterest(id: number) {
-  await prisma.interest.delete({
-    where: { id },
-  });
-
-  redirect('/');
-}
 
 /**
  * Creates a new notification in the database.
  * @param id, the notification club.
  */
-export async function createNotification(club: {
-  userId: number;
-  clubId?: number;
-  message: string;
-  isRead?: boolean;
-}) {
-  await prisma.notification.create({
-    data: {
-      userId: club.userId,
-      clubId: club.clubId,
-      message: club.message,
-      isRead: club.isRead || false,
-    },
-  });
-
-  redirect('/notifications');
-}
 
 /**
  * Marks a notification as read.
  * @param id, the notification identifier.
  */
-export async function markNotificationAsRead(id: number) {
-  await prisma.notification.update({
-    where: { id },
-    data: {
-      isRead: true,
-    },
-  });
-
-  redirect('/notifications');
-}
 
 /**
  * Deletes a notification from the database.
  * @param id, the notification identifier.
  */
-export async function deleteNotification(id: number) {
-  await prisma.notification.delete({
-    where: { id },
-  });
-
-  redirect('/notifications');
-}
 
 /**
  * Changes the password of an existing user in the database.

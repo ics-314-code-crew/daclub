@@ -35,16 +35,6 @@ async function main() {
     });
   });
 
-  config.defaultInterests.forEach(async (interest) => {
-    console.log(`Creating interest: ${interest.name}`);
-    await prisma.interest.upsert({
-      where: { name: interest.name },
-      update: {},
-      create: {
-        name: interest.name,
-      },
-    });
-  });
 
   config.defaultClubsData.forEach(async (data) => {
     // For Later use.......
@@ -76,9 +66,6 @@ async function main() {
         logo: data.logo,
         expiration: new Date(data.expiration),
         admins: data.admins,
-        categories: {
-          connect: Array.isArray(data.categories) ? data.categories.map((name) => ({ name })) : [],
-        },
       },
     });
   });
