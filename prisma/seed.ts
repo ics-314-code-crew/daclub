@@ -66,6 +66,7 @@ async function main() {
         logo: data.logo,
         expiration: new Date(data.expiration),
         admins: data.admins,
+        categories: { set: data.categories}
       },
     });
   });

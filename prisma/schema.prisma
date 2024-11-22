@@ -43,5 +43,6 @@ model Club {
   photos       String[]
   logo         String
   admins       String
+  categories   String[]
   expiration   DateTime
 }

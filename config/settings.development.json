@@ -18,7 +18,8 @@
       "photos": [],
       "logo": "techlogo.png",
       "expiration": "2025-12-31",
-      "admins": "hello@hawaii.edu"
+      "admins": "hello@hawaii.edu",
+      "categories": ["Technology", "Computer Science"]
     },
     {
       "name": "Photography Club",
@@ -30,7 +31,8 @@
       "photos": [],
       "logo": "photographylogo.png",
       "expiration": "2025-12-25",
-      "admins": "wassup@hawaii.edu"
+      "admins": "wassup@hawaii.edu",
+      "categories": ["Photography", "Art"]
     }
   ]
   
