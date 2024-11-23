@@ -1,6 +1,5 @@
 'use server';
 
-import { Role } from '@prisma/client';
 import { hash } from 'bcrypt';
 import { redirect } from 'next/navigation';
 import { prisma } from './prisma';
@@ -31,31 +30,28 @@ export async function createUser({
 }
 
 /**
- * Updates an existing user in the database.
- * Confused on those...who made this?
- * @param club, an object with the following properties: id, email, role.
+ * Gets a club by its ID.
+ * @param id, the club identifier.
  */
-export async function updateUser(id: number) {
-  await prisma.user.update({
+export async function getClubById(id: number) {
+  return prisma.club.findUnique({
     where: { id },
-    data: {
-      role: Role.USER,
-    },
   });
-
-  redirect('/');
 }
 
 /**
- * Deletes a user from the database.
- * @param id, the user identifier.
+ * Updates an existing club in the database.
+ * @param id, the club identifier.
+ * @param data, the updated club data.
  */
-export async function deleteUser(id: number) {
-  await prisma.user.delete({
+export async function updateClub(
+  id: number,
+  data: { name: string; logo: string; admins: string },
+) {
+  return prisma.club.update({
     where: { id },
+    data,
   });
-
-  redirect('/');
 }
 
 export async function changePassword(credentials: { email: string; password: string }) {
