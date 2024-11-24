@@ -10,6 +10,7 @@ import { getClubById, updateClub } from '@/lib/dbActions';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import { EditClubSchema } from '@/lib/validationSchemas';
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
 const EditClubForm: React.FC<{ clubId: string }> = ({ clubId }) => {
   const { data: session, status } = useSession();
@@ -31,8 +32,11 @@ const EditClubForm: React.FC<{ clubId: string }> = ({ clubId }) => {
       try {
         const club = await getClubById(Number(clubId));
         if (club) {
-          Object.keys(club).forEach((key) => {
-            setValue(key as keyof typeof club, club[key]);
+          const formKeys = Object.keys(EditClubSchema.fields) as Array<keyof typeof EditClubSchema.fields>;
+          formKeys.forEach((key) => {
+            if (key in club) {
+              setValue(key, club[key]?.toString() || '');
+            }
           });
         }
       } catch (error) {
@@ -53,7 +57,18 @@ const EditClubForm: React.FC<{ clubId: string }> = ({ clubId }) => {
     redirect('/auth/signin');
   }
 
-  const onSubmit = async (data: { name: string; logo: string; admins: string }) => {
+  const onSubmit = async (data: {
+    name: string;
+    description: string;
+    meetingTime: string;
+    location: string;
+    website?: string | null;
+    contactEmail?: string | null;
+    logo: string;
+    admins: string;
+    startDate: Date;
+    expirationDate: Date;
+  }) => {
     try {
       await updateClub(Number(clubId), data);
       swal('Success', 'Club has been updated.', 'success', {
@@ -87,6 +102,77 @@ const EditClubForm: React.FC<{ clubId: string }> = ({ clubId }) => {
                     </Form.Group>
                   </Col>
                 </Row>
+
+                <Row>
+                  <Col className="justify-content-start">
+                    <Form.Group>
+                      <Form.Label>Description</Form.Label>
+                      <input
+                        type="text"
+                        {...register('description')}
+                        className={`form-control ${errors.description ? 'is-invalid' : ''}`}
+                      />
+                      <div className="invalid-feedback">{errors.description?.message}</div>
+                    </Form.Group>
+                  </Col>
+                </Row>
+
+                <Row>
+                  <Col className="justify-content-start">
+                    <Form.Group>
+                      <Form.Label>Meeting Time</Form.Label>
+                      <input
+                        type="text"
+                        {...register('meetingTime')}
+                        className={`form-control ${errors.meetingTime ? 'is-invalid' : ''}`}
+                      />
+                      <div className="invalid-feedback">{errors.meetingTime?.message}</div>
+                    </Form.Group>
+                  </Col>
+                </Row>
+
+                <Row>
+                  <Col className="justify-content-start">
+                    <Form.Group>
+                      <Form.Label>Location</Form.Label>
+                      <input
+                        type="text"
+                        {...register('location')}
+                        className={`form-control ${errors.location ? 'is-invalid' : ''}`}
+                      />
+                      <div className="invalid-feedback">{errors.location?.message}</div>
+                    </Form.Group>
+                  </Col>
+                </Row>
+
+                <Row>
+                  <Col className="justify-content-start">
+                    <Form.Group>
+                      <Form.Label>Website</Form.Label>
+                      <input
+                        type="text"
+                        {...register('website')}
+                        className={`form-control ${errors.website ? 'is-invalid' : ''}`}
+                      />
+                      <div className="invalid-feedback">{errors.website?.message}</div>
+                    </Form.Group>
+                  </Col>
+                </Row>
+
+                <Row>
+                  <Col className="justify-content-start">
+                    <Form.Group>
+                      <Form.Label>Contact Email</Form.Label>
+                      <input
+                        type="text"
+                        {...register('contactEmail')}
+                        className={`form-control ${errors.contactEmail ? 'is-invalid' : ''}`}
+                      />
+                      <div className="invalid-feedback">{errors.contactEmail?.message}</div>
+                    </Form.Group>
+                  </Col>
+                </Row>
+
                 <Row>
                   <Col className="justify-content-start">
                     <Form.Group>
@@ -97,6 +183,45 @@ const EditClubForm: React.FC<{ clubId: string }> = ({ clubId }) => {
                         className={`form-control ${errors.logo ? 'is-invalid' : ''}`}
                       />
                       <div className="invalid-feedback">{errors.logo?.message}</div>
+                    </Form.Group>
+                  </Col>
+                </Row>
+
+                <Row>
+                  <Col className="justify-content-start">
+                    <Form.Group>
+                      <Form.Label>Admins</Form.Label>
+                      <input
+                        type="text"
+                        {...register('logo')}
+                        className={`form-control ${errors.admins ? 'is-invalid' : ''}`}
+                      />
+                      <div className="invalid-feedback">{errors.admins?.message}</div>
+                    </Form.Group>
+                  </Col>
+                </Row>
+
+                <Row>
+                  <Col className="justify-content-start">
+                    <Form.Group>
+                      <Form.Label>Start Date</Form.Label>
+                      <input
+                        type="text"
+                        {...register('startDate')}
+                        className={`form-control ${errors.startDate ? 'is-invalid' : ''}`}
+                      />
+                      <div className="invalid-feedback">{errors.startDate?.message}</div>
+                    </Form.Group>
+                  </Col>
+                  <Col className="justify-content-start">
+                    <Form.Group>
+                      <Form.Label>End Date</Form.Label>
+                      <input
+                        type="text"
+                        {...register('expirationDate')}
+                        className={`form-control ${errors.expirationDate ? 'is-invalid' : ''}`}
+                      />
+                      <div className="invalid-feedback">{errors.expirationDate?.message}</div>
                     </Form.Group>
                   </Col>
                 </Row>
@@ -124,6 +249,10 @@ const EditClubForm: React.FC<{ clubId: string }> = ({ clubId }) => {
       </Row>
     </Container>
   );
+};
+
+EditClubForm.propTypes = {
+  clubId: PropTypes.string.isRequired,
 };
 
 export default EditClubForm;
