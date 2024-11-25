@@ -35,7 +35,13 @@ const EditClubForm: React.FC<{ clubId: string }> = ({ clubId }) => {
           const formKeys = Object.keys(EditClubSchema.fields) as Array<keyof typeof EditClubSchema.fields>;
           formKeys.forEach((key) => {
             if (key in club) {
-              setValue(key, club[key]?.toString() || '');
+              if (key === 'startDate' || key === 'expirationDate') {
+                const formattedDate = club[key] ? new Date(club[key]).toISOString().split('T')[0] : '';
+                // TODO: jaked will update this to resolve ESLint error. This is not impacting functionality.
+                setValue(key, formattedDate);
+              } else {
+                setValue(key, club[key]?.toString() || '');
+              }
             }
           });
         }
@@ -193,7 +199,7 @@ const EditClubForm: React.FC<{ clubId: string }> = ({ clubId }) => {
                       <Form.Label>Admins</Form.Label>
                       <input
                         type="text"
-                        {...register('logo')}
+                        {...register('admins')}
                         className={`form-control ${errors.admins ? 'is-invalid' : ''}`}
                       />
                       <div className="invalid-feedback">{errors.admins?.message}</div>
@@ -206,7 +212,7 @@ const EditClubForm: React.FC<{ clubId: string }> = ({ clubId }) => {
                     <Form.Group>
                       <Form.Label>Start Date</Form.Label>
                       <input
-                        type="text"
+                        type="date"
                         {...register('startDate')}
                         className={`form-control ${errors.startDate ? 'is-invalid' : ''}`}
                       />
@@ -217,7 +223,7 @@ const EditClubForm: React.FC<{ clubId: string }> = ({ clubId }) => {
                     <Form.Group>
                       <Form.Label>End Date</Form.Label>
                       <input
-                        type="text"
+                        type="date"
                         {...register('expirationDate')}
                         className={`form-control ${errors.expirationDate ? 'is-invalid' : ''}`}
                       />
@@ -236,7 +242,12 @@ const EditClubForm: React.FC<{ clubId: string }> = ({ clubId }) => {
                       </Button>
                     </Col>
                     <Col>
-                      <Button type="button" onClick={() => reset()} variant="warning" className="float-right">
+                      <Button
+                        type="button"
+                        onClick={() => reset()}
+                        variant="warning"
+                        className="d-flex justify-content-end"
+                      >
                         Reset
                       </Button>
                     </Col>

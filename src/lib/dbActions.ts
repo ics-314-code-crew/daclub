@@ -48,10 +48,12 @@ export async function updateClub(
   id: number,
   data: { name: string; logo: string; admins: string },
 ) {
-  return prisma.club.update({
+  await prisma.club.update({
     where: { id },
     data,
   });
+
+  redirect('/list');
 }
 
 export async function changePassword(credentials: { email: string; password: string }) {
