@@ -35,32 +35,9 @@ async function main() {
     });
   });
 
-  config.defaultInterests.forEach(async (interest) => {
-    console.log(`Creating interest: ${interest.name}`);
-    await prisma.interest.upsert({
-      where: { name: interest.name },
-      update: {},
-      create: {
-        name: interest.name,
-      },
-    });
-  });
-
   config.defaultClubsData.forEach(async (data) => {
-    // For Later use.......
-    // // Ensure categories exist
-    // const categories = await prisma.interest.findMany({
-    //   where: { name: { in: Array.isArray(data.categories) ? data.categories : [data.categories] } },
-    // });
-
-    // // Ensure admins exist
-    // const admins = await prisma.user.findMany({
-    //   where: { email: { in: data.admins } },
-    // });
-    // if (categories.length !== data.categories.length || admins.length !== data.admins.length) {
-    //   console.warn(`Skipping club: ${data.name} due to missing categories or admins.`);
-    // }
     console.log(`  Adding club: ${data.name}`);
+    console.log(data);
     await prisma.club.upsert({
       where: { name: data.name },
       update: {},
@@ -71,15 +48,10 @@ async function main() {
         location: data.location,
         website: data.website,
         contactEmail: data.contactEmail,
-        photos: { set: data.photos },
         logo: data.logo,
-        expiration: new Date(data.expiration),
-        admins: {
-          connect: data.admins.map((email) => ({ email })),
-        },
-        categories: {
-          connect: Array.isArray(data.categories) ? data.categories.map((name) => ({ name })) : [],
-        },
+        startDate: new Date(data.startDate),
+        expirationDate: new Date(data.expirationDate),
+        admins: data.admins,
       },
     });
   });

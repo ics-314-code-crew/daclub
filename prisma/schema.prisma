@@ -25,14 +25,11 @@ enum Role {
 
 model User {
   id           Int          @id @default(autoincrement())
-  firstName   String
-  lastName    String
+  firstName    String
+  lastName     String
   email        String       @unique
   password     String
   role         Role         @default(USER)
-  clubs        Club[]       @relation("ClubAdmins")
-  interests    Interest[]   @relation("UserInterests")
-  notifications Notification[]
 }
 
 model Club {
@@ -43,28 +40,8 @@ model Club {
   location     String
   website      String?
   contactEmail String?
-  photos       String[]
   logo         String
-  categories   Interest[]   @relation("ClubInterests")
-  admins       User[]       @relation("ClubAdmins")
-  expiration   DateTime
-  notifications Notification[]
-}
-
-model Interest {
-  id       Int       @id @default(autoincrement())
-  name     String    @unique
-  users    User[]    @relation("UserInterests")
-  clubs    Club[]    @relation("ClubInterests")
-}
-
-model Notification {
-  id          Int      @id @default(autoincrement())
-  userId      Int
-  user        User     @relation(fields: [userId], references: [id])
-  clubId      Int?
-  club        Club?    @relation(fields: [clubId], references: [id])
-  message     String
-  createdAt   DateTime @default(now())
-  isRead      Boolean  @default(false)
+  admins       String
+  startDate    DateTime
+  expirationDate   DateTime
 }

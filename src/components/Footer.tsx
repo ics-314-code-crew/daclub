@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Col, Container } from 'react-bootstrap';
 
 /** The Footer appears at the bottom of every page. Rendered by the App Layout component. */
@@ -11,7 +12,7 @@ const Footer = () => (
         <br />
         Honolulu, HI 96822
         <br />
-        <a href="http://ics-software-engineering.github.io/nextjs-application-template">Template Home Page</a>
+        <Link href="http://ics-software-engineering.github.io/nextjs-application-template">Template Home Page</Link>
       </Col>
     </Container>
   </footer>

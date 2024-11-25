@@ -14,7 +14,7 @@ const AddClub = async () => {
   return (
     // Add your form here
     <main>
-      Placeholder for AddClubForm.
+      <h1>Add Club</h1>
     </main>
   );
 };
