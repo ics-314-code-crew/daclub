@@ -46,7 +46,7 @@ export async function getClubById(id: number) {
  */
 export async function updateClub(
   id: number,
-  data: { name: string; logo: string; admins: string },
+  data: { name: string; logo: string; interestAreas: string; admins: string, },
 ) {
   await prisma.club.update({
     where: { id },

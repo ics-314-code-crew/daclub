@@ -51,6 +51,7 @@ async function main() {
         logo: data.logo,
         startDate: new Date(data.startDate),
         expirationDate: new Date(data.expirationDate),
+        interestAreas: data.interestAreas,
         admins: data.admins,
       },
     });
