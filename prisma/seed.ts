@@ -14,7 +14,7 @@ async function main() {
     } else if (account.role === 'SUPER_ADMIN') {
       role = 'SUPER_ADMIN';
     }
-    // Valaidate Email
+    // Validate Email
     if (!account.email.endsWith('@hawaii.edu')) {
       console.error(`Invalid email: ${account.email}`);
       console.error('Email must end with @hawaii.edu');
