@@ -17,6 +17,23 @@ export const EditUserSchema = Yup.object({
   email: Yup.string().email('Invalid email').required(),
   role: Yup.mixed().oneOf(['USER', 'CLUB_ADMIN', 'SUPER_ADMIN'], 'Invalid role'),
 });
+export const AddClubSchema = Yup.object({
+  id: Yup.number().required(),
+  name: Yup.string().required(),
+  description: Yup.string().required(),
+  meetingTime: Yup.string().required(),
+  location: Yup.string().required(),
+  website: Yup.string()
+    .url('Must be a valid URL')
+    .notRequired(),
+  contactEmail: Yup.string()
+    .email('Must be a valid email')
+    .notRequired(),
+  logo: Yup.string().required(),
+  admins: Yup.array().of(Yup.string().notRequired()).required(),
+  startDate: Yup.date().required(),
+  expirationDate: Yup.date().required(),
+});
 
 export const EditClubSchema = Yup.object({
   name: Yup.string().required(),
