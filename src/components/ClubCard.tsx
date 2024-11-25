@@ -11,14 +11,23 @@ const ClubCard = ({ club }: { club: Club }) => {
 
   return (
     <Card className="h-100 text-center">
-      <Link href={`/pages/clubs/${club.id}`} passHref>
-        <Card.Link as="a">
-          <Image src={club.logo} width={100} className="club-image" />
+      {status === 'authenticated' ? (
+        <Link href={`/pages/clubs/${club.id}`} passHref>
+          <Card.Link as="a">
+            <Image src={club.logo} width={100} className="club-image" />
+            <Card.Body>
+              <Card.Title>{club.name}</Card.Title>
+            </Card.Body>
+          </Card.Link>
+        </Link>
+      ) : (
+        <Card>
+          <Image src={club.logo} width={100} className="club-image" alt={club.name} />
           <Card.Body>
             <Card.Title>{club.name}</Card.Title>
           </Card.Body>
-        </Card.Link>
-      </Link>
+        </Card>
+      )}
       {status === 'authenticated' && (
       <Card.Footer>
         <Link href={`/edit/${club.id}`} passHref>
