@@ -12,27 +12,19 @@ import { AddClubSchema } from '@/lib/validationSchemas';
 
 console.log('HELLO');
 const onSubmit = async (data: {
-  id: number;
   name: string;
   description: string;
   meetingTime: string;
   location: string;
-  website?: string | '';
-  contactEmail?: string | '';
+  website: string;
+  contactEmail: string;
   logo: string;
-  admins: string[];
+  admins: string;
   startDate: Date;
   expirationDate: Date;
 }) => {
   // console.log(`onSubmit data: ${JSON.stringify(data, null, 2)}`);
-  await addClub({
-    ...data,
-    website: data.website || '',
-    contactEmail: data.contactEmail || '',
-    admins: data.admins.filter((admin): admin is string => admin !== undefined),
-    // startDate: new Date(data.startDate),
-    // expirationDate: new Date(data.expirationDate),
-  });
+  await addClub(data);
   swal('Success', 'Your item has been added', 'success', {
     timer: 2000,
   });
@@ -131,15 +123,6 @@ const AddClubForm: React.FC = () => {
                   <div className="invalid-feedback">{errors.logo?.message}</div>
                 </Form.Group>
                 <Form.Group>
-                  <Form.Label>Admins</Form.Label>
-                  <input
-                    type="User"
-                    {...register('admins')}
-                    className={`form-control ${errors.admins ? 'is-invalid' : ''}`}
-                  />
-                  <div className="invalid-feedback">{errors.admins?.message}</div>
-                </Form.Group>
-                <Form.Group>
                   <Form.Label>Start Date</Form.Label>
                   <FormControl
                     type="date"
@@ -157,15 +140,6 @@ const AddClubForm: React.FC = () => {
                   />
                   <div className="invalid-feedback">{errors.expirationDate?.message}</div>
                 </Form.Group>
-                {/* <Form.Group>
-                  <Form.Label>Notifications</Form.Label>
-                  <input
-                    type="Notification"
-                    {...register('notifications')}
-                    className={`form-control ${errors.notifications ? 'is-invalid' : ''}`}
-                  />
-                  <div className="invalid-feedback">{errors.notifications?.message}</div>
-                </Form.Group> */}
                 <input type="hidden" {...register('admins')} value={currentUser} />
                 <Form.Group className="form-group">
                   <Row className="pt-3">

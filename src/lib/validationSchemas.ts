@@ -18,7 +18,6 @@ export const EditUserSchema = Yup.object({
   role: Yup.mixed().oneOf(['USER', 'CLUB_ADMIN', 'SUPER_ADMIN'], 'Invalid role'),
 });
 export const AddClubSchema = Yup.object({
-  id: Yup.number().required(),
   name: Yup.string().required(),
   description: Yup.string().required(),
   meetingTime: Yup.string().required(),

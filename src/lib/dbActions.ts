@@ -39,7 +39,6 @@ export async function getClubById(id: number) {
   });
 }
 export async function addClub(club: {
-  id: number;
   name: string;
   description: string;
   meetingTime: string;
@@ -47,23 +46,20 @@ export async function addClub(club: {
   website?: string;
   contactEmail?: string;
   logo: string;
-  admins: string[];
+  admins: string;
   startDate: Date;
   expirationDate: Date
 }) {
   await prisma.club.create({
     data: {
-      id: club.id,
       name: club.name,
       description: club.description,
       meetingTime: club.meetingTime,
       location: club.location,
-      website: club.website || '',
-      contactEmail: club.contactEmail || '',
+      website: club.website,
+      contactEmail: club.contactEmail,
       logo: club.logo,
-      admins: {
-        connect: club.admins.map((email) => ({ email })),
-      },
+      admins: club.admins,
       startDate: new Date(club.startDate),
       expirationDate: new Date(club.expirationDate),
     },
