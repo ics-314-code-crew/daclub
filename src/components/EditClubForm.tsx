@@ -72,9 +72,9 @@ const EditClubForm: React.FC<{ clubId: string }> = ({ clubId }) => {
     contactEmail?: string | null;
     logo: string;
     admins: string;
+    interestAreas: string | null;
     startDate: Date;
     expirationDate: Date;
-    interestAreas: string;
   }) => {
     try {
       await updateClub(Number(clubId), data);
@@ -201,7 +201,7 @@ const EditClubForm: React.FC<{ clubId: string }> = ({ clubId }) => {
                       <input
                         type="text"
                         {...register('interestAreas')}
-                        className={`form-control ${errors.logo ? 'is-invalid' : ''}`}
+                        className={`form-control ${errors.interestAreas ? 'is-invalid' : ''}`}
                       />
                       <div className="invalid-feedback">{errors.interestAreas?.message}</div>
                     </Form.Group>

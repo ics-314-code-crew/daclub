@@ -33,5 +33,5 @@ export const EditClubSchema = Yup.object({
   admins: Yup.string().required(),
   startDate: Yup.date().required(),
   expirationDate: Yup.date().required(),
-  interestAreas: Yup.date().required(),
+  interestAreas: Yup.string().required(),
 });
