@@ -43,8 +43,8 @@ export async function addClub(club: {
   description: string;
   meetingTime: string;
   location: string;
-  website?: string;
-  contactEmail?: string;
+  website?: string | null
+  contactEmail?: string | null;
   logo: string;
   admins: string;
   startDate: Date;

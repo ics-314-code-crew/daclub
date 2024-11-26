@@ -29,7 +29,7 @@ export const AddClubSchema = Yup.object({
     .email('Must be a valid email')
     .notRequired(),
   logo: Yup.string().required(),
-  admins: Yup.array().of(Yup.string().notRequired()).required(),
+  admins: Yup.string().required(),
   startDate: Yup.date().required(),
   expirationDate: Yup.date().required(),
 });

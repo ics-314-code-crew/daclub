@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Club" ALTER COLUMN "website" DROP DEFAULT,
+ALTER COLUMN "contactEmail" DROP DEFAULT;
