@@ -38,7 +38,35 @@ export async function getClubById(id: number) {
     where: { id },
   });
 }
+export async function addClub(club: {
+  name: string;
+  description: string;
+  meetingTime: string;
+  location: string;
+  website?: string | null
+  contactEmail?: string | null;
+  logo: string;
+  admins: string;
+  startDate: Date;
+  expirationDate: Date
+}) {
+  await prisma.club.create({
+    data: {
+      name: club.name,
+      description: club.description,
+      meetingTime: club.meetingTime,
+      location: club.location,
+      website: club.website,
+      contactEmail: club.contactEmail,
+      logo: club.logo,
+      admins: club.admins,
+      startDate: new Date(club.startDate),
+      expirationDate: new Date(club.expirationDate),
+    },
+  });
 
+  redirect('/list');
+}
 /**
  * Updates an existing club in the database.
  * @param id, the club identifier.
