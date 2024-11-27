@@ -1,92 +1,69 @@
 'use client';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col, Card } from 'react-bootstrap';
-import './globals.css';
-import MiddleMenu from '@/components/MiddleMenu';
-import { useSession } from 'next-auth/react';
 import { useEffect, useState } from 'react';
+import { Row, Col, Carousel } from 'react-bootstrap';
+import ClubCard from '@/components/ClubCard';
+import { Club } from '@prisma/client';
+import { getAllClubs } from '@/lib/dbActions';
+import Link from 'next/link';
 
 const Home = () => {
-  const { data: session } = useSession();
-  interface Club {
-    id: number;
-    name: string;
-    interestAreas: string;
-    description: string;
-    logo: string;
-  }
-
   const [clubs, setClubs] = useState<Club[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (session) {
-      // Fetch club data when the user is logged in
-      fetch('/api/clubs')
-        .then((response) => response.json())
-        .then((data) => setClubs(data));
-    }
-  }, [session]);
+    const fetchClubs = async () => {
+      try {
+        const club = await getAllClubs();
+        setClubs(club);
+      } catch (error) {
+        console.error('Error fetching clubs:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchClubs();
+  }, []);
 
-  // Placeholder clubs
-  const placeholderClubs: Club[] = [
-    {
-      id: 1,
-      name: 'Club 1',
-      interestAreas: 'Interest 1',
-      description: 'This is a brief description of Club 1.',
-      logo: '/logoTest.png',
-    },
-    {
-      id: 2,
-      name: 'Club 2',
-      interestAreas: 'Interest 2',
-      description: 'This is a brief description of Club 2.',
-      logo: '/logoTest.png',
-    },
-    {
-      id: 3,
-      name: 'Club 3',
-      interestAreas: 'Interest 3',
-      description: 'This is a brief description of Club 3.',
-      logo: '/logoTest.png',
-    },
-  ];
-
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+  const carouselItemStyle = {
+    backgroundColor: 'green',
+    color: 'white',
+    padding: '20px',
+  };
   return (
-    <main>
-      <Container fluid id="landing-page" style={{ paddingTop: '60px' }}>
-        {session ? (
-          <Row className="justify-content-center">
-            {(clubs.length > 0 ? clubs : placeholderClubs).map((club) => (
-              <Col key={club.id} xs={12} md={6} lg={4} className="mb-4">
-                <Card>
-                  <Card.Header className="text-center" style={{ backgroundColor: '#41d538' }}>
-                    {club.name}
-                  </Card.Header>
-                  <Card.Img
-                    variant="top"
-                    src={club.logo}
-                    alt={`${club.name} logo`}
-                    className="p-3"
-                  />
-                  <Card.Body>
-                    <Card.Text>
-                      Interest Areas:
-                      {' '}
-                      {club.interestAreas}
-                    </Card.Text>
-                    <Card.Text>{club.description}</Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
-          </Row>
-        ) : (
-          <MiddleMenu />
-        )}
-      </Container>
-    </main>
+    <Row
+      className="align-items-center justify-content-center"
+      style={{
+        backgroundImage: 'url(/bg-landing.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        minHeight: '100vh',
+      }}
+    >
+      <Col>
+        <h1 id="textbox2" className="text-center">Clubs Offered at UH Manoa</h1>
+        <Carousel className="">
+          {clubs.map((club) => (
+            <Carousel.Item key={club.id} style={carouselItemStyle}>
+              <ClubCard club={club} />
+            </Carousel.Item>
+          ))}
+        </Carousel>
+        <h2 id="textbox2" className="text-center">
+          To learn more about the Clubs offered at UH Manoa, Create an Account
+          {' '}
+          <Link href="/auth/signup">Here</Link>
+          {' '}
+          Or If you already have an account,
+          {' '}
+          <Link href="/auth/signin">Sign-in</Link>
+          .
+        </h2>
+      </Col>
+    </Row>
   );
 };
 

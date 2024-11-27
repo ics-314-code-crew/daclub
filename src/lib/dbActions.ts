@@ -15,7 +15,6 @@ export async function createUser({
   credentials: { email: string; password: string };
   user: { firstName: string; lastName: string; email: string };
 }): Promise<void> {
-  // console.log(`createUser data: ${JSON.stringify(credentials, null, 2)}`);
   const password = await hash(credentials.password, 10);
   await prisma.user.create({
     data: {
@@ -34,9 +33,65 @@ export async function createUser({
  * @param id, the club identifier.
  */
 export async function getClubById(id: number) {
-  return prisma.club.findUnique({
+  const club = await prisma.club.findUnique({
     where: { id },
   });
+
+  return club
+    ? {
+      name: club.name,
+      description: club.description || '',
+      meetingTime: club.meetingTime || '',
+      location: club.location || '',
+      website: club.website || null,
+      contactEmail: club.contactEmail || null,
+      logo: club.logo || '',
+      admins: club.admins || '',
+      interestAreas: club.interestAreas || '',
+      startDate: club.startDate.toISOString().split('T')[0],
+      expirationDate: club.expirationDate.toISOString().split('T')[0],
+    }
+    : null;
+}
+
+export async function addClub(club: {
+  name: string;
+  description: string;
+  meetingTime: string;
+  location: string;
+  website?: string | null
+  contactEmail?: string | null;
+  logo: string;
+  interestAreas: string;
+  admins: string;
+  startDate: Date;
+  expirationDate: Date;
+}) {
+  await prisma.club.create({
+    data: {
+      name: club.name,
+      description: club.description,
+      meetingTime: club.meetingTime,
+      location: club.location,
+      website: club.website,
+      contactEmail: club.contactEmail,
+      logo: club.logo,
+      interestAreas: club.interestAreas,
+      admins: club.admins,
+      startDate: new Date(club.startDate),
+      expirationDate: new Date(club.expirationDate),
+    },
+  });
+
+  redirect('/list');
+}
+
+/**
+ * Gets all the clubs in the database
+ * @returns a list of clubs.
+ */
+export async function getAllClubs() {
+  return prisma.club.findMany();
 }
 
 /**
@@ -46,17 +101,41 @@ export async function getClubById(id: number) {
  */
 export async function updateClub(
   id: number,
-  data: { name: string; logo: string; interestAreas: string; admins: string, },
+  data: {
+    name: string;
+    description: string;
+    meetingTime: string;
+    location: string;
+    website?: string | null;
+    contactEmail?: string | null;
+    logo: string;
+    admins: string;
+    interestAreas: string;
+    startDate: string;
+    expirationDate: string;
+  },
 ) {
+  const formattedData = {
+    ...data,
+    startDate: new Date(data.startDate),
+    expirationDate: new Date(data.expirationDate),
+  };
+
   await prisma.club.update({
     where: { id },
-    data,
+    data: formattedData,
   });
 
   redirect('/list');
 }
 
-export async function changePassword(credentials: { email: string; password: string }) {
+export async function changePassword(
+  credentials:
+  {
+    email: string;
+    password: string;
+  },
+) {
   const password = await hash(credentials.password, 10);
   await prisma.user.update({
     where: { email: credentials.email },

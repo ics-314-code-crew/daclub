@@ -48,7 +48,6 @@ const NavBar: React.FC = () => {
           width={190}
           height={65}
           alt="Da Club Logo"
-          style={{ marginLeft: '100px' }} // Adjust the value as needed
         />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
