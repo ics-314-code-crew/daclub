@@ -10,7 +10,7 @@ const ClubCard = ({ club }: { club: Club }) => {
   const { status } = useSession();
 
   return (
-    <Card className="h-100 text-center">
+    <Card className="h-100 text-center mx-auto">
       {status === 'authenticated' ? (
         <Link href={`/pages/clubs/${club.id}`} passHref>
           <Card.Link as="a">
@@ -25,6 +25,7 @@ const ClubCard = ({ club }: { club: Club }) => {
           <Image src={club.logo} width={100} className="club-image" alt={club.name} />
           <Card.Body>
             <Card.Title>{club.name}</Card.Title>
+            <Card.Text>{club.description}</Card.Text>
           </Card.Body>
         </Card>
       )}

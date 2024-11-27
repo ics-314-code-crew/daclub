@@ -40,6 +40,14 @@ export async function getClubById(id: number) {
 }
 
 /**
+ * Gets all the clubs in the database
+ * @returns a list of clubs.
+ */
+export async function getAllClubs() {
+  return prisma.club.findMany();
+}
+
+/**
  * Updates an existing club in the database.
  * @param id, the club identifier.
  * @param data, the updated club data.
@@ -54,6 +62,10 @@ export async function updateClub(
   });
 }
 
+/**
+ * Changes the password of a user.
+ * @param credentials, an object with the following properties: Email , password.
+ */
 export async function changePassword(credentials: { email: string; password: string }) {
   const password = await hash(credentials.password, 10);
   await prisma.user.update({

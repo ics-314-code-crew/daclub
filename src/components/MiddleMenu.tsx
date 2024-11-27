@@ -15,7 +15,7 @@ const MiddleMenu = () => (
   >
     <Col xs={8} className="text-center">
       <div id="text-box">
-        <h1>Welcome to Da Club!</h1>
+        <h1><b>Welcome to Da Club!</b></h1>
         <h5>
           This website allows students to explore and learn about the different clubs offered at UH Manoa!
           Students can find an assortment of clubs ranging from athletics to art, technology, and so much more.
