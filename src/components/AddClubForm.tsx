@@ -10,7 +10,6 @@ import { addClub } from '@/lib/dbActions';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import { AddClubSchema } from '@/lib/validationSchemas';
 
-console.log('HELLO');
 const onSubmit = async (data: {
   name: string;
   description: string;
@@ -19,20 +18,19 @@ const onSubmit = async (data: {
   website?: string | null;
   contactEmail?: string | null;
   logo: string;
+  interestAreas: string;
   admins: string;
   startDate: Date;
   expirationDate: Date;
 }) => {
-  // console.log(`onSubmit data: ${JSON.stringify(data, null, 2)}`);
   await addClub(data);
-  swal('Success', 'Your item has been added', 'success', {
+  swal('Success', 'New club has been added', 'success', {
     timer: 2000,
   });
 };
 
 const AddClubForm: React.FC = () => {
   const { data: session, status } = useSession();
-  // console.log('AddClubForm', status, session);
   const currentUser = session?.user?.email || '';
   const {
     register,
@@ -42,9 +40,11 @@ const AddClubForm: React.FC = () => {
   } = useForm({
     resolver: yupResolver(AddClubSchema),
   });
+
   if (status === 'loading') {
     return <LoadingSpinner />;
   }
+
   if (status === 'unauthenticated') {
     redirect('/auth/signin');
   }
@@ -54,7 +54,7 @@ const AddClubForm: React.FC = () => {
       <Row className="justify-content-center">
         <Col xs={5}>
           <Col className="text-center">
-            <h2>Add CLub</h2>
+            <h2>Add Club</h2>
           </Col>
           <Card>
             <Card.Body>
@@ -121,6 +121,15 @@ const AddClubForm: React.FC = () => {
                     className={`form-control ${errors.logo ? 'is-invalid' : ''}`}
                   />
                   <div className="invalid-feedback">{errors.logo?.message}</div>
+                </Form.Group>
+                <Form.Group>
+                  <Form.Label>Interest Areas</Form.Label>
+                  <input
+                    type="text"
+                    {...register('interestAreas')}
+                    className={`form-control ${errors.interestAreas ? 'is-invalid' : ''}`}
+                  />
+                  <div className="invalid-feedback">{errors.interestAreas?.message}</div>
                 </Form.Group>
                 <Form.Group>
                   <Form.Label>Start Date</Form.Label>
