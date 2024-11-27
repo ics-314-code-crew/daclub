@@ -23,6 +23,8 @@ enum Role {
   SUPER_ADMIN
 }
 
+
+
 model User {
   id           Int          @id @default(autoincrement())
   firstName    String
