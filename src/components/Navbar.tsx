@@ -16,19 +16,7 @@ const NavBar: React.FC = () => {
   return (
     <Navbar style={{ backgroundColor: '#59ce5a' }} expand="lg">
       <Container>
-        <Navbar.Brand href="/" className="w-100 d-flex justify-content-center">
-        <Image
-          src="/daClubLogo.png"
-          className="logo fs-2"
-          width={190}
-          height={65}
-          alt="Da Club Logo"
-          style={{ marginLeft: '100px' }} // Adjust the value as needed
-        />
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto justify-content-start">
+        <Nav className="me-auto justify-content-start">
             {currentUser
               ? [
                   <Nav.Link id="add-club-nav" href="/add" key="add" active={pathName === '/add'}>
@@ -49,7 +37,19 @@ const NavBar: React.FC = () => {
             ) : (
               ''
             )}
-          </Nav>
+        </Nav>
+        <Navbar.Brand href="/" className="w-100 d-flex justify-content-center">
+        <Image
+          src="/daClubLogo.png"
+          className="logo fs-2"
+          width={190}
+          height={65}
+          alt="Da Club Logo"
+          style={{ marginLeft: '100px' }} // Adjust the value as needed
+        />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
           <Nav>
             {session ? (
               <NavDropdown id="login-dropdown" title={currentUser}>
