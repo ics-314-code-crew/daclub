@@ -1,7 +1,7 @@
 'use client';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import './globals.css';
 import MiddleMenu from '@/components/MiddleMenu';
 import BottomMenu from '@/components/BottomMenu';
