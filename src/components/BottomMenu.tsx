@@ -1,11 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-<<<<<<< Updated upstream
 import { Row, Col, Carousel } from 'react-bootstrap';
-=======
-import { Container, Row, Col, Carousel } from 'react-bootstrap';
->>>>>>> Stashed changes
 import ClubCard from '@/components/ClubCard';
 import { Club } from '@prisma/client';
 import { getAllClubs } from '@/lib/dbActions';
@@ -18,28 +14,20 @@ const BottomMenu = () => {
   useEffect(() => {
     const fetchClubs = async () => {
       try {
-<<<<<<< Updated upstream
         const club = await getAllClubs();
         setClubs(club);
-=======
-        const response = await fetch('/api/clubs');
-        const data = await response.json();
-        setClubs(data);
->>>>>>> Stashed changes
       } catch (error) {
         console.error('Error fetching clubs:', error);
       } finally {
         setLoading(false);
       }
     };
-
     fetchClubs();
   }, []);
 
   if (loading) {
     return <div>Loading...</div>;
   }
-<<<<<<< Updated upstream
   const carouselItemStyle = {
     backgroundColor: 'green',
     color: 'white',
@@ -76,24 +64,6 @@ const BottomMenu = () => {
         </h2>
       </Col>
     </Row>
-=======
-
-  return (
-    <Container>
-      <Row>
-        <Col>
-          <h1 className="text-center">Clubs Offered at Manoa</h1>
-          <Carousel>
-            {clubs.map((club) => (
-              <Carousel.Item key={club.id}>
-                <ClubCard club={club} />
-              </Carousel.Item>
-            ))}
-          </Carousel>
-        </Col>
-      </Row>
-    </Container>
->>>>>>> Stashed changes
   );
 };
 

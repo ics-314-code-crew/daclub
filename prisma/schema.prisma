@@ -44,4 +44,5 @@ model Club {
   admins       String
   startDate    DateTime
   expirationDate   DateTime
+  interestAreas String
 }
