@@ -38,10 +38,11 @@ model Club {
   description  String
   meetingTime  String
   location     String
-  website      String?
-  contactEmail String?
+  website      String?      
+  contactEmail String?      
   logo         String
   admins       String
   startDate    DateTime
   expirationDate   DateTime
+  interestAreas   String
 }

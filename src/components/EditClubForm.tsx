@@ -10,9 +10,22 @@ import { getClubById, updateClub } from '@/lib/dbActions';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import { EditClubSchema } from '@/lib/validationSchemas';
 import { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 
-const EditClubForm: React.FC<{ clubId: string }> = ({ clubId }) => {
+type ClubFormData = {
+  name: string;
+  description: string;
+  meetingTime: string;
+  location: string;
+  website?: string | null;
+  contactEmail?: string | null;
+  logo: string;
+  admins: string;
+  interestAreas: string;
+  startDate: string;
+  expirationDate: string;
+};
+
+const EditClubForm = ({ clubId }: { clubId: string }) => {
   const { data: session, status } = useSession();
   const [isLoading, setIsLoading] = useState(true);
   const currentUser = session?.user?.email || '';
@@ -32,17 +45,8 @@ const EditClubForm: React.FC<{ clubId: string }> = ({ clubId }) => {
       try {
         const club = await getClubById(Number(clubId));
         if (club) {
-          const formKeys = Object.keys(EditClubSchema.fields) as Array<keyof typeof EditClubSchema.fields>;
-          formKeys.forEach((key) => {
-            if (key in club) {
-              if (key === 'startDate' || key === 'expirationDate') {
-                const formattedDate = club[key] ? new Date(club[key]).toISOString().split('T')[0] : '';
-                // TODO: jaked will update this to resolve ESLint error. This is not impacting functionality.
-                setValue(key, formattedDate);
-              } else {
-                setValue(key, club[key]?.toString() || '');
-              }
-            }
+          Object.keys(club).forEach((key) => {
+            setValue(key as keyof ClubFormData, club[key as keyof ClubFormData]);
           });
         }
       } catch (error) {
@@ -63,18 +67,7 @@ const EditClubForm: React.FC<{ clubId: string }> = ({ clubId }) => {
     redirect('/auth/signin');
   }
 
-  const onSubmit = async (data: {
-    name: string;
-    description: string;
-    meetingTime: string;
-    location: string;
-    website?: string | null;
-    contactEmail?: string | null;
-    logo: string;
-    admins: string;
-    startDate: Date;
-    expirationDate: Date;
-  }) => {
+  const onSubmit = async (data: ClubFormData) => {
     try {
       await updateClub(Number(clubId), data);
       swal('Success', 'Club has been updated.', 'success', {
@@ -108,7 +101,6 @@ const EditClubForm: React.FC<{ clubId: string }> = ({ clubId }) => {
                     </Form.Group>
                   </Col>
                 </Row>
-
                 <Row>
                   <Col className="justify-content-start">
                     <Form.Group>
@@ -122,7 +114,6 @@ const EditClubForm: React.FC<{ clubId: string }> = ({ clubId }) => {
                     </Form.Group>
                   </Col>
                 </Row>
-
                 <Row>
                   <Col className="justify-content-start">
                     <Form.Group>
@@ -136,7 +127,6 @@ const EditClubForm: React.FC<{ clubId: string }> = ({ clubId }) => {
                     </Form.Group>
                   </Col>
                 </Row>
-
                 <Row>
                   <Col className="justify-content-start">
                     <Form.Group>
@@ -150,11 +140,10 @@ const EditClubForm: React.FC<{ clubId: string }> = ({ clubId }) => {
                     </Form.Group>
                   </Col>
                 </Row>
-
                 <Row>
                   <Col className="justify-content-start">
                     <Form.Group>
-                      <Form.Label>Website</Form.Label>
+                      <Form.Label>Website URL</Form.Label>
                       <input
                         type="text"
                         {...register('website')}
@@ -164,7 +153,6 @@ const EditClubForm: React.FC<{ clubId: string }> = ({ clubId }) => {
                     </Form.Group>
                   </Col>
                 </Row>
-
                 <Row>
                   <Col className="justify-content-start">
                     <Form.Group>
@@ -178,7 +166,6 @@ const EditClubForm: React.FC<{ clubId: string }> = ({ clubId }) => {
                     </Form.Group>
                   </Col>
                 </Row>
-
                 <Row>
                   <Col className="justify-content-start">
                     <Form.Group>
@@ -192,7 +179,19 @@ const EditClubForm: React.FC<{ clubId: string }> = ({ clubId }) => {
                     </Form.Group>
                   </Col>
                 </Row>
-
+                <Row>
+                  <Col className="justify-content-start">
+                    <Form.Group>
+                      <Form.Label>Interest Areas</Form.Label>
+                      <input
+                        type="text"
+                        {...register('interestAreas')}
+                        className={`form-control ${errors.interestAreas ? 'is-invalid' : ''}`}
+                      />
+                      <div className="invalid-feedback">{errors.interestAreas?.message}</div>
+                    </Form.Group>
+                  </Col>
+                </Row>
                 <Row>
                   <Col className="justify-content-start">
                     <Form.Group>
@@ -206,7 +205,6 @@ const EditClubForm: React.FC<{ clubId: string }> = ({ clubId }) => {
                     </Form.Group>
                   </Col>
                 </Row>
-
                 <Row>
                   <Col className="justify-content-start">
                     <Form.Group>
@@ -231,9 +229,7 @@ const EditClubForm: React.FC<{ clubId: string }> = ({ clubId }) => {
                     </Form.Group>
                   </Col>
                 </Row>
-
                 <input type="hidden" {...register('admins')} value={currentUser} />
-
                 <Form.Group className="form-group">
                   <Row className="pt-3">
                     <Col>
@@ -260,10 +256,6 @@ const EditClubForm: React.FC<{ clubId: string }> = ({ clubId }) => {
       </Row>
     </Container>
   );
-};
-
-EditClubForm.propTypes = {
-  clubId: PropTypes.string.isRequired,
 };
 
 export default EditClubForm;
