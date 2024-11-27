@@ -17,6 +17,9 @@ const NavBar: React.FC = () => {
     <Navbar style={{ backgroundColor: '#59ce5a' }} expand="lg">
       <Container>
         <Nav className="me-auto justify-content-start">
+          <Nav.Link id="about-page-nav" href="/about" active={pathName === '/about'}>
+            About
+          </Nav.Link>
             {currentUser
               ? [
                   <Nav.Link id="add-club-nav" href="/add" key="add" active={pathName === '/add'}>
@@ -45,7 +48,6 @@ const NavBar: React.FC = () => {
           width={190}
           height={65}
           alt="Da Club Logo"
-          style={{ marginLeft: '100px' }} // Adjust the value as needed
         />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

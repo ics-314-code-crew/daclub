@@ -37,14 +37,14 @@ const BottomMenu = () => {
     <Row
       className="align-items-center justify-content-center"
       style={{
-        // backgroundImage: 'url(/bg-landing.jpg)',
+        backgroundImage: 'url(/bg-landing.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         minHeight: '100vh',
       }}
     >
       <Col>
-        <h1 className="text-center">Clubs Offered at UH Manoa</h1>
+        <h1 id="textbox2" className="text-center">Clubs Offered at UH Manoa</h1>
         <Carousel className="">
           {clubs.map((club) => (
             <Carousel.Item key={club.id} style={carouselItemStyle}>
@@ -52,7 +52,7 @@ const BottomMenu = () => {
             </Carousel.Item>
           ))}
         </Carousel>
-        <h2 className="text-center">
+        <h2 id="textbox2" className="text-center">
           To learn more about the Clubs offered at UH Manoa, Create an Account
           {' '}
           <Link href="/auth/signup">Here</Link>
