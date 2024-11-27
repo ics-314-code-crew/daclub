@@ -4,8 +4,9 @@
 
 import { useSession } from 'next-auth/react';
 import { usePathname } from 'next/navigation';
-import { Container, Nav, Navbar, NavDropdown, Image } from 'react-bootstrap';
-import { BoxArrowRight, Lock, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
+import { useState } from 'react';
+import { Container, Nav, Navbar, NavDropdown, Image, Form, FormControl, Button } from 'react-bootstrap';
+import { BoxArrowRight, Lock, PersonFill, PersonPlusFill, Search } from 'react-bootstrap-icons';
 
 const NavBar: React.FC = () => {
   const { data: session } = useSession();
@@ -13,6 +14,12 @@ const NavBar: React.FC = () => {
   const userWithRole = session?.user as { email: string; role: string };
   const role = userWithRole?.role;
   const pathName = usePathname();
+  const [showSearch, setShowSearch] = useState(false);
+
+  const toggleSearch = () => {
+    setShowSearch(!showSearch);
+  };
+
   return (
     <Navbar style={{ backgroundColor: '#59ce5a' }} expand="lg">
       <Container>
@@ -52,7 +59,23 @@ const NavBar: React.FC = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav>
+        <Nav className="ms-auto align-items-center">
+          <Nav.Link onClick={toggleSearch} style={{ cursor: 'pointer' }}>
+            <Search size={20} />
+          </Nav.Link>
+          {showSearch && (
+            <div className="search-dropdown">
+              <Form className="d-flex">
+                <FormControl
+                  type="search"
+                  placeholder="Search"
+                  className="me-2"
+                  aria-label="Search"
+                />
+                <Button variant="outline-success">Search</Button>
+              </Form>
+            </div>
+          )}
             {session ? (
               <NavDropdown id="login-dropdown" title={currentUser}>
                 <NavDropdown.Item id="login-dropdown-sign-out" href="/api/auth/signout">
@@ -76,7 +99,7 @@ const NavBar: React.FC = () => {
                 </NavDropdown.Item>
               </NavDropdown>
             )}
-          </Nav>
+        </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>

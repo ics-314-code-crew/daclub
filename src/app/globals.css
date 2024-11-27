@@ -20,6 +20,26 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+.search-dropdown {
+  position: absolute;
+  top: 60px; /* Adjust as needed */
+  right: 20px; /* Adjust as needed */
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.search-dropdown .form-control {
+  width: 200px; /* Adjust as needed */
+}
+
+.search-dropdown .btn {
+  margin-left: 10px;
+}
+
 #landing-page {
   background-image: url('/bg-landing.jpg');
   background-size: cover;
