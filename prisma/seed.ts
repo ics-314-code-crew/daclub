@@ -53,7 +53,6 @@ async function main() {
         expirationDate: new Date(data.expirationDate),
         interestAreas: data.interestAreas,
         admins: data.admins,
-        interestAreas: data.interestAreas,
       },
     });
   });
