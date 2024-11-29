@@ -29,6 +29,7 @@ const ListPage = async () => {
       admins: true,
       startDate: true,
       expirationDate: true,
+      interestAreas: true,
     },
   });
   const clubsWithLinks = clubs.map((club) => ({
