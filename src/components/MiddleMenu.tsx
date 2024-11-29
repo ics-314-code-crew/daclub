@@ -1,7 +1,6 @@
 'use client';
 
 import { Col, Row } from 'react-bootstrap';
-// add Montserrat font
 
 const MiddleMenu = () => (
   <Row

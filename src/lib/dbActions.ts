@@ -87,6 +87,14 @@ export async function addClub(club: {
 }
 
 /**
+ * Gets all the clubs in the database
+ * @returns a list of clubs.
+ */
+export async function getAllClubs() {
+  return prisma.club.findMany();
+}
+
+/**
  * Updates an existing club in the database.
  * @param id, the club identifier.
  * @param data, the updated club data.
