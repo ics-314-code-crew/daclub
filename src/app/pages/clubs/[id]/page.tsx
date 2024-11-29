@@ -10,6 +10,12 @@ type ClubPageProps = {
 const ClubPage = async ({ params }: ClubPageProps) => {
   const { id } = params;
 
+  const clubId = parseInt(id, 10);
+
+  if (isNaN(clubId)) {
+    return <h1>Invalid club ID</h1>;
+  }
+
   // Fetch the club data from the database
   const club = await prisma.club.findUnique({
     where: { id: Number(id) },
@@ -19,6 +25,8 @@ const ClubPage = async ({ params }: ClubPageProps) => {
   if (!club) {
     return <h1>Club not found</h1>;
   }
+
+  console.log('id', id);
 
   // Render the club details if found
   return (
