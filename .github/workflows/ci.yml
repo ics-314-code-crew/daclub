@@ -1,4 +1,4 @@
-name: ci-nextjs-application-template
+name: ci-daclub
 on:
   push:
     branches: [main, master]
