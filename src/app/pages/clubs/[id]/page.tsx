@@ -1,5 +1,5 @@
 import { prisma } from '@/lib/prisma';
-import { Image } from 'react-bootstrap';
+import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeftCircle } from 'react-bootstrap-icons';
 
@@ -19,6 +19,12 @@ const ClubPage = async ({ params }: ClubPageProps) => {
   // Fetch the club data from the database
   const club = await prisma.club.findUnique({
     where: { id: Number(id) },
+    select: {
+      id: true,
+      name: true,
+      description: true,
+      logo: true,
+    },
   });
 
   // Handle case where club is not found
@@ -26,16 +32,16 @@ const ClubPage = async ({ params }: ClubPageProps) => {
     return <h1>Club not found</h1>;
   }
 
-  console.log('id', id);
+  console.log('club.logo in ClubPage:', club.logo);
 
   // Render the club details if found
   return (
     <div>
+      <h1>{club.name}</h1>
       <Link href="/list">
         <ArrowLeftCircle />
       </Link>
-      <h1>{club.name}</h1>
-      <Image src={club.logo} />
+      <img src={`/${club.logo}`} width={100} height={100} className="club-image mx-auto d-block" />
       <p>{club.description}</p>
     </div>
   );
