@@ -16,7 +16,26 @@ const ListPage = async () => {
       // eslint-disable-next-line @typescript-eslint/comma-dangle
     } | null,
   );
-  const clubs: Club[] = await prisma.club.findMany({});
+  const clubs: Club[] = await prisma.club.findMany({
+    select: {
+      id: true,
+      name: true,
+      logo: true,
+      website: true, // Ensure website is included
+      description: true,
+      meetingTime: true,
+      location: true,
+      contactEmail: true,
+      admins: true,
+      startDate: true,
+      expirationDate: true,
+      interestAreas: true,
+    },
+  });
+  const clubsWithLinks = clubs.map((club) => ({
+    ...club,
+    link: club.website || 'https://manoa.hawaii.edu/', // Replace with a real property or a default URL
+  }));
   return (
     <main id="landing-page">
       <Container id="list" fluid className="py-3">
@@ -24,7 +43,7 @@ const ListPage = async () => {
           <Col>
             <h1 className="text-center">Club List</h1>
             <Row xs={1} md={2} lg={3} className="g-4">
-              {clubs.map((club) => (
+              {clubsWithLinks.map((club) => (
                 <ClubCard key={club.id} club={club} />
               ))}
             </Row>
