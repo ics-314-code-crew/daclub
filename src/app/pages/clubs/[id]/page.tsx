@@ -12,7 +12,7 @@ const ClubPage = async ({ params }: ClubPageProps) => {
 
   const clubId = parseInt(id, 10);
 
-  if (isNaN(clubId)) {
+  if (Number.isNaN(clubId)) {
     return <h1>Invalid club ID</h1>;
   }
 
