@@ -1,5 +1,5 @@
 import { prisma } from '@/lib/prisma';
-import Image from 'next/image';
+import { Image } from 'react-bootstrap';
 import Link from 'next/link';
 import { ArrowLeftCircle } from 'react-bootstrap-icons';
 
@@ -41,7 +41,7 @@ const ClubPage = async ({ params }: ClubPageProps) => {
       <Link href="/list">
         <ArrowLeftCircle />
       </Link>
-      <img src={`/${club.logo}`} width={100} height={100} className="club-image mx-auto d-block" />
+      <Image src={`/${club.logo}`} width={100} height={100} className="club-image mx-auto d-block" />
       <p>{club.description}</p>
     </div>
   );
