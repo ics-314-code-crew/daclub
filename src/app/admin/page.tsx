@@ -39,7 +39,7 @@ const AdminPage = async () => {
       <Container id="list" fluid className="py-3">
         <Row>
           <Col>
-            <h1 className="text-center">Club List</h1>
+            <h1 className="text-center">Club List (Admin)</h1>
             <Row xs={1} md={2} lg={3} className="g-4">
               {clubsWithLinks.map((club) => (
                 <ClubCardAdmin key={club.id} club={club} />
