@@ -55,8 +55,14 @@ const ClubPage = async ({ params }: ClubPageProps) => {
         />
       </div>
       <div className="text-container ms-4">
-        <p>Meeting Time: {club.meetingTime}</p>
-        <p>Location: {club.location}</p>
+        <p>
+          Meeting Time:
+          {club.meetingTime}
+        </p>
+        <p>
+          Location:
+          {club.location}
+        </p>
         <p>{club.description}</p>
       </div>
     </Container>
