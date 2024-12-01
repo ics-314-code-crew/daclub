@@ -1,5 +1,5 @@
 import { prisma } from '@/lib/prisma';
-import { Image } from 'react-bootstrap';
+import { Container, Image, Navbar } from 'react-bootstrap';
 import Link from 'next/link';
 import { ArrowLeftCircle } from 'react-bootstrap-icons';
 
@@ -24,6 +24,8 @@ const ClubPage = async ({ params }: ClubPageProps) => {
       name: true,
       description: true,
       logo: true,
+      meetingTime: true,
+      location: true,
     },
   });
 
@@ -36,14 +38,28 @@ const ClubPage = async ({ params }: ClubPageProps) => {
 
   // Render the club details if found
   return (
-    <div>
-      <h1>{club.name}</h1>
-      <Link href="/list">
-        <ArrowLeftCircle />
-      </Link>
-      <Image src={`/${club.logo}`} width={100} height={100} className="club-image mx-auto d-block" />
-      <p>{club.description}</p>
-    </div>
+    <Container>
+      <Navbar>
+        <Link href="/list">
+          <ArrowLeftCircle width={50} height={50} className="pt-1" />
+        </Link>
+        <h2 className="text-center w-100">{club.name}</h2>
+      </Navbar>
+      <div className="float-start bg-dark p-3 d-inline-block rounded" id="image-box">
+        <Image
+          src={`/${club.logo}`}
+          width={250}
+          height={250}
+          className="d-block float-start"
+          style={{ objectFit: 'contain' }}
+        />
+      </div>
+      <div className="text-container ms-4">
+        <p>Meeting Time: {club.meetingTime}</p>
+        <p>Location: {club.location}</p>
+        <p>{club.description}</p>
+      </div>
+    </Container>
   );
 };
 
