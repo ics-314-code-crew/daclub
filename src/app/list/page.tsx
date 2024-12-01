@@ -21,7 +21,7 @@ const ListPage = async () => {
       id: true,
       name: true,
       logo: true,
-      website: true, // Ensure website is included
+      website: true,
       description: true,
       meetingTime: true,
       location: true,
@@ -34,7 +34,7 @@ const ListPage = async () => {
   });
   const clubsWithLinks = clubs.map((club) => ({
     ...club,
-    link: club.website || 'https://manoa.hawaii.edu/', // Replace with a real property or a default URL
+    link: club.website || 'https://manoa.hawaii.edu/',
   }));
   return (
     <main id="landing-page">
