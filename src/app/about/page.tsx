@@ -1,5 +1,6 @@
 'use client';
 
+import '@/app/globals.css'; // Ensure you import the CSS file
 import MiddleMenu from '@/components/MiddleMenu';
 import { Container } from 'react-bootstrap';
 
