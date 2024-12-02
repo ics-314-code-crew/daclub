@@ -2,11 +2,11 @@
 
 import { useSession } from 'next-auth/react';
 import { Club } from '@prisma/client';
-import { Card, Image } from 'react-bootstrap';
+import { Card, Image, Button } from 'react-bootstrap';
 import Link from 'next/link';
 
-/* Renders a single row in the List Club table. See list/page.tsx. */
-const ClubCard = ({ club }: { club: Club }) => {
+/* Renders a single club card (admin). */
+const ClubCardAdmin = ({ club }: { club: Club }) => {
   const { status } = useSession();
 
   return (
@@ -29,8 +29,17 @@ const ClubCard = ({ club }: { club: Club }) => {
           </Card.Body>
         </Card>
       )}
+      {status === 'authenticated' && (
+      <Card.Footer>
+        <Link href={`/edit/${club.id}`} passHref>
+          <Button variant="outline-primary" className="w-100">
+            Edit Club
+          </Button>
+        </Link>
+      </Card.Footer>
+      )}
     </Card>
   );
 };
 
-export default ClubCard;
+export default ClubCardAdmin;
