@@ -104,7 +104,9 @@ body {
   margin-right: auto;
 }
 
-h1 , h2, h5 {
+h1,
+h2,
+h5 {
   font-family: 'Tinos', serif;
   font-size: 2.5rem;
   font-weight: 700;
@@ -114,4 +116,24 @@ h1 , h2, h5 {
 .transparent-card {
   background-color: transparent !important;
   border: none;
+}
+
+#image-box {
+  margin-right: 20px;
+}
+
+#about-page-nav {
+  margin-right: 10px;
+}
+
+#add-club-nav {
+  display: flex;
+  width: 90px;
+  margin-right: 1px;
+}
+
+#list-club-nav {
+  display: flex;
+  width: 90px;
+  margin-left: 1px;
 }
