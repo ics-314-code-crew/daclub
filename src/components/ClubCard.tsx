@@ -3,6 +3,7 @@
 import { Club } from '@prisma/client';
 import { Card, Image, Button } from 'react-bootstrap';
 import Link from 'next/link';
+import StarRating from '@/components/StarRating';
 
 /* Renders a single row in the List Club table. See list/page.tsx. */
 const ClubCard = ({ club }: { club: Club }) => (
@@ -16,6 +17,8 @@ const ClubCard = ({ club }: { club: Club }) => (
       </Card>
     </Link>
     <Card.Footer>
+      Rate this club:
+      <StarRating club={club} />
       <Link href={`/edit/${club.id}`} passHref>
         <Button variant="outline-primary" className="w-100">
           Edit Club

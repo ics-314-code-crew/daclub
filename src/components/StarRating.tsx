@@ -7,8 +7,8 @@ import ReactStars from 'react-stars';
 
 export default function StarRating() {
   return (
-    <div>
-      <h2>NextJs Star Ratings - GeeksforGeeks</h2>
+    // eslint-disable-next-line max-len
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', paddingBottom: '100' }}>
       <ReactStars count={5} size={24} color2="#ffd700" />
     </div>
   );
