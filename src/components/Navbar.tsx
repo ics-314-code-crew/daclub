@@ -44,26 +44,26 @@ const NavBar: React.FC = () => {
           <Nav.Link id="about-page-nav" href="/about" active={pathName === '/about'}>
             About
           </Nav.Link>
-            {currentUser
-              ? [
-                  <Nav.Link id="add-club-nav" href="/add" key="add" active={pathName === '/add'}>
-                    Add Club
-                  </Nav.Link>,
-                  <Nav.Link id="list-club-nav" href="/list" key="list" active={pathName === '/list'}>
-                    Club List
-                  </Nav.Link>,
-                  // <Nav.Link id="list-friend-nav" href="/friends" key="friends" active={pathName === '/friends'}>
-                  //   Friend List
-                  // </Nav.Link>,
-                ]
-              : ''}
-            {currentUser && role === 'SUPER_ADMIN' ? (
-              <Nav.Link id="admin-club-nav" href="/admin" key="admin" active={pathName === '/admin'}>
-                Manage Clubs
-              </Nav.Link>
-            ) : (
-              ''
-            )}
+          {currentUser
+            ? [
+                <Nav.Link id="add-club-nav" href="/add" key="add" active={pathName === '/add'}>
+                  Add Club
+                </Nav.Link>,
+                <Nav.Link id="list-club-nav" href="/list" key="list" active={pathName === '/list'}>
+                  Club List
+                </Nav.Link>,
+                // <Nav.Link id="list-friend-nav" href="/friends" key="friends" active={pathName === '/friends'}>
+                //   Friend List
+                // </Nav.Link>,
+              ]
+            : ''}
+          {currentUser && role === 'SUPER_ADMIN' ? (
+            <Nav.Link id="admin-club-nav" href="/admin" key="admin" active={pathName === '/admin'}>
+              Manage Clubs
+            </Nav.Link>
+          ) : (
+            ''
+          )}
         </Nav>
         <Navbar.Brand href="/" className="w-100 d-flex justify-content-center">
           <Image
@@ -72,6 +72,7 @@ const NavBar: React.FC = () => {
             width={190}
             height={65}
             alt="Da Club Logo"
+            id="da-club-logo"
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -91,9 +92,15 @@ const NavBar: React.FC = () => {
                     value={searchQuery}
                     onChange={handleSearchChange}
                   />
-                  <Button type="submit" variant="outline-success">Search</Button>
+                  <Button type="submit" variant="outline-success">
+                    Search
+                  </Button>
                 </Form>
-                {errorMessage && <Alert variant="danger" className="mt-2">{errorMessage}</Alert>}
+                {errorMessage && (
+                  <Alert variant="danger" className="mt-2">
+                    {errorMessage}
+                  </Alert>
+                )}
               </div>
             )}
             {session ? (
