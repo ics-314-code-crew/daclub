@@ -18,6 +18,8 @@ test.describe('Add Club', () => {
     await page.goto('http://localhost:3000/add', { waitUntil: 'networkidle' });
     await page.locator('.spinner-border').waitFor({ state: 'detached' });
 
+    await page.locator('input[name="name"]').waitFor({ state: 'visible', timeout: 30000 });
+
     // Ensure form fields are visible
     await expect(page.locator('input[name="name"]')).toBeVisible();
     await expect(page.locator('input[name="description"]')).toBeVisible();
@@ -36,6 +38,8 @@ test.describe('Add Club', () => {
   test('Form Reset', async ({ page }) => {
     await page.goto('http://localhost:3000/add', { waitUntil: 'networkidle' });
     await page.locator('.spinner-border').waitFor({ state: 'detached' });
+
+    await page.locator('input[name="name"]').waitFor({ state: 'visible', timeout: 30000 });
 
     // Fill in the form
     await page.locator('input[name="name"]').fill('Club');
