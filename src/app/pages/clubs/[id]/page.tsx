@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { ArrowLeftCircle } from 'react-bootstrap-icons';
 
 type ClubPageProps = {
-  params: { id: string }; // Ensure `params` type is correctly defined
+  params: { id: string };
 };
 
 const ClubPage = async ({ params }: ClubPageProps) => {
@@ -35,7 +35,7 @@ const ClubPage = async ({ params }: ClubPageProps) => {
         <ArrowLeftCircle />
       </Link>
       <h1>{club.name}</h1>
-      <Image src={club.logo} />
+      <Image width={100} src={club.logo} />
       <p>{club.description}</p>
     </div>
   );

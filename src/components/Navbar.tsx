@@ -40,9 +40,9 @@ const NavBar: React.FC = () => {
                   // </Nav.Link>,
                 ]
               : ''}
-            {currentUser && role === 'ADMIN' ? (
+            {currentUser && role === 'SUPER_ADMIN' ? (
               <Nav.Link id="admin-club-nav" href="/admin" key="admin" active={pathName === '/admin'}>
-                Admin
+                Manage Clubs
               </Nav.Link>
             ) : (
               ''
