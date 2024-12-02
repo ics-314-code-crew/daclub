@@ -3,9 +3,9 @@
 'use client';
 
 import { useSession } from 'next-auth/react';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { Container, Nav, Navbar, NavDropdown, Image, Form, FormControl, Button } from 'react-bootstrap';
+import { Container, Nav, Navbar, NavDropdown, Image, Form, FormControl, Button, Alert } from 'react-bootstrap';
 import { BoxArrowRight, Lock, PersonFill, PersonPlusFill, Search } from 'react-bootstrap-icons';
 
 const NavBar: React.FC = () => {
@@ -14,10 +14,27 @@ const NavBar: React.FC = () => {
   const userWithRole = session?.user as { email: string; role: string };
   const role = userWithRole?.role;
   const pathName = usePathname();
+  const router = useRouter();
   const [showSearch, setShowSearch] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const toggleSearch = () => {
     setShowSearch(!showSearch);
+  };
+
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(event.target.value);
+    setErrorMessage(''); // Clear error message when user starts typing
+  };
+
+  const handleSearchSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (!searchQuery.trim()) {
+      setErrorMessage('Invalid search.');
+      return;
+    }
+    router.push(`/resultsPage?query=${searchQuery}`);
   };
 
   return (
@@ -49,33 +66,36 @@ const NavBar: React.FC = () => {
             )}
         </Nav>
         <Navbar.Brand href="/" className="w-100 d-flex justify-content-center">
-        <Image
-          src="/daClubLogo.png"
-          className="logo fs-2"
-          width={190}
-          height={65}
-          alt="Da Club Logo"
-        />
+          <Image
+            src="/daClubLogo.png"
+            className="logo fs-2"
+            width={190}
+            height={65}
+            alt="Da Club Logo"
+          />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="ms-auto align-items-center">
-          <Nav.Link onClick={toggleSearch} style={{ cursor: 'pointer' }}>
-            <Search size={20} />
-          </Nav.Link>
-          {showSearch && (
-            <div className="search-dropdown">
-              <Form className="d-flex">
-                <FormControl
-                  type="search"
-                  placeholder="Search"
-                  className="me-2"
-                  aria-label="Search"
-                />
-                <Button variant="outline-success">Search</Button>
-              </Form>
-            </div>
-          )}
+          <Nav className="ms-auto align-items-center">
+            <Nav.Link onClick={toggleSearch} style={{ cursor: 'pointer' }}>
+              <Search size={20} />
+            </Nav.Link>
+            {showSearch && (
+              <div className="search-dropdown">
+                <Form className="d-flex" onSubmit={handleSearchSubmit}>
+                  <FormControl
+                    type="search"
+                    placeholder="Search"
+                    className="me-2"
+                    aria-label="Search"
+                    value={searchQuery}
+                    onChange={handleSearchChange}
+                  />
+                  <Button type="submit" variant="outline-success">Search</Button>
+                </Form>
+                {errorMessage && <Alert variant="danger" className="mt-2">{errorMessage}</Alert>}
+              </div>
+            )}
             {session ? (
               <NavDropdown id="login-dropdown" title={currentUser}>
                 <NavDropdown.Item id="login-dropdown-sign-out" href="/api/auth/signout">
@@ -99,7 +119,7 @@ const NavBar: React.FC = () => {
                 </NavDropdown.Item>
               </NavDropdown>
             )}
-        </Nav>
+          </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
