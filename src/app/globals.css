@@ -107,7 +107,7 @@ body {
 h1,
 h2,
 h5 {
-  font-family: 'Tinos', serif;
+  font-family: 'Montserrat', serif;
   font-size: 2.5rem;
   font-weight: 700;
   text-align: center;
@@ -136,4 +136,20 @@ h5 {
   display: flex;
   width: 90px;
   margin-left: 1px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: black;
+  background-size: 100%, 100%;
+  width: 3rem;
+  height: 3rem;
+}
+
+.carousel-control-prev-icon {
+  background-image: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23000" viewBox="0 0 8 8"><path d="M7 0l-4 4 4 4V4H0V0h7z"/></svg>');
+}
+
+.carousel-control-next-icon {
+  background-image: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23000" viewBox="0 0 8 8"><path d="M1 0v4h7V0l-4 4-4-4z"/></svg>');
 }
