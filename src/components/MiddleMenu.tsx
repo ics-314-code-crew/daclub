@@ -5,10 +5,10 @@ import { Col, Row } from 'react-bootstrap';
 const MiddleMenu = () => (
   <Row
     id="centerText"
-    className="align-items-center justify-content-center"
+    className="align-items-center justify-content-center montserrat-font"
     style={{ paddingTop: '110px' }}
   >
-    <Col xs={8} className="text-center montserrat-font">
+    <Col xs={8} className="text-center">
       <div id="text-box" className="my-3" style={{ margin: '0 auto', maxWidth: '600px' }}>
         <h1>Welcome to Da Club!</h1>
       </div>
