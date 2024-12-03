@@ -21,6 +21,16 @@
       "sameSite": "Lax"
     },
     {
+      "name": "next-auth.callback-url",
+      "value": "http%3A%2F%2Flocalhost%3A3000%2Fadd",
+      "domain": "localhost",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
       "name": "next-auth.session-token",
       "value": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..EwiryrOi14mUF6NT.qKKUjAKfRRKC_sKDi3o6Q-bAoEsOqTkiJqvjRhzOhnzPAqnoaG-uXb5gDNCU52wnLl4ZK1r2M_z9jgEsAoXONEAXu2Sq3Qy3b9_MSTTDAbmMct7DMSurhBCQ0fgiCFXrO_fKEDFilou9CxCsWVFSRxrDCzDVo3bDjDvVqOkTfhH1JyGZh3v8Kamnnd39.1fFl6lEGR9GYNzXKhFjXZw",
       "domain": "localhost",
