@@ -54,8 +54,11 @@ const SignUp = () => {
         email: data.email,
       },
     });
-    // After creating, signIn with redirect to the add page
-    await signIn('credentials', { callbackUrl: '/add', ...data });
+    await signIn('credentials', {
+      email: data.email,
+      password: data.password,
+      callbackUrl: '/',
+    });
   };
 
   return (

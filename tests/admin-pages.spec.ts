@@ -18,11 +18,11 @@ test.describe('Add Club', () => {
     await page.goto('http://localhost:3000/add', { waitUntil: 'networkidle' });
     await page.locator('.spinner-border').waitFor({ state: 'detached' });
 
-    await page.locator('input[name="name"]').waitFor({ state: 'visible', timeout: 30000 });
+    await page.locator('input[name="name"]').waitFor({ state: 'visible', timeout: 5000 });
 
     // Ensure form fields are visible
     await expect(page.locator('input[name="name"]')).toBeVisible();
-    await expect(page.locator('input[name="description"]')).toBeVisible();
+    await expect(page.locator('textarea[name="description"]')).toBeVisible();
     await expect(page.locator('input[name="meetingTime"]')).toBeVisible();
     await expect(page.locator('input[name="location"]')).toBeVisible();
     await expect(page.locator('input[name="website"]')).toBeVisible();
@@ -43,13 +43,13 @@ test.describe('Add Club', () => {
 
     // Fill in the form
     await page.locator('input[name="name"]').fill('Club');
-    await page.locator('input[name="description"]').fill('Description.');
+    await page.locator('textarea[name="description"]').fill('Description.');
 
     // Reset the form
     await page.getByRole('button', { name: 'Reset' }).click();
 
     await expect(page.locator('input[name="name"]')).toHaveValue('');
-    await expect(page.locator('input[name="description"]')).toHaveValue('');
+    await expect(page.locator('textarea[name="description"]')).toHaveValue('');
   });
 
   test('Unauthenticated Redirect', async ({ page }) => {
@@ -69,5 +69,6 @@ test.describe('Add Club', () => {
     await expect(page.getByRole('link', { name: 'About' })).toBeVisible();
     await expect(page.getByRole('link', { name: 'Add Club' })).toBeVisible();
     await expect(page.getByRole('link', { name: 'Club List' })).toBeVisible();
+    await expect(page.getByRole('link', { name: 'Home' })).toBeVisible();
   });
 });

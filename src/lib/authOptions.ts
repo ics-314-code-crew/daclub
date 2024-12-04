@@ -5,6 +5,7 @@ import CredentialsProvider from 'next-auth/providers/credentials';
 import { prisma } from '@/lib/prisma';
 
 const authOptions: NextAuthOptions = {
+  debug: true,
   session: {
     strategy: 'jwt',
   },
@@ -50,14 +51,14 @@ const authOptions: NextAuthOptions = {
   ],
   pages: {
     signIn: '/auth/signin',
-    signOut: '/auth/signout',
+    // signOut: '/auth/signout',
     //   error: '/auth/error',
     //   verifyRequest: '/auth/verify-request',
     //   newUser: '/auth/new-user'
   },
   callbacks: {
-    session: ({ session, token }) => {
-      // console.log('Session Callback', { session, token });
+    session: async ({ session, token }) => {
+      console.log('Session Callback', { session, token });
       return {
         ...session,
         user: {
@@ -69,8 +70,8 @@ const authOptions: NextAuthOptions = {
         },
       };
     },
-    jwt: ({ token, user }) => {
-      // console.log('JWT Callback', { token, user });
+    jwt: async ({ token, user }) => {
+      console.log('JWT Callback', { token, user });
       if (user) {
         const u = user as unknown as any;
         return {
