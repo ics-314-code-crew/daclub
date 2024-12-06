@@ -7,7 +7,11 @@
       "password": "changeme",
       "role": "SUPER_ADMIN"
     },
-    { "firstName": "john", "lastName": "Foo", "email": "john@hawaii.edu", "password": "changeme", "role": "USER" },
+    { "firstName": "john", 
+      "lastName": "Foo", 
+      "email": "john@hawaii.edu", 
+      "password": "changeme", 
+      "role": "USER" },
     {
       "firstName": "God",
       "lastName": "Mode",
@@ -20,14 +24,14 @@
       "lastName": "Kitty",
       "email": "hello@hawaii.edu",
       "password": "changeme",
-      "role": "CLUB_ADMIN"
+      "role": "USER"
     },
     {
       "firstName": "Wassup",
       "lastName": "Fool",
       "email": "wassup@hawaii.edu",
       "password": "changeme",
-      "role": "CLUB_ADMIN"
+      "role": "USER"
     }
   ],
 
@@ -37,11 +41,12 @@
       "description": "A club for tech enthusiasts",
       "meetingTime": "Every Tuesday at 5 PM",
       "location": "Computer Science Building",
-      "website": "https://techclub.example.com/",
+      "website": "https://acmmanoa.org/clubs/gamedev.html",
       "contactEmail": "tech@example.com",
       "logo": "techlogo.png",
       "startDate": "2021-01-01",
       "expirationDate": "2025-12-31",
+      "interestAreas": "Technology",
       "admins": "hello@hawaii.edu"
     },
     {
@@ -49,11 +54,12 @@
       "description": "A club for aspiring photographers to learn and practice photography.",
       "meetingTime": "Wednesdays at 3 PM",
       "location": "Room 101",
-      "website": "https://photographyclub.example.com/",
+      "website": "https://manoa.hawaii.edu/ctahr/4h/4h-hale-learning/hawaii-military-4-h-virtual-photography-club/",
       "contactEmail": "contact@photographyclub.example.com",
       "logo": "photographylogo.png",
       "startDate": "2021-01-01",
       "expirationDate": "2025-12-25",
+      "interestAreas": "Photography",
       "admins": "wassup@hawaii.edu"
     }
   ]

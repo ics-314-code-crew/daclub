@@ -1,5 +1,5 @@
 -- CreateEnum
-CREATE TYPE "Role" AS ENUM ('USER', 'CLUB_ADMIN', 'SUPER_ADMIN');
+CREATE TYPE "Role" AS ENUM ('USER', 'SUPER_ADMIN');
 
 -- CreateTable
 CREATE TABLE "User" (
@@ -26,6 +26,7 @@ CREATE TABLE "Club" (
     "admins" TEXT NOT NULL,
     "startDate" TIMESTAMP(3) NOT NULL,
     "expirationDate" TIMESTAMP(3) NOT NULL,
+    "interestAreas" TEXT NOT NULL,
 
     CONSTRAINT "Club_pkey" PRIMARY KEY ("id")
 );

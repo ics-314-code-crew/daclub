@@ -6,16 +6,13 @@ const MiddleMenu = () => (
   <Row
     id="centerText"
     className="align-items-center justify-content-center"
-    style={{
-      backgroundImage: 'url(/bg-landing.jpg)',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      minHeight: '100vh',
-    }}
+    style={{ paddingTop: '110px' }}
   >
-    <Col xs={8} className="text-center">
-      <div id="text-box">
+    <Col xs={8} className="text-center montserrat-font">
+      <div id="text-box" className="my-3" style={{ margin: '0 auto', maxWidth: '600px' }}>
         <h1>Welcome to Da Club!</h1>
+      </div>
+      <div id="text-box" className="my-3" style={{ margin: '0 auto', maxWidth: '600px' }}>
         <h5>
           This website allows students to explore and learn about the different clubs offered at UH Manoa!
           Students can find an assortment of clubs ranging from athletics to art, technology, and so much more.
