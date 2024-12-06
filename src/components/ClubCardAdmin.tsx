@@ -17,7 +17,8 @@ const ClubCardAdmin = ({ club }: { club: Club }) => {
             <Image src={club.logo} width={100} className="club-image" />
             <Card.Body>
               <Card.Title>{club.name}</Card.Title>
-            </Card.Body>
+              <Card.Text>{club.description}</Card.Text>
+          </Card.Body>
           </Card.Link>
         </Link>
       ) : (

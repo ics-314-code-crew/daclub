@@ -24,14 +24,14 @@
       "lastName": "Kitty",
       "email": "hello@hawaii.edu",
       "password": "changeme",
-      "role": "CLUB_ADMIN"
+      "role": "USER"
     },
     {
       "firstName": "Wassup",
       "lastName": "Fool",
       "email": "wassup@hawaii.edu",
       "password": "changeme",
-      "role": "CLUB_ADMIN"
+      "role": "USER"
     }
   ],
 
