@@ -50,13 +50,15 @@ const BottomMenu = () => {
         <Carousel className="">
           {clubs.map((club) => (
             <Carousel.Item key={club.id} style={carouselItemStyle}>
-              <ClubCard club={club} userEmail={''} />
+              <ClubCard club={club} userEmail="" />
             </Carousel.Item>
           ))}
         </Carousel>
         <h2 id="textbox2" className="text-center">
-          To learn more about the Clubs offered at UH Manoa, Create an Account <Link href="/auth/signup">Here</Link> Or
-          If you already have an account, <Link href="/auth/signin">Sign-in</Link>.
+          To learn more about the Clubs offered at UH Manoa, Create an Account
+          <Link href="/auth/signup">Here</Link>
+          Or If you already have an account,
+          <Link href="/auth/signin">Sign-in</Link>.
         </h2>
       </Col>
     </Row>
