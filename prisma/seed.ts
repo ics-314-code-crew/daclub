@@ -9,11 +9,10 @@ async function main() {
 
   config.defaultAccounts.forEach(async (account) => {
     let role: Role = 'USER';
-    if (account.role === 'CLUB_ADMIN') {
-      role = 'CLUB_ADMIN';
-    } else if (account.role === 'SUPER_ADMIN') {
+    if (account.role === 'SUPER_ADMIN') {
       role = 'SUPER_ADMIN';
     }
+
     // Validate Email
     if (!account.email.endsWith('@hawaii.edu')) {
       console.error(`Invalid email: ${account.email}`);

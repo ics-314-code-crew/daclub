@@ -15,7 +15,7 @@ export const CreateUserSchema = Yup.object({
 export const EditUserSchema = Yup.object({
   id: Yup.number().required(),
   email: Yup.string().email('Invalid email').required(),
-  role: Yup.mixed().oneOf(['USER', 'CLUB_ADMIN', 'SUPER_ADMIN'], 'Invalid role'),
+  role: Yup.mixed().oneOf(['USER', 'SUPER_ADMIN'], 'Invalid role'),
 });
 
 export const AddClubSchema = Yup.object({
