@@ -5,7 +5,7 @@ import { Club } from '@prisma/client';
 import { Card, Image } from 'react-bootstrap';
 import Link from 'next/link';
 
-/* Renders a single row in the List Club table. See list/page.tsx. */
+// Renders a single row in the List Club table. See list/page.tsx.
 const ClubCard = ({ club }: { club: Club }) => {
   const { status } = useSession();
 
