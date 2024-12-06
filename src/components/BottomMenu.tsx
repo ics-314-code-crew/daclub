@@ -58,7 +58,8 @@ const BottomMenu = () => {
           To learn more about the Clubs offered at UH Manoa, Create an Account
           <Link href="/auth/signup">Here</Link>
           Or If you already have an account,
-          <Link href="/auth/signin">Sign-in</Link>.
+          <Link href="/auth/signin">Sign-in</Link>
+          .
         </h2>
       </Col>
     </Row>
