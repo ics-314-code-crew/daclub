@@ -30,13 +30,13 @@ const ClubCardAdmin = ({ club }: { club: Club }) => {
         </Card>
       )}
       {status === 'authenticated' && (
-      <Card.Footer>
-        <Link href={`/edit/${club.id}`} passHref>
-          <Button variant="outline-primary" className="w-100">
-            Edit Club
-          </Button>
-        </Link>
-      </Card.Footer>
+        <Card.Footer>
+          <Link href={`/edit/${club.id}`} passHref>
+            <Button variant="outline-primary" className="w-100">
+              Edit Club
+            </Button>
+          </Link>
+        </Card.Footer>
       )}
     </Card>
   );
