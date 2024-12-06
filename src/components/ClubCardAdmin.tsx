@@ -18,7 +18,7 @@ const ClubCardAdmin = ({ club }: { club: Club }) => {
             <Card.Body>
               <Card.Title>{club.name}</Card.Title>
               <Card.Text>{club.description}</Card.Text>
-          </Card.Body>
+            </Card.Body>
           </Card.Link>
         </Link>
       ) : (
@@ -31,13 +31,13 @@ const ClubCardAdmin = ({ club }: { club: Club }) => {
         </Card>
       )}
       {status === 'authenticated' && (
-      <Card.Footer>
-        <Link href={`/edit/${club.id}`} passHref>
-          <Button variant="outline-primary" className="w-100">
-            Edit Club
-          </Button>
-        </Link>
-      </Card.Footer>
+        <Card.Footer>
+          <Link href={`/edit/${club.id}`} passHref>
+            <Button variant="outline-primary" className="w-100">
+              Edit Club
+            </Button>
+          </Link>
+        </Card.Footer>
       )}
     </Card>
   );

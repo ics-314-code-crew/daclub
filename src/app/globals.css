@@ -123,6 +123,7 @@ h5 {
 }
 
 #about-page-nav {
+  margin-left: -50px;
   margin-right: 10px;
 }
 
@@ -136,4 +137,14 @@ h5 {
   display: flex;
   width: 90px;
   margin-left: 1px;
+}
+
+#admin-club-nav {
+  display: flex;
+  width: 130px;
+  margin-left: 1px;
+}
+
+#da-club-logo {
+  margin-right: 100px;
 }

@@ -6,7 +6,6 @@ import Link from 'next/link';
 
 /* Renders a single club card and shows Edit button if user email matches */
 const ClubCard = ({ club, userEmail }: { club: Club; userEmail: string }) => {
-
   const adminEmails = club.admins ? club.admins.split(',').map((email) => email.trim()) : [];
   const canEdit = adminEmails.includes(userEmail);
 
