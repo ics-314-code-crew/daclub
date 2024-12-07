@@ -13,7 +13,7 @@ const ClubCardAdmin = ({ club }: { club: Club }) => {
     <Card className="h-100 text-center mx-auto">
       {status === 'authenticated' ? (
         <Link href={`/pages/clubs/${club.id}`} passHref>
-          <Card.Link as="a">
+          <Card.Link>
             <Image src={club.logo} width={100} className="club-image" />
             <Card.Body>
               <Card.Title>{club.name}</Card.Title>

@@ -49,7 +49,9 @@ const ListPage = async () => {
             <h1 className="text-center">Club List</h1>
             <Row xs={1} md={2} lg={3} className="g-4">
               {clubsWithLinks.map((club) => (
-                <ClubCard key={club.id} club={club} userEmail={userEmail} />
+                <Col key={club.id} className="mb-4">
+                  <ClubCard club={club} userEmail={userEmail} />
+                </Col>
               ))}
             </Row>
           </Col>
