@@ -55,7 +55,14 @@ const BottomMenu = () => {
           ))}
         </Carousel>
         <h2 id="textbox2" className="text-center">
-          To learn more about the Clubs offered at UH Manoa, Create an Account <Link href="/auth/signup">Here</Link>. If you already have an account, <Link href="/auth/signin">Sign-in</Link>.
+          To learn more about the Clubs offered at UH Manoa, Create an Account
+          {' '}
+          <Link href="/auth/signup">Here</Link>
+          . If
+          you already have an account,
+          {' '}
+          <Link href="/auth/signin">Sign-in</Link>
+          .
         </h2>
       </Col>
     </Row>
