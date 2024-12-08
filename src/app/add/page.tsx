@@ -13,8 +13,7 @@ const AddClub = async () => {
   );
 
   return (
-    // Add your form here
-    <main>
+    <main id="add-page">
       <AddClubForm />
     </main>
   );

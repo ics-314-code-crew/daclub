@@ -3,10 +3,10 @@
 import MiddleMenu from '@/components/MiddleMenu';
 import { Container } from 'react-bootstrap';
 
-const aboutPage = () => (
-  <Container fluid id="landing-page">
+const AboutPage = () => (
+  <Container fluid id="about-page">
     <MiddleMenu />
   </Container>
 );
 
-export default aboutPage;
+export default AboutPage;

@@ -6,7 +6,8 @@
   color: white;
   padding: 20px;
   max-width: 500px;
-  width: 100%;
+  width: 90%; /* Adjusted for smaller screens */
+  margin: 0 auto; /* Center on smaller screens */
 }
 
 #textbox2 {
@@ -14,6 +15,8 @@
   border-radius: 10px;
   color: white;
   padding: 20px;
+  width: 90%; /* Adjusted for smaller screens */
+  margin: 0 auto;
 }
 
 .montserrat-font {
@@ -22,8 +25,8 @@
 
 .search-dropdown {
   position: absolute;
-  top: 60px; /* Adjust as needed */
-  right: 20px; /* Adjust as needed */
+  top: 60px;
+  right: 20px;
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -33,11 +36,46 @@
 }
 
 .search-dropdown .form-control {
-  width: 200px; /* Adjust as needed */
+  width: 200px;
 }
 
 .search-dropdown .btn {
   margin-left: 10px;
+}
+
+#about-page,
+#add-page,
+#edit-page {
+  background-image: url('/bg-landing.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  position: relative;
+}
+
+#about-page::before,
+#add-page::before,
+#edit-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit;
+  background-size: inherit;
+  background-position: inherit;
+  background-repeat: inherit;
+  filter: blur(5px);
+  z-index: 1;
+}
+
+#about-page > *,
+#add-page > *,
+#edit-page > * {
+  position: relative;
+  z-index: 2;
 }
 
 #landing-page {
@@ -45,40 +83,47 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh; /* Adjust the height as needed */
-}
-
-#sign-in-page {
-  background-image: url('/sign-in-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh; /* Adjust the height as needed */
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
-#sign-up-page {
-  background-image: url('/sign-in-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh; /* Adjust the height as needed */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+#landing-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit;
+  background-size: inherit;
+  background-position: inherit;
+  background-repeat: inherit;
+  filter: blur(5px);
+  z-index: 1;
 }
 
+#landing-page > * {
+  position: relative;
+  z-index: 2;
+}
+
+#sign-in-page,
+#sign-up-page,
 #signout-page {
   background-image: url('/sign-in-bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh; /* Adjust the height as needed */
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 html,
@@ -89,28 +134,31 @@ body {
   padding: 0;
   margin: 0;
 }
+
 .wrapper {
   box-sizing: border-box;
   min-height: 100%;
   display: flex;
   flex-direction: column;
 }
+
 .club-image {
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
   object-fit: cover;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 20px auto;
 }
 
 h1,
 h2,
 h5 {
   font-family: 'Tinos', serif;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   text-align: center;
+  margin: 10px;
 }
 
 .transparent-card {
@@ -123,28 +171,69 @@ h5 {
 }
 
 #about-page-nav {
-  margin-left: -50px;
-  margin-right: 10px;
+  margin: 10px;
+}
+
+#add-club-nav,
+#list-club-nav,
+#admin-club-nav {
+  display: flex;
+  justify-content: center;
+  margin: 10px 5px;
 }
 
 #add-club-nav {
-  display: flex;
-  width: 90px;
-  margin-right: 1px;
+  width: auto;
 }
 
 #list-club-nav {
-  display: flex;
-  width: 90px;
-  margin-left: 1px;
+  width: auto;
 }
 
 #admin-club-nav {
-  display: flex;
-  width: 130px;
-  margin-left: 1px;
+  width: auto;
 }
 
 #da-club-logo {
-  margin-right: 100px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  #text-box,
+  #textbox2 {
+    width: 95%;
+  }
+
+  h1,
+  h2,
+  h5 {
+    font-size: 1.8rem;
+  }
+
+  .club-image {
+    max-width: 150px;
+  }
+
+  #search-dropdown .form-control {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #search-dropdown .btn {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  #about-page-nav,
+  #add-club-nav,
+  #list-club-nav,
+  #admin-club-nav {
+    flex-direction: column;
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  #landing-page {
+    padding: 20px;
+  }
 }

@@ -28,11 +28,12 @@ const BottomMenu = () => {
   if (loading) {
     return <div>Loading...</div>;
   }
+
   const carouselItemStyle = {
-    backgroundColor: 'green',
     color: 'white',
     padding: '20px',
   };
+
   return (
     <Row
       className="align-items-center justify-content-center"
