@@ -10,7 +10,7 @@ import BottomMenu from '@/components/BottomMenu';
 
 /** The Home page. */
 const Home = () => {
-  const { data: session, status } = useSession();
+  const { status } = useSession();
   const router = useRouter();
 
   useEffect(() => {
