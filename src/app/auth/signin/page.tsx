@@ -120,7 +120,8 @@ const SignIn = () => {
                   </Button>
                 </Form>
                 <div className="text-center text-white">
-                  Don&apos;t have an account?{' '}
+                  Don&apos;t have an account?
+                  {' '}
                   <Link href="/auth/signup" className="text-info">
                     Sign Up
                   </Link>

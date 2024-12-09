@@ -173,7 +173,8 @@ const SignUp = () => {
                   </Button>
                 </Form>
                 <div className="text-center text-white">
-                  Already have an account?{' '}
+                  Already have an account?
+                  {' '}
                   <Link href="/auth/signin" className="text-info">
                     Sign In
                   </Link>

@@ -97,7 +97,8 @@ const BottomMenu = () => {
         <Row className="text-center mt-4">
           <Col>
             <h4>
-              To learn more about the clubs offered at UH Manoa,{' '}
+              To learn more about the clubs offered at UH Manoa,
+              {' '}
               <Link
                 href="/auth/signup"
                 className="text-info"

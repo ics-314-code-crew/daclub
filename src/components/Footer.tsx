@@ -11,7 +11,7 @@ const Footer = () => (
           <p>
             Student-developed RIO management portal by Jake Dickinson, Dodie
             Madriaga, Eden K. Parungao, Jayden Sagayaga, and Nathan Chee for UH
-            Manoa's ICS 314.
+            Manoa&apos;s ICS 314.
           </p>
         </Col>
         <Col xs={12} md={4}>
@@ -46,7 +46,11 @@ const Footer = () => (
       <Row className="justify-content-center text-center">
         <Col xs="auto">
           <p className="mb-0">
-            © {new Date().getFullYear()} Da Club. All rights reserved.
+            ©
+            {' '}
+            {new Date().getFullYear()}
+            {' '}
+            Da Club. All rights reserved.
           </p>
         </Col>
       </Row>
