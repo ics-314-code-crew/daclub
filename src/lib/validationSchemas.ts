@@ -25,6 +25,20 @@ const adminsValidationNotRequired = Yup.string()
   )
   .notRequired();
 
+const membersValidationNotRequired = Yup.string()
+  .test(
+    'valid-member-emails',
+    'All member emails must end with @hawaii.edu',
+    (value) => {
+      if (!value || value.trim() === '') {
+        return true; // Skip validation if the field is empty
+      }
+      const emails = value.split(',').map((email) => email.trim());
+      return emails.every((email) => /^[^\s@]+@hawaii\.edu$/.test(email));
+    },
+  )
+  .notRequired();
+
 const nameValidation = Yup.string().required('This field is required');
 
 const websiteValidation = Yup.string().url('Must be a valid URL').notRequired();
@@ -91,4 +105,5 @@ export const EditClubSchema = Yup.object({
       'Expiration date must be a valid date in YYYY-MM-DD format',
       (value) => !Number.isNaN(Date.parse(value || '')),
     ),
+  members: membersValidationNotRequired,
 });

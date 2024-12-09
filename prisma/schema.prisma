@@ -32,16 +32,17 @@ model User {
 }
 
 model Club {
-  id           Int          @id @default(autoincrement())
-  name         String       @unique
-  description  String
-  meetingTime  String
-  location     String
-  website      String?      
-  contactEmail String?      
-  logo         String
-  admins       String
-  startDate    DateTime
-  expirationDate   DateTime
+  id              Int       @id @default(autoincrement())
+  name            String    @unique
+  description     String
+  meetingTime     String
+  location        String
+  website         String?
+  contactEmail    String?
+  logo            String
+  admins          String
+  startDate       DateTime
+  expirationDate  DateTime
   interestAreas   String
+  members         String?
 }

@@ -33,6 +33,7 @@ const ClubPage = async ({ params }: ClubPageProps) => {
       meetingTime: true,
       location: true,
       admins: true,
+      members: true,
     },
   });
 
@@ -112,6 +113,12 @@ const ClubPage = async ({ params }: ClubPageProps) => {
               <div>
                 <h5>Admin(s):</h5>
                 {club.admins || 'Not specified'}
+              </div>
+            )}
+            {club.members && (
+              <div>
+                <h5>Members(s):</h5>
+                {club.members || 'Not specified'}
               </div>
             )}
           </Col>

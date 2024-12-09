@@ -23,6 +23,7 @@ type ClubFormData = {
   interestAreas: string;
   startDate: string;
   expirationDate: string;
+  members?: string | null;
 };
 
 const EditClubForm = ({ clubId }: { clubId: string }) => {
@@ -44,10 +45,7 @@ const EditClubForm = ({ clubId }: { clubId: string }) => {
         const club = await getClubById(Number(clubId));
         if (club) {
           Object.keys(club).forEach((key) => {
-            setValue(
-              key as keyof ClubFormData,
-              club[key as keyof ClubFormData],
-            );
+            setValue(key as keyof ClubFormData, club[key as keyof ClubFormData]);
           });
         }
       } catch (error) {
@@ -56,7 +54,6 @@ const EditClubForm = ({ clubId }: { clubId: string }) => {
         setIsLoading(false);
       }
     };
-
     fetchClubData();
   }, [clubId, setValue]);
 
@@ -70,7 +67,11 @@ const EditClubForm = ({ clubId }: { clubId: string }) => {
 
   const onSubmit = async (data: ClubFormData) => {
     try {
-      await updateClub(Number(clubId), data);
+      const formattedData = {
+        ...data,
+      };
+
+      await updateClub(Number(clubId), formattedData);
       swal('Success', 'Club has been updated.', 'success', {
         timer: 2000,
       });
@@ -244,6 +245,16 @@ const EditClubForm = ({ clubId }: { clubId: string }) => {
                   {...register('admins')}
                   className="form-control-lg"
                 />
+              </Form.Group>
+              <Form.Group className="mb-4">
+                <Form.Label>Members</Form.Label>
+                <FormControl
+                  type="text"
+                  placeholder="e.g., member1@hawaii.edu, member2@hawaii.edu"
+                  {...register('members')}
+                  className={`form-control-lg ${errors.members ? 'is-invalid' : ''}`}
+                />
+                <div className="invalid-feedback">{errors.members?.message}</div>
               </Form.Group>
 
               {/* Dates */}

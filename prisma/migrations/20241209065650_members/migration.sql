@@ -27,6 +27,7 @@ CREATE TABLE "Club" (
     "startDate" TIMESTAMP(3) NOT NULL,
     "expirationDate" TIMESTAMP(3) NOT NULL,
     "interestAreas" TEXT NOT NULL,
+    "members" TEXT,
 
     CONSTRAINT "Club_pkey" PRIMARY KEY ("id")
 );

@@ -50,6 +50,7 @@ export async function getClubById(id: number) {
       interestAreas: club.interestAreas || '',
       startDate: club.startDate.toISOString().split('T')[0],
       expirationDate: club.expirationDate.toISOString().split('T')[0],
+      members: club.members || '',
     }
     : null;
 }

@@ -9,10 +9,20 @@ export async function GET(request: Request) {
   try {
     const clubs = await prisma.club.findMany({
       where: {
-        name: {
-          contains: query,
-          mode: 'insensitive',
-        },
+        OR: [
+          {
+            name: {
+              contains: query,
+              mode: 'insensitive',
+            },
+          },
+          {
+            interestAreas: {
+              contains: query,
+              mode: 'insensitive',
+            },
+          },
+        ],
       },
     });
 

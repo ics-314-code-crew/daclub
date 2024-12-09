@@ -13,7 +13,6 @@ async function main() {
       role = 'SUPER_ADMIN';
     }
 
-    // Validate Email
     if (!account.email.endsWith('@hawaii.edu')) {
       console.error(`Invalid email: ${account.email}`);
       console.error('Email must end with @hawaii.edu');
@@ -52,6 +51,7 @@ async function main() {
         expirationDate: new Date(data.expirationDate),
         interestAreas: data.interestAreas,
         admins: data.admins,
+        members: data.members,
       },
     });
   });
