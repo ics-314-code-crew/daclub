@@ -104,7 +104,7 @@ const ListPage: React.FC = () => {
                 {isSearchActive && (
                   <FormControl
                     type="text"
-                    placeholder="Type to filter the results..."
+                    placeholder="Search clubs by name..."
                     value={searchQuery}
                     onChange={handleSearchChange}
                     className="p-3"
