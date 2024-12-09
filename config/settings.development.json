@@ -76,30 +76,30 @@
       "admins": "wassup@hawaii.edu"
     },
     {
-      "name": "ACM Manoa",
-      "description": "Computer Science Organization at UH Manoa",
-      "meetingTime": "Every Tuesday at 5 PM",
-      "location": "Computer Science Building",
-      "website": "https://acmmanoa.org/",
-      "contactEmail": "president@acmmanoa.org",
-      "logo": "acm.png",
-      "startDate": "2024-09-27",
+      "name": "Timpuyog",
+      "description": "An organization of students enrolled in various courses offered by ILLP at UH Manoa",
+      "meetingTime": "N/A",
+      "location": "N/A",
+      "website": "https://manoa.hawaii.edu/rio/timpuyog/Home.html",
+      "contactEmail": "timpuyog@hawaii.edu",
+      "logo": "timpuyogLogo.jpg",
+      "startDate": "2024-10-08",
       "expirationDate": "2025-09-30",
-      "interestAreas": "Technology",
+      "interestAreas": "Cultural",
       "admins": "hello@hawaii.edu"
     },
     {
-      "name": "ACM Manoa",
-      "description": "Computer Science Organization at UH Manoa",
-      "meetingTime": "Every Tuesday at 5 PM",
-      "location": "Computer Science Building",
-      "website": "https://acmmanoa.org/",
-      "contactEmail": "president@acmmanoa.org",
-      "logo": "acm.png",
+      "name": "International Business Club",
+      "description": "A club that promotes international business and culture at UH Manoa",
+      "meetingTime": "N/A",
+      "location": "Shidler College of Business",
+      "website": "https://www.ibouhm.com/",
+      "contactEmail": "jmbandol@hawaii.edu",
+      "logo": "IBOlogo.png",
       "startDate": "2024-09-27",
       "expirationDate": "2025-09-30",
-      "interestAreas": "Technology",
-      "admins": "hello@hawaii.edu"
+      "interestAreas": "Business",
+      "admins": "wassup@hawaii.edu"
     }
   ]
 }
