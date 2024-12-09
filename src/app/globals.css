@@ -1,239 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-#text-box {
-  background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 10px;
-  color: white;
-  padding: 20px;
-  max-width: 500px;
-  width: 90%; /* Adjusted for smaller screens */
-  margin: 0 auto; /* Center on smaller screens */
-}
-
-#textbox2 {
-  background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 10px;
-  color: white;
-  padding: 20px;
-  width: 90%; /* Adjusted for smaller screens */
-  margin: 0 auto;
-}
-
-.montserrat-font {
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
   font-family: 'Montserrat', sans-serif;
 }
 
-.search-dropdown {
-  position: absolute;
-  top: 60px;
-  right: 20px;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-}
-
-.search-dropdown .form-control {
-  width: 200px;
-}
-
-.search-dropdown .btn {
-  margin-left: 10px;
-}
-
-#about-page,
-#add-page,
-#edit-page {
-  background-image: url('/bg-landing.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-  position: relative;
-}
-
-#about-page::before,
-#add-page::before,
-#edit-page::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: inherit;
-  background-size: inherit;
-  background-position: inherit;
-  background-repeat: inherit;
-  filter: blur(5px);
-  z-index: 1;
-}
-
-#about-page > *,
-#add-page > *,
-#edit-page > * {
-  position: relative;
-  z-index: 2;
-}
-
-#landing-page {
-  background-image: url('/bg-landing.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-
-#landing-page::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: inherit;
-  background-size: inherit;
-  background-position: inherit;
-  background-repeat: inherit;
-  filter: blur(5px);
-  z-index: 1;
-}
-
-#landing-page > * {
-  position: relative;
-  z-index: 2;
-}
-
-#sign-in-page,
-#sign-up-page,
-#signout-page {
-  background-image: url('/sign-in-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-html,
 body {
-  --bs-light-rgb: 236, 236, 236;
-  box-sizing: border-box;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-}
-
-.wrapper {
-  box-sizing: border-box;
-  min-height: 100%;
   display: flex;
   flex-direction: column;
+  background-color: #f8f9fa;
 }
 
-.club-image {
-  width: 100%;
-  max-width: 200px;
-  height: auto;
-  object-fit: cover;
-  display: block;
-  margin: 20px auto;
+#root,
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
-h1,
-h2,
-h5 {
-  font-family: 'Tinos', serif;
-  font-size: 2rem;
-  font-weight: 700;
-  text-align: center;
-  margin: 10px;
+.navbar-nav .nav-link {
+  color: white !important;
 }
 
-.transparent-card {
-  background-color: transparent !important;
+.navbar-nav .nav-link:hover {
+  color: #f8f9fa !important;
+  text-decoration: none;
+}
+
+.navbar-nav .dropdown-menu {
+  background-color: #343a40;
   border: none;
 }
 
-#image-box {
-  margin-right: 20px;
+.navbar-nav .dropdown-item {
+  color: white !important;
 }
 
-#about-page-nav {
-  margin: 10px;
-}
-
-#add-club-nav,
-#list-club-nav,
-#admin-club-nav {
-  display: flex;
-  justify-content: center;
-  margin: 10px 5px;
-}
-
-#add-club-nav {
-  width: auto;
-}
-
-#list-club-nav {
-  width: auto;
-}
-
-#admin-club-nav {
-  width: auto;
-}
-
-#da-club-logo {
-  margin: 0 auto;
-}
-
-@media (max-width: 768px) {
-  #text-box,
-  #textbox2 {
-    width: 95%;
-  }
-
-  h1,
-  h2,
-  h5 {
-    font-size: 1.8rem;
-  }
-
-  .club-image {
-    max-width: 150px;
-  }
-
-  #search-dropdown .form-control {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-
-  #search-dropdown .btn {
-    margin-left: 0;
-    width: 100%;
-  }
-
-  #about-page-nav,
-  #add-club-nav,
-  #list-club-nav,
-  #admin-club-nav {
-    flex-direction: column;
-    width: 100%;
-    margin: 5px 0;
-  }
-
-  #landing-page {
-    padding: 20px;
-  }
+.navbar-nav .dropdown-item:hover {
+  background-color: #495057;
+  color: white !important;
 }

@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Row, Col, Carousel } from 'react-bootstrap';
+import { Row, Col, Carousel, Spinner, Container } from 'react-bootstrap';
 import ClubCard from '@/components/ClubCard';
 import { Club } from '@prisma/client';
 import { getAllClubs } from '@/lib/dbActions';
@@ -26,47 +26,100 @@ const BottomMenu = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          minHeight: '100%',
+          backgroundImage: 'url(/uh-blurred.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <Spinner animation="border" variant="light" />
+      </div>
+    );
   }
 
-  const carouselItemStyle = {
-    color: 'white',
-    padding: '20px',
-  };
-
   return (
-    <Row
-      className="align-items-center justify-content-center"
+    <main
       style={{
-        backgroundImage: 'url(/bg-landing.jpg)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundImage: 'url(/uh-blurred.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        minHeight: '100vh',
+        minHeight: '100%',
+        fontFamily: "'Montserrat', sans-serif",
+        padding: '2rem 0',
       }}
     >
-      <Col>
-        <h1 id="textbox2" className="text-center">
-          Clubs Offered at UH Manoa
-        </h1>
-        <Carousel className="">
+      <Container
+        fluid
+        style={{
+          backgroundColor: 'rgba(0, 0, 0, 0.85)',
+          borderRadius: '12px',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.7)',
+          padding: '2rem',
+          color: '#fff',
+          maxWidth: '90%',
+          margin: '0 auto',
+        }}
+      >
+        <Row className="justify-content-center text-center mb-4">
+          <Col>
+            <h1
+              className="mb-3"
+              style={{ fontSize: '2rem', fontWeight: 'bold' }}
+            >
+              Clubs Offered at UH Manoa
+            </h1>
+            <p style={{ fontSize: '1.2rem', color: '#ccc' }}>
+              Explore various student organizations and find the perfect club
+              for you!
+            </p>
+          </Col>
+        </Row>
+        <Carousel className="mb-4" indicators={false}>
           {clubs.map((club) => (
-            <Carousel.Item key={club.id} style={carouselItemStyle}>
-              <ClubCard club={club} userEmail="" />
+            <Carousel.Item key={club.id}>
+              <Row className="justify-content-center">
+                <Col xs={12} md={8}>
+                  <ClubCard club={club} userEmail="Guest" />
+                </Col>
+              </Row>
             </Carousel.Item>
           ))}
         </Carousel>
-        <h2 id="textbox2" className="text-center">
-          To learn more about the Clubs offered at UH Manoa, Create an Account
-          {' '}
-          <Link href="/auth/signup">Here</Link>
-          . If
-          you already have an account,
-          {' '}
-          <Link href="/auth/signin">Sign-in</Link>
-          .
-        </h2>
-      </Col>
-    </Row>
+        <Row className="text-center mt-4">
+          <Col>
+            <h4>
+              To learn more about the clubs offered at UH Manoa,{' '}
+              <Link
+                href="/auth/signup"
+                className="text-info"
+                style={{ fontWeight: 'bold' }}
+              >
+                create an account here
+              </Link>
+              . If you already have an account,
+              {' '}
+              <Link
+                href="/auth/signin"
+                className="text-info"
+                style={{ fontWeight: 'bold' }}
+              >
+                sign in
+              </Link>
+              .
+            </h4>
+          </Col>
+        </Row>
+      </Container>
+    </main>
   );
 };
 

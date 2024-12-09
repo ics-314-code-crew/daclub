@@ -6,19 +6,19 @@ import { prisma } from './prisma';
 
 /**
  * Creates a new user in the database.
- * @param credentials, an object with the following properties: Email , password.
+ * @param credentials, an object with the following properties: Email, password.
  */
 export async function createUser({
   credentials,
   user,
 }: {
   credentials: { email: string; password: string };
-  user: { firstName: string; lastName: string; email: string };
+  user: { firstName: string; lastName: string };
 }): Promise<void> {
   const password = await hash(credentials.password, 10);
   await prisma.user.create({
     data: {
-      email: user.email,
+      email: credentials.email,
       password,
       firstName: user.firstName,
       lastName: user.lastName,
@@ -101,7 +101,7 @@ export async function getAllClubs() {
  */
 export async function updateClub(
   id: number,
-  data: {
+  data: Omit<{
     name: string;
     description: string;
     meetingTime: string;
@@ -109,16 +109,19 @@ export async function updateClub(
     website?: string | null;
     contactEmail?: string | null;
     logo: string;
-    admins: string;
+    admins?: string | null;
     interestAreas: string;
     startDate: string;
     expirationDate: string;
-  },
+  }, 'admins'> & { admins?: string | null },
 ) {
+  const { admins, ...rest } = data;
+
   const formattedData = {
-    ...data,
+    ...rest,
     startDate: new Date(data.startDate),
     expirationDate: new Date(data.expirationDate),
+    ...(admins ? { admins } : {}),
   };
 
   await prisma.club.update({

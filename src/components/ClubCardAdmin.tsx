@@ -13,20 +13,18 @@ const ClubCardAdmin = ({ club }: { club: Club }) => {
     <div className={styles.cardContainer}>
       <Card className={styles.card}>
         {status === 'authenticated' ? (
-          <Link href={`/pages/clubs/${club.id}`} passHref>
-            <Card.Link className={styles.cardLink}>
-              <div className={styles.imageContainer}>
-                <Image
-                  src={club.logo}
-                  alt={`${club.name} Logo`}
-                  className={styles.logoImage}
-                />
-              </div>
-              <Card.Body>
-                <Card.Title className={styles.cardTitle}>{club.name}</Card.Title>
-              </Card.Body>
-            </Card.Link>
-          </Link>
+          <Card.Link href={`/clubs/${club.id}`} className={styles.cardLink}>
+            <div className={styles.imageContainer}>
+              <Image
+                src={club.logo}
+                alt={`${club.name} Logo`}
+                className={styles.logoImage}
+              />
+            </div>
+            <Card.Body>
+              <Card.Title className={styles.cardTitle}>{club.name}</Card.Title>
+            </Card.Body>
+          </Card.Link>
         ) : (
           <div>
             <div className={styles.imageContainer}>

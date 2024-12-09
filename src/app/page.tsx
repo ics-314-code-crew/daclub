@@ -4,11 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useSession } from 'next-auth/react';
-import { Container } from 'react-bootstrap';
-import './globals.css';
 import BottomMenu from '@/components/BottomMenu';
+import LoadingSpinner from '@/components/LoadingSpinner';
 
-/** The Home page. */
 const Home = () => {
   const { status } = useSession();
   const router = useRouter();
@@ -20,16 +18,14 @@ const Home = () => {
   }, [status, router]);
 
   if (status === 'loading') {
-    return <p>Loading...</p>;
+    return <LoadingSpinner />;
   }
 
-  return (
-    <main>
-      <Container fluid>
-        <BottomMenu />
-      </Container>
-    </main>
-  );
+  if (status === 'authenticated') {
+    return null;
+  }
+
+  return <BottomMenu />;
 };
 
 export default Home;

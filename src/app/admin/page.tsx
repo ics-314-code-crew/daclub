@@ -14,32 +14,41 @@ const AdminPage = async () => {
     } | null,
   );
 
-  const clubs: Club[] = await prisma.club.findMany({
-    select: {
-      id: true,
-      name: true,
-      logo: true,
-      website: true,
-      description: true,
-      meetingTime: true,
-      location: true,
-      contactEmail: true,
-      admins: true,
-      startDate: true,
-      expirationDate: true,
-      interestAreas: true,
-    },
-  });
+  const clubs: Club[] = await prisma.club.findMany({});
+
   const clubsWithLinks = clubs.map((club) => ({
     ...club,
     link: club.website || 'https://manoa.hawaii.edu/',
   }));
+
   return (
-    <main id="landing-page">
-      <Container id="list" fluid className="py-3">
+    <main
+      style={{
+        backgroundImage: "url('/uh-blurred.jpg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+        minHeight: '100%',
+        fontFamily: "'Montserrat', sans-serif",
+        padding: '2rem 0',
+      }}
+    >
+      <Container
+        fluid
+        style={{
+          backgroundColor: 'rgba(0, 0, 0, 0.8)',
+          borderRadius: '10px',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.5)',
+          padding: '2rem',
+          color: '#fff',
+          maxWidth: '1200px',
+          margin: '0 auto',
+        }}
+      >
         <Row>
           <Col>
-            <h1 className="text-center">Club List (Admin)</h1>
+            <h2 className="text-white text-center">Manage Clubs (Admin)</h2>
+            <br />
             <Row xs={1} md={2} lg={3} className="g-4">
               {clubsWithLinks.map((club) => (
                 <ClubCardAdmin key={club.id} club={club} />

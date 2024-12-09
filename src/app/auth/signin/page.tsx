@@ -1,46 +1,48 @@
 'use client';
 
 import { useState } from 'react';
-import { signIn } from 'next-auth/react';
-import { Button, Card, Col, Container, Form, Row, Alert } from 'react-bootstrap';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import {
+  Button,
+  Card,
+  Col,
+  Container,
+  Form,
+  Row,
+  Alert,
+} from 'react-bootstrap';
 import Link from 'next/link';
+import { signIn } from 'next-auth/react';
+import { SignInSchema } from '@/lib/validationSchemas';
 
-/** The sign in page. */
+type SignInFormData = {
+  credentials: {
+    email: string;
+    password: string;
+  };
+};
+
 const SignIn = () => {
   const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const target = e.target as typeof e.target & {
-      email: { value: string };
-      password: { value: string };
-    };
-    const email = target.email.value;
-    const password = target.password.value;
-    console.log(email, password);
-    // Validate email and password
-    if (!email.endsWith('@hawaii.edu')) {
-      setError(`Invalid email: ${email}... Email must end with '@hawaii.edu'`);
-      return;
-    }
-    if (!password) {
-      setError('Password cannot be empty');
-      return;
-    }
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<SignInFormData>({
+    resolver: yupResolver(SignInSchema),
+  });
+
+  const onSubmit = async (data: SignInFormData) => {
     const result = await signIn('credentials', {
       redirect: false,
-      email,
-      password,
+      email: data.credentials.email,
+      password: data.credentials.password,
     });
 
     if (result?.error) {
-      if (result.error === 'No user found with the provided email') {
-        setError('No user found with the provided email');
-      } else if (result.error === 'Invalid password') {
-        setError('Invalid password for the provided email');
-      } else {
-        setError('Invalid email or password');
-      }
+      setError(result.error);
     } else {
       setError(null);
       window.location.href = '/';
@@ -48,47 +50,85 @@ const SignIn = () => {
   };
 
   return (
-    <main>
-      <Container id="sign-up-page" fluid className="py-3">
-        <Container>
-          <Row className="justify-content-center">
-            <Col xs={5}>
-              <h1 className="text-center">Sign In</h1>
-              <Card>
-                <Card.Body>
-                  {error && <Alert variant="danger">{error}</Alert>}
-                  <Form method="post" onSubmit={handleSubmit}>
-                    <Form.Group>
-                      <Form.Label>Email</Form.Label>
-                      <Form.Control
-                        name="email"
-                        type="email"
-                        placeholder="Email"
-                        required
-                      />
-                    </Form.Group>
-                    <Form.Group>
-                      <Form.Label>Password</Form.Label>
-                      <Form.Control
-                        name="password"
-                        type="password"
-                        placeholder="Password"
-                        required
-                      />
-                    </Form.Group>
-                    <Button type="submit" className="mt-3">
-                      Signin
-                    </Button>
-                  </Form>
-                </Card.Body>
-                <Card.Footer>
-                  Don&apos;t have an account?
-                  <Link href="/auth/signup">Sign up</Link>
-                </Card.Footer>
-              </Card>
-            </Col>
-          </Row>
-        </Container>
+    <main
+      style={{
+        backgroundImage: "url('/sign-in-bg.jpg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+        minHeight: '100%',
+        fontFamily: "'Montserrat', sans-serif",
+        padding: '2rem 0',
+      }}
+    >
+      <Container
+        fluid
+        style={{
+          backgroundColor: 'rgba(0, 0, 0, 0.8)',
+          borderRadius: '10px',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.5)',
+          padding: '2rem',
+          color: '#fff',
+          maxWidth: '500px',
+          margin: '0 auto',
+        }}
+      >
+        <Row className="justify-content-center">
+          <Col>
+            <Card
+              style={{
+                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                border: 'none',
+              }}
+            >
+              <Card.Body>
+                <h2 className="text-center text-white mb-4">Sign In</h2>
+                {error && <Alert variant="danger">{error}</Alert>}
+                <Form onSubmit={handleSubmit(onSubmit)}>
+                  <Form.Group className="mb-4">
+                    <Form.Label className="text-white">Email</Form.Label>
+                    <Form.Control
+                      {...register('credentials.email')}
+                      type="email"
+                      placeholder="Enter your university email"
+                    />
+                    {errors.credentials?.email && (
+                      <div className="text-danger">
+                        {errors.credentials.email.message}
+                      </div>
+                    )}
+                  </Form.Group>
+                  <Form.Group className="mb-4">
+                    <Form.Label className="text-white">Password</Form.Label>
+                    <Form.Control
+                      {...register('credentials.password')}
+                      type="password"
+                      placeholder="Enter your password"
+                    />
+                    {errors.credentials?.password && (
+                      <div className="text-danger">
+                        {errors.credentials.password.message}
+                      </div>
+                    )}
+                  </Form.Group>
+                  <Button
+                    type="submit"
+                    variant="success"
+                    className="w-100 py-2 mb-3"
+                  >
+                    Sign In
+                  </Button>
+                </Form>
+                <div className="text-center text-white">
+                  Don&apos;t have an account?{' '}
+                  <Link href="/auth/signup" className="text-info">
+                    Sign Up
+                  </Link>
+                </div>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
       </Container>
     </main>
   );

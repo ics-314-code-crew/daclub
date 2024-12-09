@@ -1,55 +1,94 @@
 import * as Yup from 'yup';
 
-export const CreateUserSchema = Yup.object({
+const hawaiiEmailValidationRequired = Yup.string()
+  .required('Email is required')
+  .matches(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Email must be a valid email address')
+  .matches(/^[^\s@]+@hawaii\.edu$/, 'Email must end with @hawaii.edu');
+
+const hawaiiEmailValidationNotRequired = Yup.string().notRequired();
+
+const passwordValidation = Yup.string()
+  .min(6, 'Must be at least 6 characters')
+  .required('Password is required');
+
+const adminsValidationNotRequired = Yup.string()
+  .test(
+    'valid-hawaii-emails',
+    'All admin emails must end with @hawaii.edu',
+    (value) => {
+      if (!value || value.trim() === '') {
+        return true; // Skip validation if the field is empty
+      }
+      const emails = value.split(',').map((email) => email.trim());
+      return emails.every((email) => /^[^\s@]+@hawaii\.edu$/.test(email));
+    },
+  )
+  .notRequired();
+
+const nameValidation = Yup.string().required('This field is required');
+
+const websiteValidation = Yup.string().url('Must be a valid URL').notRequired();
+
+export const SignInSchema = Yup.object({
   credentials: Yup.object({
-    email: Yup.string().email('Invalid email').required(),
-    password: Yup.string().min(6, 'Must be at least 6 characters').required(),
+    email: hawaiiEmailValidationRequired,
+    password: passwordValidation,
+  }),
+});
+
+export const SignUpSchema = Yup.object({
+  credentials: Yup.object({
+    email: hawaiiEmailValidationRequired,
+    password: passwordValidation,
   }),
   user: Yup.object({
-    firstName: Yup.string().required(),
-    lastName: Yup.string().required(),
-    email: Yup.string().email('Invalid email').required(),
+    firstName: nameValidation,
+    lastName: nameValidation,
   }),
 });
 
 export const EditUserSchema = Yup.object({
-  id: Yup.number().required(),
-  email: Yup.string().email('Invalid email').required(),
+  id: Yup.number().required('ID is required'),
+  email: hawaiiEmailValidationRequired,
   role: Yup.mixed().oneOf(['USER', 'SUPER_ADMIN'], 'Invalid role'),
 });
 
 export const AddClubSchema = Yup.object({
-  name: Yup.string().required(),
-  description: Yup.string().required(),
-  meetingTime: Yup.string().required(),
-  location: Yup.string().required(),
-  website: Yup.string()
-    .url('Must be a valid URL')
-    .notRequired(),
-  contactEmail: Yup.string()
-    .email('Must be a valid email')
-    .notRequired(),
-  logo: Yup.string().required(),
-  admins: Yup.string().required(),
-  interestAreas: Yup.string().required(),
-  startDate: Yup.date().required(),
-  expirationDate: Yup.date().required(),
+  name: nameValidation,
+  description: nameValidation,
+  meetingTime: nameValidation,
+  location: nameValidation,
+  website: websiteValidation,
+  contactEmail: hawaiiEmailValidationNotRequired,
+  logo: nameValidation,
+  admins: adminsValidationNotRequired,
+  interestAreas: nameValidation,
+  startDate: Yup.date().required('Start date is required'),
+  expirationDate: Yup.date().required('Expiration date is required'),
 });
 
 export const EditClubSchema = Yup.object({
-  name: Yup.string().required(),
-  description: Yup.string().required(),
-  meetingTime: Yup.string().required(),
-  location: Yup.string().required(),
-  website: Yup.string()
-    .url('Must be a valid URL')
-    .notRequired(),
-  contactEmail: Yup.string()
-    .email('Must be a valid email')
-    .notRequired(),
-  logo: Yup.string().required(),
-  admins: Yup.string().required(),
-  interestAreas: Yup.string().required(),
-  startDate: Yup.string().required(),
-  expirationDate: Yup.string().required(),
+  name: nameValidation,
+  description: nameValidation,
+  meetingTime: nameValidation,
+  location: nameValidation,
+  website: websiteValidation,
+  contactEmail: hawaiiEmailValidationNotRequired,
+  logo: nameValidation,
+  admins: adminsValidationNotRequired,
+  interestAreas: nameValidation,
+  startDate: Yup.string()
+    .required('Start date is required')
+    .test(
+      'valid-date',
+      'Start date must be a valid date in YYYY-MM-DD format',
+      (value) => !Number.isNaN(Date.parse(value || '')),
+    ),
+  expirationDate: Yup.string()
+    .required('Expiration date is required')
+    .test(
+      'valid-date',
+      'Expiration date must be a valid date in YYYY-MM-DD format',
+      (value) => !Number.isNaN(Date.parse(value || '')),
+    ),
 });
