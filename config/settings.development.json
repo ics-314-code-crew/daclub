@@ -51,7 +51,7 @@
     },
     {
       "name": "Ballroom Dance Club",
-      "description": "A club that promotes social and competitive ballroom dance within the UH community.",
+      "description": "A club that promotes social and competitive ballroom dance within the UH community",
       "meetingTime": "Every Tuesday at 7 PM",
       "location": "Studio 3 in the Athletic Complex",
       "website": "https://acmmanoa.org/clubs/ballroom.html",
@@ -61,6 +61,45 @@
       "expirationDate": "2025-09-30",
       "interestAreas": "Ballroom Dance",
       "admins": "wassup@hawaii.edu"
+    },
+    {
+      "name": "Game Dev Club",
+      "description": "An organization for students interested in game development UH Manoa",
+      "meetingTime": "Every Thursday from 7-8 PM",
+      "location": "Computer Science Building",
+      "website": "https://acmmanoa.org/clubs/gamedev.html",
+      "contactEmail": "brandimw@hawaii.edu",
+      "logo": "gamedev.png",
+      "startDate": "2024-10-15",
+      "expirationDate": "2025-09-30",
+      "interestAreas": "Game Development",
+      "admins": "wassup@hawaii.edu"
+    },
+    {
+      "name": "ACM Manoa",
+      "description": "Computer Science Organization at UH Manoa",
+      "meetingTime": "Every Tuesday at 5 PM",
+      "location": "Computer Science Building",
+      "website": "https://acmmanoa.org/",
+      "contactEmail": "president@acmmanoa.org",
+      "logo": "acm.png",
+      "startDate": "2024-09-27",
+      "expirationDate": "2025-09-30",
+      "interestAreas": "Technology",
+      "admins": "hello@hawaii.edu"
+    },
+    {
+      "name": "ACM Manoa",
+      "description": "Computer Science Organization at UH Manoa",
+      "meetingTime": "Every Tuesday at 5 PM",
+      "location": "Computer Science Building",
+      "website": "https://acmmanoa.org/",
+      "contactEmail": "president@acmmanoa.org",
+      "logo": "acm.png",
+      "startDate": "2024-09-27",
+      "expirationDate": "2025-09-30",
+      "interestAreas": "Technology",
+      "admins": "hello@hawaii.edu"
     }
   ]
 }
