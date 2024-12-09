@@ -13,7 +13,6 @@ const AddClub = async () => {
   );
 
   return (
-    // Add your form here
     <main>
       <AddClubForm />
     </main>

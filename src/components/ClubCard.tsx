@@ -1,35 +1,97 @@
 'use client';
 
-import { useSession } from 'next-auth/react';
+import { useState } from 'react';
 import { Club } from '@prisma/client';
-import { Card, Image } from 'react-bootstrap';
-import Link from 'next/link';
+import { Card, Image, Button, OverlayTrigger, Tooltip, Toast } from 'react-bootstrap';
+import styles from './ClubCard.module.css';
 
-/* Renders a single row in the List Club table. See list/page.tsx. */
-const ClubCard = ({ club }: { club: Club }) => {
-  const { status } = useSession();
+const ClubCard = ({ club, userEmail }: { club: Club; userEmail: string }) => {
+  const adminEmails = club.admins ? club.admins.split(',').map((email) => email.trim()) : [];
+  const canEdit = adminEmails.includes(userEmail);
+
+  const [showToast, setShowToast] = useState(false);
+
+  const handleCopyEmails = () => {
+    if (adminEmails.length > 0) {
+      navigator.clipboard.writeText(adminEmails.join(';'));
+      setShowToast(true);
+      setTimeout(() => setShowToast(false), 2000);
+    }
+  };
+
+  const isGuest = userEmail === 'Guest';
 
   return (
-    <Card className="h-100 text-center mx-auto">
-      {status === 'authenticated' ? (
-        <Link href={`/pages/clubs/${club.id}`} passHref>
-          <Card.Link as="a">
-            <Image src={club.logo} width={100} className="club-image" />
+    <div className={styles.cardContainer}>
+      <Card className={styles.card}>
+        {!isGuest ? (
+          <Card.Link href={`/clubs/${club.id}`} className={styles.cardLink}>
+            <div className={styles.imageContainer}>
+              <Image
+                src={club.logo}
+                alt={`${club.name} Logo`}
+                className={styles.logoImage}
+              />
+            </div>
             <Card.Body>
-              <Card.Title>{club.name}</Card.Title>
+              <Card.Title className={styles.cardTitle}>{club.name}</Card.Title>
             </Card.Body>
           </Card.Link>
-        </Link>
-      ) : (
-        <Card>
-          <Image src={club.logo} width={100} className="club-image" alt={club.name} />
-          <Card.Body>
-            <Card.Title>{club.name}</Card.Title>
-            <Card.Text>{club.description}</Card.Text>
-          </Card.Body>
-        </Card>
-      )}
-    </Card>
+        ) : (
+          <div className={styles.cardLink} style={{ cursor: 'default' }}>
+            <div className={styles.imageContainer}>
+              <Image
+                src={club.logo}
+                alt={`${club.name} Logo`}
+                className={styles.logoImage}
+              />
+            </div>
+            <Card.Body>
+              <Card.Title className={styles.cardTitle}>{club.name}</Card.Title>
+            </Card.Body>
+          </div>
+        )}
+        {!isGuest && (
+          <Card.Footer className={styles.cardFooter}>
+            {canEdit && (
+              <a href={`/edit/${club.id}`} className={styles.cardLink}>
+                <Button variant="outline-primary" className={styles.editButton}>
+                  Edit Club
+                </Button>
+              </a>
+            )}
+            {!canEdit && (
+              <OverlayTrigger
+                placement="top"
+                overlay={(
+                  <Tooltip>
+                    {adminEmails.length > 0
+                      ? 'Click to copy admin emails'
+                      : 'No admins available.'}
+                  </Tooltip>
+                )}
+              >
+                <Button
+                  variant="outline-primary"
+                  className={styles.editButton}
+                  onClick={handleCopyEmails}
+                  disabled={adminEmails.length === 0}
+                >
+                  Copy Admin Emails
+                </Button>
+              </OverlayTrigger>
+            )}
+          </Card.Footer>
+        )}
+      </Card>
+      <Toast
+        show={showToast}
+        onClose={() => setShowToast(false)}
+        className={styles.toast}
+      >
+        <Toast.Body>Copied to Clipboard!</Toast.Body>
+      </Toast>
+    </div>
   );
 };
 

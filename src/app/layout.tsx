@@ -15,16 +15,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
-  const classString = `${inter.className} wrapper`;
+}) {
   return (
     <html lang="en">
-      <body className={classString}>
+      <body className={`${inter.className}`}>
         <Providers>
           <NavBar />
-          {children}
+          <main style={{ flex: '1 0 auto' }}>{children}</main>
           <Footer />
         </Providers>
       </body>

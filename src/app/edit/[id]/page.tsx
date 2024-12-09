@@ -15,7 +15,7 @@ export default async function EditClubPage({ params }: { params: { id: string } 
 
   if (!id) {
     return (
-      <main>
+      <main id="edit-page">
         <h2>Error</h2>
         <p>Club ID is missing.</p>
       </main>
@@ -23,7 +23,7 @@ export default async function EditClubPage({ params }: { params: { id: string } 
   }
 
   return (
-    <main>
+    <main id="edit-page">
       <EditClubForm clubId={id} />
     </main>
   );

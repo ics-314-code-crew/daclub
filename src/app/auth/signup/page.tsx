@@ -1,152 +1,188 @@
 'use client';
 
-import { signIn } from 'next-auth/react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import * as Yup from 'yup';
-import { Card, Col, Container, Button, Form, Row } from 'react-bootstrap';
-import { createUser } from '@/lib/dbActions';
+import {
+  Button,
+  Card,
+  Col,
+  Container,
+  Form,
+  Row,
+  Alert,
+} from 'react-bootstrap';
 import Link from 'next/link';
+import { signIn } from 'next-auth/react';
+import { SignUpSchema } from '@/lib/validationSchemas';
+import { createUser } from '@/lib/dbActions';
 
-type SignUpForm = {
-  firstName: string;
-  lastName: string;
-  email: string;
-  password: string;
-  confirmPassword: string;
-  // acceptTerms: boolean;
+type SignUpFormData = {
+  user: {
+    firstName: string;
+    lastName: string;
+  };
+  credentials: {
+    email: string;
+    password: string;
+  };
 };
 
-/** The sign up page. */
 const SignUp = () => {
-  const validationSchema = Yup.object().shape({
-    firstName: Yup.string().required('First Name is required'),
-    lastName: Yup.string().required('Last Name is required'),
-    email: Yup.string().required('Email is required').email('Email is invalid'),
-    password: Yup.string()
-      .required('Password is required')
-      .min(6, 'Password must be at least 6 characters')
-      .max(40, 'Password must not exceed 40 characters'),
-    confirmPassword: Yup.string()
-      .required('Confirm Password is required')
-      .oneOf([Yup.ref('password'), ''], 'Confirm Password does not match'),
-  });
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
 
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
-  } = useForm<SignUpForm>({
-    resolver: yupResolver(validationSchema),
+  } = useForm<SignUpFormData>({
+    resolver: yupResolver(SignUpSchema),
   });
 
-  const onSubmit = async (data: SignUpForm) => {
-    // console.log(JSON.stringify(data, null, 2));
-    await createUser({
-      credentials: {
-        email: data.email,
-        password: data.password,
-      },
-      user: {
-        firstName: data.firstName,
-        lastName: data.lastName,
-        email: data.email,
-      },
-    });
-    // After creating, signIn with redirect to the add page
-    await signIn('credentials', { callbackUrl: '/add', ...data });
+  const onSubmit = async (data: SignUpFormData) => {
+    setLoading(true);
+    setError(null);
+
+    try {
+      await createUser(data);
+
+      const result = await signIn('credentials', {
+        redirect: false,
+        email: data.credentials.email,
+        password: data.credentials.password,
+      });
+
+      if (result?.error) {
+        setError(result.error);
+      } else {
+        window.location.href = '/';
+      }
+    } catch (err) {
+      setError('Failed to create account. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <main>
-      <Container id="sign-up-page" fluid className="py-3">
-        <Container>
-          <Row className="justify-content-center">
-            <Col xs={5}>
-              <h1 className="text-center">Sign Up</h1>
-              <Card>
-                <Card.Body>
-                  <Form onSubmit={handleSubmit(onSubmit)}>
-                    <Row>
-                      <Col>
-                        <Form.Group className="form-group">
-                          <Form.Label>First Name</Form.Label>
-                          <input
-                            type="text"
-                            {...register('firstName')}
-                            className={`form-control ${errors.firstName ? 'is-invalid' : ''}`}
-                          />
-                          <div className="invalid-feedback">{errors.firstName?.message}</div>
-                        </Form.Group>
-                      </Col>
-                      <Col>
-                        <Form.Group className="form-group">
-                          <Form.Label>Last Name</Form.Label>
-                          <input
-                            type="text"
-                            {...register('lastName')}
-                            className={`form-control ${errors.lastName ? 'is-invalid' : ''}`}
-                          />
-                          <div className="invalid-feedback">{errors.lastName?.message}</div>
-                        </Form.Group>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col>
-                        <Form.Group className="form-group">
-                          <Form.Label>UH Email</Form.Label>
-                          <input
-                            type="text"
-                            {...register('email')}
-                            className={`form-control ${errors.email ? 'is-invalid' : ''}`}
-                          />
-                          <div className="invalid-feedback">{errors.email?.message}</div>
-                        </Form.Group>
-                      </Col>
-                    </Row>
-                    <Form.Group className="form-group">
-                      <Form.Label>Password</Form.Label>
-                      <input
-                        type="password"
-                        {...register('password')}
-                        className={`form-control ${errors.password ? 'is-invalid' : ''}`}
-                      />
-                      <div className="invalid-feedback">{errors.password?.message}</div>
-                    </Form.Group>
-                    <Form.Group className="form-group">
-                      <Form.Label>Confirm Password</Form.Label>
-                      <input
-                        type="password"
-                        {...register('confirmPassword')}
-                        className={`form-control ${errors.confirmPassword ? 'is-invalid' : ''}`}
-                      />
-                      <div className="invalid-feedback">{errors.confirmPassword?.message}</div>
-                    </Form.Group>
-                    <Form.Group className="form-group py-3">
-                      <Row>
-                        <Col>
-                          <Button type="submit" className="btn btn-primary">
-                            Register
-                          </Button>
-                        </Col>
-                        <Col>
-                          <Button type="button" onClick={() => reset()} className="btn btn-warning float-right">
-                            Reset
-                          </Button>
-                        </Col>
-                      </Row>
-                    </Form.Group>
-                  </Form>
-                </Card.Body>
-                <Card.Footer>
+    <main
+      style={{
+        backgroundImage: "url('/sign-in-bg.jpg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+        minHeight: '100%',
+        fontFamily: "'Montserrat', sans-serif",
+        padding: '2rem 0',
+      }}
+    >
+      <Container
+        fluid
+        style={{
+          backgroundColor: 'rgba(0, 0, 0, 0.8)',
+          borderRadius: '10px',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.5)',
+          padding: '2rem',
+          color: '#fff',
+          maxWidth: '600px',
+          margin: '0 auto',
+        }}
+      >
+        <Row className="justify-content-center">
+          <Col>
+            <Card
+              style={{
+                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                border: 'none',
+              }}
+            >
+              <Card.Body>
+                <h2 className="text-center text-white mb-4">Sign Up</h2>
+                {error && <Alert variant="danger">{error}</Alert>}
+                <Form onSubmit={handleSubmit(onSubmit)}>
+                  <Row>
+                    <Col>
+                      <Form.Group className="mb-4">
+                        <Form.Label className="text-white">
+                          First Name
+                        </Form.Label>
+                        <Form.Control
+                          {...register('user.firstName')}
+                          type="text"
+                          placeholder="Enter your first name"
+                        />
+                        {errors.user?.firstName && (
+                          <div className="text-danger">
+                            {errors.user.firstName.message}
+                          </div>
+                        )}
+                      </Form.Group>
+                    </Col>
+                    <Col>
+                      <Form.Group className="mb-4">
+                        <Form.Label className="text-white">
+                          Last Name
+                        </Form.Label>
+                        <Form.Control
+                          {...register('user.lastName')}
+                          type="text"
+                          placeholder="Enter your last name"
+                        />
+                        {errors.user?.lastName && (
+                          <div className="text-danger">
+                            {errors.user.lastName.message}
+                          </div>
+                        )}
+                      </Form.Group>
+                    </Col>
+                  </Row>
+                  <Form.Group className="mb-4">
+                    <Form.Label className="text-white">UH Email</Form.Label>
+                    <Form.Control
+                      {...register('credentials.email')}
+                      type="email"
+                      placeholder="Enter your university email"
+                    />
+                    {errors.credentials?.email && (
+                      <div className="text-danger">
+                        {errors.credentials.email.message}
+                      </div>
+                    )}
+                  </Form.Group>
+                  <Form.Group className="mb-4">
+                    <Form.Label className="text-white">Password</Form.Label>
+                    <Form.Control
+                      {...register('credentials.password')}
+                      type="password"
+                      placeholder="Enter your password"
+                    />
+                    {errors.credentials?.password && (
+                      <div className="text-danger">
+                        {errors.credentials.password.message}
+                      </div>
+                    )}
+                  </Form.Group>
+                  <Button
+                    type="submit"
+                    variant="success"
+                    className="w-100 py-2 mb-3"
+                    disabled={loading}
+                  >
+                    {loading ? 'Processing...' : 'Sign Up'}
+                  </Button>
+                </Form>
+                <div className="text-center text-white">
                   Already have an account?
-                  <Link href="/auth/signin">Sign in</Link>
-                </Card.Footer>
-              </Card>
-            </Col>
-          </Row>
-        </Container>
+                  {' '}
+                  <Link href="/auth/signin" className="text-info">
+                    Sign In
+                  </Link>
+                </div>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
       </Container>
     </main>
   );

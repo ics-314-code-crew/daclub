@@ -1,12 +1,9 @@
-/* eslint-disable react/jsx-indent, @typescript-eslint/indent */
-
 'use client';
 
 import { useSession } from 'next-auth/react';
-import { usePathname, useRouter } from 'next/navigation';
-import { useState } from 'react';
-import { Container, Nav, Navbar, NavDropdown, Image, Form, FormControl, Button, Alert } from 'react-bootstrap';
-import { BoxArrowRight, Lock, PersonFill, PersonPlusFill, Search } from 'react-bootstrap-icons';
+import { usePathname } from 'next/navigation';
+import { Navbar, Container, Nav, NavDropdown, Image } from 'react-bootstrap';
+import { BoxArrowRight, Lock } from 'react-bootstrap-icons';
 
 const NavBar: React.FC = () => {
   const { data: session } = useSession();
@@ -14,109 +11,94 @@ const NavBar: React.FC = () => {
   const userWithRole = session?.user as { email: string; role: string };
   const role = userWithRole?.role;
   const pathName = usePathname();
-  const router = useRouter();
-  const [showSearch, setShowSearch] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
-
-  const toggleSearch = () => {
-    setShowSearch(!showSearch);
-  };
-
-  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchQuery(event.target.value);
-    setErrorMessage(''); // Clear error message when user starts typing
-  };
-
-  const handleSearchSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    if (!searchQuery.trim()) {
-      setErrorMessage('Invalid search.');
-      return;
-    }
-    router.push(`/resultsPage?query=${searchQuery}`);
-  };
 
   return (
-    <Navbar style={{ backgroundColor: '#59ce5a' }} expand="lg">
+    <Navbar
+      expand="lg"
+      className="bg-dark text-white shadow"
+      style={{ position: 'sticky', top: 0, zIndex: 1000 }}
+    >
       <Container>
-        <Nav className="me-auto justify-content-start">
-          <Nav.Link id="about-page-nav" href="/about" active={pathName === '/about'}>
-            About
-          </Nav.Link>
-            {currentUser
-              ? [
-                  <Nav.Link id="add-club-nav" href="/add" key="add" active={pathName === '/add'}>
-                    Add Club
-                  </Nav.Link>,
-                  <Nav.Link id="list-club-nav" href="/list" key="list" active={pathName === '/list'}>
-                    Club List
-                  </Nav.Link>,
-                  // <Nav.Link id="list-friend-nav" href="/friends" key="friends" active={pathName === '/friends'}>
-                  //   Friend List
-                  // </Nav.Link>,
-                ]
-              : ''}
-            {currentUser && role === 'SUPER_ADMIN' ? (
-              <Nav.Link id="admin-club-nav" href="/admin" key="admin" active={pathName === '/admin'}>
-                Manage Clubs
-              </Nav.Link>
-            ) : (
-              ''
-            )}
-        </Nav>
-        <Navbar.Brand href="/" className="w-100 d-flex justify-content-center">
+        <Navbar.Brand href="/" className="d-flex align-items-center">
           <Image
             src="/daClubLogo.png"
-            className="logo fs-2"
-            width={190}
-            height={65}
             alt="Da Club Logo"
+            width={120}
+            height={40}
+            className="me-2"
+            style={{ objectFit: 'contain' }}
           />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto align-items-center">
-            <Nav.Link onClick={toggleSearch} style={{ cursor: 'pointer' }}>
-              <Search size={20} />
+        <Navbar.Toggle aria-controls="navbar-content" />
+        <Navbar.Collapse id="navbar-content">
+          <Nav className="me-auto">
+            <Nav.Link
+              href="/about"
+              className={`text-white ${pathName === '/about' ? 'fw-bold' : ''}`}
+            >
+              About
             </Nav.Link>
-            {showSearch && (
-              <div className="search-dropdown">
-                <Form className="d-flex" onSubmit={handleSearchSubmit}>
-                  <FormControl
-                    type="search"
-                    placeholder="Search"
-                    className="me-2"
-                    aria-label="Search"
-                    value={searchQuery}
-                    onChange={handleSearchChange}
-                  />
-                  <Button type="submit" variant="outline-success">Search</Button>
-                </Form>
-                {errorMessage && <Alert variant="danger" className="mt-2">{errorMessage}</Alert>}
-              </div>
+            {currentUser && (
+              <>
+                <Nav.Link
+                  href="/add"
+                  className={`text-white ${
+                    pathName === '/add' ? 'fw-bold' : ''
+                  }`}
+                >
+                  Add Club
+                </Nav.Link>
+                <Nav.Link
+                  href="/list"
+                  className={`text-white ${
+                    pathName === '/list' ? 'fw-bold' : ''
+                  }`}
+                >
+                  Club List
+                </Nav.Link>
+                {role === 'SUPER_ADMIN' && (
+                  <Nav.Link
+                    href="/admin"
+                    className={`text-white ${
+                      pathName === '/admin' ? 'fw-bold' : ''
+                    }`}
+                  >
+                    Manage Clubs
+                  </Nav.Link>
+                )}
+              </>
             )}
+          </Nav>
+          <Nav className="ms-auto align-items-center">
             {session ? (
-              <NavDropdown id="login-dropdown" title={currentUser}>
-                <NavDropdown.Item id="login-dropdown-sign-out" href="/api/auth/signout">
-                  <BoxArrowRight />
+              <NavDropdown
+                title={(
+                  <span className="text-white">
+                    {`${role === 'SUPER_ADMIN' ? '(Da Club Admin) ' : ''}${currentUser}`}
+                  </span>
+                )}
+                id="user-dropdown"
+                align="end"
+                className="text-white"
+              >
+                <NavDropdown.Item href="/api/auth/signout">
+                  <BoxArrowRight className="me-2" />
                   Sign Out
                 </NavDropdown.Item>
-                <NavDropdown.Item id="login-dropdown-change-password" href="/auth/change-password">
-                  <Lock />
+                <NavDropdown.Item href="/auth/change-password">
+                  <Lock className="me-2" />
                   Change Password
                 </NavDropdown.Item>
               </NavDropdown>
             ) : (
-              <NavDropdown id="login-dropdown" title="Login">
-                <NavDropdown.Item id="login-dropdown-sign-in" href="/auth/signin">
-                  <PersonFill />
-                  Sign In
-                </NavDropdown.Item>
-                <NavDropdown.Item id="login-dropdown-sign-up" href="/auth/signup">
-                  <PersonPlusFill />
-                  Sign Up
-                </NavDropdown.Item>
+              <NavDropdown
+                title={<span className="text-white">Login</span>}
+                id="guest-dropdown"
+                align="end"
+                className="text-white"
+              >
+                <NavDropdown.Item href="/auth/signin">Sign In</NavDropdown.Item>
+                <NavDropdown.Item href="/auth/signup">Sign Up</NavDropdown.Item>
               </NavDropdown>
             )}
           </Nav>

@@ -4,41 +4,52 @@ import { useSession } from 'next-auth/react';
 import { Club } from '@prisma/client';
 import { Card, Image, Button } from 'react-bootstrap';
 import Link from 'next/link';
+import styles from './ClubCard.module.css';
 
-/* Renders a single club card (admin). */
 const ClubCardAdmin = ({ club }: { club: Club }) => {
   const { status } = useSession();
 
   return (
-    <Card className="h-100 text-center mx-auto">
-      {status === 'authenticated' ? (
-        <Link href={`/pages/clubs/${club.id}`} passHref>
-          <Card.Link as="a">
-            <Image src={club.logo} width={100} className="club-image" />
+    <div className={styles.cardContainer}>
+      <Card className={styles.card}>
+        {status === 'authenticated' ? (
+          <Card.Link href={`/clubs/${club.id}`} className={styles.cardLink}>
+            <div className={styles.imageContainer}>
+              <Image
+                src={club.logo}
+                alt={`${club.name} Logo`}
+                className={styles.logoImage}
+              />
+            </div>
             <Card.Body>
-              <Card.Title>{club.name}</Card.Title>
+              <Card.Title className={styles.cardTitle}>{club.name}</Card.Title>
             </Card.Body>
           </Card.Link>
-        </Link>
-      ) : (
-        <Card>
-          <Image src={club.logo} width={100} className="club-image" alt={club.name} />
-          <Card.Body>
-            <Card.Title>{club.name}</Card.Title>
-            <Card.Text>{club.description}</Card.Text>
-          </Card.Body>
-        </Card>
-      )}
-      {status === 'authenticated' && (
-      <Card.Footer>
-        <Link href={`/edit/${club.id}`} passHref>
-          <Button variant="outline-primary" className="w-100">
-            Edit Club
-          </Button>
-        </Link>
-      </Card.Footer>
-      )}
-    </Card>
+        ) : (
+          <div>
+            <div className={styles.imageContainer}>
+              <Image
+                src={club.logo}
+                alt={`${club.name} Logo`}
+                className={styles.logoImage}
+              />
+            </div>
+            <Card.Body>
+              <Card.Title className={styles.cardTitle}>{club.name}</Card.Title>
+            </Card.Body>
+          </div>
+        )}
+        {status === 'authenticated' && (
+          <Card.Footer className={styles.cardFooter}>
+            <Link href={`/edit/${club.id}`} passHref>
+              <Button variant="outline-primary" className={styles.editButton}>
+                Edit Club
+              </Button>
+            </Link>
+          </Card.Footer>
+        )}
+      </Card>
+    </div>
   );
 };
 

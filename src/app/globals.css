@@ -1,139 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-#text-box {
-  background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 10px;
-  color: white;
-  padding: 20px;
-  max-width: 500px;
-  width: 100%;
-}
-
-#textbox2 {
-  background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 10px;
-  color: white;
-  padding: 20px;
-}
-
-.montserrat-font {
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
   font-family: 'Montserrat', sans-serif;
 }
 
-.search-dropdown {
-  position: absolute;
-  top: 60px; /* Adjust as needed */
-  right: 20px; /* Adjust as needed */
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-}
-
-.search-dropdown .form-control {
-  width: 200px; /* Adjust as needed */
-}
-
-.search-dropdown .btn {
-  margin-left: 10px;
-}
-
-#landing-page {
-  background-image: url('/bg-landing.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh; /* Adjust the height as needed */
-}
-
-#sign-in-page {
-  background-image: url('/sign-in-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh; /* Adjust the height as needed */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#sign-up-page {
-  background-image: url('/sign-in-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh; /* Adjust the height as needed */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#signout-page {
-  background-image: url('/sign-in-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh; /* Adjust the height as needed */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-html,
 body {
-  --bs-light-rgb: 236, 236, 236;
-  box-sizing: border-box;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-}
-.wrapper {
-  box-sizing: border-box;
-  min-height: 100%;
   display: flex;
   flex-direction: column;
-}
-.club-image {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  background-color: #f8f9fa;
 }
 
-h1,
-h2,
-h5 {
-  font-family: 'Tinos', serif;
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-align: center;
+#root,
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
-.transparent-card {
-  background-color: transparent !important;
+.navbar-nav .nav-link {
+  color: white !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #f8f9fa !important;
+  text-decoration: none;
+}
+
+.navbar-nav .dropdown-menu {
+  background-color: #343a40;
   border: none;
 }
 
-#image-box {
-  margin-right: 20px;
+.navbar-nav .dropdown-item {
+  color: white !important;
 }
 
-#about-page-nav {
-  margin-right: 10px;
-}
-
-#add-club-nav {
-  display: flex;
-  width: 90px;
-  margin-right: 1px;
-}
-
-#list-club-nav {
-  display: flex;
-  width: 90px;
-  margin-left: 1px;
+.navbar-nav .dropdown-item:hover {
+  background-color: #495057;
+  color: white !important;
 }

@@ -1,7 +1,7 @@
 'use client';
 
 import { useSession } from 'next-auth/react';
-import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
+import { Button, Card, Container, Form, FormControl } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import swal from 'sweetalert';
@@ -19,21 +19,20 @@ type ClubFormData = {
   website?: string | null;
   contactEmail?: string | null;
   logo: string;
-  admins: string;
+  admins?: string | null;
   interestAreas: string;
   startDate: string;
   expirationDate: string;
+  members?: string | null;
 };
 
 const EditClubForm = ({ clubId }: { clubId: string }) => {
-  const { data: session, status } = useSession();
+  const { status } = useSession();
   const [isLoading, setIsLoading] = useState(true);
-  const currentUser = session?.user?.email || '';
 
   const {
     register,
     handleSubmit,
-    reset,
     setValue,
     formState: { errors },
   } = useForm({
@@ -55,7 +54,6 @@ const EditClubForm = ({ clubId }: { clubId: string }) => {
         setIsLoading(false);
       }
     };
-
     fetchClubData();
   }, [clubId, setValue]);
 
@@ -69,7 +67,11 @@ const EditClubForm = ({ clubId }: { clubId: string }) => {
 
   const onSubmit = async (data: ClubFormData) => {
     try {
-      await updateClub(Number(clubId), data);
+      const formattedData = {
+        ...data,
+      };
+
+      await updateClub(Number(clubId), formattedData);
       swal('Success', 'Club has been updated.', 'success', {
         timer: 2000,
       });
@@ -79,181 +81,226 @@ const EditClubForm = ({ clubId }: { clubId: string }) => {
   };
 
   return (
-    <Container className="py-3">
-      <Row className="justify-content-center">
-        <Col xs={10}>
-          <Col className="text-center">
-            <h2>Edit Club</h2>
-          </Col>
-          <Card>
-            <Card.Body>
-              <Form onSubmit={handleSubmit(onSubmit)}>
-                <Row>
-                  <Col className="justify-content-start">
-                    <Form.Group>
-                      <Form.Label>Club Name</Form.Label>
-                      <input
-                        type="text"
-                        {...register('name')}
-                        className={`form-control ${errors.name ? 'is-invalid' : ''}`}
-                      />
-                      <div className="invalid-feedback">{errors.name?.message}</div>
-                    </Form.Group>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col className="justify-content-start">
-                    <Form.Group>
-                      <Form.Label>Description</Form.Label>
-                      <input
-                        type="text"
-                        {...register('description')}
-                        className={`form-control ${errors.description ? 'is-invalid' : ''}`}
-                      />
-                      <div className="invalid-feedback">{errors.description?.message}</div>
-                    </Form.Group>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col className="justify-content-start">
-                    <Form.Group>
-                      <Form.Label>Meeting Time</Form.Label>
-                      <input
-                        type="text"
-                        {...register('meetingTime')}
-                        className={`form-control ${errors.meetingTime ? 'is-invalid' : ''}`}
-                      />
-                      <div className="invalid-feedback">{errors.meetingTime?.message}</div>
-                    </Form.Group>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col className="justify-content-start">
-                    <Form.Group>
-                      <Form.Label>Location</Form.Label>
-                      <input
-                        type="text"
-                        {...register('location')}
-                        className={`form-control ${errors.location ? 'is-invalid' : ''}`}
-                      />
-                      <div className="invalid-feedback">{errors.location?.message}</div>
-                    </Form.Group>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col className="justify-content-start">
-                    <Form.Group>
-                      <Form.Label>Website URL</Form.Label>
-                      <input
-                        type="text"
-                        {...register('website')}
-                        className={`form-control ${errors.website ? 'is-invalid' : ''}`}
-                      />
-                      <div className="invalid-feedback">{errors.website?.message}</div>
-                    </Form.Group>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col className="justify-content-start">
-                    <Form.Group>
-                      <Form.Label>Contact Email</Form.Label>
-                      <input
-                        type="text"
-                        {...register('contactEmail')}
-                        className={`form-control ${errors.contactEmail ? 'is-invalid' : ''}`}
-                      />
-                      <div className="invalid-feedback">{errors.contactEmail?.message}</div>
-                    </Form.Group>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col className="justify-content-start">
-                    <Form.Group>
-                      <Form.Label>Logo</Form.Label>
-                      <input
-                        type="text"
-                        {...register('logo')}
-                        className={`form-control ${errors.logo ? 'is-invalid' : ''}`}
-                      />
-                      <div className="invalid-feedback">{errors.logo?.message}</div>
-                    </Form.Group>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col className="justify-content-start">
-                    <Form.Group>
-                      <Form.Label>Interest Areas</Form.Label>
-                      <input
-                        type="text"
-                        {...register('interestAreas')}
-                        className={`form-control ${errors.interestAreas ? 'is-invalid' : ''}`}
-                      />
-                      <div className="invalid-feedback">{errors.interestAreas?.message}</div>
-                    </Form.Group>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col className="justify-content-start">
-                    <Form.Group>
-                      <Form.Label>Admins</Form.Label>
-                      <input
-                        type="text"
-                        {...register('admins')}
-                        className={`form-control ${errors.admins ? 'is-invalid' : ''}`}
-                      />
-                      <div className="invalid-feedback">{errors.admins?.message}</div>
-                    </Form.Group>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col className="justify-content-start">
-                    <Form.Group>
-                      <Form.Label>Start Date</Form.Label>
-                      <input
-                        type="date"
-                        {...register('startDate')}
-                        className={`form-control ${errors.startDate ? 'is-invalid' : ''}`}
-                      />
-                      <div className="invalid-feedback">{errors.startDate?.message}</div>
-                    </Form.Group>
-                  </Col>
-                  <Col className="justify-content-start">
-                    <Form.Group>
-                      <Form.Label>End Date</Form.Label>
-                      <input
-                        type="date"
-                        {...register('expirationDate')}
-                        className={`form-control ${errors.expirationDate ? 'is-invalid' : ''}`}
-                      />
-                      <div className="invalid-feedback">{errors.expirationDate?.message}</div>
-                    </Form.Group>
-                  </Col>
-                </Row>
-                <input type="hidden" {...register('admins')} value={currentUser} />
-                <Form.Group className="form-group">
-                  <Row className="pt-3">
-                    <Col>
-                      <Button type="submit" variant="primary">
-                        Update
-                      </Button>
-                    </Col>
-                    <Col>
-                      <Button
-                        type="button"
-                        onClick={() => reset()}
-                        variant="warning"
-                        className="d-flex justify-content-end"
-                      >
-                        Reset
-                      </Button>
-                    </Col>
-                  </Row>
-                </Form.Group>
-              </Form>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
+    <Container
+      fluid
+      className="d-flex justify-content-center align-items-center"
+      style={{
+        backgroundImage: "url('/uh-blurred.jpg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+        minHeight: '100%',
+        padding: '3rem',
+      }}
+    >
+      <div
+        style={{
+          backgroundColor: 'rgba(0, 0, 0, 0.7)',
+          borderRadius: '10px',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.5)',
+          padding: '2rem',
+          width: '100%',
+          maxWidth: '900px',
+        }}
+      >
+        <div className="text-center mb-4">
+          <h2 className="text-white">Edit Club</h2>
+          <p className="text-white">
+            Fields marked with
+            {' '}
+            <span style={{ color: 'red' }}>*</span>
+            {' '}
+            are
+            required.
+          </p>
+        </div>
+        <Card className="border-0">
+          <Card.Body>
+            <Form onSubmit={handleSubmit(onSubmit)}>
+              {/* Club Details */}
+              <h5 className="mb-3">Club Details</h5>
+              <hr />
+              <Form.Group className="mb-4">
+                <Form.Label>
+                  Club Name
+                  {' '}
+                  <span style={{ color: 'red' }}>*</span>
+                </Form.Label>
+                <FormControl
+                  type="text"
+                  placeholder="e.g., Hawaii Hiking Club"
+                  {...register('name')}
+                  className={`form-control-lg ${errors.name ? 'is-invalid' : ''}`}
+                />
+                <div className="invalid-feedback">{errors.name?.message}</div>
+              </Form.Group>
+              <Form.Group className="mb-4">
+                <Form.Label>
+                  Description
+                  {' '}
+                  <span style={{ color: 'red' }}>*</span>
+                </Form.Label>
+                <FormControl
+                  as="textarea"
+                  rows={4}
+                  placeholder="Provide a detailed description about the club..."
+                  {...register('description')}
+                  className={`form-control-lg ${errors.description ? 'is-invalid' : ''}`}
+                />
+                <div className="invalid-feedback">
+                  {errors.description?.message}
+                </div>
+              </Form.Group>
+
+              {/* Meeting and Location */}
+              <h5 className="mb-3">Meeting Information</h5>
+              <hr />
+              <Form.Group className="mb-4">
+                <Form.Label>
+                  Meeting Time
+                  {' '}
+                  <span style={{ color: 'red' }}>*</span>
+                </Form.Label>
+                <FormControl
+                  type="text"
+                  placeholder="e.g., Every Tuesday at 5 PM"
+                  {...register('meetingTime')}
+                  className={`form-control-lg ${errors.meetingTime ? 'is-invalid' : ''}`}
+                />
+                <div className="invalid-feedback">
+                  {errors.meetingTime?.message}
+                </div>
+              </Form.Group>
+              <Form.Group className="mb-4">
+                <Form.Label>
+                  Location
+                  {' '}
+                  <span style={{ color: 'red' }}>*</span>
+                </Form.Label>
+                <FormControl
+                  type="text"
+                  placeholder="e.g., Room 101, Student Union"
+                  {...register('location')}
+                  className={`form-control-lg ${errors.location ? 'is-invalid' : ''}`}
+                />
+                <div className="invalid-feedback">
+                  {errors.location?.message}
+                </div>
+              </Form.Group>
+
+              {/* Additional Details */}
+              <h5 className="mb-3">Additional Information</h5>
+              <hr />
+              <Form.Group className="mb-4">
+                <Form.Label>Website URL</Form.Label>
+                <FormControl
+                  type="text"
+                  placeholder="e.g., https://hawaiihikingclub.org"
+                  {...register('website')}
+                  className={`form-control-lg ${errors.website ? 'is-invalid' : ''}`}
+                />
+                <div className="invalid-feedback">
+                  {errors.website?.message}
+                </div>
+              </Form.Group>
+              <Form.Group className="mb-4">
+                <Form.Label>Contact Email</Form.Label>
+                <FormControl
+                  type="text"
+                  placeholder="e.g., contact@hawaiihikingclub.org"
+                  {...register('contactEmail')}
+                  className={`form-control-lg ${errors.contactEmail ? 'is-invalid' : ''}`}
+                />
+                <div className="invalid-feedback">
+                  {errors.contactEmail?.message}
+                </div>
+              </Form.Group>
+              <Form.Group className="mb-4">
+                <Form.Label>Logo</Form.Label>
+                <FormControl
+                  type="text"
+                  placeholder="e.g., https://example.com/logo.png"
+                  {...register('logo')}
+                  className={`form-control-lg ${errors.logo ? 'is-invalid' : ''}`}
+                />
+                <div className="invalid-feedback">{errors.logo?.message}</div>
+              </Form.Group>
+              <Form.Group className="mb-4">
+                <Form.Label>Interest Areas</Form.Label>
+                <FormControl
+                  type="text"
+                  placeholder="e.g., Hiking, Nature, Adventure"
+                  {...register('interestAreas')}
+                  className={`form-control-lg ${errors.interestAreas ? 'is-invalid' : ''}`}
+                />
+                <div className="invalid-feedback">
+                  {errors.interestAreas?.message}
+                </div>
+              </Form.Group>
+              <Form.Group className="mb-4">
+                <Form.Label>Club Admins</Form.Label>
+                <FormControl
+                  type="text"
+                  disabled
+                  {...register('admins')}
+                  className="form-control-lg"
+                />
+              </Form.Group>
+              <Form.Group className="mb-4">
+                <Form.Label>Members</Form.Label>
+                <FormControl
+                  type="text"
+                  placeholder="e.g., member1@hawaii.edu, member2@hawaii.edu"
+                  {...register('members')}
+                  className={`form-control-lg ${errors.members ? 'is-invalid' : ''}`}
+                />
+                <div className="invalid-feedback">{errors.members?.message}</div>
+              </Form.Group>
+
+              {/* Dates */}
+              <h5 className="mb-3">Dates</h5>
+              <hr />
+              <Form.Group className="mb-4">
+                <Form.Label>
+                  Start Date
+                  {' '}
+                  <span style={{ color: 'red' }}>*</span>
+                </Form.Label>
+                <FormControl
+                  type="date"
+                  {...register('startDate')}
+                  className={`form-control-lg ${errors.startDate ? 'is-invalid' : ''}`}
+                />
+                <div className="invalid-feedback">
+                  {errors.startDate?.message}
+                </div>
+              </Form.Group>
+              <Form.Group className="mb-4">
+                <Form.Label>
+                  Expiration Date
+                  {' '}
+                  <span style={{ color: 'red' }}>*</span>
+                </Form.Label>
+                <FormControl
+                  type="date"
+                  {...register('expirationDate')}
+                  className={`form-control-lg ${errors.expirationDate ? 'is-invalid' : ''}`}
+                />
+                <div className="invalid-feedback">
+                  {errors.expirationDate?.message}
+                </div>
+              </Form.Group>
+
+              {/* Actions */}
+              <Form.Group className="d-flex justify-content-between">
+                <Button type="submit" variant="primary" className="px-5">
+                  Update
+                </Button>
+              </Form.Group>
+            </Form>
+          </Card.Body>
+        </Card>
+      </div>
     </Container>
   );
 };
