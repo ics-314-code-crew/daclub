@@ -3,7 +3,7 @@
 import { useSession } from 'next-auth/react';
 import { usePathname } from 'next/navigation';
 import { Navbar, Container, Nav, NavDropdown, Image } from 'react-bootstrap';
-import { BoxArrowRight, Lock, PersonCircle } from 'react-bootstrap-icons';
+import { BoxArrowRight, Lock, PersonCircle, Trash } from 'react-bootstrap-icons';
 
 const NavBar: React.FC = () => {
   const { data: session } = useSession();
@@ -92,6 +92,10 @@ const NavBar: React.FC = () => {
                 <NavDropdown.Item href="/auth/change-password">
                   <Lock className="me-2" />
                   Change Password
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/auth/delete-account">
+                  <Trash className="me-2 red-text" />
+                  <span className="red-text">Delete Account</span>
                 </NavDropdown.Item>
               </NavDropdown>
             ) : (
