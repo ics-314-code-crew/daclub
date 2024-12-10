@@ -23,7 +23,7 @@ const ProfilePage = () => {
     <Container>
       <h1 className="text-center mt-5">Profile</h1>
       <div className="profile-div">
-        <div className="profile-image-info mt-5 mx-5">
+        <div className="profile-image-info mt-2 mx-5">
           <Image
             src={profile}
             alt="Profile Picture"
@@ -33,7 +33,7 @@ const ProfilePage = () => {
             className="profile-image mb-5 mx-5"
           />
         </div>
-        <div className="profile-info mt-5 mx-5">
+        <div className="profile-info mx-5">
           <div className="text-size">
             <strong>First Name: </strong>
             <br />
