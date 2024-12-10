@@ -46,4 +46,5 @@ model Club {
   expirationDate  DateTime
   interestAreas   String
   members         String?
+  imageLocations  String[]
 }

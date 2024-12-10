@@ -26,12 +26,18 @@
   }  
   
   .imageContainer {
-    background-color: #fff;
+    /* background-color: #fff;
     padding: 0.15rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 150px; */
     height: 150px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
   }
   
   .logoImage {

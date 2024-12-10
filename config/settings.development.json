@@ -8,7 +8,8 @@
       "role": "SUPER_ADMIN",
       "profileImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJa_CcFSwA2X0Y-kYFsSxHaiPE5Z2EOd50FA&s"
     },
-    { "firstName": "john", 
+    {
+      "firstName": "john", 
       "lastName": "Foo", 
       "email": "john@hawaii.edu", 
       "password": "changeme", 
@@ -54,7 +55,12 @@
       "expirationDate": "2025-12-31",
       "interestAreas": "Technology",
       "admins": "hello@hawaii.edu",
-      "members": "wassup@hawaii.edu,hello@hawaii.edu"
+      "members": "wassup@hawaii.edu,hello@hawaii.edu",
+      "imageLocations": [
+        "https://www.brookings.edu/wp-content/uploads/2017/11/metro_20171121_tech-empowers-tech-polarizes-mark-muro.jpg?quality=75&w=1500",
+        "https://techcrunch.com/wp-content/uploads/2022/04/global_blue_tech.jpg",
+        "https://static.wikia.nocookie.net/skylanders/images/d/d7/TechSymbolSkylanders.png/revision/latest?cb=20160925223504"
+      ]
     },
     {
       "name": "Photography Club",
@@ -68,7 +74,11 @@
       "expirationDate": "2025-12-25",
       "interestAreas": "Photography",
       "admins": "wassup@hawaii.edu",
-      "members": "wassup@hawaii.edu,hello@hawaii.edu"
+      "members": "wassup@hawaii.edu,hello@hawaii.edu",
+      "imageLocations": [
+        "https://thedispatchonline.net/wp-content/uploads/2022/03/IMG_5088-900x600.jpg",
+        "https://www.parkorchards.org.au/site/DefaultSite/filesystem/images/Clubs/Photography%20S.jpeg"
+      ]
     }
   ]
 }

@@ -52,10 +52,15 @@ export async function getClubById(id: number) {
       startDate: club.startDate.toISOString().split('T')[0],
       expirationDate: club.expirationDate.toISOString().split('T')[0],
       members: club.members || '',
+      imageLocations: club.imageLocations || [],
     }
     : null;
 }
 
+/**
+ * Creates a new club in the database.
+ * @param club, an object with the club's properties.
+ */
 export async function addClub(club: {
   name: string;
   description: string;
@@ -68,6 +73,7 @@ export async function addClub(club: {
   admins: string;
   startDate: Date;
   expirationDate: Date;
+  imageLocations: string[];
 }) {
   await prisma.club.create({
     data: {
@@ -82,6 +88,7 @@ export async function addClub(club: {
       admins: club.admins,
       startDate: new Date(club.startDate),
       expirationDate: new Date(club.expirationDate),
+      imageLocations: club.imageLocations,
     },
   });
 
@@ -115,15 +122,17 @@ export async function updateClub(
     interestAreas: string;
     startDate: string;
     expirationDate: string;
+    imageLocations?: string[];
   }, 'admins'> & { admins?: string | null },
 ) {
-  const { admins, ...rest } = data;
+  const { admins, imageLocations, ...rest } = data;
 
   const formattedData = {
     ...rest,
     startDate: new Date(data.startDate),
     expirationDate: new Date(data.expirationDate),
     ...(admins ? { admins } : {}),
+    ...(imageLocations ? { imageLocations } : {}),
   };
 
   await prisma.club.update({
@@ -134,6 +143,10 @@ export async function updateClub(
   redirect('/list');
 }
 
+/**
+ * Changes a user's password.
+ * @param credentials, the user credentials.
+ */
 export async function changePassword(
   credentials:
   {
@@ -148,4 +161,6 @@ export async function changePassword(
       password,
     },
   });
+
+  redirect('/about');
 }

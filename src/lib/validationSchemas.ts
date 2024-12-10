@@ -82,6 +82,12 @@ export const AddClubSchema = Yup.object({
   interestAreas: nameValidation,
   startDate: Yup.date().required('Start date is required'),
   expirationDate: Yup.date().required('Expiration date is required'),
+  imageLocations: Yup.string()
+    .matches(
+      /^(\s*https?:\/\/\S+\s*,?\s*)*$/,
+      'Images must be a comma-separated list of valid URLs',
+    )
+    .notRequired(),
 });
 
 export const EditClubSchema = Yup.object({
@@ -109,4 +115,10 @@ export const EditClubSchema = Yup.object({
       (value) => !Number.isNaN(Date.parse(value || '')),
     ),
   members: membersValidationNotRequired,
+  imageLocations: Yup.string()
+    .matches(
+      /^(\s*https?:\/\/\S+\s*,?\s*)*$/,
+      'Images must be a comma-separated list of valid URLs',
+    )
+    .notRequired(),
 });

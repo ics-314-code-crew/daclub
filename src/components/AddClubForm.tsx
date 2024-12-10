@@ -43,6 +43,7 @@ const AddClubForm: React.FC = () => {
     admins?: string | null;
     startDate: Date;
     expirationDate: Date;
+    imageLocations?: string | null;
   }) => {
     try {
       const adminsArray = Array.from(
@@ -57,6 +58,9 @@ const AddClubForm: React.FC = () => {
       const processedData = {
         ...data,
         admins: adminsArray.join(','),
+        imageLocations: data.imageLocations
+          ? data.imageLocations.split(',').map((url) => url.trim())
+          : [],
       };
 
       await addClub(processedData);
@@ -187,6 +191,16 @@ const AddClubForm: React.FC = () => {
               {/* Additional Details */}
               <h5 className="mb-3">Additional Information</h5>
               <hr />
+              <Form.Group className="mb-4">
+                <Form.Label>Gallery Images</Form.Label>
+                <FormControl
+                  type="text"
+                  placeholder="e.g., https://example.com/image1.jpg, https://example.com/image2.jpg"
+                  {...register('imageLocations')}
+                  className={`form-control-lg ${errors.imageLocations ? 'is-invalid' : ''}`}
+                />
+                <div className="invalid-feedback">{errors.imageLocations?.message}</div>
+              </Form.Group>
               <Form.Group className="mb-4">
                 <Form.Label>Website URL</Form.Label>
                 <FormControl

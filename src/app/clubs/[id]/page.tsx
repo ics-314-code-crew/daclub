@@ -1,7 +1,5 @@
 import { prisma } from '@/lib/prisma';
 import { Container, Image, Navbar, Row, Col, Card } from 'react-bootstrap';
-import Link from 'next/link';
-import { ArrowLeftCircle } from 'react-bootstrap-icons';
 
 type ClubPageProps = {
   params: { id: string };
@@ -18,7 +16,7 @@ const ClubPage = async ({ params }: ClubPageProps) => {
         className="d-flex justify-content-center align-items-center"
         style={{ minHeight: '100%' }}
       >
-        <h1>Invalid club ID</h1>
+        <h1>Invalid Club ID</h1>
       </Container>
     );
   }
@@ -34,6 +32,8 @@ const ClubPage = async ({ params }: ClubPageProps) => {
       location: true,
       admins: true,
       members: true,
+      imageLocations: true,
+      interestAreas: true,
     },
   });
 
@@ -47,8 +47,6 @@ const ClubPage = async ({ params }: ClubPageProps) => {
       </Container>
     );
   }
-
-  console.log('club.logo in ClubPage:', club.logo);
 
   return (
     <Container
@@ -74,13 +72,6 @@ const ClubPage = async ({ params }: ClubPageProps) => {
         }}
       >
         <Navbar className="mb-4">
-          <Link href="/list">
-            <ArrowLeftCircle
-              width={40}
-              height={40}
-              style={{ color: 'white' }}
-            />
-          </Link>
           <h2 className="text-center w-100" style={{ color: 'white' }}>
             {club.name}
           </h2>
@@ -108,21 +99,60 @@ const ClubPage = async ({ params }: ClubPageProps) => {
             <h5>Meeting Time:</h5>
             <p>{club.meetingTime || 'Not specified'}</p>
             <h5>Description:</h5>
-            <p>{club.description || 'No description provided'}</p>
+            <p>{club.description || 'Not specified'}</p>
+            <h5>Interest Areas:</h5>
+            <p>{club.interestAreas || 'Not specified'}</p>
             {club.admins && (
-              <div>
+              <>
                 <h5>Admin(s):</h5>
-                {club.admins || 'Not specified'}
-              </div>
+                <p>{club.admins || 'Not specified'}</p>
+              </>
             )}
             {club.members && (
-              <div>
+              <>
                 <h5>Members(s):</h5>
-                {club.members || 'Not specified'}
-              </div>
+                <p>{club.members || 'Not specified'}</p>
+              </>
             )}
           </Col>
         </Row>
+        {club.imageLocations && club.imageLocations.length > 0 && (
+          <>
+            <div className="text-center mt-4">
+              <h5>Gallery</h5>
+              <hr />
+            </div>
+            <Row className="mt-3">
+              {club.imageLocations.map((image, index) => (
+                <Col key={image} xs={6} md={4} className="mb-4">
+                  <div
+                    style={{
+                      height: '150px',
+                      overflow: 'hidden',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      borderRadius: '8px',
+                      backgroundColor: '#000',
+                    }}
+                  >
+                    <Image
+                      src={image}
+                      rounded
+                      fluid
+                      style={{
+                        objectFit: 'cover',
+                        maxHeight: '150px',
+                        width: '100%',
+                      }}
+                      alt={`Gallery Image ${index + 1}`}
+                    />
+                  </div>
+                </Col>
+              ))}
+            </Row>
+          </>
+        )}
       </Card>
     </Container>
   );

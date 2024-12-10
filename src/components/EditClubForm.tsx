@@ -11,7 +11,7 @@ import LoadingSpinner from '@/components/LoadingSpinner';
 import { EditClubSchema } from '@/lib/validationSchemas';
 import { useEffect, useState } from 'react';
 
-type ClubFormData = {
+type BaseClubFormData = {
   name: string;
   description: string;
   meetingTime: string;
@@ -24,6 +24,12 @@ type ClubFormData = {
   startDate: string;
   expirationDate: string;
   members?: string | null;
+};
+
+type IteratableClubFormData = BaseClubFormData;
+
+type OnSubmitClubFormData = BaseClubFormData & {
+  imageLocations?: string | null;
 };
 
 const EditClubForm = ({ clubId }: { clubId: string }) => {
@@ -45,7 +51,11 @@ const EditClubForm = ({ clubId }: { clubId: string }) => {
         const club = await getClubById(Number(clubId));
         if (club) {
           Object.keys(club).forEach((key) => {
-            setValue(key as keyof ClubFormData, club[key as keyof ClubFormData]);
+            if (key === 'imageLocations') {
+              setValue('imageLocations', club.imageLocations?.join(','));
+            } else {
+              setValue(key as keyof IteratableClubFormData, club[key as keyof IteratableClubFormData]);
+            }
           });
         }
       } catch (error) {
@@ -54,6 +64,7 @@ const EditClubForm = ({ clubId }: { clubId: string }) => {
         setIsLoading(false);
       }
     };
+
     fetchClubData();
   }, [clubId, setValue]);
 
@@ -65,10 +76,13 @@ const EditClubForm = ({ clubId }: { clubId: string }) => {
     redirect('/auth/signin');
   }
 
-  const onSubmit = async (data: ClubFormData) => {
+  const onSubmit = async (data: OnSubmitClubFormData) => {
     try {
       const formattedData = {
         ...data,
+        imageLocations: data.imageLocations
+          ? data.imageLocations.split(',').map((url) => url.trim())
+          : [],
       };
 
       await updateClub(Number(clubId), formattedData);
@@ -191,6 +205,16 @@ const EditClubForm = ({ clubId }: { clubId: string }) => {
               {/* Additional Details */}
               <h5 className="mb-3">Additional Information</h5>
               <hr />
+              <Form.Group className="mb-4">
+                <Form.Label>Gallery Images</Form.Label>
+                <FormControl
+                  type="text"
+                  placeholder="e.g., https://example.com/image1.jpg, https://example.com/image2.jpg"
+                  {...register('imageLocations')}
+                  className={`form-control-lg ${errors.imageLocations ? 'is-invalid' : ''}`}
+                />
+                <div className="invalid-feedback">{errors.imageLocations?.message}</div>
+              </Form.Group>
               <Form.Group className="mb-4">
                 <Form.Label>Website URL</Form.Label>
                 <FormControl
