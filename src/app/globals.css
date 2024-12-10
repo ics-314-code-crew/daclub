@@ -62,3 +62,7 @@ body {
 .text-size {
   font-size: 20px;
 }
+
+.red-text {
+  color: red;
+}

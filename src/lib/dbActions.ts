@@ -28,7 +28,17 @@ export async function createUser({
 
   redirect('/');
 }
-
+/**
+ * Deletes a user from the database.
+ * @param email, the user's id.
+ */
+export async function deleteUser(id: number) {
+  const userId = Number(id);
+  await prisma.user.delete({
+    where: { id: userId },
+  });
+  redirect('/');
+}
 /**
  * Gets a club by its ID.
  * @param id, the club identifier.
