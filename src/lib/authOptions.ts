@@ -81,7 +81,7 @@ const authOptions: NextAuthOptions = {
           email: u.email,
           name: u.name,
           role: u.role,
-          profileImage: u.profileImage as string,
+          profileImage: u.profileImage,
         };
       }
       return token;

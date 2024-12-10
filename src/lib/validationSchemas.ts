@@ -43,6 +43,8 @@ const nameValidation = Yup.string().required('This field is required');
 
 const websiteValidation = Yup.string().url('Must be a valid URL').notRequired();
 
+const profileImageValidation = Yup.string().url('Must be a valid URL').notRequired();
+
 export const SignInSchema = Yup.object({
   credentials: Yup.object({
     email: hawaiiEmailValidationRequired,
@@ -58,6 +60,7 @@ export const SignUpSchema = Yup.object({
   user: Yup.object({
     firstName: nameValidation,
     lastName: nameValidation,
+    profileImage: profileImageValidation,
   }),
 });
 

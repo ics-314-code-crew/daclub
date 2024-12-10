@@ -21,6 +21,7 @@ type SignUpFormData = {
   user: {
     firstName: string;
     lastName: string;
+    profileImage?: string | null;
   };
   credentials: {
     email: string;
@@ -161,6 +162,19 @@ const SignUp = () => {
                       <div className="text-danger">
                         {errors.credentials.password.message}
                       </div>
+                    )}
+                  </Form.Group>
+                  <Form.Group className="mb-4">
+                    <Form.Label className="text-white">Profile Image URL</Form.Label>
+                    <Form.Control
+                      {...register('user.profileImage')}
+                      type="text"
+                      placeholder="Enter your profile image URL"
+                    />
+                    {errors.user?.profileImage && (
+                    <div className="text-danger">
+                      {errors.user.profileImage.message}
+                    </div>
                     )}
                   </Form.Group>
                   <Button
