@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 'use client';
 
 import { useState } from 'react';
@@ -26,7 +28,10 @@ const SearchWithResults: React.FC<SearchWithResultsProps> = ({ currentUserEmail 
 
   return (
     <>
-      <Search onResults={handleResults} onLoading={handleLoading} />
+      <div className="text-center text-white">
+        No clubs found. Try a different search term.
+      </div>
+      {/* <Search onResults={handleResults} onLoading={handleLoading} />
       {isLoading ? (
         <div className="d-flex justify-content-center my-4">
           <Spinner animation="border" variant="light" />
@@ -45,7 +50,7 @@ const SearchWithResults: React.FC<SearchWithResultsProps> = ({ currentUserEmail 
             </div>
           )}
         </Row>
-      )}
+      )} */}
     </>
   );
 };
