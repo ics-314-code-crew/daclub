@@ -18,8 +18,8 @@ async function main() {
       console.error('Email must end with @hawaii.edu');
       process.exit(1);
     }
-
-    console.log(`  Creating user: ${account.firstName} + ${account.lastName} with role: ${role}`);
+    const fullName = `${account.firstName} ${account.lastName}`;
+    console.log(`  Creating user: ${fullName} with role: ${role}`);
     await prisma.user.upsert({
       where: { email: account.email },
       update: {},
@@ -29,6 +29,7 @@ async function main() {
         email: account.email,
         password,
         role,
+        profileImage: account.profileImage,
       },
     });
   });

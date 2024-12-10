@@ -43,3 +43,21 @@ body {
   background-color: #495057;
   color: white !important;
 }
+.profile-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 20px;
+  /* border: 2px solid black;
+  border-radius: 10px;
+  margin-bottom: 50px; */
+}
+.profile-image-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.text-size {
+  font-size: 20px;
+}

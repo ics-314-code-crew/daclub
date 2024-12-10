@@ -5,33 +5,39 @@
       "lastName": "Foo",
       "email": "admin@hawaii.edu",
       "password": "changeme",
-      "role": "SUPER_ADMIN"
+      "role": "SUPER_ADMIN",
+      "profileImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJa_CcFSwA2X0Y-kYFsSxHaiPE5Z2EOd50FA&s"
     },
     { "firstName": "john", 
       "lastName": "Foo", 
       "email": "john@hawaii.edu", 
       "password": "changeme", 
-      "role": "USER" },
+      "role": "USER",
+      "profileImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq5eMRxkFIQMnfAe5p_L-BJUdf6xv6CvD0zw&s"
+    },
     {
       "firstName": "God",
       "lastName": "Mode",
       "email": "godmode@hawaii.edu",
       "password": "changeme",
-      "role": "SUPER_ADMIN"
+      "role": "SUPER_ADMIN",
+      "profileImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwuV6tUMHQdr1QylRKnHObaIYb0rLvvZhqjg&s"
     },
     {
       "firstName": "Hello",
       "lastName": "Kitty",
       "email": "hello@hawaii.edu",
       "password": "changeme",
-      "role": "USER"
+      "role": "USER",
+      "profileImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSIIjIwD70XpdbhG86nei2WLS-XwgFRLy3hw&s"
     },
     {
       "firstName": "Wassup",
       "lastName": "Fool",
       "email": "wassup@hawaii.edu",
       "password": "changeme",
-      "role": "USER"
+      "role": "USER",
+      "profileImage": "https://t3.ftcdn.net/jpg/02/52/27/26/360_F_252272632_AktibshzaSMfZdNaFJTZNMa8z1u64OP5.jpg"
     }
   ],
 

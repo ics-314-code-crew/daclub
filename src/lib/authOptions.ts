@@ -44,6 +44,7 @@ const authOptions: NextAuthOptions = {
           email: user.email,
           name: `${user.firstName} ${user.lastName}`,
           role: user.role,
+          profileImage: user.profileImage,
         };
       },
     }),
@@ -66,6 +67,7 @@ const authOptions: NextAuthOptions = {
           email: token.email,
           name: token.name,
           role: token.role,
+          profileImage: token.profileImage,
         },
       };
     },
@@ -79,6 +81,7 @@ const authOptions: NextAuthOptions = {
           email: u.email,
           name: u.name,
           role: u.role,
+          profileImage: u.profileImage as string,
         };
       }
       return token;

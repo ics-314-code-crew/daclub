@@ -13,7 +13,7 @@ export async function createUser({
   user,
 }: {
   credentials: { email: string; password: string };
-  user: { firstName: string; lastName: string };
+  user: { firstName: string; lastName: string, profileImage: string };
 }): Promise<void> {
   const password = await hash(credentials.password, 10);
   await prisma.user.create({
@@ -22,6 +22,7 @@ export async function createUser({
       password,
       firstName: user.firstName,
       lastName: user.lastName,
+      profileImage: user.profileImage,
     },
   });
 
