@@ -1572,6 +1572,266 @@
         "admins": "hello@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
         "imageLocations": []
+    },
+    {
+        "name": "LIFE (Love Is For Everyone)",
+        "description": "LIFE is a Christian club for students who are interested in having fellowship and fun. This club is committed to providing opportunities for all students to study the bible, get together and have fun while abiding by all established policies of the University. A variety of activities will be conducted ranging from dances and hikes to prayer times and devotionals.",
+        "meetingTime": "n/a",
+        "location": "n/a",
+        "website": "",
+        "contactEmail": "sjpin89@hawaii.edu",
+        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "startDate": "2024-10-08",
+        "expirationDate": "2025-09-30",
+        "interestAreas": "Spiritual/Religious",
+        "admins": "hello@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": []
+    },
+    {
+        "name": "Linguistic Society of Manoa",
+        "description":"The mission of LSM is to promote academic and social activity among the students, staff, and faculty at the University of Hawaiʻi at Mānoa who are interested in linguistics. We are dedicated to the promotion of linguistics, and to making the study of language and linguistics fun, social, inclusive, and interactive.",
+        "meetingTime": "Twice a semester, information provided by email",
+        "location": "Moore Hall 569",
+        "website": "https://manoa.hawaii.edu/linguistics/linguistic-society-of-manoa/?fbclid=PAY2xjawHG2xZleHRuA2FlbQIxMAABpt4z6O7dEdauRyc15VlZWgvpTR-QCleOyh1ku7J7SaOS74HFdkHV5CZ-zQ_aem_hxP0URYx2uuyrUIYPw7isg",
+        "contactEmail": "kbialo@hawaii.edu",
+        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "startDate": "2024-09-27",
+        "expirationDate": "2025-09-30",
+        "interestAreas": "Academic/Professional",
+        "admins": "wassup@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": [
+            "https://th.bing.com/th/id/OIP.0exjZJREPmy4qT39W62SaAHaFj?rs=1&pid=ImgDetMain"
+        ]
+    },
+    {
+        "name": "LOTUS (Lord of the Universe Society)",
+        "description":"The mission of LSM is to promote academic and social activity among the students, staff, and faculty at the University of Hawaiʻi at Mānoa who are interested in linguistics. We are dedicated to the promotion of linguistics, and to making the study of language and linguistics fun, social, inclusive, and interactive.",
+        "meetingTime": "n/a",
+        "location": "n/a",
+        "website": "",
+        "contactEmail": "venkatar@hawaii.edu",
+        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "startDate": "2024-10-08",
+        "expirationDate": "2025-09-30",
+        "interestAreas": "Religious/Spiritual",
+        "admins": "wassup@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": []
+    },
+    {
+        "name": "Manoa Academy of Gamers",
+        "description":"To organize a safe physical space dedicated to the diversity of students at the University of Hawaiʻi at Mānoa (UHM) who may identify themselves as 'gamers'. To promote activities (directly related to playing games or activities around games) structured around campus culture that are inclusive of a variety of communities presently unrepresented at UHM. To acknowledge that gaming and college life can be mutually beneficial to students’ success in assimilating into college life at UHM.",
+        "meetingTime": "Information provided on socials",
+        "location": "UHE iLab",
+        "website": "",
+        "contactEmail": "ayee9@hawaii.edu",
+        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "startDate": "2024-10-15",
+        "expirationDate": "2025-09-30",
+        "interestAreas": "Leisure/Recreational",
+        "admins": "hello@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": [
+            "https://th.bing.com/th/id/OIP.8LC0nU1I3ItzDdLrnbjYIgHaEL?rs=1&pid=ImgDetMain",
+            "https://bloximages.newyork1.vip.townnews.com/manoanow.org/content/tncms/assets/v3/editorial/5/35/5353d782-cafd-11e9-8ed7-5bd091db5203/5d68d9727f515.image.jpg?crop=1763%2C926%2C0%2C124&resize=1200%2C630&order=crop%2Cresize"
+        ]
+    },
+    {
+        "name": "Manoa Economics Association",
+        "description":"The Manoa Economic Association (MEA) aims to support economics students at the University of Hawaii at Manoa (UH Manoa) in overcoming barriers to success by providing comprehensive resources for academic and professional development. MEA is dedicated to fostering a vibrant community that supports economics students in their pursuit of higher education, career advancement, networking opportunities, and research endeavors.",
+        "meetingTime": "n/a",
+        "location": "n/a",
+        "website": "",
+        "contactEmail": "cachob@hawaii.edu",
+        "logo":"https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "startDate": "2024-10-15",
+        "expirationDate": "2025-09-30",
+        "interestAreas": "Academic/Professional",
+        "admins": "wassup@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": []
+    },
+    {
+        "name": "Manoa Scholars Club",
+        "description":"The purpose of the Mānoa Scholars Club is to give students—both incoming and continuing New Warrior Scholars—the opportunity to represent the best and brightest at UH Mānoa both academically and in character. Students who have a stronger commitment to their university are more likely to retain and enhance their success. Many of the scholars were active members in their high schools and community and would like to carry that same sense of pride and commitment as a University of Hawai’i at Mānoa student.",
+        "meetingTime": "n/a",
+        "location": "QLC 001",
+        "website": "https://manoascholarsclub.weebly.com/?c=mkt_w_chnl:aff_geo:all_prtnr:sas_subprtnr:1538097_camp:brand_adtype:txtlnk_ag:weebly_lptype:hp_var:358504&sscid=c1k8_jgdor&utm_source=ShareASale",
+        "contactEmail": "lkubo4@hawaii.edu",
+        "logo":"https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "startDate": "2024-09-27",
+        "expirationDate": "2025-09-30",
+        "interestAreas": "Academic/Professional",
+        "admins": "wassup@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": []
+    },
+    {
+        "name": "Manoa Student Ambassadors",
+        "description":"The Mānoa Student Ambassadors proudly promotes the University of Hawaiʻi at Mānoa. We connect current students with prospective students, parents, alumni, and friends, sharing insights about student life, support services, and programs. As ambassadors, we participate in marketing campaigns and events like Welina Mānoa and Discover Mānoa, showcasing our experiences as Rainbow Warriors and helping others discover all that UH Mānoa has to offer.",
+        "meetingTime": "n/a",
+        "location": "n/a",
+        "website": "",
+        "contactEmail": "tilitile@hawaii.edu",
+        "logo":"https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "startDate": "2024-10-08",
+        "expirationDate": "2025-09-30",
+        "interestAreas": "Academic/Professional",
+        "admins": "wassup@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": []
+    },
+    {
+        "name": "Martial Arts Club",
+        "description":"The Martial Arts Club is for any kind of Martial artist or Martial arts enthusiast who wants to train with and meet other like minded individuals. As in all martial arts, martial arts is about discipline, focus, and helping someone become the best version of themselves by consistently training and bettering themselves. Club activities consist of but are not limited to meetup training sessions, open discussions about similarities and differences in martial arts, drills, practicing/learning forms/katas/sequences and at the end of the day just having fun hanging out and meeting new people at UH. By learning from other martial artists it will not only help improve your overall knowledge but will also hopefully bring about a better understanding of the reasons you do things a certain way or bring to light why there might be a flaw in your technique. Hopefully at the end of the day we can all improve on our abilities and techniques and learn a bunch of new ones as well!",
+        "meetingTime": "n/a",
+        "location": "n/a",
+        "website": "",
+        "contactEmail": "zsteely@hawaii.edu",
+        "logo":"https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "startDate": "2024-10-21",
+        "expirationDate": "2025-09-30",
+        "interestAreas": "Leisure/Sport",
+        "admins": "wassup@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": []
+    },
+    {
+        "name": "Materials Protection Hawaii AMPP Student Chapter",
+        "description":"Stimulate interest in AMPP, the Association for Materials Protection and Performance, a global community of professionals dedicated to materials protection through the advancement of corrosion control and protective coatings.",
+        "meetingTime": "n/a",
+        "location": "n/a",
+        "website": "",
+        "contactEmail": "by34@hawaii.edu",
+        "logo":"https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "startDate": "2024-12-02",
+        "expirationDate": "2025-09-30",
+        "interestAreas": "Academic/Professional",
+        "admins": "hello@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": [
+            "https://th.bing.com/th/id/OIP.4t4hQJSkyXARNGRRfdtYlwHaE8?rs=1&pid=ImgDetMain"
+        ]
+    },
+    {
+        "name": "Math Club at the University of Hawaii at Manoa",
+        "description":"The Math Club at the University of Hawaiʻi at Mānoa is dedicated to fostering a vibrant community for students passionate about mathematics. We aim to create a space where members can explore and deepen their understanding of mathematical concepts, collaborate on problem-solving, and engage in stimulating discussions. Through our events, we connect students with professors and professionals who demonstrate the practical applications of mathematics in various fields, offering insight into how math is used in research, industry, and beyond.",
+        "meetingTime": "n/a",
+        "location": "Keller Hall",
+        "website": "",
+        "contactEmail": "sakuraet@hawaii.edu",
+        "logo":"https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "startDate": "2024-10-15",
+        "expirationDate": "2025-09-30",
+        "interestAreas": "",
+        "admins": "hello@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": [
+            "https://th.bing.com/th/id/OIP.Wv_pzPZcQEJgNK_YNLApnwAAAA?w=171&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+        ]
+    },
+    {
+        "name": "Medical Student Mentorship Program (MSMP)",
+        "description":"The purpose of this organization is to pair current medical students at the John A. Burns School of Medicine (JABSOM) with undergraduate students in Hawaii interested in pursuing a career in medicine.",
+        "meetingTime": "n/a",
+        "location": "John A. Burns School of Medicine (JABSOM)",
+        "website": "https://uhmsmp.com/",
+        "contactEmail": "erinjh@hawaii.edu",
+        "logo":"https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "startDate": "2024-10-15",
+        "expirationDate": "2025-09-30",
+        "interestAreas": "Academic/Professional",
+        "admins": "hello@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": [
+            "https://uhmsmp.com/wp-content/uploads/2023/09/MSMP-Board-23-24-scaled.jpeg",
+            "https://uhmsmp.com/wp-content/uploads/2022/09/cropped-MSMP-Board-22-23-scaled-1.jpg",
+            "https://www.khon2.com/wp-content/uploads/sites/8/2019/11/11-8-uh-nursing.jpg?w=1280&h=720&crop=1"
+        ]
+    },
+    {
+        "name": "Medical Student Pride Alliance",
+        "description":"The purpose of the Medical Student Pride Alliance (MSPA) is to support sexual and gender minority (SGM) diversity efforts within JABSOM and the community by promoting education, safe spaces, awareness, and ongoing discussion of SGM health.",
+        "meetingTime": "n/a",
+        "location": "n/a",
+        "website": "https://www.medpride.org/",
+        "contactEmail": "rich808@hawaii.edu",
+        "logo":"https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "startDate": "2024-09-27",
+        "expirationDate": "2025-09-30",
+        "interestAreas": "Academic/Professional",
+        "admins": "wassup@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": [
+            "https://images.squarespace-cdn.com/content/v1/612bfd25a84af13ad0ada0f8/ab93d91e-d9d0-45f3-a7d0-ead7d9cf8aa4/Copy+of+MSPA+Logo+extended.png?format=1500w"
+        ]
+    },
+    {
+        "name": "Midshipmen Association",
+        "description":"To support the Midshipmen of the Naval ROTC at UH Manoa ",
+        "meetingTime": "n/a",
+        "location": "n/a",
+        "website": "",
+        "contactEmail": "hiram28@hawaii.edu",
+        "logo":"https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "startDate": "2024-12-02",
+        "expirationDate": "2025-09-30",
+        "interestAreas": "Academic/Professional",
+        "admins": "wassup@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": [
+            "https://d1ldvf68ux039x.cloudfront.net/thumbs/photos/2407/8514337/1000w_q95.jpg"
+        ]
+    },
+    {
+        "name": "Moku O Lo'e Student Association",
+        "description":"The mission of  Moku o Lo`e Student Association is to generate a strong student community that enhances professional development, interdisciplinary collaborations, and academic growth.",
+        "meetingTime": "n/a",
+        "location": "n/a",
+        "website": "https://natsci.manoa.hawaii.edu/sasc/post/?permalink=the-moku-o-loe-student-association---himb-opportunity-information-session",
+        "contactEmail": "seaenna@hawaii.edu",
+        "logo":"https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "startDate": "2024-12-10",
+        "expirationDate": "2025-09-30",
+        "interestAreas": "Academic/Professional",
+        "admins": "wassup@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": []
+    },
+    {
+        "name": "Molecular Cell Biology Club at UH Manoa",
+        "description":"The Molecular Cell Biology Club at the University of Hawai’i at Mānoa serves to foster student interest in the field of cell biology, promote extra-curricular educational opportunities, and support student interactions with peers and professionals who have similar interests.",
+        "meetingTime": "See socials or Nat Sci website for more information",
+        "location": "n/a",
+        "website": "https://natsci.manoa.hawaii.edu/sasc/post/?permalink=molecular-cell-biology-club",
+        "contactEmail": "kmmiyamo@hawaii.edu",
+        "logo":"https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "startDate": "2024-09-27",
+        "expirationDate": "2025-09-30",
+        "interestAreas": "Academic/Professional",
+        "admins": "wassup@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": []
+    },
+    {
+        "name": "Mortar Board National Honor Society Hui Po'okela Chapter at the University Of Hawaiʻi at Mānoa",
+        "description":"Mortar Board Senior National Honor Society ​is one of the oldest organizations at the University of Hawai'i at Mānoa. This is a national collegiate honor society for students in their senior year. Each chapter is typically comprised of only a handful of carefully selected applicants for the year. Potential members are chosen based on how they measure in accord with Mortar Board's key values: scholarship, leadership, and service. Those who excel in said values are then carefully examined through a series of interviews hosted by the chapter's current members. Once in Mortar Board, you will engage in various community service and fundraising activities. This honor society is more than just prestige, but rather, an opportunity for every undergraduate senior to make a local impact in their campus and community before they graduate. Once in Mortar Board, every member will engage in various community service and fundraising activities. We not only help support the University of Hawaiʻi and the Oʻahu community but above all, we are making a global impact by building and growing the best leaders of tomorrow.",
+        "meetingTime": "n/a",
+        "location": "n/a",
+        "website": "https://mortarboardmanoa.weebly.com/?c=mkt_w_chnl:aff_geo:all_prtnr:sas_subprtnr:1538097_camp:brand_adtype:txtlnk_ag:weebly_lptype:hp_var:358504&sscid=c1k8_jgnxx&utm_source=ShareASale",
+        "contactEmail": "Nicoleou@hawaii.edu",
+        "logo":"https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "startDate": "2024-10-15",
+        "expirationDate": "2025-09-30",
+        "interestAreas": "Academic/Professional",
+        "admins": "wassup@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": [
+            "https://mortarboardmanoa.weebly.com/uploads/2/3/0/1/23010832/img-2566_1_orig.jpg",
+            "https://mortarboardmanoa.weebly.com/uploads/2/3/0/1/23010832/mortar-board-group-shot-5_1_orig.jpg"
+        ]
     }
   ]
 }
