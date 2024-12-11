@@ -28,6 +28,38 @@ export async function createUser({
 
   redirect('/');
 }
+
+/**
+ * Edits a users information in the database.
+ * @param id, the user's id.
+ */
+export async function editUser({
+  id,
+  firstName,
+  lastName,
+  profileImage,
+  email,
+}: {
+  id: number;
+  firstName: string;
+  lastName: string;
+  profileImage?: string | null;
+  email: string;
+}) {
+  const userId = Number(id);
+  await prisma.user.update({
+    where: { id: userId },
+    data: {
+      firstName,
+      lastName,
+      email,
+      profileImage,
+    },
+  });
+
+  redirect('/auth/profile');
+}
+
 /**
  * Deletes a user from the database.
  * @param email, the user's id.
@@ -38,6 +70,43 @@ export async function deleteUser(id: number) {
     where: { id: userId },
   });
   redirect('/');
+}
+/**
+ * Get users data from the database.
+ * @param id, the user's id.
+ */
+export async function getUserData(id: number) {
+  const userId = Number(id);
+  const user = await prisma.user.findUnique({
+    where: { id: userId },
+  });
+
+  return user
+    ? {
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email,
+      profileImage: user.profileImage || '',
+    }
+    : null;
+}
+/**
+ * Gets a user by their id.
+ * @param id, the user's id.
+ */
+export async function getUserById(id: number) {
+  const user = await prisma.user.findUnique({
+    where: { id },
+  });
+
+  return user
+    ? {
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email,
+      profileImage: user.profileImage || '',
+    }
+    : null;
 }
 /**
  * Gets a club by its ID.
