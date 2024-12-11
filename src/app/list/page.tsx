@@ -33,6 +33,7 @@ const ListPage: React.FC = () => {
         throw new Error('Failed to fetch clubs');
       }
       const data = await response.json();
+      console.log('Clubs', data);
       setFilteredClubs(data);
     } catch (error) {
       console.error('Error fetching clubs:', error);
