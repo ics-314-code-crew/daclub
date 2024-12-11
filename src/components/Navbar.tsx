@@ -15,7 +15,7 @@ const NavBar: React.FC = () => {
   return (
     <Navbar
       expand="lg"
-      className="bg-dark text-white shadow"
+      className="bg-dark text-white shadow navbar-dark"
       style={{ position: 'sticky', top: 0, zIndex: 1000 }}
     >
       <Container>
@@ -29,7 +29,7 @@ const NavBar: React.FC = () => {
             style={{ objectFit: 'contain' }}
           />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbar-content" />
+        <Navbar.Toggle aria-controls="navbar-content" className="text-white" />
         <Navbar.Collapse id="navbar-content">
           <Nav className="me-auto">
             <Nav.Link
@@ -97,7 +97,7 @@ const NavBar: React.FC = () => {
                   <Lock className="me-2" />
                   Change Password
                 </NavDropdown.Item>
-                <NavDropdown.Item href="/auth/delete-account">
+                <NavDropdown.Item href="/auth/delete-account" className="mt-2">
                   <Trash className="me-2 red-text" />
                   <span className="red-text">Delete Account</span>
                 </NavDropdown.Item>
