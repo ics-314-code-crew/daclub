@@ -136,9 +136,7 @@ const ListPage: React.FC = () => {
               <Row xs={1} md={2} lg={3} className="g-4">
                 {filteredClubs.length > 0 ? (
                   filteredClubs.map((club) => (
-                    <Col key={club.id} className="mb-4">
-                      <ClubCard club={club} userEmail={currentUserEmail} />
-                    </Col>
+                    <ClubCard key={club.id} club={club} userEmail={currentUserEmail} />
                   ))
                 ) : (
                   <div className="text-center text-white">

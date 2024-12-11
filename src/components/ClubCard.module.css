@@ -12,6 +12,7 @@
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
   }
   
   .card:hover {
@@ -26,18 +27,13 @@
   }  
   
   .imageContainer {
-    /* background-color: #fff;
-    padding: 0.15rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 150px; */
     height: 150px;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 8px;
+    padding: 3px;
   }
   
   .logoImage {
@@ -60,7 +56,9 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    margin-top: auto;
   }
+  
   
   .editButton {
     font-size: 0.9rem;

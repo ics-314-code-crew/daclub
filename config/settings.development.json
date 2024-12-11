@@ -50,13 +50,15 @@
         "location": "Building A Room 195",
         "website": "",
         "contactEmail": "lmig4@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://8bithawaii.org/static/main_app/assets/8bit-long-logo.png",
         "startDate": "2024-12-02",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+          "https://8bithawaii.org/download/?name=main_app.File%2Fbytes%2Ffilename%2Fmimetype%2FScreenshot_2024-10-28_231819.png"
+        ]
     },
     {
         "name": "Accounting Club",
@@ -65,22 +67,25 @@
         "location": "Building A Room 92",
         "website": "",
         "contactEmail": "karcher@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://images.squarespace-cdn.com/content/v1/5f2371858296275165c4fed8/1598171416577-93L1YDJ9YHL3W7F5AMCA/New-AC-Logo-1024x1024.png",
         "startDate": "2024-09-27",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "hello@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfXOqIODEwV-uCyLdK-Zu7xy11IkK1LivABA&s",
+          "https://images.squarespace-cdn.com/content/v1/5f2371858296275165c4fed8/4aecc639-3526-483a-9bfb-1ea6e8435f20/Welcome_Picnic_S24.jpg"
+        ]
     },
     {
-        "name": "Advocates for Public Interest Law ",
+        "name": "Advocates for Public Interest Law",
         "description": "APIL aims to raise the consciousness of Hawai'i's law students and the entire legal community regarding public interest law. APIL does so by holding educational events and panels with Hawai'i attorneys working in public interest fields and by awarding several grants each spring to Hawai'i law students enabling them to intern with various public interest organizations during their summer recess. The goal of these grants is to provide legal services to underrepresented groups in the community while providing valuable training and experience to each of our grantees.",
         "meetingTime": "Every Wednesday at 7 PM Hawaii Time",
         "location": "Building A Room 160",
         "website": "",
         "contactEmail": "mansos@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://img.freepik.com/premium-vector/simple-justice-scales-legal-law-logo-design_468322-480.jpg",
         "startDate": "2024-10-08",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
@@ -95,13 +100,16 @@
         "location": "Building A Room 129",
         "website": "",
         "contactEmail": "halliday@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://www6.pbrc.hawaii.edu/logos/manoaseal_transparent.png",
         "startDate": "2024-09-27",
         "expirationDate": "2025-09-30",
         "interestAreas": "Sport/Leisure",
         "admins": "hello@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnFdhZx6NnSttmp2dVd7PpvL_ha0MKwy0grA&s",
+          "https://manoaaikidojo.weebly.com/uploads/2/6/2/7/26273033/header_images/1391595131.jpg"
+      ]
     },
     {
         "name": "AlohaThon Dance Marathon",
@@ -110,13 +118,13 @@
         "location": "Building A Room 2",
         "website": "",
         "contactEmail": "ichongna@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://scontent.fhnl3-1.fna.fbcdn.net/v/t39.30808-6/326230076_713351750247038_4301282265724936966_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=zkPxUAnx5IEQ7kNvgFQfLld&_nc_zt=23&_nc_ht=scontent.fhnl3-1.fna&_nc_gid=ANK0_QX7Yvw4v8dbtC4Snfd&oh=00_AYCskLLO9ZCbGSu-AhxmLdusQzhOl-XRjhUNH6TI_26-Ew&oe=675ED8EF",
         "startDate": "2024-10-10",
         "expirationDate": "2025-09-30",
         "interestAreas": "Service",
         "admins": "hello@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": ["https://scontent.fhnl3-2.fna.fbcdn.net/v/t39.30808-6/326557612_692599919265779_6899767437379958756_n.png?_nc_cat=100&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=zsfTwOiCLrcQ7kNvgFqXmby&_nc_zt=23&_nc_ht=scontent.fhnl3-2.fna&_nc_gid=AfVqtn-OshYFfEPMg1hYY5h&oh=00_AYDj0YkHPJ6mHmQIsF_skpnr1Nbz1GCOEoQQIn8GPBhC-w&oe=675EEADE"]
     },
     {
         "name": "Alpha Gamma Delta Delta Sigma",
@@ -125,13 +133,13 @@
         "location": "Building A Room 3",
         "website": "",
         "contactEmail": "mtozzer@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://static.wixstatic.com/media/2468d8_d62c4e2f9739421083d662cce8263f07~mv2.png/v1/fill/w_320,h_108,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/AlphaGammaDeltacolor.png",
         "startDate": "2024-11-19",
         "expirationDate": "2025-09-30",
         "interestAreas": "Fraternity/Sorority",
         "admins": "hello@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": ["https://static.wixstatic.com/media/2468d8_9213049cdd0f4cb187b8abd5672bdfe8~mv2.png/v1/fill/w_240,h_272,al_c,lg_1,q_85,enc_avif,quality_auto/Alpha_Gamma_Delta_crest.png"]
     },
     {
         "name": "Alpha Omega Hawaii",
@@ -140,13 +148,13 @@
         "location": "Building A Room 148",
         "website": "",
         "contactEmail": "jdmoya@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://scontent.fhnl3-2.fna.fbcdn.net/v/t39.30808-6/326558335_709442344069825_1110971242454072572_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=o8zEHotiLAQQ7kNvgFcVMB4&_nc_zt=23&_nc_ht=scontent.fhnl3-2.fna&_nc_gid=AEd_BqHL3C1Em3f7bd26xGp&oh=00_AYBXMHLgYJnLbPwMY10f43Mumrj7pfk43jH4DktjWvkmpQ&oe=675ED75C",
         "startDate": "2024-09-27",
         "expirationDate": "2025-09-30",
         "interestAreas": "Religious/Spiritual",
         "admins": "john@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": ["https://scontent.fhnl3-2.fna.fbcdn.net/v/t39.30808-6/326701907_3304155226510246_377146562339571395_n.png?_nc_cat=100&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=VGyB6EevmssQ7kNvgE9xSR7&_nc_zt=23&_nc_ht=scontent.fhnl3-2.fna&_nc_gid=A8QDTpoB_seXSUw1rS_xBwA&oh=00_AYAdKS_fxXkxqD4mADCYQ2rOHkdvVgufC-K1UvcSk5ZT6Q&oe=675EE431"]
     },
     {
         "name": "Alpha Sigma Phi",
@@ -155,13 +163,13 @@
         "location": "Building A Room 16",
         "website": "",
         "contactEmail": "awebb37@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://scontent.fhnl3-2.fna.fbcdn.net/v/t39.30808-6/326405435_5736258356427333_2956247644429457884_n.png?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=cJ0-dTl93msQ7kNvgHvP7Pi&_nc_zt=23&_nc_ht=scontent.fhnl3-2.fna&_nc_gid=AHq5SaQy68uX2UpzIRCqVnw&oh=00_AYBL8XzDNSxfvfobGFC_aAYZsI8t9c4lleo-hsB2oxdJ-g&oe=675EF6A0",
         "startDate": "2024-10-21",
         "expirationDate": "2025-09-30",
         "interestAreas": "Fraternity/Sorority",
         "admins": "john@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": ["https://scontent.fhnl3-2.fna.fbcdn.net/v/t1.6435-9/118403968_959610437878587_2180587359003952274_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=3a1ebe&_nc_ohc=8R2F7II6VDMQ7kNvgFsQmgE&_nc_zt=23&_nc_ht=scontent.fhnl3-2.fna&_nc_gid=AcqmTs2BiFM1XZsENdIDIqt&oh=00_AYBriYaH_IYp8x9RHdHMlFt2y7gMHnk0KvcZs_yQEEgIGQ&oe=67809E5D"]
     },
     {
         "name": "American Institute of Aeronautics and Astronautics Student Branch at the University of Hawai'i at Manoa",
@@ -170,13 +178,16 @@
         "location": "Building A Room 118",
         "website": "",
         "contactEmail": "mhm69@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://scontent.fhnl3-2.fna.fbcdn.net/v/t39.30808-6/441638447_122106924794332724_5824154118954846524_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=zmwxit64tRQQ7kNvgHYtYnb&_nc_zt=23&_nc_ht=scontent.fhnl3-2.fna&_nc_gid=AJZ0VVo-yXRw1k6Ly3RJ3ic&oh=00_AYA16eDw7pP1CBhfR0zds17JcA0KvWRDAHTrZc5_FrtbaA&oe=675EDB09",
         "startDate": "2024-12-02",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+          "https://scontent.fhnl3-1.fna.fbcdn.net/v/t39.30808-6/448126367_122110846994332724_6481695863357233561_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=XBNZKSK-EYkQ7kNvgHHTEvO&_nc_zt=23&_nc_ht=scontent.fhnl3-1.fna&_nc_gid=AHxVM5iPQt3IQbboikAaoA7&oh=00_AYCvj0tEvmVZDL2er1xFV-d4iXCGeEkNja8U9ZUsBB6qQA&oe=675EFBAE",
+          "https://scontent.fhnl3-2.fna.fbcdn.net/v/t39.30808-6/451512218_122120279324332724_3814830196746657473_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=C3rj0NKwi5wQ7kNvgHVlY6o&_nc_zt=23&_nc_ht=scontent.fhnl3-2.fna&_nc_gid=AEQPcI-HkQfamqTkvDL5GwA&oh=00_AYC3l6UZFGGIwucAQCYn4Vd4iCmS3vmYxzNXkl7C-5RQhg&oe=675F0642"
+        ]
     },
     {
         "name": "American Institute of Architecture Students Hawaii Chapter",
@@ -185,13 +196,15 @@
         "location": "Building A Room 39",
         "website": "",
         "contactEmail": "adame2@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://scontent.fhnl3-2.fna.fbcdn.net/v/t39.30808-6/358715092_594751386106845_6958539591234448407_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=Ms-EwYf7c7MQ7kNvgFDvnHY&_nc_zt=23&_nc_ht=scontent.fhnl3-2.fna&_nc_gid=Ahl7jeULkI-9h0OaODAdPYq&oh=00_AYBdxqNcNYzGC7LrVbpSR3NmvNzDtx4LZeBMADZsbGOdOQ&oe=675EDE22",
         "startDate": "2024-10-10",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "john@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+          "https://scontent.fhnl3-1.fna.fbcdn.net/v/t39.30808-6/358720119_594751389440178_7168558061065079034_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=i1FFpfJLaD4Q7kNvgEngRkz&_nc_zt=23&_nc_ht=scontent.fhnl3-1.fna&_nc_gid=ACeRFhl3DzkQrHzSxi7uZBp&oh=00_AYCvh9f5iVXscium4uQW9EZHGNA6qttzEh5j3q9Xkw5NBA&oe=675F0ABA"
+        ]
     },
     {
         "name": "American Library Association",
@@ -200,13 +213,15 @@
         "location": "Building A Room 146",
         "website": "",
         "contactEmail": "cdahmen@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://www.ala.org/themes/custom/ala/logo.svg",
         "startDate": "2024-11-14",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "john@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+          "https://sci.manoa.hawaii.edu/wp-content/uploads/2024/02/LIS-ALA-jpg.webp"
+        ]
     },
     {
         "name": "American Marketing Association",
@@ -215,13 +230,15 @@
         "location": "Building A Room 164",
         "website": "",
         "contactEmail": "padme@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://media.licdn.com/dms/image/v2/C5603AQFAm3E9Glka1Q/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1517093246878?e=2147483647&v=beta&t=HCdM_u-EBdRcZ_2qRc0dxS5452z5cwo4lW1NZuQrRK8",
         "startDate": "2024-09-27",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWxB99_3_TLVK8QiGtc5nvYVVqHoAOO5e9xQ&s"
+        ]
     },
     {
         "name": "American Medical Association/Hawaii Medical Association Branch at JABSOM",
@@ -230,7 +247,7 @@
         "location": "Building A Room 117",
         "website": "",
         "contactEmail": "reannons@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://pbs.twimg.com/profile_images/1432795145766785033/zCCh_szq_400x400.jpg",
         "startDate": "2024-09-27",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
@@ -245,7 +262,7 @@
         "location": "Building A Room 99",
         "website": "",
         "contactEmail": "tnitta21@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://www.igroupanz.com/wp-content/uploads/2021/03/p-Asce.png",
         "startDate": "2024-09-09",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
@@ -260,28 +277,32 @@
         "location": "Building A Room 31",
         "website": "",
         "contactEmail": "shibuya4@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWbUshpr7AyQJXHNerY3yPZdhN9rdmZ2nVAw&s",
         "startDate": "2024-12-02",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+          "https://www.bls.gov/ooh/images/3035.png"
+        ]
     },
     {
-        "name": "American Society of Mechanical Engineers ",
+        "name": "American Society of Mechanical Engineers",
         "description": "The American Society of Mechanical Engineers (ASME) at the University of Hawaii is an organization dedicated to supporting the College of Engineering (COE) and its mechanical engineering students. Their mission includes: (1) providing professional development and networking opportunities (2) serving as a bridge between the COE and the mechanical engineering student body and (3) facilitating interactions among students to foster growth in the mechanical engineering field.",
         "meetingTime": "Every Monday at 1 PM Hawaii Time",
         "location": "Building A Room 125",
         "website": "",
         "contactEmail": "liujiayi@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://me.hawaii.edu/wp-content/uploads/2022/09/SeniorCapstoneAtPearlHarborNavalShipyard-px1000x725.jpg",
         "startDate": "2024-12-02",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+          "https://cloudfront-us-east-1.images.arcpublishing.com/gray/SA6XAQQBWBGDFPVRITENU4PXIQ.jpg"
+        ]
     },
     {
         "name": "Animal Science Club at UH Manoa",
@@ -290,22 +311,25 @@
         "location": "Building A Room 175",
         "website": "",
         "contactEmail": "aheana@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0hAXe6zFJ87nhOO-talguuZTzD0tpkrY3XQ&s",
         "startDate": "2024-12-02",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+          "https://www.ctahr.hawaii.edu/site/images/ASAOBrochure/ansci1.jpg",
+          "https://www2.hawaii.edu/~prevet/index_files/connie1.jpg"
+        ]
     },
     {
         "name": "Anime Manga Society of Hawai`i @ UH Manoa",
         "description": "AMS is a leisure club and a gathering place for people to discuss and enjoy anime and anime related things.  We are also hooked up with a few other club that we do combined club related activities.  ",
         "meetingTime": "Every Wednesday at 8 PM Hawaii Time",
         "location": "Building A Room 170",
-        "website": "",
+        "website": "https://anime-manga-society.square.site/",
         "contactEmail": "ams@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://746f2fe966ba5f84f7a1.cdn6.editmysite.com/uploads/b/8f25bd30-5ff2-11ea-8ed8-3d73fafaca34/IMG_gday_ilab.png?width=2400&optimize=medium",
         "startDate": "2024-11-14",
         "expirationDate": "2025-09-30",
         "interestAreas": "Leisure/Recreational",
@@ -320,13 +344,15 @@
         "location": "Building A Room 110",
         "website": "",
         "contactEmail": "estern@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://scontent-sea1-1.xx.fbcdn.net/v/t39.30808-6/323932286_1645205575928908_6536021260651512040_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=ZBg8YAzfaHwQ7kNvgFo69Gm&_nc_zt=23&_nc_ht=scontent-sea1-1.xx&_nc_gid=AtRGq9IVm9kBy_3XJsNxRrO&oh=00_AYCJYlRVWIvtXBNKhgkgxE5imJ9lHFuUr3OCASC_Z_N3Xg&oe=675F01E7",
         "startDate": "2024-10-10",
         "expirationDate": "2025-09-30",
         "interestAreas": "Political",
         "admins": "hello@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+          "https://scontent-sea1-1.xx.fbcdn.net/v/t39.30808-6/372056434_770608495070143_4008624289321343876_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=BNIEsLDJ08AQ7kNvgEEb5_n&_nc_zt=23&_nc_ht=scontent-sea1-1.xx&_nc_gid=AzqCuGjBuP5K7QE-ve-rW2M&oh=00_AYAkS2LmCHq7wdx6Y5MY79UaDDLkuw9Cmuge246w_SQuuw&oe=675EE20C"
+        ]
     },
     {
         "name": "ASL Club ",
@@ -335,22 +361,24 @@
         "location": "Building A Room 51",
         "website": "",
         "contactEmail": "gin444@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://manoa.hawaii.edu/linguistics/wp-content/uploads/2023/12/groupshot_001-scaled.jpg",
         "startDate": "2024-10-28",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "hello@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+          "https://kapionews.com/wp-content/uploads/2018/05/Sequence-01.Still003-300x169.jpg"
+        ]
     },
     {
         "name": "Associated Students of the John A. Burns School of Medicine",
         "description": "The purpose of ASJABSOM and the JABSOM Classes is to serve as the official body representing the medical students of JABSOM. To that end purposes include but are not limited to advocating on behalf of the medical students of JABSOM promoting the welfare of JABSOM and its students and fostering student morale.",
         "meetingTime": "Every Thursday at 1 PM Hawaii Time",
         "location": "Building A Room 82",
-        "website": "",
+        "website": "https://jabsom.hawaii.edu/health-care/partnerships/friends-of-the-medical-school.html",
         "contactEmail": "nj23@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://jabsom.hawaii.edu/_images/_health-care/logo-FOMS.jpg",
         "startDate": "2024-09-27",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
@@ -363,15 +391,18 @@
         "description": "We are an organization in the computer science department that represents the students and helps them gain education community and opportunities in the work force through 6 independent SIG groups and ACM run programs ",
         "meetingTime": "Every Friday at 8 PM Hawaii Time",
         "location": "Building A Room 123",
-        "website": "",
+        "website": "https://acmmanoa.org/",
         "contactEmail": "kyla8@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://acmmanoa.org/images/icon.png",
         "startDate": "2024-09-27",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "hello@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+          "https://acmmanoa.org/images/post/S23_CareerFair/S23_CareerFair.jpg",
+          "https://acmmanoa.org/images/post/F23_CareerFair/F23_CareerFair.jpg"
+        ]
     },
     {
         "name": "Autism Student Union",
@@ -380,7 +411,7 @@
         "location": "Building A Room 184",
         "website": "",
         "contactEmail": "wirthyap@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://coe.hawaii.edu/sped/wp-content/uploads/sites/4/2023/10/Cook.Rao_.MEdSPED-1024x683.jpg",
         "startDate": "2024-10-15",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
@@ -395,7 +426,7 @@
         "location": "Building A Room 171",
         "website": "",
         "contactEmail": "capintor@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTutOiHqB3kua0gpE06GFRAR_yarfCcn2Nnbg&s",
         "startDate": "2024-10-08",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
@@ -410,13 +441,16 @@
         "location": "Building A Room 16",
         "website": "",
         "contactEmail": "rnarayan@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://manoa.hawaii.edu/news/attachments/img13143_15185l.jpg",
         "startDate": "2024-09-27",
         "expirationDate": "2025-09-30",
         "interestAreas": "Leisure/Recreational",
         "admins": "hello@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+          "https://manoa.hawaii.edu/news/attachments/img13143_15184l.jpg",
+          "https://manoa.hawaii.edu/news/attachments/img13143_15183l.jpg"
+        ]
     },
     {
         "name": "Best Buddies Chapter at UHM",
@@ -425,7 +459,7 @@
         "location": "Building A Room 62",
         "website": "",
         "contactEmail": "rdazzeo@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://coe.hawaii.edu/sped/wp-content/uploads/sites/4/2023/04/UHM-BB-Waikiki-Aquarium-2-1024x695.png",
         "startDate": "2024-10-08",
         "expirationDate": "2025-09-30",
         "interestAreas": "Service",
@@ -440,13 +474,15 @@
         "location": "Building A Room 89",
         "website": "",
         "contactEmail": "gtoyama@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/6/67/Beta_Alpha_Psi_logo.png",
         "startDate": "2024-10-21",
         "expirationDate": "2025-09-30",
         "interestAreas": "Fraternity/Sorority",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+          "https://www.bapuhm.org/uploads/1/2/1/2/121255561/bap-bonding-1_orig.jpg"
+        ]
     },
     {
         "name": "Beta Beta Gamma Sorority",
@@ -455,7 +491,7 @@
         "location": "Building A Room 164",
         "website": "",
         "contactEmail": "kianakt9@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOlcOuzgqlDva-q0bg2sVBDH_eaRnRkPZ0jQ&s",
         "startDate": "2024-10-08",
         "expirationDate": "2025-09-30",
         "interestAreas": "Fraternity/Sorority",
@@ -470,26 +506,11 @@
         "location": "Building A Room 144",
         "website": "",
         "contactEmail": "slee3079@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmzSUlZR32vRASevs-VPGNKaETUikD1rENLQ&s",
         "startDate": "2024-09-09",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "wassup@hawaii.edu",
-        "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
-    },
-    {
-        "name": "C.O.P. Alaka'ina",
-        "description": "Our purpose is to promote college success and post-secondary opportunities for our College Opportunities Program (COP) students. COP Alaka'ina serves our COP freshmen and alumni throughout the academic year by providing guidance information and workshops about academic and college life at UH Manoa. Our areas of focus are the following: professional development community service socials and fundraising. As COP primarily serves those who are economically disadvantaged academically underprepared and those who come from underrepresented communities every bit of support counts.",
-        "meetingTime": "Every Wednesday at 1 PM Hawaii Time",
-        "location": "Building A Room 138",
-        "website": "",
-        "contactEmail": "kmoss@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
-        "startDate": "2024-10-10",
-        "expirationDate": "2025-09-30",
-        "interestAreas": "Academic/Professional",
-        "admins": "hello@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
         "imageLocations": []
     },
@@ -500,7 +521,7 @@
         "location": "Building A Room 12",
         "website": "",
         "contactEmail": "zhaos@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://manoa.hawaii.edu/ccle/wp-content/uploads/2023/10/DSC01277-min-scaled.jpg",
         "startDate": "2024-11-01",
         "expirationDate": "2025-09-30",
         "interestAreas": "Religious/Spiritual",
@@ -515,7 +536,7 @@
         "location": "Building A Room 200",
         "website": "",
         "contactEmail": "andru78@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://bloximages.newyork1.vip.townnews.com/manoanow.org/content/tncms/assets/v3/editorial/6/fa/6fa0d92d-60ed-55aa-9b07-bf2b5ea04ea4/4f16efd2aa3bf.image.jpg?resize=417%2C500",
         "startDate": "2024-10-21",
         "expirationDate": "2025-09-30",
         "interestAreas": "Leisure/Recreational",
@@ -530,13 +551,15 @@
         "location": "Building A Room 200",
         "website": "",
         "contactEmail": "saito22@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://images.squarespace-cdn.com/content/v1/5aea18b9ec4eb72fa0676189/d1603ef3-4c8b-4a88-be3a-1703892e7bac/Large_CARP-LOGO-colored-light-mark.png",
         "startDate": "2024-10-21",
         "expirationDate": "2025-09-30",
         "interestAreas": "Leisure/Recreational",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+          "https://images.squarespace-cdn.com/content/v1/5aea18b9ec4eb72fa0676189/1680267620674-E0QWME8WS0FO0GT7OMZW/5A5F8F4E-1675-4E95-AECB-0FCBF39513D5.jpg?format=750w"
+        ]
     },
     {
         "name": "CHAARG at the University of Hawaii at Manoa",
@@ -545,13 +568,15 @@
         "location": "Building A Room 185",
         "website": "",
         "contactEmail": "Isabeld@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://scontent-sea1-1.xx.fbcdn.net/v/t39.30808-6/216380809_2342887989177655_1668105370209369173_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=36G_V5H1HYoQ7kNvgHjfSCm&_nc_zt=23&_nc_ht=scontent-sea1-1.xx&_nc_gid=AYTjRwjlLiBXoAQA5_LwsLB&oh=00_AYBJVib77bqg9-_qJHj5tYVPb_sDD-5T7hc-mKk5oqULKg&oe=675EEC6A",
         "startDate": "2024-12-02",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "hello@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+          "https://spoonuniversity.com/cdn-cgi/image/width=1020,height=680,fit=cover,format=auto/https://s3.amazonaws.com/secretsaucefiles/photos/images/000/235/823/original/unnamed.png?1599688233"
+        ]
     },
     {
         "name": "Chi Alpha Hawaii",
@@ -560,7 +585,7 @@
         "location": "Building A Room 181",
         "website": "",
         "contactEmail": "destinyy@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3M068geg_hZk8g8Jh0ECZl5iNtx_BCq25jQ&s",
         "startDate": "2024-10-08",
         "expirationDate": "2025-09-30",
         "interestAreas": "Religious/Spiritual",
@@ -569,13 +594,13 @@
         "imageLocations": []
     },
     {
-        "name": "Chi Epsilon ",
+        "name": "Chi Epsilon",
         "description": "Chi Epsilon is the National Civil Engineering Honor Society. We are dedicated to maintaining and promoting the status of civil engineering as an ideal profession here on the UHM campus. To contribute to the improvement of the profession Chi Epsilon fosters the development and exercise of sound traits of character and technical ability among civil engineers and its members by precept and example toward an ever higher standard of professional service. We provide tutoring in lower-level CEE courses commit ourselves frequently to community service events offer career development opportunities for our members and host social events.",
         "meetingTime": "Every Tuesday at 4 PM Hawaii Time",
         "location": "Building A Room 11",
         "website": "",
         "contactEmail": "carad@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://upload.wikimedia.org/wikipedia/en/f/f0/The_crest_of_Chi_Epsilon.jpg",
         "startDate": "2024-10-28",
         "expirationDate": "2025-09-30",
         "interestAreas": "Honorary Society",
@@ -590,13 +615,15 @@
         "location": "Building A Room 60",
         "website": "",
         "contactEmail": "mibara24@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoXsPrhu2YBsQcRbAS1Q-v_mzxP-KbSEKOCg&s",
         "startDate": "2024-09-27",
         "expirationDate": "2025-09-30",
         "interestAreas": "Ethnic/Cultural",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+          "https://manoa.hawaii.edu/music/wp-content/uploads/2016/09/050514-234-845x362.jpg"
+        ]
     },
     {
         "name": "Church in Honolulu",
@@ -605,7 +632,7 @@
         "location": "Building A Room 147",
         "website": "",
         "contactEmail": "weijie20@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://s3-media0.fl.yelpcdn.com/bphoto/gL4-QKQETxGJx-3IhkSSyA/348s.jpg",
         "startDate": "2024-09-27",
         "expirationDate": "2025-09-30",
         "interestAreas": "Religious/Spiritual",
@@ -620,7 +647,7 @@
         "location": "Building A Room 5",
         "website": "",
         "contactEmail": "ddre@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://www.hawaii.edu/news/wp-content/uploads/2022/07/manoa-jabsom-class-of-2026.jpg",
         "startDate": "2024-09-27",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
@@ -635,7 +662,7 @@
         "location": "Building A Room 40",
         "website": "",
         "contactEmail": "nj23@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://live.staticflickr.com/65535/53090119053_7261ab5990.jpg",
         "startDate": "2024-09-27",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
@@ -650,7 +677,7 @@
         "location": "Building A Room 113",
         "website": "",
         "contactEmail": "kaihira@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpeGBfFeI5QWdeov8dZBqSLf9LkeynJ-iGdQ&s",
         "startDate": "2024-10-08",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
@@ -665,13 +692,16 @@
         "location": "Building A Room 19",
         "website": "",
         "contactEmail": "arielae@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://s3.amazonaws.com/s3.travelsports.com/photos/uploads/2022/9/a014B6lj1mDwdaBm20KW_1663605684_md.webp",
         "startDate": "2024-12-02",
         "expirationDate": "2025-09-30",
         "interestAreas": "Leisure/Recreational",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWYyM8CgUCcBLCYI81C7Wkxo8kqc8_9vfUDg&s",
+          "https://external-preview.redd.it/RTwaPRLCAn6XTG0zoBO1Dm9fvXibnbytHFMzE3sM0SY.jpg?width=1080&crop=smart&auto=webp&s=84626087e64034fab45b610bcbcb87b54ecab67f"
+        ]
     },
     {
         "name": "Club Management Association of America (CMAA)",
