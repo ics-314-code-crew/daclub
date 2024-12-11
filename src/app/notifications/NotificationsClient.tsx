@@ -1,15 +1,36 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Notification from '@/components/Notification';
 
 const NotificationsClient = () => {
-  const [notifications, setNotifications] = useState<string[]>(['New club request', 'Profile update required']);
+  const [notifications, setNotifications] = useState<{ id: number; message: string }[]>([]);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchNotifications = async () => {
+      try {
+        const response = await fetch('/pages/api/notifications'); // Adjust the API endpoint if needed
+        if (!response.ok) {
+          throw new Error('Failed to fetch notifications');
+        }
+        const data = await response.json();
+        console.log('Fetched notifications:', data);
+        setNotifications(data);
+      } catch (err) {
+        setError((err as Error).message);//+
+      }
+    };
+    fetchNotifications();
+  }, []);
 
   return (
     <main>
-      {notifications.map((notification, index) => (
-        <Notification key={index} message={notification} />
+      <h1>Notifications</h1>
+      {error && <p>Error: {error}</p>}
+      {notifications.length === 0 && !error && <p>No notifications available.</p>}
+      {notifications.map((notification) => (
+        <Notification key={notification.id} message={notification.message} />
       ))}
     </main>
   );

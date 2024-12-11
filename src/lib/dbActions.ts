@@ -13,7 +13,7 @@ export async function createUser({
   user,
 }: {
   credentials: { email: string; password: string };
-  user: { firstName: string; lastName: string, profileImage?: string | null };
+  user: { firstName: string; lastName: string; profileImage?: string | null };
 }): Promise<void> {
   const password = await hash(credentials.password, 10);
   await prisma.user.create({
@@ -76,7 +76,7 @@ export async function addClub(club: {
   description: string;
   meetingTime: string;
   location: string;
-  website?: string | null
+  website?: string | null;
   contactEmail?: string | null;
   logo: string;
   interestAreas: string;
@@ -113,14 +113,20 @@ export async function getAllClubs() {
   return prisma.club.findMany();
 }
 
-/**
- * Updates an existing club in the database.
- * @param id, the club identifier.
- * @param data, the updated club data.
- */
+async function addNotification(clubId: number, message: string) {
+  await prisma.notification.create({
+    data: {
+      clubId,
+      message,
+      createdAt: new Date(),
+    },
+  });
+}
+
 export async function updateClub(
   id: number,
-  data: Omit<{
+  data: Omit<
+  {
     name: string;
     description: string;
     meetingTime: string;
@@ -133,7 +139,9 @@ export async function updateClub(
     startDate: string;
     expirationDate: string;
     imageLocations?: string[];
-  }, 'admins'> & { admins?: string | null },
+  },
+  'admins'
+  > & { admins?: string | null },
 ) {
   const { admins, imageLocations, ...rest } = data;
 
@@ -150,6 +158,9 @@ export async function updateClub(
     data: formattedData,
   });
 
+  // Trigger notification
+  await addNotification(id, `The club "${data.name}" has been edited and needs review.`);
+
   redirect('/list');
 }
 
@@ -157,13 +168,7 @@ export async function updateClub(
  * Changes a user's password.
  * @param credentials, the user credentials.
  */
-export async function changePassword(
-  credentials:
-  {
-    email: string;
-    password: string;
-  },
-) {
+export async function changePassword(credentials: { email: string; password: string }) {
   const password = await hash(credentials.password, 10);
   await prisma.user.update({
     where: { email: credentials.email },
