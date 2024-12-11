@@ -1601,7 +1601,9 @@
         "interestAreas": "Academic/Professional",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://th.bing.com/th/id/OIP.0exjZJREPmy4qT39W62SaAHaFj?rs=1&pid=ImgDetMain"
+        ]
     },
     {
         "name": "LOTUS (Lord of the Universe Society)",
@@ -1631,7 +1633,10 @@
         "interestAreas": "Leisure/Recreational",
         "admins": "hello@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://th.bing.com/th/id/OIP.8LC0nU1I3ItzDdLrnbjYIgHaEL?rs=1&pid=ImgDetMain",
+            "https://bloximages.newyork1.vip.townnews.com/manoanow.org/content/tncms/assets/v3/editorial/5/35/5353d782-cafd-11e9-8ed7-5bd091db5203/5d68d9727f515.image.jpg?crop=1763%2C926%2C0%2C124&resize=1200%2C630&order=crop%2Cresize"
+        ]
     },
     {
         "name": "Manoa Economics Association",
@@ -1652,8 +1657,8 @@
         "name": "Manoa Scholars Club",
         "description":"The purpose of the Mānoa Scholars Club is to give students—both incoming and continuing New Warrior Scholars—the opportunity to represent the best and brightest at UH Mānoa both academically and in character. Students who have a stronger commitment to their university are more likely to retain and enhance their success. Many of the scholars were active members in their high schools and community and would like to carry that same sense of pride and commitment as a University of Hawai’i at Mānoa student.",
         "meetingTime": "n/a",
-        "location": "n/a",
-        "website": "",
+        "location": "QLC 001",
+        "website": "https://manoascholarsclub.weebly.com/?c=mkt_w_chnl:aff_geo:all_prtnr:sas_subprtnr:1538097_camp:brand_adtype:txtlnk_ag:weebly_lptype:hp_var:358504&sscid=c1k8_jgdor&utm_source=ShareASale",
         "contactEmail": "lkubo4@hawaii.edu",
         "logo":"https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
         "startDate": "2024-09-27",
@@ -1706,7 +1711,9 @@
         "interestAreas": "Academic/Professional",
         "admins": "hello@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://th.bing.com/th/id/OIP.4t4hQJSkyXARNGRRfdtYlwHaE8?rs=1&pid=ImgDetMain"
+        ]
     },
     {
         "name": "Math Club at the University of Hawaii at Manoa",
@@ -1721,7 +1728,9 @@
         "interestAreas": "",
         "admins": "hello@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://th.bing.com/th/id/OIP.Wv_pzPZcQEJgNK_YNLApnwAAAA?w=171&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+        ]
     },
     {
         "name": "Medical Student Mentorship Program (MSMP)",
@@ -1736,14 +1745,18 @@
         "interestAreas": "Academic/Professional",
         "admins": "hello@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://uhmsmp.com/wp-content/uploads/2023/09/MSMP-Board-23-24-scaled.jpeg",
+            "https://uhmsmp.com/wp-content/uploads/2022/09/cropped-MSMP-Board-22-23-scaled-1.jpg",
+            "https://www.khon2.com/wp-content/uploads/sites/8/2019/11/11-8-uh-nursing.jpg?w=1280&h=720&crop=1"
+        ]
     },
     {
         "name": "Medical Student Pride Alliance",
         "description":"The purpose of the Medical Student Pride Alliance (MSPA) is to support sexual and gender minority (SGM) diversity efforts within JABSOM and the community by promoting education, safe spaces, awareness, and ongoing discussion of SGM health.",
         "meetingTime": "n/a",
         "location": "n/a",
-        "website": "",
+        "website": "https://www.medpride.org/",
         "contactEmail": "rich808@hawaii.edu",
         "logo":"https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
         "startDate": "2024-09-27",
@@ -1751,7 +1764,9 @@
         "interestAreas": "Academic/Professional",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://images.squarespace-cdn.com/content/v1/612bfd25a84af13ad0ada0f8/ab93d91e-d9d0-45f3-a7d0-ead7d9cf8aa4/Copy+of+MSPA+Logo+extended.png?format=1500w"
+        ]
     },
     {
         "name": "Midshipmen Association",
@@ -1766,14 +1781,16 @@
         "interestAreas": "Academic/Professional",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://d1ldvf68ux039x.cloudfront.net/thumbs/photos/2407/8514337/1000w_q95.jpg"
+        ]
     },
     {
         "name": "Moku O Lo'e Student Association",
         "description":"The mission of  Moku o Lo`e Student Association is to generate a strong student community that enhances professional development, interdisciplinary collaborations, and academic growth.",
         "meetingTime": "n/a",
         "location": "n/a",
-        "website": "",
+        "website": "https://natsci.manoa.hawaii.edu/sasc/post/?permalink=the-moku-o-loe-student-association---himb-opportunity-information-session",
         "contactEmail": "seaenna@hawaii.edu",
         "logo":"https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
         "startDate": "2024-12-10",
@@ -1786,9 +1803,9 @@
     {
         "name": "Molecular Cell Biology Club at UH Manoa",
         "description":"The Molecular Cell Biology Club at the University of Hawai’i at Mānoa serves to foster student interest in the field of cell biology, promote extra-curricular educational opportunities, and support student interactions with peers and professionals who have similar interests.",
-        "meetingTime": "n/a",
+        "meetingTime": "See socials or Nat Sci website for more information",
         "location": "n/a",
-        "website": "",
+        "website": "https://natsci.manoa.hawaii.edu/sasc/post/?permalink=molecular-cell-biology-club",
         "contactEmail": "kmmiyamo@hawaii.edu",
         "logo":"https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
         "startDate": "2024-09-27",
@@ -1803,7 +1820,7 @@
         "description":"Mortar Board Senior National Honor Society ​is one of the oldest organizations at the University of Hawai'i at Mānoa. This is a national collegiate honor society for students in their senior year. Each chapter is typically comprised of only a handful of carefully selected applicants for the year. Potential members are chosen based on how they measure in accord with Mortar Board's key values: scholarship, leadership, and service. Those who excel in said values are then carefully examined through a series of interviews hosted by the chapter's current members. Once in Mortar Board, you will engage in various community service and fundraising activities. This honor society is more than just prestige, but rather, an opportunity for every undergraduate senior to make a local impact in their campus and community before they graduate. Once in Mortar Board, every member will engage in various community service and fundraising activities. We not only help support the University of Hawaiʻi and the Oʻahu community but above all, we are making a global impact by building and growing the best leaders of tomorrow.",
         "meetingTime": "n/a",
         "location": "n/a",
-        "website": "",
+        "website": "https://mortarboardmanoa.weebly.com/?c=mkt_w_chnl:aff_geo:all_prtnr:sas_subprtnr:1538097_camp:brand_adtype:txtlnk_ag:weebly_lptype:hp_var:358504&sscid=c1k8_jgnxx&utm_source=ShareASale",
         "contactEmail": "Nicoleou@hawaii.edu",
         "logo":"https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
         "startDate": "2024-10-15",
@@ -1811,7 +1828,10 @@
         "interestAreas": "Academic/Professional",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://mortarboardmanoa.weebly.com/uploads/2/3/0/1/23010832/img-2566_1_orig.jpg",
+            "https://mortarboardmanoa.weebly.com/uploads/2/3/0/1/23010832/mortar-board-group-shot-5_1_orig.jpg"
+        ]
     }
   ]
 }
