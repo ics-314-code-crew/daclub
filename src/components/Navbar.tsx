@@ -92,20 +92,6 @@ const NavBar: React.FC = () => {
             {session && (
               <Nav.Link href="/notifications" className="position-relative">
                 <Bell className="text-white fs-4" />
-                
-                  <span
-                    style={{
-                      position: 'absolute',
-                      top: 0,
-                      right: 0,
-                      height: '10px',
-                      width: '10px',
-                      backgroundColor: 'red',
-                      borderRadius: '50%',
-                    }}
-                  >
-                  </span>
-              
               </Nav.Link>
             )}
             {session ? (
