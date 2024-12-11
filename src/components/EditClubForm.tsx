@@ -1,4 +1,6 @@
-// src/components/EditClubForm.tsx
+'use client';
+
+
 import { useSession } from 'next-auth/react';
 import { Button, Card, Container, Form, FormControl } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';

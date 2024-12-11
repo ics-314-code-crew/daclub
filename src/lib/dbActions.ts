@@ -84,6 +84,7 @@ export async function addClub(club: {
   startDate: Date;
   expirationDate: Date;
   imageLocations: string[];
+  createdAt: Date;
 }) {
   await prisma.club.create({
     data: {
@@ -140,6 +141,7 @@ export async function updateClub(
     expirationDate: string;
     imageLocations?: string[];
     createdAt: Date;
+    edited: boolean;
   },
   'admins'
   > & { admins?: string | null },
