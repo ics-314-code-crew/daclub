@@ -4,7 +4,11 @@ import { useEffect, useState } from 'react';
 import { useSession } from 'next-auth/react';
 import { usePathname } from 'next/navigation';
 import { Navbar, Container, Nav, NavDropdown, Image } from 'react-bootstrap';
+<<<<<<< HEAD
 import { BoxArrowRight, Lock, PersonCircle, Trash, Bell, Pencil } from 'react-bootstrap-icons';
+=======
+import { BoxArrowRight, Lock, PersonCircle, Trash } from 'react-bootstrap-icons';
+>>>>>>> parent of dce3564 (Merge pull request #70 from ics-314-code-crew/issue-63)
 
 const NavBar: React.FC = () => {
   const { data: session } = useSession();
@@ -12,12 +16,15 @@ const NavBar: React.FC = () => {
   const userWithRole = session?.user as { email: string; role: string };
   const role = userWithRole?.role;
   const pathName = usePathname();
+<<<<<<< HEAD
   // const [notifications, setNotifications] = useState<string[]>([]);
 
   // useEffect(() => {
   //   // Fetch notifications logic here (this should be replaced with actual logic)
   //   setNotifications(['New club request', 'Profile update required']);
   // }, []);
+=======
+>>>>>>> parent of dce3564 (Merge pull request #70 from ics-314-code-crew/issue-63)
 
   const [opacity, setOpacity] = useState(1);
 
@@ -69,19 +76,37 @@ const NavBar: React.FC = () => {
         <Navbar.Toggle aria-controls="navbar-content" />
         <Navbar.Collapse id="navbar-content">
           <Nav className="me-auto">
-            <Nav.Link href="/about" className={`text-white ${pathName === '/about' ? 'fw-bold' : ''}`}>
+            <Nav.Link
+              href="/about"
+              className={`text-white ${pathName === '/about' ? 'fw-bold' : ''}`}
+            >
               About
             </Nav.Link>
             {currentUser && (
               <>
-                <Nav.Link href="/add" className={`text-white ${pathName === '/add' ? 'fw-bold' : ''}`}>
+                <Nav.Link
+                  href="/add"
+                  className={`text-white ${
+                    pathName === '/add' ? 'fw-bold' : ''
+                  }`}
+                >
                   Add Club
                 </Nav.Link>
-                <Nav.Link href="/list" className={`text-white ${pathName === '/list' ? 'fw-bold' : ''}`}>
+                <Nav.Link
+                  href="/list"
+                  className={`text-white ${
+                    pathName === '/list' ? 'fw-bold' : ''
+                  }`}
+                >
                   Club List
                 </Nav.Link>
                 {role === 'SUPER_ADMIN' && (
-                  <Nav.Link href="/admin" className={`text-white ${pathName === '/admin' ? 'fw-bold' : ''}`}>
+                  <Nav.Link
+                    href="/admin"
+                    className={`text-white ${
+                      pathName === '/admin' ? 'fw-bold' : ''
+                    }`}
+                  >
                     Manage Clubs
                   </Nav.Link>
                 )}
@@ -89,11 +114,6 @@ const NavBar: React.FC = () => {
             )}
           </Nav>
           <Nav className="ms-auto align-items-center">
-            {session && (
-              <Nav.Link href="/notifications" className="position-relative">
-                <Bell className="text-white fs-4" />
-              </Nav.Link>
-            )}
             {session ? (
               <NavDropdown
                 title={(

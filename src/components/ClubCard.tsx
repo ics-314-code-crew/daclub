@@ -1,25 +1,21 @@
-// src/components/ClubCard.tsx
+'use client';
+
 import { useState } from 'react';
 import { Club } from '@prisma/client';
 import { Card, Image, Button, OverlayTrigger, Tooltip, Toast } from 'react-bootstrap';
 import styles from './ClubCard.module.css';
-import Notification from './Notification'; // Import the Notification component
 
 const ClubCard = ({ club, userEmail }: { club: Club; userEmail: string }) => {
   const adminEmails = club.admins ? club.admins.split(',').map((email) => email.trim()) : [];
   const canEdit = adminEmails.includes(userEmail);
 
   const [showToast, setShowToast] = useState(false);
-  const [notification, setNotification] = useState<string | null>(null);
 
   const handleCopyEmails = () => {
     if (adminEmails.length > 0) {
       navigator.clipboard.writeText(adminEmails.join(';'));
       setShowToast(true);
       setTimeout(() => setShowToast(false), 2000);
-      setNotification('Admin emails copied to clipboard!');
-    } else {
-      setNotification('No admin emails available.');
     }
   };
 
@@ -31,7 +27,11 @@ const ClubCard = ({ club, userEmail }: { club: Club; userEmail: string }) => {
         {!isGuest ? (
           <Card.Link href={`/clubs/${club.id}`} className={styles.cardLink}>
             <div className={styles.imageContainer}>
-              <Image src={club.logo} alt={`${club.name} Logo`} className={styles.logoImage} />
+              <Image
+                src={club.logo}
+                alt={`${club.name} Logo`}
+                className={styles.logoImage}
+              />
             </div>
             <Card.Body>
               <Card.Title className={styles.cardTitle}>{club.name}</Card.Title>
@@ -40,7 +40,11 @@ const ClubCard = ({ club, userEmail }: { club: Club; userEmail: string }) => {
         ) : (
           <div className={styles.cardLink} style={{ cursor: 'default' }}>
             <div className={styles.imageContainer}>
-              <Image src={club.logo} alt={`${club.name} Logo`} className={styles.logoImage} />
+              <Image
+                src={club.logo}
+                alt={`${club.name} Logo`}
+                className={styles.logoImage}
+              />
             </div>
             <Card.Body>
               <Card.Title className={styles.cardTitle}>{club.name}</Card.Title>
@@ -59,9 +63,13 @@ const ClubCard = ({ club, userEmail }: { club: Club; userEmail: string }) => {
             {!canEdit && (
               <OverlayTrigger
                 placement="top"
-                overlay={
-                  <Tooltip>{adminEmails.length > 0 ? 'Click to copy admin emails' : 'No admins available.'}</Tooltip>
-                }
+                overlay={(
+                  <Tooltip>
+                    {adminEmails.length > 0
+                      ? 'Click to copy admin emails'
+                      : 'No admins available.'}
+                  </Tooltip>
+                )}
               >
                 <Button
                   variant="outline-primary"
@@ -76,10 +84,13 @@ const ClubCard = ({ club, userEmail }: { club: Club; userEmail: string }) => {
           </Card.Footer>
         )}
       </Card>
-      <Toast show={showToast} onClose={() => setShowToast(false)} className={styles.toast}>
+      <Toast
+        show={showToast}
+        onClose={() => setShowToast(false)}
+        className={styles.toast}
+      >
         <Toast.Body>Copied to Clipboard!</Toast.Body>
       </Toast>
-      {notification && <Notification message={notification} />}
     </div>
   );
 };
