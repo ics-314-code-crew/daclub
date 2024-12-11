@@ -23,6 +23,20 @@ const NavBar: React.FC = () => {
       setOpacity(newOpacity);
     };
 
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const maxScroll = 200; // adjustable
+      const newOpacity = Math.max(1 - scrollPosition / maxScroll, 0.25); // adjust minimum opacity
+      setOpacity(newOpacity);
+    };
+
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
