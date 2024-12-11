@@ -65,9 +65,10 @@ export const SignUpSchema = Yup.object({
 });
 
 export const EditUserSchema = Yup.object({
-  id: Yup.number().required('ID is required'),
-  email: hawaiiEmailValidationRequired,
-  role: Yup.mixed().oneOf(['USER', 'SUPER_ADMIN'], 'Invalid role'),
+  email: Yup.string().email().notRequired(),
+  firstName: Yup.string().notRequired(),
+  lastName: Yup.string().notRequired(),
+  profileImage: Yup.string().url('Must be a valid URL').notRequired().nullable(),
 });
 
 export const AddClubSchema = Yup.object({

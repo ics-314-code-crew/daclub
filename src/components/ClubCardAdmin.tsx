@@ -15,11 +15,7 @@ const ClubCardAdmin = ({ club }: { club: Club }) => {
         {status === 'authenticated' ? (
           <Card.Link href={`/clubs/${club.id}`} className={styles.cardLink}>
             <div className={styles.imageContainer}>
-              <Image
-                src={club.logo}
-                alt={`${club.name} Logo`}
-                className={styles.logoImage}
-              />
+              <Image src={club.logo} alt={`${club.name} Logo`} className={styles.logoImage} />
             </div>
             <Card.Body>
               <Card.Title className={styles.cardTitle}>{club.name}</Card.Title>
@@ -28,11 +24,7 @@ const ClubCardAdmin = ({ club }: { club: Club }) => {
         ) : (
           <div>
             <div className={styles.imageContainer}>
-              <Image
-                src={club.logo}
-                alt={`${club.name} Logo`}
-                className={styles.logoImage}
-              />
+              <Image src={club.logo} alt={`${club.name} Logo`} className={styles.logoImage} />
             </div>
             <Card.Body>
               <Card.Title className={styles.cardTitle}>{club.name}</Card.Title>

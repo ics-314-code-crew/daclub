@@ -32,6 +32,15 @@ model User {
   profileImage String?
 }
 
+model Notification {
+  id        Int      @id @default(autoincrement())
+  clubId    Int
+  message   String
+  createdAt DateTime @default(now())
+  
+  Club      Club     @relation(fields: [clubId], references: [id])
+}
+
 model Club {
   id              Int       @id @default(autoincrement())
   name            String    @unique
@@ -47,4 +56,8 @@ model Club {
   interestAreas   String
   members         String?
   imageLocations  String[]
+  notifications   Notification[]
+  createdAt       DateTime  @default(now())
+  edited          Boolean   @default(false)
+  read            Boolean   @default(false)
 }
