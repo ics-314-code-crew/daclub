@@ -3,11 +3,7 @@
 import { useSession } from 'next-auth/react';
 import { usePathname } from 'next/navigation';
 import { Navbar, Container, Nav, NavDropdown, Image } from 'react-bootstrap';
-<<<<<<< HEAD
-import { BoxArrowRight, Lock, PersonCircle, Trash, Bell, Pencil } from 'react-bootstrap-icons';
-=======
-import { BoxArrowRight, Lock, PersonCircle, Trash } from 'react-bootstrap-icons';
->>>>>>> parent of dce3564 (Merge pull request #70 from ics-314-code-crew/issue-63)
+import { BoxArrowRight, Lock, Pencil, PersonCircle, Trash } from 'react-bootstrap-icons';
 
 const NavBar: React.FC = () => {
   const { data: session } = useSession();
@@ -15,15 +11,6 @@ const NavBar: React.FC = () => {
   const userWithRole = session?.user as { email: string; role: string };
   const role = userWithRole?.role;
   const pathName = usePathname();
-<<<<<<< HEAD
-  // const [notifications, setNotifications] = useState<string[]>([]);
-
-  // useEffect(() => {
-  //   // Fetch notifications logic here (this should be replaced with actual logic)
-  //   setNotifications(['New club request', 'Profile update required']);
-  // }, []);
-=======
->>>>>>> parent of dce3564 (Merge pull request #70 from ics-314-code-crew/issue-63)
 
   return (
     <Navbar
