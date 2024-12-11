@@ -12,12 +12,12 @@ const NavBar: React.FC = () => {
   const userWithRole = session?.user as { email: string; role: string };
   const role = userWithRole?.role;
   const pathName = usePathname();
-  const [notifications, setNotifications] = useState<string[]>([]);
+  // const [notifications, setNotifications] = useState<string[]>([]);
 
-  useEffect(() => {
-    // Fetch notifications logic here (this should be replaced with actual logic)
-    setNotifications(['New club request', 'Profile update required']);
-  }, []);
+  // useEffect(() => {
+  //   // Fetch notifications logic here (this should be replaced with actual logic)
+  //   setNotifications(['New club request', 'Profile update required']);
+  // }, []);
 
   const [opacity, setOpacity] = useState(1);
 
