@@ -28,6 +28,7 @@ export async function GET(request: Request) {
 
     return NextResponse.json(clubs);
   } catch (error) {
+    console.log('Seems like its here');
     console.error('Error fetching clubs:', error);
     return NextResponse.json(
       { error: 'Internal Server Error' },
