@@ -35,8 +35,7 @@ const ListPage: React.FC = () => {
       const data = await response.json();
       setFilteredClubs(data);
     } catch (error) {
-      console.error('Error fetching clubs:', error);
-      console.log('Its in list page');
+      console.error('Error with fetching clubs:', error);
     } finally {
       setIsLoading(false);
     }
