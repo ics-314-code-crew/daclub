@@ -83,12 +83,6 @@ const EditClubForm = ({ clubId }: { clubId: string }) => {
         imageLocations: data.imageLocations
           ? data.imageLocations.split(',').map((url) => url.trim())
           : [],
-<<<<<<< HEAD
-        edited: true,
-        createdAt: new Date(), // Add createdAt property
-        read: false, // Add read property
-=======
->>>>>>> parent of dce3564 (Merge pull request #70 from ics-314-code-crew/issue-63)
       };
 
       await updateClub(Number(clubId), formattedData);
