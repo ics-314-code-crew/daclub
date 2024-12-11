@@ -74,32 +74,6 @@
       "expirationDate": "2025-09-30",
       "interestAreas": "Game Development",
       "admins": "wassup@hawaii.edu"
-    },
-    {
-      "name": "Timpuyog",
-      "description": "An organization of students enrolled in various courses offered by ILLP at UH Manoa",
-      "meetingTime": "N/A",
-      "location": "N/A",
-      "website": "https://manoa.hawaii.edu/rio/timpuyog/Home.html",
-      "contactEmail": "timpuyog@hawaii.edu",
-      "logo": "timpuyogLogo.jpg",
-      "startDate": "2024-10-08",
-      "expirationDate": "2025-09-30",
-      "interestAreas": "Cultural",
-      "admins": "hello@hawaii.edu"
-    },
-    {
-      "name": "International Business Club",
-      "description": "A club that promotes international business and culture at UH Manoa",
-      "meetingTime": "N/A",
-      "location": "Shidler College of Business",
-      "website": "https://www.ibouhm.com/",
-      "contactEmail": "jmbandol@hawaii.edu",
-      "logo": "IBOlogo.png",
-      "startDate": "2024-09-27",
-      "expirationDate": "2025-09-30",
-      "interestAreas": "Business",
-      "admins": "wassup@hawaii.edu"
     }
   ]
 }
