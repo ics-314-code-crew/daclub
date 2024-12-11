@@ -9,6 +9,7 @@ async function main() {
 
   config.defaultAccounts.forEach(async (account) => {
     let role: Role = 'USER';
+
     if (account.role === 'SUPER_ADMIN') {
       role = 'SUPER_ADMIN';
     }
@@ -18,6 +19,7 @@ async function main() {
       console.error('Email must end with @hawaii.edu');
       process.exit(1);
     }
+
     const fullName = `${account.firstName} ${account.lastName}`;
     console.log(`  Creating user: ${fullName} with role: ${role}`);
     await prisma.user.upsert({
@@ -53,6 +55,7 @@ async function main() {
         interestAreas: data.interestAreas,
         admins: data.admins,
         members: data.members,
+        imageLocations: data.imageLocations,
       },
     });
   });
