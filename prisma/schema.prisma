@@ -59,4 +59,5 @@ model Club {
   notifications   Notification[]
   createdAt       DateTime  @default(now())
   edited          Boolean   @default(false)
+  read            Boolean   @default(false)
 }

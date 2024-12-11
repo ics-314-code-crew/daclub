@@ -142,6 +142,7 @@ export async function updateClub(
     imageLocations?: string[];
     createdAt: Date;
     edited: boolean;
+    read: boolean;
   },
   'admins'
   > & { admins?: string | null },
