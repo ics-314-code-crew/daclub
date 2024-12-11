@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import { useSession } from 'next-auth/react';
 import { usePathname } from 'next/navigation';
 import { Navbar, Container, Nav, NavDropdown, Image } from 'react-bootstrap';
@@ -13,41 +12,11 @@ const NavBar: React.FC = () => {
   const role = userWithRole?.role;
   const pathName = usePathname();
 
-  const [opacity, setOpacity] = useState(1);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const maxScroll = 200; // adjustable
-      const newOpacity = Math.max(1 - scrollPosition / maxScroll, 0.25); // adjust minimum opacity
-      setOpacity(newOpacity);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const maxScroll = 200; // adjustable
-      const newOpacity = Math.max(1 - scrollPosition / maxScroll, 0.25); // adjust minimum opacity
-      setOpacity(newOpacity);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
   return (
     <Navbar
       expand="lg"
       className="bg-dark text-white shadow"
-      style={{ position: 'sticky', top: 0, zIndex: 1000, opacity }}
+      style={{ position: 'sticky', top: 0, zIndex: 1000 }}
     >
       <Container>
         <Navbar.Brand href="/" className="d-flex align-items-center">
