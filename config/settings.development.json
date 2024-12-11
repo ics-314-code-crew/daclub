@@ -44,15 +44,15 @@
 
   "defaultClubsData": [
     {
-      "name": "Tech Club",
-      "description": "A club for tech enthusiasts",
+      "name": "ACM Manoa",
+      "description": "Computer Science Organization at UH Manoa",
       "meetingTime": "Every Tuesday at 5 PM",
       "location": "Computer Science Building",
-      "website": "https://acmmanoa.org/clubs/gamedev.html",
-      "contactEmail": "tech@example.com",
-      "logo": "techlogo.png",
-      "startDate": "2021-01-01",
-      "expirationDate": "2025-12-31",
+      "website": "https://acmmanoa.org/",
+      "contactEmail": "president@acmmanoa.org",
+      "logo": "acm.png",
+      "startDate": "2024-09-27",
+      "expirationDate": "2025-09-30",
       "interestAreas": "Technology",
       "admins": "hello@hawaii.edu",
       "members": "wassup@hawaii.edu,hello@hawaii.edu",
@@ -63,21 +63,38 @@
       ]
     },
     {
-      "name": "Photography Club",
-      "description": "A club for aspiring photographers to learn and practice photography.",
-      "meetingTime": "Wednesdays at 3 PM",
-      "location": "Room 101",
-      "website": "https://manoa.hawaii.edu/ctahr/4h/4h-hale-learning/hawaii-military-4-h-virtual-photography-club/",
-      "contactEmail": "contact@photographyclub.example.com",
-      "logo": "photographylogo.png",
-      "startDate": "2021-01-01",
-      "expirationDate": "2025-12-25",
-      "interestAreas": "Photography",
+      "name": "Ballroom Dance Club",
+      "description": "A club that promotes social and competitive ballroom dance within the UH community",
+      "meetingTime": "Every Tuesday at 7 PM",
+      "location": "Studio 3 in the Athletic Complex",
+      "website": "https://acmmanoa.org/clubs/ballroom.html",
+      "contactEmail": "rnarayan@hawaii.edu",
+      "logo": "BDCUHlogo.png",
+      "startDate": "2024-09-27",
+      "expirationDate": "2025-09-30",
+      "interestAreas": "Ballroom Dance",
       "admins": "wassup@hawaii.edu",
       "members": "wassup@hawaii.edu,hello@hawaii.edu",
       "imageLocations": [
-        "https://thedispatchonline.net/wp-content/uploads/2022/03/IMG_5088-900x600.jpg",
-        "https://www.parkorchards.org.au/site/DefaultSite/filesystem/images/Clubs/Photography%20S.jpeg"
+        "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1kJ25G.img?w=899&h=495&m=4&q=100",
+        "https://www.khon2.com/wp-content/uploads/sites/8/2024/03/uh-manoa-ballroom-1.png?resize=160"
+      ]
+    },
+    {
+      "name": "Game Dev Club",
+      "description": "An organization for students interested in game development UH Manoa",
+      "meetingTime": "Every Thursday from 7-8 PM",
+      "location": "Computer Science Building",
+      "website": "https://acmmanoa.org/clubs/gamedev.html",
+      "contactEmail": "brandimw@hawaii.edu",
+      "logo": "gamedev.png",
+      "startDate": "2024-10-15",
+      "expirationDate": "2025-09-30",
+      "interestAreas": "Game Development",
+      "admins": "wassup@hawaii.edu",
+      "members": "wassup@hawaii.edu,hello@hawaii.edu",
+      "imageLocations": [
+        "https://thedispatchonline.net/wp-content/uploads/2022/03/IMG_5088-900x600.jpg"
       ]
     }
   ]
