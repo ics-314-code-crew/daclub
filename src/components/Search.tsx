@@ -1,35 +1,33 @@
-/* eslint-disable */
-
-'use client';
-
 import { useState, useEffect, useCallback } from 'react';
 import { InputGroup, FormControl, Button } from 'react-bootstrap';
 import { Search as SearchIcon } from 'react-bootstrap-icons';
 import { Club } from '@prisma/client';
+import Notification from './Notification'; // Import the Notification component
 
 type SearchProps = {
   onResults: (clubs: Club[]) => void;
   onLoading?: (loading: boolean) => void;
 };
 
-// eslint-disable-next-line react/prop-types
 const Search: React.FC<SearchProps> = ({ onResults, onLoading }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [isSearchActive, setIsSearchActive] = useState(false);
+  const [notification, setNotification] = useState<string | null>(null);
 
   const fetchClubs = useCallback(
     async (query: string) => {
       if (onLoading) onLoading(true);
       try {
-        return null;
         const response = await fetch(`/api/search?q=${query}`);
         if (!response.ok) {
           throw new Error('Failed to fetch clubs');
         }
         const data = await response.json();
         onResults(data);
+        setNotification('Clubs fetched successfully!');
       } catch (error) {
         onResults([]);
+        setNotification('Failed to fetch clubs');
       } finally {
         if (onLoading) onLoading(false);
       }
@@ -88,6 +86,7 @@ const Search: React.FC<SearchProps> = ({ onResults, onLoading }) => {
           />
         )}
       </InputGroup>
+      {notification && <Notification message={notification} />}
     </div>
   );
 };

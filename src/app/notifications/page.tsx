@@ -1,6 +1,7 @@
 import { getServerSession } from 'next-auth';
 import authOptions from '@/lib/authOptions';
 import { loggedInProtectedPage } from '@/lib/page-protection';
+import NotificationsClient from './NotificationsClient';
 
 const NotificationsPage = async () => {
   // Protect the page, only logged in users can access it.
@@ -11,11 +12,7 @@ const NotificationsPage = async () => {
     } | null,
   );
 
-  return (
-    <main>
-      Placeholder for Notifications.
-    </main>
-  );
+  return <NotificationsClient />;
 };
 
 export default NotificationsPage;

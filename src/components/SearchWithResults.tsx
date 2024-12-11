@@ -1,25 +1,29 @@
-/* eslint-disable */
-
 'use client';
 
 import { useState } from 'react';
 import { Row, Col, Spinner } from 'react-bootstrap';
 import ClubCard from '@/components/ClubCard';
 import Search from '@/components/Search';
+import Notification from '@/components/Notification';
 import { Club } from '@prisma/client';
 
 type SearchWithResultsProps = {
   currentUserEmail: string;
 };
 
-// eslint-disable-next-line react/prop-types
 const SearchWithResults: React.FC<SearchWithResultsProps> = ({ currentUserEmail }) => {
   const [filteredClubs, setFilteredClubs] = useState<Club[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [notification, setNotification] = useState<string | null>(null);
 
   const handleResults = (clubs: Club[]) => {
     setFilteredClubs(clubs);
     setIsLoading(false);
+    if (clubs.length > 0) {
+      setNotification('Clubs found successfully!');
+    } else {
+      setNotification('No clubs found. Try a different search term.');
+    }
   };
 
   const handleLoading = (loading: boolean) => {
@@ -28,10 +32,9 @@ const SearchWithResults: React.FC<SearchWithResultsProps> = ({ currentUserEmail 
 
   return (
     <>
-      <div className="text-center text-white">
-        No clubs found. Try a different search term.
-      </div>
-      {/* <Search onResults={handleResults} onLoading={handleLoading} />
+      {notification && <Notification message={notification} />}
+      <div className="text-center text-white">No clubs found. Try a different search term.</div>
+      <Search onResults={handleResults} onLoading={handleLoading} />
       {isLoading ? (
         <div className="d-flex justify-content-center my-4">
           <Spinner animation="border" variant="light" />
@@ -45,12 +48,10 @@ const SearchWithResults: React.FC<SearchWithResultsProps> = ({ currentUserEmail 
               </Col>
             ))
           ) : (
-            <div className="text-center text-white">
-              No clubs found. Try a different search term.
-            </div>
+            <div className="text-center text-white">No clubs found. Try a different search term.</div>
           )}
         </Row>
-      )} */}
+      )}
     </>
   );
 };
