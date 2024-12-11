@@ -96,11 +96,11 @@ const NavBar: React.FC = () => {
             )}
             {session ? (
               <NavDropdown
-                title={
+                title={(
                   <span className="text-white">
                     {`${role === 'SUPER_ADMIN' ? '(Da Club Admin) ' : ''}${currentUser}`}
                   </span>
-                }
+                )}
                 id="user-dropdown"
                 align="end"
                 className="text-white"

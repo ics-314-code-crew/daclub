@@ -19,7 +19,7 @@ const NotificationCard = ({ id, name, read, onMarkAsRead }: NotificationCardProp
   };
 
   return (
-    <Card className={`mb-4`} id="notificationCard">
+    <Card className="mb-4" id="notificationCard">
       <Card.Header>
         <h2>{name}</h2>
       </Card.Header>
