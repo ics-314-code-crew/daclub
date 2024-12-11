@@ -139,6 +139,7 @@ export async function updateClub(
     startDate: string;
     expirationDate: string;
     imageLocations?: string[];
+    createdAt: Date;
   },
   'admins'
   > & { admins?: string | null },

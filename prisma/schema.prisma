@@ -57,4 +57,5 @@ model Club {
   members         String?
   imageLocations  String[]
   notifications   Notification[]
+  createdAt       DateTime  @default(now()) // Add this line
 }
