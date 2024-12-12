@@ -81,6 +81,7 @@ const NavBar: React.FC = () => {
                 align="end"
                 className="text-white"
               >
+                {/* Profile Section */}
                 <NavDropdown.Item href="/auth/profile">
                   <PersonCircle className="me-2" />
                   Profile
@@ -89,10 +90,18 @@ const NavBar: React.FC = () => {
                   <Pencil className="me-2" />
                   Edit Profile
                 </NavDropdown.Item>
+
+                <NavDropdown.Divider />
+
+                {/* Sign Out */}
                 <NavDropdown.Item href="/api/auth/signout">
                   <BoxArrowRight className="me-2" />
                   Sign Out
                 </NavDropdown.Item>
+
+                <NavDropdown.Divider />
+
+                {/* Security Settings */}
                 <NavDropdown.Item href="/auth/change-password">
                   <Lock className="me-2" />
                   Change Password
