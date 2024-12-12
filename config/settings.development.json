@@ -44,6 +44,22 @@
 
   "defaultClubsData": [
     {
+        "name": "Lego Club",
+        "description": "We build legos and compete in competitions.",
+        "meetingTime": "Every Wednesday and Friday at 1 PM Hawaii Time",
+        "location": "Library Room 195",
+        "website": "",
+        "contactEmail": "lego@hawaii.edu",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/LEGO_logo.svg/1024px-LEGO_logo.svg.png",
+        "startDate": "2023-12-02",
+        "expirationDate": "2024-09-30",
+        "interestAreas": "Fun/Leisure",
+        "admins": "john@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": []
+
+    },
+    {
         "name": "8bit at UH Manoa",
         "description": "8bit is dedicated to developing impactful software ranging from open-source projects to client solutions all while providing students with hands-on experience and a supportive network to advance their careers in software engineering.",
         "meetingTime": "Every Monday at 1 PM Hawaii Time",

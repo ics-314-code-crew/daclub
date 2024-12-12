@@ -183,6 +183,49 @@ export async function getAllClubs() {
 }
 
 /**
+ * Gets all active clubs in the database.
+ * @returns a list of active clubs.
+ */
+export async function getActiveClubs() {
+  const clubs = await prisma.club.findMany({
+    where: {
+      status: 'ACTIVE',
+    },
+  });
+  return clubs;
+}
+/**
+ * Gets all the expired clubs in the database.
+ * @returns a list of expired clubs.
+ */
+export async function getExpiredClubs() {
+  const clubs = await prisma.club.findMany({
+    where: {
+      status: 'EXPIRED',
+    },
+  });
+  return clubs;
+}
+/**
+ * Updates the club to be expired if the data for expiration passes.
+ * @param id, the club identifier.
+ */
+export async function setClubExpired() {
+  const now = new Date();
+  await prisma.club.updateMany({
+    where: {
+      expirationDate: {
+        lte: now,
+      },
+      status: 'ACTIVE',
+    },
+    data: {
+      status: 'EXPIRED',
+    },
+  });
+}
+
+/**
  * Updates an existing club in the database.
  * @param id, the club identifier.
  * @param data, the updated club data.
