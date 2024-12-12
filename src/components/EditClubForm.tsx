@@ -78,6 +78,7 @@ const EditClubForm = ({ clubId }: { clubId: string }) => {
 
   const onSubmit = async (data: OnSubmitClubFormData) => {
     try {
+      console.log('hello');
       const formattedData = {
         ...data,
         imageLocations: data.imageLocations
