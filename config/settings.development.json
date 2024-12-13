@@ -1675,13 +1675,15 @@
         "location": "n/a",
         "website": "",
         "contactEmail": "tilitile@hawaii.edu",
-        "logo":"https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo":"https://www.staradvertiser.com/wp-content/uploads/2023/04/WDA-MANOA-132.jpg",
         "startDate": "2024-10-08",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://natsci.manoa.hawaii.edu/sasc/photos/Ambassadors2022-Group.JPG"
+        ]
     },
     {
         "name": "Martial Arts Club",
@@ -1696,7 +1698,9 @@
         "interestAreas": "Leisure/Sport",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://static.wixstatic.com/media/1c9d9d_e9d175b222ae445e8f0ea94be738996e~mv2.jpg/v1/crop/x_118,y_290,w_901,h_671/fill/w_432,h_322,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/1c9d9d_e9d175b222ae445e8f0ea94be738996e~mv2.jpg"
+        ]
     },
     {
         "name": "Materials Protection Hawaii AMPP Student Chapter",
@@ -1798,7 +1802,9 @@
         "interestAreas": "Academic/Professional",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://biodiversity-reu.manoa.hawaii.edu/cms-data/gallery/blog/2016reu/visiting-moku-o-loe/unnamed-7-sq.jpg"
+        ]
     },
     {
         "name": "Molecular Cell Biology Club at UH Manoa",
@@ -1813,7 +1819,9 @@
         "interestAreas": "Academic/Professional",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://th.bing.com/th/id/R.a450d986c404c5c2cdbfcb42d8196fca?rik=XcY4VPWiAJwoZw&pid=ImgRaw&r=0"
+        ]
     },
     {
         "name": "Mortar Board National Honor Society Hui Po'okela Chapter at the University Of Hawai'i at Mānoa",
