@@ -37,8 +37,8 @@ model Notification {
   clubId    Int
   message   String
   createdAt DateTime @default(now())
-  
   Club      Club     @relation(fields: [clubId], references: [id])
+  read            Boolean   @default(false)
 }
 
 model Club {

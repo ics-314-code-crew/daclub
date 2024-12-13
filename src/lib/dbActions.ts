@@ -124,6 +124,17 @@ async function addNotification(clubId: number, message: string) {
   });
 }
 
+
+/**
+ * Deletes a notification from the database.
+ * @param notificationId, the identifier of the notification to be deleted.
+ */
+export async function deleteNotification(notificationId: number) {
+  await prisma.notification.delete({
+    where: { id: notificationId },
+  });
+}
+
 export async function updateClub(
   id: number,
   data: Omit<
@@ -161,7 +172,7 @@ export async function updateClub(
     where: { id },
     data: formattedData,
   });
-  
+
   // Remove club from the notification database
   if (data.read) {
     await prisma.notification.deleteMany({

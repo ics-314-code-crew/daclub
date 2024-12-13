@@ -10,5 +10,12 @@ declare module 'next-auth' {
       profileImage?: string;
       role: string;
     };
+    notification: {
+      id: number;
+      message: string;
+      clubId: number;
+      createdAt: Date;
+      editedAt: Date;
+    }
   }
 }
