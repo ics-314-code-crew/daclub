@@ -47,5 +47,4 @@ model Club {
   interestAreas   String
   members         String?
   imageLocations  String[]
-  status          String     @default("ACTIVE")
 }
