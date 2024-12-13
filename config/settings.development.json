@@ -1727,13 +1727,15 @@
         "location": "n/a",
         "website": "",
         "contactEmail": "tilitile@hawaii.edu",
-        "logo":"https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo":"https://staradvertiser.wpenginepowered.com/wp-content/uploads/2023/04/WDA-MANOA-132.jpg",
         "startDate": "2024-10-08",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://natsci.manoa.hawaii.edu/sasc/photos/Ambassadors2022-Group.JPG"
+        ]
     },
     {
         "name": "Martial Arts Club",
@@ -1748,7 +1750,9 @@
         "interestAreas": "Leisure/Sport",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://static.wixstatic.com/media/1c9d9d_e9d175b222ae445e8f0ea94be738996e~mv2.jpg/v1/crop/x_118,y_290,w_901,h_671/fill/w_432,h_322,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/1c9d9d_e9d175b222ae445e8f0ea94be738996e~mv2.jpg"
+        ]
     },
     {
         "name": "Materials Protection Hawaii AMPP Student Chapter",
@@ -1757,7 +1761,7 @@
         "location": "n/a",
         "website": "",
         "contactEmail": "by34@hawaii.edu",
-        "logo":"https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo":"https://ampp.academicworks.com/image_uploads/W1siZiIsImltYWdlX3VwbG9hZHMvMy8zODllMzFjNy00YWNhLTQ1NWItOTk0NC03NTMzNjE2MDgwYTIvTG9nb19Ud29Db2xvcl9WZXJ0aWNhbF9SR0IuanBnIl1d?sha=7eb5ced8ce9fcfd7",
         "startDate": "2024-12-02",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
@@ -1770,11 +1774,11 @@
     {
         "name": "Math Club at the University of Hawaii at Manoa",
         "description":"The Math Club at the University of Hawai'i at Mānoa is dedicated to fostering a vibrant community for students passionate about mathematics. We aim to create a space where members can explore and deepen their understanding of mathematical concepts, collaborate on problem-solving, and engage in stimulating discussions. Through our events, we connect students with professors and professionals who demonstrate the practical applications of mathematics in various fields, offering insight into how math is used in research, industry, and beyond.",
-        "meetingTime": "n/a",
-        "location": "Keller Hall",
+        "meetingTime": "Every Monday at 4 PM",
+        "location": "Keller 301",
         "website": "",
         "contactEmail": "sakuraet@hawaii.edu",
-        "logo":"https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo":"https://math.hawaii.edu/wordpress/wp-content/uploads/2023/11/Screenshot-2023-11-08-at-5.17.24-PM-672x372.png",
         "startDate": "2024-10-15",
         "expirationDate": "2025-09-30",
         "interestAreas": "",
@@ -1791,7 +1795,7 @@
         "location": "John A. Burns School of Medicine (JABSOM)",
         "website": "https://uhmsmp.com/",
         "contactEmail": "erinjh@hawaii.edu",
-        "logo":"https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo":"https://manoa.hawaii.edu/undergrad/pac/wp-content/uploads/2021/07/MSMP.png",
         "startDate": "2024-10-15",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
@@ -1850,7 +1854,9 @@
         "interestAreas": "Academic/Professional",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://biodiversity-reu.manoa.hawaii.edu/cms-data/gallery/blog/2016reu/visiting-moku-o-loe/unnamed-7-sq.jpg"
+        ]
     },
     {
         "name": "Molecular Cell Biology Club at UH Manoa",
@@ -1865,7 +1871,9 @@
         "interestAreas": "Academic/Professional",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://th.bing.com/th/id/R.a450d986c404c5c2cdbfcb42d8196fca?rik=XcY4VPWiAJwoZw&pid=ImgRaw&r=0"
+        ]
     },
     {
         "name": "Mortar Board National Honor Society Hui Po'okela Chapter at the University Of Hawai'i at Mānoa",
@@ -1874,7 +1882,7 @@
         "location": "n/a",
         "website": "https://mortarboardmanoa.weebly.com/?c=mkt_w_chnl:aff_geo:all_prtnr:sas_subprtnr:1538097_camp:brand_adtype:txtlnk_ag:weebly_lptype:hp_var:358504&sscid=c1k8_jgnxx&utm_source=ShareASale",
         "contactEmail": "Nicoleou@hawaii.edu",
-        "logo":"https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx6tlBlSw84479CzlM1UZ5c4VllNrjqJSuaA&s",
         "startDate": "2024-10-15",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
