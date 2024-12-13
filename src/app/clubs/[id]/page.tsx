@@ -35,6 +35,19 @@ const ClubPage = async ({ params }: ClubPageProps) => {
 
   const club = await prisma.club.findUnique({
     where: { id: clubId },
+    select: {
+      id: true,
+      name: true,
+      description: true,
+      logo: true,
+      meetingTime: true,
+      location: true,
+      admins: true,
+      members: true,
+      contactEmail: true,
+      imageLocations: true,
+      interestAreas: true,
+    },
   });
 
   if (!club) {
