@@ -355,7 +355,7 @@
         ]
     },
     {
-        "name": "ASL Club ",
+        "name": "ASL Club",
         "description": "The purpose of ASL club is to give members a community and space to practice ASL further their ASL skills and get more involved with the Deaf community. ",
         "meetingTime": "Every Monday at 4 PM Hawaii Time",
         "location": "Building A Room 51",
@@ -710,13 +710,16 @@
         "location": "Building A Room 194",
         "website": "",
         "contactEmail": "gardea@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://scontent.fhnl3-2.fna.fbcdn.net/v/t39.30808-6/306137008_522368696558815_795507128696691798_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=cKF7jiEBoMYQ7kNvgF5lRA7&_nc_zt=23&_nc_ht=scontent.fhnl3-2.fna&_nc_gid=AK3udDQKxrTSdMRqcQwIcxv&oh=00_AYC_IV_ju9YVJzJPp7Gugxu7KqyWWk18PaAyWaZty2cVSQ&oe=6761724D",
         "startDate": "2024-11-14",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "hello@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://shidler.hawaii.edu/sites/shidler.hawaii.edu/files/2022/07/cmaa-main-picture.png",
+            "https://shidler.hawaii.edu/sites/shidler.hawaii.edu/files/2022/07/cart.jpeg"
+        ]
     },
     {
         "name": "College of Tropical Agriculture and Human Resources (CTAHR) Student Ambassadors",
@@ -725,13 +728,17 @@
         "location": "Building A Room 36",
         "website": "",
         "contactEmail": "radovije@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://scontent.fhnl3-1.fna.fbcdn.net/v/t39.30808-6/243480660_264828328979879_5898934932791299275_n.png?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=vxB_dpixCnMQ7kNvgG_ILBV&_nc_zt=23&_nc_ht=scontent.fhnl3-1.fna&_nc_gid=ArP9Zi7rZzLKvDMz1ZOu-es&oh=00_AYDa71Q1yDqOpHEDbj2QzBvMB7Ewfc_hmg143KkWzj3HTA&oe=676190FB",
         "startDate": "2024-09-27",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "hello@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://cms.ctahr.hawaii.edu/portals/0/Users/120/00/1400/CTAHR%20Final.jpg?ver=2018-10-03-121118-327",
+            "https://www.ctahr.hawaii.edu/site/images/Ambassadors/group15.jpg",
+            "https://web.ctahr.hawaii.edu/wp-content/uploads/2024/07/student_club.jpg"
+        ]
     },
     {
         "name": "Cycle Mānoa",
@@ -740,28 +747,32 @@
         "location": "Building A Room 25",
         "website": "",
         "contactEmail": "wmeinke@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://scontent-sea1-1.xx.fbcdn.net/v/t1.6435-9/85096466_2572422742855725_4791897112386207744_n.png?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=tSicq0UgYOMQ7kNvgE8FESw&_nc_zt=23&_nc_ht=scontent-sea1-1.xx&_nc_gid=AXz1IB4y_pKAmBLud-3S5XI&oh=00_AYAwMqzN4WF8aN-geZFb--Kg8o6zwrTsPUR25y1RgKOnHg&oe=678329FC",
         "startDate": "2024-10-08",
         "expirationDate": "2025-09-30",
         "interestAreas": "Leisure/Recreational",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://scontent-sea1-1.xx.fbcdn.net/v/t39.30808-6/464582737_8318612471570028_2880899366460606418_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=aKr6gzs62gwQ7kNvgHHLNpm&_nc_zt=23&_nc_ht=scontent-sea1-1.xx&_nc_gid=ATcSrI2mwK5kZqDQcImcKsb&oh=00_AYCXCR-Re4SguDQzAG2ThTyq4cTL76a3GXriWiQc57TpMQ&oe=67619B6A"
+        ]
     },
     {
-        "name": "Delta Sigma Pi: Rho Chi ",
+        "name": "Delta Sigma Pi: Rho Chi",
         "description": "Delta Sigma Pi is a professional fraternity organized to foster the study of business in universities; to encourage scholarship social activity and the association of students for their mutual advancement by research and practice; to promote closer affiliation between the commercial world and students of commerce and to further a higher standard of commercial ethics and culture and the civic and commercial welfare of the community.",
         "meetingTime": "Every Monday at 1 PM Hawaii Time",
         "location": "Building A Room 200",
         "website": "",
         "contactEmail": "marinacl@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://scontent.fhnl3-1.fna.fbcdn.net/v/t39.30808-6/241212689_4165424900222215_8207192109591424965_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=guyS62e7dB0Q7kNvgEKf9KG&_nc_zt=23&_nc_ht=scontent.fhnl3-1.fna&_nc_gid=AKOsyBPSWH30-B_6SSCLkuT&oh=00_AYDHXFDiKGFzF3Jrsd55X87Yxze6febklzw1FlqWYd3c9g&oe=67618E7B",
         "startDate": "2024-10-08",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://images.squarespace-cdn.com/content/v1/5209b34be4b00fb51876dab6/1667269182261-N0LJ5V8VDC3OZJCK1UZC/IMG_0230.JPG?format=1500w"
+        ]
     },
     {
         "name": "Disability In Medicine",
@@ -770,13 +781,15 @@
         "location": "Building A Room 103",
         "website": "",
         "contactEmail": "parksr@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVvYPBtxEEHkSICWoUi92X64ozVPK024sI8A&s",
         "startDate": "2024-10-10",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "john@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://www.outreach.hawaii.edu/wp-content/uploads/2020/07/disability_access-1024x579.jpg"
+        ]
     },
     {
         "name": "Domestic Violence Awareness Committee",
@@ -785,13 +798,15 @@
         "location": "Building A Room 152",
         "website": "",
         "contactEmail": "agnescat@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://uhcc.hawaii.edu/dvam/assets/img/DVAM-Round_Logo.png",
         "startDate": "2024-10-10",
         "expirationDate": "2025-09-30",
         "interestAreas": "Service",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://uhcc.hawaii.edu/dvam/assets/img/webinars/Event1.png"
+        ]
     },
     {
         "name": "Drone Technologies at the University of Hawaii at Manoa",
@@ -800,13 +815,15 @@
         "location": "Building A Room 13",
         "website": "",
         "contactEmail": "leon8@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRamyXGjfjENobrGKVMBmNgu-trqbMjdMKx8w&s",
         "startDate": "2024-09-27",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "hello@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://manoa.hawaii.edu/news/attachments/img13316_15554l.jpg"
+        ]
     },
     {
         "name": "Dungeons & Tables at Manoa",
@@ -815,7 +832,7 @@
         "location": "Building A Room 59",
         "website": "",
         "contactEmail": "solanoj@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://assetsio.gnwcdn.com/lords-of-waterdeep-board-game-layout.jpg?width=1200&height=1200&fit=bounds&quality=70&format=jpg&auto=webp",
         "startDate": "2024-10-21",
         "expirationDate": "2025-09-30",
         "interestAreas": "Sport/Leisure",
@@ -830,13 +847,16 @@
         "location": "Building A Room 67",
         "website": "",
         "contactEmail": "santiago@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://scontent.fhnl3-2.fna.fbcdn.net/v/t39.30808-6/301151779_549319133660904_8380902434548495575_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=piJ2WjsfEmQQ7kNvgFIoa0m&_nc_zt=23&_nc_ht=scontent.fhnl3-2.fna&_nc_gid=AWeKH8HLf2YQz5sRtukxiaq&oh=00_AYCUfv5TAwAPI10pmDzWC5feJGZmgiTJaKSefLRbqoAg1w&oe=67619CEC",
         "startDate": "2024-10-08",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "john@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://eastwest.toastmastersclubs.org/imageuploads/4012/Hawaii_008.JPG",
+            "https://eastwest.toastmastersclubs.org/imageuploads/4012/photo.JPG"
+        ]
     },
     {
         "name": "Engineers' Council at the University of Hawai'i",
@@ -845,13 +865,15 @@
         "location": "Building A Room 172",
         "website": "",
         "contactEmail": "trcmendo@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://scontent.fhnl3-1.fna.fbcdn.net/v/t39.30808-6/295308093_1003960043754244_1093301706763254570_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=264DJ_L47rAQ7kNvgEq0Asw&_nc_zt=23&_nc_ht=scontent.fhnl3-1.fna&_nc_gid=AaLj-q4XL8IiTKGtXnq1peG&oh=00_AYC_1OnK6jM-sfZqwt1_C4X8eQPjF7X_zA-rDWoEApnm4Q&oe=67616BF3",
         "startDate": "2024-10-08",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "john@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://images.squarespace-cdn.com/content/v1/5f4c72df4aef0b74694db7ad/1664400645161-BAWJRFP2XQ5Q8A3AD676/image-asset.jpeg?format=1000w"
+        ]
     },
     {
         "name": "Environmental Justice Club",
@@ -860,52 +882,58 @@
         "location": "Building A Room 182",
         "website": "",
         "contactEmail": "gkics@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://ugc.production.linktr.ee/e8b2c7c8-ac7d-4997-9e2f-29a6c602b79a_IMG-8688-1-.jpeg?io=true&size=avatar-v3_0",
         "startDate": "2024-10-08",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "john@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://bloximages.newyork1.vip.townnews.com/manoanow.org/content/tncms/assets/v3/editorial/1/60/16023b94-ea0c-11ed-b6bc-97b6ae4457c5/6452f16f0321f.image.jpg?resize=512%2C384"
+        ]
     },
     {
-        "name": "Environmental Law Society ",
+        "name": "Environmental Law Society",
         "description": "The University of Hawai`i at Mānoa William S. Richardson School of Law's Environmental Law Society (“ELS”) provides students and the community with exposure to environmental issues and laws participates in conservation efforts and develops students' skills to participate in the making of sound environmental policy. ELS organizes opportunities for students to go on hikes and to participate in service projects throughout the school year. To enhance and enable student opportunities to work in the public sector of environmental law ELS students raise funds for the summer grant program No Ke Ola O Ka `Aina (For the Life of the Land).\nELS members actively raise and promote awareness for greener living through ELS sponsored activities and by “living green” themselves. Living green does not necessarily entail radical sacrifices but those seemingly small changes that can have a big impact in the future. Some of those changes include: recycling using re-usable coffee mugs and take-out containers taking re-usable shopping bags to the grocery store and turning off lights when not in a room be it at home or at school.\nOther ELS activities include participating in the City and County of Honolulu's Adopt-a-Stream program. In addition ELS sponsors island-wide hiking trips and beach cleanups presents papers at and participates in regional and national environmental conferences and organizes service trips to the uninhabited island of Kaho'olawe to assist in cleanup and re-vegetation efforts on the former U.S. military bombing target.\nELS welcomes all those who are interested in environmental law or even those who just love the outdoors and want to keep Hawai'i beautiful so that we can continue to say “lucky we live Hawai'i.\"\n",
         "meetingTime": "Every Friday at 8 PM Hawaii Time",
         "location": "Building A Room 52",
         "website": "",
         "contactEmail": "kailamw@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://manoa.hawaii.edu/elp/wp-content/uploads/sites/95/2024/12/Screen-Shot-2024-12-05-at-11.44.02-AM.png",
         "startDate": "2024-10-08",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "hello@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://manoa.hawaii.edu/elp/wp-content/uploads/sites/95/2024/06/unnamed-scaled.jpg"
+        ]
     },
     {
-        "name": "Eta Sigma Delta ",
+        "name": "Eta Sigma Delta",
         "description": "Eta Sigma Delta is an international honor society that recognizes the scholastic and professional achievements of students and alumni from institutions granting diplomas associate and baccalaureate degrees or their equivalents in the field of hospitality tourism and culinary arts.",
         "meetingTime": "Every Wednesday at 6 PM Hawaii Time",
         "location": "Building A Room 170",
         "website": "",
         "contactEmail": "cksakamo@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMKn4esT3_hWa5Cx5_XearSQ39YXAd6TUW0A&s",
         "startDate": "2024-10-08",
         "expirationDate": "2025-09-30",
         "interestAreas": "Honorary Society",
         "admins": "john@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://www.hawaii.edu/news/wp-content/uploads/2020/06/manoa-shidler-tim-esd.jpgs"
+        ]
     },
     {
-        "name": "Every Nation Campus ",
+        "name": "Every Nation Campus",
         "description": "Every Nation Campus (ENC) partners with schools to help students excel in their\nacademics develop leadership skills be a positive influence in their community and pursue a Christ-centered life.",
         "meetingTime": "Every Monday at 1 PM Hawaii Time",
         "location": "Building A Room 53",
         "website": "",
         "contactEmail": "kmtuazon@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://scontent.fhnl3-1.fna.fbcdn.net/v/t39.30808-6/307701862_420322273551343_6129905639153433488_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=F7CPQEfMDEkQ7kNvgHKqDap&_nc_zt=23&_nc_ht=scontent.fhnl3-1.fna&_nc_gid=ABtx_QfObNN18jEAZSsAr7Z&oh=00_AYCKnVyovGq_wZr985en6yXRcZgRXMOrWUOEzaB0JKYPKA&oe=676193AB",
         "startDate": "2024-10-10",
         "expirationDate": "2025-09-30",
         "interestAreas": "Religiuos",
@@ -920,13 +948,15 @@
         "location": "Building A Room 146",
         "website": "",
         "contactEmail": "sevett@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://www.aafp.org/content/dam/AAFP/images/med-ed/category/fmig-sq(2).png",
         "startDate": "2024-09-27",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "john@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlaIGgyCa-EmeWeuyVD4AU18PkRjCWCoMCeg&s"
+        ]
     },
     {
         "name": "FilGrad at UH Manoa",
@@ -935,13 +965,16 @@
         "location": "Building A Room 125",
         "website": "",
         "contactEmail": "rondellt@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://scontent.fhnl3-2.fna.fbcdn.net/v/t39.30808-6/428680145_733487752216172_9179720611988492495_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=eOBkpsIr9HEQ7kNvgEaAzGx&_nc_zt=23&_nc_ht=scontent.fhnl3-2.fna&_nc_gid=A0KJHDUl9ahoIlZVZ0FkLZY&oh=00_AYBvgD2x5a72sYnwdcuACmg61YNb7rkq8qQzUZ84ZJxNrw&oe=67619933",
         "startDate": "2024-10-15",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://coe.hawaii.edu/tinalak/wp-content/uploads/sites/18/2020/03/FilGrad-Ceremony.jpg",
+            "https://live.staticflickr.com/65535/52081934250_5101324868_b.jpg"
+        ]
     },
     {
         "name": "Filipino Law Students Association (FLSA)",
@@ -950,13 +983,15 @@
         "location": "Building A Room 170",
         "website": "",
         "contactEmail": "jluab@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbuCusa2NWIQN1puMxXrFkrwgfoROeGomRTQ&s",
         "startDate": "2024-10-15",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQxjzxOqlBygJ9UapMFggNfxYLZ2e_EdtPLw&s"
+        ]
     },
     {
         "name": "Freshman Mentorship Program",
@@ -965,13 +1000,16 @@
         "location": "Building A Room 8",
         "website": "",
         "contactEmail": "younggi@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLQnjFwM7Tr-dp0bYSOfvQf8wwQ0qPfky9PQ&s",
         "startDate": "2024-11-04",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://manoa.hawaii.edu/undergrad/freshman/wp-content/uploads/2023/01/IMG_0857-scaled.jpg",
+            "https://manoa.hawaii.edu/undergrad/freshman/wp-content/uploads/2020/01/unnamed.jpg"
+        ]
     },
     {
         "name": "Game Dev at the University of Hawai'i",
