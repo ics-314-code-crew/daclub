@@ -13,7 +13,7 @@ export async function createUser({
   user,
 }: {
   credentials: { email: string; password: string };
-  user: { firstName: string; lastName: string, profileImage?: string | null };
+  user: { firstName: string; lastName: string; profileImage?: string | null };
 }): Promise<void> {
   const password = await hash(credentials.password, 10);
   await prisma.user.create({
@@ -83,11 +83,11 @@ export async function getUserData(id: number) {
 
   return user
     ? {
-      firstName: user.firstName,
-      lastName: user.lastName,
-      email: user.email,
-      profileImage: user.profileImage || '',
-    }
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
+        profileImage: user.profileImage || '',
+      }
     : null;
 }
 /**
@@ -101,11 +101,11 @@ export async function getUserById(id: number) {
 
   return user
     ? {
-      firstName: user.firstName,
-      lastName: user.lastName,
-      email: user.email,
-      profileImage: user.profileImage || '',
-    }
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
+        profileImage: user.profileImage || '',
+      }
     : null;
 }
 /**
@@ -119,20 +119,20 @@ export async function getClubById(id: number) {
 
   return club
     ? {
-      name: club.name,
-      description: club.description || '',
-      meetingTime: club.meetingTime || '',
-      location: club.location || '',
-      website: club.website || null,
-      contactEmail: club.contactEmail || null,
-      logo: club.logo || '',
-      admins: club.admins || '',
-      interestAreas: club.interestAreas || '',
-      startDate: club.startDate.toISOString().split('T')[0],
-      expirationDate: club.expirationDate.toISOString().split('T')[0],
-      members: club.members || '',
-      imageLocations: club.imageLocations || [],
-    }
+        name: club.name,
+        description: club.description || '',
+        meetingTime: club.meetingTime || '',
+        location: club.location || '',
+        website: club.website || null,
+        contactEmail: club.contactEmail || null,
+        logo: club.logo || '',
+        admins: club.admins || '',
+        interestAreas: club.interestAreas || '',
+        startDate: club.startDate.toISOString().split('T')[0],
+        expirationDate: club.expirationDate.toISOString().split('T')[0],
+        members: club.members || '',
+        imageLocations: club.imageLocations || [],
+      }
     : null;
 }
 
@@ -145,7 +145,7 @@ export async function addClub(club: {
   description: string;
   meetingTime: string;
   location: string;
-  website?: string | null
+  website?: string | null;
   contactEmail?: string | null;
   logo: string;
   interestAreas: string;
@@ -189,20 +189,24 @@ export async function getAllClubs() {
  */
 export async function updateClub(
   id: number,
-  data: Omit<{
-    name: string;
-    description: string;
-    meetingTime: string;
-    location: string;
-    website?: string | null;
-    contactEmail?: string | null;
-    logo: string;
-    admins?: string | null;
-    interestAreas: string;
-    startDate: string;
-    expirationDate: string;
-    imageLocations?: string[];
-  }, 'admins'> & { admins?: string | null },
+  data: Omit<
+    {
+      name: string;
+      description: string;
+      meetingTime: string;
+      location: string;
+      website?: string | null;
+      contactEmail?: string | null;
+      logo: string;
+      admins?: string | null;
+      interestAreas: string;
+      startDate: string;
+      expirationDate: string;
+      imageLocations?: string[];
+      read?: boolean;
+    },
+    'admins'
+  > & { admins?: string | null },
 ) {
   const { admins, imageLocations, ...rest } = data;
 
@@ -219,6 +223,13 @@ export async function updateClub(
     data: formattedData,
   });
 
+  // Remove club from the notification database
+  if (data.read) {
+    await prisma.notification.deleteMany({
+      where: { clubId: id },
+    });
+  }
+
   redirect('/list');
 }
 
@@ -226,13 +237,7 @@ export async function updateClub(
  * Changes a user's password.
  * @param credentials, the user credentials.
  */
-export async function changePassword(
-  credentials:
-  {
-    email: string;
-    password: string;
-  },
-) {
+export async function changePassword(credentials: { email: string; password: string }) {
   const password = await hash(credentials.password, 10);
   await prisma.user.update({
     where: { email: credentials.email },
