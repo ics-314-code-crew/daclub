@@ -83,10 +83,10 @@ const EditClubForm = ({ clubId }: { clubId: string }) => {
     try {
       const formattedData = {
         ...data,
-        imageLocations: data.imageLocations 
-          ? data.imageLocations.split(',').map((url) => url.trim()) 
-          : [],
-        edited: true
+        imageLocations: data.imageLocations ? data.imageLocations.split(',').map((url) => url.trim()) : [],
+        edited: true,
+        createdAt: new Date(),
+        read: true,
       };
 
       await updateClub(Number(clubId), formattedData);
