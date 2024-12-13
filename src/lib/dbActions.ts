@@ -50,20 +50,20 @@ export async function getClubById(id: number) {
 
   return club
     ? {
-      name: club.name,
-      description: club.description || '',
-      meetingTime: club.meetingTime || '',
-      location: club.location || '',
-      website: club.website || null,
-      contactEmail: club.contactEmail || null,
-      logo: club.logo || '',
-      admins: club.admins || '',
-      interestAreas: club.interestAreas || '',
-      startDate: club.startDate.toISOString().split('T')[0],
-      expirationDate: club.expirationDate.toISOString().split('T')[0],
-      members: club.members || '',
-      imageLocations: club.imageLocations || [],
-    }
+        name: club.name,
+        description: club.description || '',
+        meetingTime: club.meetingTime || '',
+        location: club.location || '',
+        website: club.website || null,
+        contactEmail: club.contactEmail || null,
+        logo: club.logo || '',
+        admins: club.admins || '',
+        interestAreas: club.interestAreas || '',
+        startDate: club.startDate.toISOString().split('T')[0],
+        expirationDate: club.expirationDate.toISOString().split('T')[0],
+        members: club.members || '',
+        imageLocations: club.imageLocations || [],
+      }
     : null;
 }
 
@@ -127,24 +127,24 @@ async function addNotification(clubId: number, message: string) {
 export async function updateClub(
   id: number,
   data: Omit<
-  {
-    name: string;
-    description: string;
-    meetingTime: string;
-    location: string;
-    website?: string | null;
-    contactEmail?: string | null;
-    logo: string;
-    admins?: string | null;
-    interestAreas: string;
-    startDate: string;
-    expirationDate: string;
-    imageLocations?: string[];
-    createdAt: Date;
-    edited: boolean;
-    read: boolean;
-  },
-  'admins'
+    {
+      name: string;
+      description: string;
+      meetingTime: string;
+      location: string;
+      website?: string | null;
+      contactEmail?: string | null;
+      logo: string;
+      admins?: string | null;
+      interestAreas: string;
+      startDate: string;
+      expirationDate: string;
+      imageLocations?: string[];
+      createdAt: Date;
+      edited: boolean;
+      read: boolean;
+    },
+    'admins'
   > & { admins?: string | null },
 ) {
   const { admins, imageLocations, ...rest } = data;
@@ -161,6 +161,13 @@ export async function updateClub(
     where: { id },
     data: formattedData,
   });
+  
+  // Remove club from the notification database
+  if (data.read) {
+    await prisma.notification.deleteMany({
+      where: { clubId: id },
+    });
+  }
 
   // Trigger notification
   await addNotification(id, `The club "${data.name}" has been edited and needs review.`);
