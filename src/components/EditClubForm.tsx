@@ -10,7 +10,6 @@ import { getClubById, updateClub } from '@/lib/dbActions';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import { EditClubSchema } from '@/lib/validationSchemas';
 import { useEffect, useState } from 'react';
-import Notification from './Notification'; // Import the Notification component
 
 type BaseClubFormData = {
   name: string;
@@ -36,7 +35,6 @@ type OnSubmitClubFormData = BaseClubFormData & {
 const EditClubForm = ({ clubId }: { clubId: string }) => {
   const { status } = useSession();
   const [isLoading, setIsLoading] = useState(true);
-  const [notification, setNotification] = useState<string | null>(null);
 
   const {
     register,
@@ -62,7 +60,6 @@ const EditClubForm = ({ clubId }: { clubId: string }) => {
         }
       } catch (error) {
         swal('Error', 'Failed to load club data.', 'error');
-        setNotification('Failed to load club data.');
       } finally {
         setIsLoading(false);
       }
@@ -81,22 +78,20 @@ const EditClubForm = ({ clubId }: { clubId: string }) => {
 
   const onSubmit = async (data: OnSubmitClubFormData) => {
     try {
+      console.log('hello');
       const formattedData = {
         ...data,
-        imageLocations: data.imageLocations 
-          ? data.imageLocations.split(',').map((url) => url.trim()) 
+        imageLocations: data.imageLocations
+          ? data.imageLocations.split(',').map((url) => url.trim())
           : [],
-        edited: true
       };
 
       await updateClub(Number(clubId), formattedData);
       swal('Success', 'Club has been updated.', 'success', {
         timer: 2000,
       });
-      setNotification('Club has been updated successfully!');
     } catch (error) {
       swal('Error', 'Failed to update club.', 'error');
-      setNotification('Failed to update club.');
     }
   };
 
@@ -127,8 +122,11 @@ const EditClubForm = ({ clubId }: { clubId: string }) => {
           <h2 className="text-white">Edit Club</h2>
           <p className="text-white">
             Fields marked with
+            {' '}
             <span style={{ color: 'red' }}>*</span>
-            are required.
+            {' '}
+            are
+            required.
           </p>
         </div>
         <Card className="border-0">
@@ -140,6 +138,7 @@ const EditClubForm = ({ clubId }: { clubId: string }) => {
               <Form.Group className="mb-4">
                 <Form.Label>
                   Club Name
+                  {' '}
                   <span style={{ color: 'red' }}>*</span>
                 </Form.Label>
                 <FormControl
@@ -153,6 +152,7 @@ const EditClubForm = ({ clubId }: { clubId: string }) => {
               <Form.Group className="mb-4">
                 <Form.Label>
                   Description
+                  {' '}
                   <span style={{ color: 'red' }}>*</span>
                 </Form.Label>
                 <FormControl
@@ -162,7 +162,9 @@ const EditClubForm = ({ clubId }: { clubId: string }) => {
                   {...register('description')}
                   className={`form-control-lg ${errors.description ? 'is-invalid' : ''}`}
                 />
-                <div className="invalid-feedback">{errors.description?.message}</div>
+                <div className="invalid-feedback">
+                  {errors.description?.message}
+                </div>
               </Form.Group>
 
               {/* Meeting and Location */}
@@ -171,6 +173,7 @@ const EditClubForm = ({ clubId }: { clubId: string }) => {
               <Form.Group className="mb-4">
                 <Form.Label>
                   Meeting Time
+                  {' '}
                   <span style={{ color: 'red' }}>*</span>
                 </Form.Label>
                 <FormControl
@@ -179,11 +182,14 @@ const EditClubForm = ({ clubId }: { clubId: string }) => {
                   {...register('meetingTime')}
                   className={`form-control-lg ${errors.meetingTime ? 'is-invalid' : ''}`}
                 />
-                <div className="invalid-feedback">{errors.meetingTime?.message}</div>
+                <div className="invalid-feedback">
+                  {errors.meetingTime?.message}
+                </div>
               </Form.Group>
               <Form.Group className="mb-4">
                 <Form.Label>
                   Location
+                  {' '}
                   <span style={{ color: 'red' }}>*</span>
                 </Form.Label>
                 <FormControl
@@ -192,7 +198,9 @@ const EditClubForm = ({ clubId }: { clubId: string }) => {
                   {...register('location')}
                   className={`form-control-lg ${errors.location ? 'is-invalid' : ''}`}
                 />
-                <div className="invalid-feedback">{errors.location?.message}</div>
+                <div className="invalid-feedback">
+                  {errors.location?.message}
+                </div>
               </Form.Group>
 
               {/* Additional Details */}
@@ -216,7 +224,9 @@ const EditClubForm = ({ clubId }: { clubId: string }) => {
                   {...register('website')}
                   className={`form-control-lg ${errors.website ? 'is-invalid' : ''}`}
                 />
-                <div className="invalid-feedback">{errors.website?.message}</div>
+                <div className="invalid-feedback">
+                  {errors.website?.message}
+                </div>
               </Form.Group>
               <Form.Group className="mb-4">
                 <Form.Label>Contact Email</Form.Label>
@@ -226,7 +236,9 @@ const EditClubForm = ({ clubId }: { clubId: string }) => {
                   {...register('contactEmail')}
                   className={`form-control-lg ${errors.contactEmail ? 'is-invalid' : ''}`}
                 />
-                <div className="invalid-feedback">{errors.contactEmail?.message}</div>
+                <div className="invalid-feedback">
+                  {errors.contactEmail?.message}
+                </div>
               </Form.Group>
               <Form.Group className="mb-4">
                 <Form.Label>Logo</Form.Label>
@@ -246,11 +258,18 @@ const EditClubForm = ({ clubId }: { clubId: string }) => {
                   {...register('interestAreas')}
                   className={`form-control-lg ${errors.interestAreas ? 'is-invalid' : ''}`}
                 />
-                <div className="invalid-feedback">{errors.interestAreas?.message}</div>
+                <div className="invalid-feedback">
+                  {errors.interestAreas?.message}
+                </div>
               </Form.Group>
               <Form.Group className="mb-4">
                 <Form.Label>Club Admins</Form.Label>
-                <FormControl type="text" disabled {...register('admins')} className="form-control-lg" />
+                <FormControl
+                  type="text"
+                  disabled
+                  {...register('admins')}
+                  className="form-control-lg"
+                />
               </Form.Group>
               <Form.Group className="mb-4">
                 <Form.Label>Members</Form.Label>
@@ -269,6 +288,7 @@ const EditClubForm = ({ clubId }: { clubId: string }) => {
               <Form.Group className="mb-4">
                 <Form.Label>
                   Start Date
+                  {' '}
                   <span style={{ color: 'red' }}>*</span>
                 </Form.Label>
                 <FormControl
@@ -276,11 +296,14 @@ const EditClubForm = ({ clubId }: { clubId: string }) => {
                   {...register('startDate')}
                   className={`form-control-lg ${errors.startDate ? 'is-invalid' : ''}`}
                 />
-                <div className="invalid-feedback">{errors.startDate?.message}</div>
+                <div className="invalid-feedback">
+                  {errors.startDate?.message}
+                </div>
               </Form.Group>
               <Form.Group className="mb-4">
                 <Form.Label>
                   Expiration Date
+                  {' '}
                   <span style={{ color: 'red' }}>*</span>
                 </Form.Label>
                 <FormControl
@@ -288,7 +311,9 @@ const EditClubForm = ({ clubId }: { clubId: string }) => {
                   {...register('expirationDate')}
                   className={`form-control-lg ${errors.expirationDate ? 'is-invalid' : ''}`}
                 />
-                <div className="invalid-feedback">{errors.expirationDate?.message}</div>
+                <div className="invalid-feedback">
+                  {errors.expirationDate?.message}
+                </div>
               </Form.Group>
 
               {/* Actions */}
@@ -300,7 +325,6 @@ const EditClubForm = ({ clubId }: { clubId: string }) => {
             </Form>
           </Card.Body>
         </Card>
-        {notification && <Notification message={notification} />}
       </div>
     </Container>
   );
