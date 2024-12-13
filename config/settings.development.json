@@ -1083,13 +1083,16 @@
         "location": "Building A Room 153",
         "website": "",
         "contactEmail": "chloemcc@hawaii.edu",
-        "logo": "https://lh3.googleusercontent.com/gcAj__MaQz9dMw8puGBTxpoMFtudaKPYXBFy94Ucqn6iHUA7iIjIT-Wq8T1Y0VPIeIsZdahUoNpLSJLCVNW9I1BSNmAgv8tzSNY_7r-5j2i-ERNPvg2y7lDEBbAhjGUbXQ=w1280",
+        "logo": "https://lh5.googleusercontent.com/543kFTzUCIwUE0G_uNy_gBhgZnmullUutZti_vZm5MpYSUYU8zr_lhzKa7JIgN0I9sHY9zC5SlNn3PofVsd9EaV0Q2JhXL0ZA84Xfrir8UJ_3dSzqIixodplV4UlZWjljQ=w1280",
         "startDate": "2024-11-04",
         "expirationDate": "2025-09-30",
         "interestAreas": "Leisure/Recreational",
         "admins": "john@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://lh6.googleusercontent.com/x8xf0jLOmwNYaB-ct8e9KHGKMsb_mTopj7fRKJ421nNq4iR92gaK5IaPMXFpePY4WOgzaMAO5kYnDQfdBqVyfIKTcQYGSDCY7718tFDUEan-Qz1eKBgA-u9YAvP3iVgcgQ=w1280",
+            "https://lh3.googleusercontent.com/3g4aVm3tijUXhhqKcMHW5gnhXEzPWdvvin2tC4-ByfNivwA2jnbC2ymIGxDh2BLeBoKT1XHlJlF-rH5q4QXy2OzaWrtRofVEr-leJW_Spg93TRo4Jg9VukfGCa-sysRggQ=w1280"
+        ]
     },
     {
         "name": "Graduate Arts Council",

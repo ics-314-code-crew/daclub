@@ -1,4 +1,7 @@
 import { prisma } from '@/lib/prisma';
+import { useSession } from 'next-auth/react';
+import { redirect } from 'next/navigation';
+import LoadingSpinner from '@/components/LoadingSpinner';
 import { Container, Image, Navbar, Row, Col, Card } from 'react-bootstrap';
 
 type ClubPageProps = {
@@ -6,8 +9,17 @@ type ClubPageProps = {
 };
 
 const ClubPage = async ({ params }: ClubPageProps) => {
-  const { id } = params;
+  const { status } = useSession();
 
+  if (status === 'loading') {
+    return <LoadingSpinner />;
+  }
+
+  if (status === 'unauthenticated') {
+    redirect('/auth/signin');
+  }
+
+  const { id } = params;
   const clubId = parseInt(id, 10);
 
   if (Number.isNaN(clubId)) {
@@ -23,18 +35,6 @@ const ClubPage = async ({ params }: ClubPageProps) => {
 
   const club = await prisma.club.findUnique({
     where: { id: clubId },
-    select: {
-      id: true,
-      name: true,
-      description: true,
-      logo: true,
-      meetingTime: true,
-      location: true,
-      admins: true,
-      members: true,
-      imageLocations: true,
-      interestAreas: true,
-    },
   });
 
   if (!club) {
@@ -102,9 +102,15 @@ const ClubPage = async ({ params }: ClubPageProps) => {
             <p>{club.description || 'Not specified'}</p>
             <h5>Interest Areas:</h5>
             <p>{club.interestAreas || 'Not specified'}</p>
+            {club.contactEmail && (
+              <>
+                <h5>Club Contact(s):</h5>
+                <p>{club.contactEmail || 'Not specified'}</p>
+              </>
+            )}
             {club.admins && (
               <>
-                <h5>Admin(s):</h5>
+                <h5>Club Admin(s):</h5>
                 <p>{club.admins || 'Not specified'}</p>
               </>
             )}
