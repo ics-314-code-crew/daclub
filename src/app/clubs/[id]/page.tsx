@@ -1,7 +1,4 @@
 import { prisma } from '@/lib/prisma';
-import { useSession } from 'next-auth/react';
-import { redirect } from 'next/navigation';
-import LoadingSpinner from '@/components/LoadingSpinner';
 import { Container, Image, Navbar, Row, Col, Card } from 'react-bootstrap';
 
 type ClubPageProps = {
@@ -9,16 +6,6 @@ type ClubPageProps = {
 };
 
 const ClubPage = async ({ params }: ClubPageProps) => {
-  const { status } = useSession();
-
-  if (status === 'loading') {
-    return <LoadingSpinner />;
-  }
-
-  if (status === 'unauthenticated') {
-    redirect('/auth/signin');
-  }
-
   const { id } = params;
   const clubId = parseInt(id, 10);
 
