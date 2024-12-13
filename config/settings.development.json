@@ -44,6 +44,22 @@
 
   "defaultClubsData": [
     {
+        "name": "Lego Club",
+        "description": "We build legos and compete in competitions.",
+        "meetingTime": "Every Wednesday and Friday at 1 PM Hawaii Time",
+        "location": "Library Room 195",
+        "website": "",
+        "contactEmail": "lego@hawaii.edu",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/LEGO_logo.svg/1024px-LEGO_logo.svg.png",
+        "startDate": "2023-12-02",
+        "expirationDate": "2024-09-30",
+        "interestAreas": "Fun/Leisure",
+        "admins": "john@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": []
+
+    },
+    {
         "name": "8bit at UH Manoa",
         "description": "8bit is dedicated to developing impactful software ranging from open-source projects to client solutions all while providing students with hands-on experience and a supportive network to advance their careers in software engineering.",
         "meetingTime": "Every Monday at 1 PM Hawaii Time",
@@ -113,7 +129,7 @@
     },
     {
         "name": "AlohaThon Dance Marathon",
-        "description": "AlohaThon is a Dance Marathon that lasts for about 6-8 hours. We fundraise money for our local Children's Miracle Network Hospital Kapiolani Medical Center for Women and Children. ",
+        "description": "AlohaThon is a Dance Marathon that lasts for about 6-8 hours. We fundraise money for our local Children's Miracle Network Hospital Kapiolani Medical Center for Women and Children.",
         "meetingTime": "Every Wednesday at 8 PM Hawaii Time",
         "location": "Building A Room 2",
         "website": "",
@@ -324,7 +340,7 @@
     },
     {
         "name": "Anime Manga Society of Hawai`i @ UH Manoa",
-        "description": "AMS is a leisure club and a gathering place for people to discuss and enjoy anime and anime related things.  We are also hooked up with a few other club that we do combined club related activities.  ",
+        "description": "AMS is a leisure club and a gathering place for people to discuss and enjoy anime and anime related things.  We are also hooked up with a few other club that we do combined club related activities. ",
         "meetingTime": "Every Wednesday at 8 PM Hawaii Time",
         "location": "Building A Room 170",
         "website": "https://anime-manga-society.square.site/",
@@ -355,8 +371,8 @@
         ]
     },
     {
-        "name": "ASL Club ",
-        "description": "The purpose of ASL club is to give members a community and space to practice ASL further their ASL skills and get more involved with the Deaf community. ",
+        "name": "ASL Club",
+        "description": "The purpose of ASL club is to give members a community and space to practice ASL further their ASL skills and get more involved with the Deaf community.",
         "meetingTime": "Every Monday at 4 PM Hawaii Time",
         "location": "Building A Room 51",
         "website": "",
@@ -388,7 +404,7 @@
     },
     {
         "name": "Association for Computing Machinery at University of Hawaii at Manoa",
-        "description": "We are an organization in the computer science department that represents the students and helps them gain education community and opportunities in the work force through 6 independent SIG groups and ACM run programs ",
+        "description": "We are an organization in the computer science department that represents the students and helps them gain education community and opportunities in the work force through 6 independent SIG groups and ACM run programs",
         "meetingTime": "Every Friday at 8 PM Hawaii Time",
         "location": "Building A Room 123",
         "website": "https://acmmanoa.org/",
@@ -486,7 +502,7 @@
     },
     {
         "name": "Beta Beta Gamma Sorority",
-        "description": "To create an environment of likeminded people contributing to our personal growth. ",
+        "description": "To create an environment of likeminded people contributing to our personal growth.",
         "meetingTime": "Every Friday at 1 PM Hawaii Time",
         "location": "Building A Room 164",
         "website": "",
@@ -531,7 +547,7 @@
     },
     {
         "name": "Capoeira Senzala Hawaii",
-        "description": "Capoeira Senzala Hawaii strives to improve physical and mental health of the community though exposure to Afro-Brazilian culture of capoeira and samba.  Regular participants will be trained in the art of attack and evasion flexibility strength acrobatics and rhythm.  We practice traditional Brazilian musical instruments that accompany capoeira and samba.  We also organize and participate in community events and strive to expose students to a larger capoeira community by bringing in guest teachers from the US mainland and Brazil. ",
+        "description": "Capoeira Senzala Hawaii strives to improve physical and mental health of the community though exposure to Afro-Brazilian culture of capoeira and samba.  Regular participants will be trained in the art of attack and evasion flexibility strength acrobatics and rhythm.  We practice traditional Brazilian musical instruments that accompany capoeira and samba.  We also organize and participate in community events and strive to expose students to a larger capoeira community by bringing in guest teachers from the US mainland and Brazil.",
         "meetingTime": "Every Tuesday at 2 PM Hawaii Time",
         "location": "Building A Room 200",
         "website": "",
@@ -563,7 +579,7 @@
     },
     {
         "name": "CHAARG at the University of Hawaii at Manoa",
-        "description": "To enhance our members' knowledge and experience of health fitness and overall wellness through providing opportunities for our members to engage in various forms of healthy activities; To advocate for and seek to address issues of concern for members and women in general; To serve as a network for all of our members that hold one another accountable for living out a healthier and happier lifestyle. ",
+        "description": "To enhance our members' knowledge and experience of health fitness and overall wellness through providing opportunities for our members to engage in various forms of healthy activities; To advocate for and seek to address issues of concern for members and women in general; To serve as a network for all of our members that hold one another accountable for living out a healthier and happier lifestyle.",
         "meetingTime": "Every Wednesday at 6 PM Hawaii Time",
         "location": "Building A Room 185",
         "website": "",
@@ -610,7 +626,7 @@
     },
     {
         "name": "Chinese Club",
-        "description": "The Chinese Club aims to help students who are learning or interested in Chinese learn about Chinese culture and language. Activities in the club will allow students (of all majors) to learn more about China Taiwan and other Chinese-speaking countries and the rich culture that these places practice. Other activities will also help with language learning such as learning certain Chinese words and phrases. This is a safe space for students who want to practice their Chinese speaking skills. ",
+        "description": "The Chinese Club aims to help students who are learning or interested in Chinese learn about Chinese culture and language. Activities in the club will allow students (of all majors) to learn more about China Taiwan and other Chinese-speaking countries and the rich culture that these places practice. Other activities will also help with language learning such as learning certain Chinese words and phrases. This is a safe space for students who want to practice their Chinese speaking skills.",
         "meetingTime": "Every Friday at 7 PM Hawaii Time",
         "location": "Building A Room 60",
         "website": "",
@@ -710,28 +726,35 @@
         "location": "Building A Room 194",
         "website": "",
         "contactEmail": "gardea@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://scontent.fhnl3-2.fna.fbcdn.net/v/t39.30808-6/306137008_522368696558815_795507128696691798_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=cKF7jiEBoMYQ7kNvgF5lRA7&_nc_zt=23&_nc_ht=scontent.fhnl3-2.fna&_nc_gid=AK3udDQKxrTSdMRqcQwIcxv&oh=00_AYC_IV_ju9YVJzJPp7Gugxu7KqyWWk18PaAyWaZty2cVSQ&oe=6761724D",
         "startDate": "2024-11-14",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "hello@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://shidler.hawaii.edu/sites/shidler.hawaii.edu/files/2022/07/cmaa-main-picture.png",
+            "https://shidler.hawaii.edu/sites/shidler.hawaii.edu/files/2022/07/cart.jpeg"
+        ]
     },
     {
         "name": "College of Tropical Agriculture and Human Resources (CTAHR) Student Ambassadors",
-        "description": "The purpose of this organization shall be to create awareness of CTAHR academic programs recruit prospective students to the College  encourage student engagement mentor current CTAHR students and to positively portray CTAHR to the University and outside communities. ",
+        "description": "The purpose of this organization shall be to create awareness of CTAHR academic programs recruit prospective students to the College  encourage student engagement mentor current CTAHR students and to positively portray CTAHR to the University and outside communities.",
         "meetingTime": "Every Monday at 8 PM Hawaii Time",
         "location": "Building A Room 36",
         "website": "",
         "contactEmail": "radovije@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://scontent.fhnl3-1.fna.fbcdn.net/v/t39.30808-6/243480660_264828328979879_5898934932791299275_n.png?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=vxB_dpixCnMQ7kNvgG_ILBV&_nc_zt=23&_nc_ht=scontent.fhnl3-1.fna&_nc_gid=ArP9Zi7rZzLKvDMz1ZOu-es&oh=00_AYDa71Q1yDqOpHEDbj2QzBvMB7Ewfc_hmg143KkWzj3HTA&oe=676190FB",
         "startDate": "2024-09-27",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "hello@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://cms.ctahr.hawaii.edu/portals/0/Users/120/00/1400/CTAHR%20Final.jpg?ver=2018-10-03-121118-327",
+            "https://www.ctahr.hawaii.edu/site/images/Ambassadors/group15.jpg",
+            "https://web.ctahr.hawaii.edu/wp-content/uploads/2024/07/student_club.jpg"
+        ]
     },
     {
         "name": "Cycle Mānoa",
@@ -740,28 +763,32 @@
         "location": "Building A Room 25",
         "website": "",
         "contactEmail": "wmeinke@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://scontent-sea1-1.xx.fbcdn.net/v/t1.6435-9/85096466_2572422742855725_4791897112386207744_n.png?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=tSicq0UgYOMQ7kNvgE8FESw&_nc_zt=23&_nc_ht=scontent-sea1-1.xx&_nc_gid=AXz1IB4y_pKAmBLud-3S5XI&oh=00_AYAwMqzN4WF8aN-geZFb--Kg8o6zwrTsPUR25y1RgKOnHg&oe=678329FC",
         "startDate": "2024-10-08",
         "expirationDate": "2025-09-30",
         "interestAreas": "Leisure/Recreational",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://scontent-sea1-1.xx.fbcdn.net/v/t39.30808-6/464582737_8318612471570028_2880899366460606418_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=aKr6gzs62gwQ7kNvgHHLNpm&_nc_zt=23&_nc_ht=scontent-sea1-1.xx&_nc_gid=ATcSrI2mwK5kZqDQcImcKsb&oh=00_AYCXCR-Re4SguDQzAG2ThTyq4cTL76a3GXriWiQc57TpMQ&oe=67619B6A"
+        ]
     },
     {
-        "name": "Delta Sigma Pi: Rho Chi ",
+        "name": "Delta Sigma Pi: Rho Chi",
         "description": "Delta Sigma Pi is a professional fraternity organized to foster the study of business in universities; to encourage scholarship social activity and the association of students for their mutual advancement by research and practice; to promote closer affiliation between the commercial world and students of commerce and to further a higher standard of commercial ethics and culture and the civic and commercial welfare of the community.",
         "meetingTime": "Every Monday at 1 PM Hawaii Time",
         "location": "Building A Room 200",
         "website": "",
         "contactEmail": "marinacl@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://scontent.fhnl3-1.fna.fbcdn.net/v/t39.30808-6/241212689_4165424900222215_8207192109591424965_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=guyS62e7dB0Q7kNvgEKf9KG&_nc_zt=23&_nc_ht=scontent.fhnl3-1.fna&_nc_gid=AKOsyBPSWH30-B_6SSCLkuT&oh=00_AYDHXFDiKGFzF3Jrsd55X87Yxze6febklzw1FlqWYd3c9g&oe=67618E7B",
         "startDate": "2024-10-08",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://images.squarespace-cdn.com/content/v1/5209b34be4b00fb51876dab6/1667269182261-N0LJ5V8VDC3OZJCK1UZC/IMG_0230.JPG?format=1500w"
+        ]
     },
     {
         "name": "Disability In Medicine",
@@ -770,28 +797,32 @@
         "location": "Building A Room 103",
         "website": "",
         "contactEmail": "parksr@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVvYPBtxEEHkSICWoUi92X64ozVPK024sI8A&s",
         "startDate": "2024-10-10",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "john@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://www.outreach.hawaii.edu/wp-content/uploads/2020/07/disability_access-1024x579.jpg"
+        ]
     },
     {
         "name": "Domestic Violence Awareness Committee",
-        "description": "Particularly during Domestic Violence Awareness month in October the Domestic Violence Awareness Committee organizes a series of events at the John A. Burns School of Medicine for the purpose of raising awareness of domestic violence facts and resources. ",
+        "description": "Particularly during Domestic Violence Awareness month in October the Domestic Violence Awareness Committee organizes a series of events at the John A. Burns School of Medicine for the purpose of raising awareness of domestic violence facts and resources.",
         "meetingTime": "Every Friday at 7 PM Hawaii Time",
         "location": "Building A Room 152",
         "website": "",
         "contactEmail": "agnescat@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://uhcc.hawaii.edu/dvam/assets/img/DVAM-Round_Logo.png",
         "startDate": "2024-10-10",
         "expirationDate": "2025-09-30",
         "interestAreas": "Service",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://uhcc.hawaii.edu/dvam/assets/img/webinars/Event1.png"
+        ]
     },
     {
         "name": "Drone Technologies at the University of Hawaii at Manoa",
@@ -800,13 +831,15 @@
         "location": "Building A Room 13",
         "website": "",
         "contactEmail": "leon8@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRamyXGjfjENobrGKVMBmNgu-trqbMjdMKx8w&s",
         "startDate": "2024-09-27",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "hello@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://manoa.hawaii.edu/news/attachments/img13316_15554l.jpg"
+        ]
     },
     {
         "name": "Dungeons & Tables at Manoa",
@@ -815,7 +848,7 @@
         "location": "Building A Room 59",
         "website": "",
         "contactEmail": "solanoj@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://assetsio.gnwcdn.com/lords-of-waterdeep-board-game-layout.jpg?width=1200&height=1200&fit=bounds&quality=70&format=jpg&auto=webp",
         "startDate": "2024-10-21",
         "expirationDate": "2025-09-30",
         "interestAreas": "Sport/Leisure",
@@ -830,13 +863,16 @@
         "location": "Building A Room 67",
         "website": "",
         "contactEmail": "santiago@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://scontent.fhnl3-2.fna.fbcdn.net/v/t39.30808-6/301151779_549319133660904_8380902434548495575_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=piJ2WjsfEmQQ7kNvgFIoa0m&_nc_zt=23&_nc_ht=scontent.fhnl3-2.fna&_nc_gid=AWeKH8HLf2YQz5sRtukxiaq&oh=00_AYCUfv5TAwAPI10pmDzWC5feJGZmgiTJaKSefLRbqoAg1w&oe=67619CEC",
         "startDate": "2024-10-08",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "john@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://eastwest.toastmastersclubs.org/imageuploads/4012/Hawaii_008.JPG",
+            "https://eastwest.toastmastersclubs.org/imageuploads/4012/photo.JPG"
+        ]
     },
     {
         "name": "Engineers' Council at the University of Hawai'i",
@@ -845,13 +881,15 @@
         "location": "Building A Room 172",
         "website": "",
         "contactEmail": "trcmendo@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://scontent.fhnl3-1.fna.fbcdn.net/v/t39.30808-6/295308093_1003960043754244_1093301706763254570_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=264DJ_L47rAQ7kNvgEq0Asw&_nc_zt=23&_nc_ht=scontent.fhnl3-1.fna&_nc_gid=AaLj-q4XL8IiTKGtXnq1peG&oh=00_AYC_1OnK6jM-sfZqwt1_C4X8eQPjF7X_zA-rDWoEApnm4Q&oe=67616BF3",
         "startDate": "2024-10-08",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "john@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://images.squarespace-cdn.com/content/v1/5f4c72df4aef0b74694db7ad/1664400645161-BAWJRFP2XQ5Q8A3AD676/image-asset.jpeg?format=1000w"
+        ]
     },
     {
         "name": "Environmental Justice Club",
@@ -860,52 +898,58 @@
         "location": "Building A Room 182",
         "website": "",
         "contactEmail": "gkics@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://ugc.production.linktr.ee/e8b2c7c8-ac7d-4997-9e2f-29a6c602b79a_IMG-8688-1-.jpeg?io=true&size=avatar-v3_0",
         "startDate": "2024-10-08",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "john@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://bloximages.newyork1.vip.townnews.com/manoanow.org/content/tncms/assets/v3/editorial/1/60/16023b94-ea0c-11ed-b6bc-97b6ae4457c5/6452f16f0321f.image.jpg?resize=512%2C384"
+        ]
     },
     {
-        "name": "Environmental Law Society ",
+        "name": "Environmental Law Society",
         "description": "The University of Hawai`i at Mānoa William S. Richardson School of Law's Environmental Law Society (“ELS”) provides students and the community with exposure to environmental issues and laws participates in conservation efforts and develops students' skills to participate in the making of sound environmental policy. ELS organizes opportunities for students to go on hikes and to participate in service projects throughout the school year. To enhance and enable student opportunities to work in the public sector of environmental law ELS students raise funds for the summer grant program No Ke Ola O Ka `Aina (For the Life of the Land).\nELS members actively raise and promote awareness for greener living through ELS sponsored activities and by “living green” themselves. Living green does not necessarily entail radical sacrifices but those seemingly small changes that can have a big impact in the future. Some of those changes include: recycling using re-usable coffee mugs and take-out containers taking re-usable shopping bags to the grocery store and turning off lights when not in a room be it at home or at school.\nOther ELS activities include participating in the City and County of Honolulu's Adopt-a-Stream program. In addition ELS sponsors island-wide hiking trips and beach cleanups presents papers at and participates in regional and national environmental conferences and organizes service trips to the uninhabited island of Kaho'olawe to assist in cleanup and re-vegetation efforts on the former U.S. military bombing target.\nELS welcomes all those who are interested in environmental law or even those who just love the outdoors and want to keep Hawai'i beautiful so that we can continue to say “lucky we live Hawai'i.\"\n",
         "meetingTime": "Every Friday at 8 PM Hawaii Time",
         "location": "Building A Room 52",
         "website": "",
         "contactEmail": "kailamw@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://manoa.hawaii.edu/elp/wp-content/uploads/sites/95/2024/12/Screen-Shot-2024-12-05-at-11.44.02-AM.png",
         "startDate": "2024-10-08",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "hello@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://manoa.hawaii.edu/elp/wp-content/uploads/sites/95/2024/06/unnamed-scaled.jpg"
+        ]
     },
     {
-        "name": "Eta Sigma Delta ",
+        "name": "Eta Sigma Delta",
         "description": "Eta Sigma Delta is an international honor society that recognizes the scholastic and professional achievements of students and alumni from institutions granting diplomas associate and baccalaureate degrees or their equivalents in the field of hospitality tourism and culinary arts.",
         "meetingTime": "Every Wednesday at 6 PM Hawaii Time",
         "location": "Building A Room 170",
         "website": "",
         "contactEmail": "cksakamo@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMKn4esT3_hWa5Cx5_XearSQ39YXAd6TUW0A&s",
         "startDate": "2024-10-08",
         "expirationDate": "2025-09-30",
         "interestAreas": "Honorary Society",
         "admins": "john@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://www.hawaii.edu/news/wp-content/uploads/2020/06/manoa-shidler-tim-esd.jpgs"
+        ]
     },
     {
-        "name": "Every Nation Campus ",
+        "name": "Every Nation Campus",
         "description": "Every Nation Campus (ENC) partners with schools to help students excel in their\nacademics develop leadership skills be a positive influence in their community and pursue a Christ-centered life.",
         "meetingTime": "Every Monday at 1 PM Hawaii Time",
         "location": "Building A Room 53",
         "website": "",
         "contactEmail": "kmtuazon@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://scontent.fhnl3-1.fna.fbcdn.net/v/t39.30808-6/307701862_420322273551343_6129905639153433488_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=F7CPQEfMDEkQ7kNvgHKqDap&_nc_zt=23&_nc_ht=scontent.fhnl3-1.fna&_nc_gid=ABtx_QfObNN18jEAZSsAr7Z&oh=00_AYCKnVyovGq_wZr985en6yXRcZgRXMOrWUOEzaB0JKYPKA&oe=676193AB",
         "startDate": "2024-10-10",
         "expirationDate": "2025-09-30",
         "interestAreas": "Religiuos",
@@ -920,13 +964,15 @@
         "location": "Building A Room 146",
         "website": "",
         "contactEmail": "sevett@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://www.aafp.org/content/dam/AAFP/images/med-ed/category/fmig-sq(2).png",
         "startDate": "2024-09-27",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "john@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlaIGgyCa-EmeWeuyVD4AU18PkRjCWCoMCeg&s"
+        ]
     },
     {
         "name": "FilGrad at UH Manoa",
@@ -935,28 +981,33 @@
         "location": "Building A Room 125",
         "website": "",
         "contactEmail": "rondellt@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://scontent.fhnl3-2.fna.fbcdn.net/v/t39.30808-6/428680145_733487752216172_9179720611988492495_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=eOBkpsIr9HEQ7kNvgEaAzGx&_nc_zt=23&_nc_ht=scontent.fhnl3-2.fna&_nc_gid=A0KJHDUl9ahoIlZVZ0FkLZY&oh=00_AYBvgD2x5a72sYnwdcuACmg61YNb7rkq8qQzUZ84ZJxNrw&oe=67619933",
         "startDate": "2024-10-15",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://coe.hawaii.edu/tinalak/wp-content/uploads/sites/18/2020/03/FilGrad-Ceremony.jpg",
+            "https://live.staticflickr.com/65535/52081934250_5101324868_b.jpg"
+        ]
     },
     {
         "name": "Filipino Law Students Association (FLSA)",
-        "description": "The Filipino Law Students Association (FLSA) is dedicated to strengthening the Filipino community through Filipino scholarship and leadership in Hawai'i's legal community.\nFLSA also aims to raise awareness about important contemporary issues facing Filipinos especially Filipino women as an oppressed class of Hawai'i society mindful that these issues are related to struggles in the Philippines and in the Native Hawaiian community. ",
+        "description": "The Filipino Law Students Association (FLSA) is dedicated to strengthening the Filipino community through Filipino scholarship and leadership in Hawai'i's legal community.\nFLSA also aims to raise awareness about important contemporary issues facing Filipinos especially Filipino women as an oppressed class of Hawai'i society mindful that these issues are related to struggles in the Philippines and in the Native Hawaiian community.",
         "meetingTime": "Every Wednesday at 6 PM Hawaii Time",
         "location": "Building A Room 170",
         "website": "",
         "contactEmail": "jluab@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbuCusa2NWIQN1puMxXrFkrwgfoROeGomRTQ&s",
         "startDate": "2024-10-15",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQxjzxOqlBygJ9UapMFggNfxYLZ2e_EdtPLw&s"
+        ]
     },
     {
         "name": "Freshman Mentorship Program",
@@ -965,13 +1016,16 @@
         "location": "Building A Room 8",
         "website": "",
         "contactEmail": "younggi@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLQnjFwM7Tr-dp0bYSOfvQf8wwQ0qPfky9PQ&s",
         "startDate": "2024-11-04",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://manoa.hawaii.edu/undergrad/freshman/wp-content/uploads/2023/01/IMG_0857-scaled.jpg",
+            "https://manoa.hawaii.edu/undergrad/freshman/wp-content/uploads/2020/01/unnamed.jpg"
+        ]
     },
     {
         "name": "Game Dev at the University of Hawai'i",
@@ -980,13 +1034,15 @@
         "location": "Building A Room 87",
         "website": "",
         "contactEmail": "brandimw@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://acmmanoa.org/images/gamedev/gamedev.png",
         "startDate": "2024-10-15",
         "expirationDate": "2025-09-30",
         "interestAreas": "Leisure/Recreational",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://acmsystem.hawaii.edu/wp-content/uploads/2024/05/GameDev_1-960x720.png"
+        ]
     },
     {
         "name": "Geology Club",
@@ -995,22 +1051,25 @@
         "location": "Building A Room 96",
         "website": "",
         "contactEmail": "oschmitt@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj_fpXQsZ0Tv4P9z4T1kqBIQz1lT-P7Aig_g&s",
         "startDate": "2024-10-08",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "hello@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHKo_W2HhJDQrnfrGQ3Y8KY50HTVEei8x1RQ&s",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWnL_8p8VVZXkj7M6mnPXNvaOi5pqAHXp4ig&s"
+        ]
     },
     {
         "name": "Girls Club at the University of Hawai'i at Mānoa",
-        "description": "Girls Club is a national foundation that has helped spearhead a movement for women in sports. We aim to help women get their foot in the door regarding the sports industry. Whether one is passionate about graphic design law statistics marketing physical therapy athletic training social media management etc. we can offer a place to explore those options and build connections with other strong hardworking individuals. This is not just a club about sports but a way to foster creativity find career opportunities and advocate for fellow women. ",
+        "description": "Girls Club is a national foundation that has helped spearhead a movement for women in sports. We aim to help women get their foot in the door regarding the sports industry. Whether one is passionate about graphic design law statistics marketing physical therapy athletic training social media management etc. we can offer a place to explore those options and build connections with other strong hardworking individuals. This is not just a club about sports but a way to foster creativity find career opportunities and advocate for fellow women.",
         "meetingTime": "Every Monday at 6 PM Hawaii Time",
         "location": "Building A Room 60",
         "website": "",
         "contactEmail": "emeraz@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkm_NBzVSuiOUnkrYCwbjRpp6QA5bCg4mgMw&s",
         "startDate": "2024-10-08",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
@@ -1025,7 +1084,7 @@
         "location": "Building A Room 88",
         "website": "",
         "contactEmail": "sugiki24@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZijwKj-zoY8MVMdj6QPQGMBe8hJFBHPndlQ&s",
         "startDate": "2024-10-15",
         "expirationDate": "2025-09-30",
         "interestAreas": "Leisure/Recreational",
@@ -1040,13 +1099,16 @@
         "location": "Building A Room 153",
         "website": "",
         "contactEmail": "chloemcc@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://lh5.googleusercontent.com/543kFTzUCIwUE0G_uNy_gBhgZnmullUutZti_vZm5MpYSUYU8zr_lhzKa7JIgN0I9sHY9zC5SlNn3PofVsd9EaV0Q2JhXL0ZA84Xfrir8UJ_3dSzqIixodplV4UlZWjljQ=w1280",
         "startDate": "2024-11-04",
         "expirationDate": "2025-09-30",
         "interestAreas": "Leisure/Recreational",
         "admins": "john@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://lh6.googleusercontent.com/x8xf0jLOmwNYaB-ct8e9KHGKMsb_mTopj7fRKJ421nNq4iR92gaK5IaPMXFpePY4WOgzaMAO5kYnDQfdBqVyfIKTcQYGSDCY7718tFDUEan-Qz1eKBgA-u9YAvP3iVgcgQ=w1280",
+            "https://lh3.googleusercontent.com/3g4aVm3tijUXhhqKcMHW5gnhXEzPWdvvin2tC4-ByfNivwA2jnbC2ymIGxDh2BLeBoKT1XHlJlF-rH5q4QXy2OzaWrtRofVEr-leJW_Spg93TRo4Jg9VukfGCa-sysRggQ=w1280"
+        ]
     },
     {
         "name": "Graduate Arts Council",
@@ -1055,7 +1117,7 @@
         "location": "Building A Room 25",
         "website": "",
         "contactEmail": "wongshel@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFQHYzboLXLEnfUuvBhrrE3iEQvD5yaHopCg&s",
         "startDate": "2024-10-08",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
@@ -1070,7 +1132,7 @@
         "location": "Building A Room 57",
         "website": "",
         "contactEmail": "kaylinmu@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://manoa.hawaii.edu/thompson/wp-content/uploads/DSW_TS-Logo-green_400.jpg",
         "startDate": "2024-09-27",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
@@ -1085,28 +1147,34 @@
         "location": "Building A Room 37",
         "website": "",
         "contactEmail": "linneamw@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://www.gwishawaii.org/uploads/1/0/9/3/109397165/new-gwish-logo.png",
         "startDate": "2024-10-08",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "wassup@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAB8Fu1AY4UAHwqVT3KQLx523Xx_xkL60DWA&s",
+            "https://media.licdn.com/dms/image/v2/D5622AQEvi_ejz7hYDw/feedshare-shrink_800/feedshare-shrink_800/0/1733273252547?e=1736985600&v=beta&t=joxVZfMMoSk8AqQCKvn97vjlciDEQ_fe2nEWo6eF650"
+        ]
     },
     {
         "name": "Grey Hats at UH Manoa",
         "description": "The purpose of the organization is to provide education on cybersecurity topics facilitate mentorship from relevant professionals and create an environment where interested individuals can learn cybersecurity fundamentals.",
         "meetingTime": "Every Wednesday at 5 PM Hawaii Time",
         "location": "Building A Room 162",
-        "website": "",
+        "website": "https://uhmgreyhats.github.io/",
         "contactEmail": "emorrell@hawaii.edu",
-        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "logo": "https://acmmanoa.org/images/grayhat/grayhats.png",
         "startDate": "2024-09-27",
         "expirationDate": "2025-09-30",
         "interestAreas": "Academic/Professional",
         "admins": "hello@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
-        "imageLocations": []
+        "imageLocations": [
+            "https://github.com/uhmgreyhats/uhmgreyhats.github.io/raw/master/thumbnail.png",
+            "https://avatars.githubusercontent.com/u/17755980?s=280&v=4"
+        ]
     },
     {
         "name": "Haumāna Exchange",
@@ -1125,7 +1193,7 @@
     },
     {
         "name": "Hawai'i Branch of American Society for Microbiology Student Chapter",
-        "description": "The purpose of this organization shall be: \nPromote student interest and further improves the quality of the Microbiology programs within the University of Hawai'i systems and at other institutions in the state.\nPromote and explain the benefits and value of HI-ASM membership to students postdocs and early career scientists in the state of Hawai'i \nProvide aid and professional development opportunities for students in Microbiology within the state in respects to academic curriculum research and employment. \nPromote student community and professional participation in local state and national ASM meetings and activities. ",
+        "description": "The purpose of this organization shall be: \nPromote student interest and further improves the quality of the Microbiology programs within the University of Hawai'i systems and at other institutions in the state.\nPromote and explain the benefits and value of HI-ASM membership to students postdocs and early career scientists in the state of Hawai'i \nProvide aid and professional development opportunities for students in Microbiology within the state in respects to academic curriculum research and employment. \nPromote student community and professional participation in local state and national ASM meetings and activities.",
         "meetingTime": "Every Friday at 3 PM Hawaii Time",
         "location": "Building A Room 23",
         "website": "",
@@ -1154,7 +1222,7 @@
         "imageLocations": []
     },
     {
-        "name": "Hawaii Sigma Pi ",
+        "name": "Hawaii Sigma Pi",
         "description": "In order to establish a closer bond of fellowship which will result in mutual benefit to those men and women in the study and in the profession of mechanical engineering who by their academic or practical achievements manifest a real interest and marked ability in their chosen work this constitution of the International Pi Tau Sigma Mechanical Engineering Honor Society was established.",
         "meetingTime": "Every Tuesday at 8 PM Hawaii Time",
         "location": "Building A Room 12",
@@ -1184,7 +1252,7 @@
         "imageLocations": []
     },
     {
-        "name": "Hawaii Undergraduate Initiative ",
+        "name": "Hawaii Undergraduate Initiative",
         "description": "HUI RIO strives to build a community and support system for current Hawai'i Undergraduate Initiative students alumni and friends by providing resources academic services social and community activities needed to ensure that students continue to have a college going attitude.",
         "meetingTime": "Every Friday at 2 PM Hawaii Time",
         "location": "Building A Room 99",
@@ -1560,7 +1628,7 @@
     },
     {
         "name": "Law and Business Organization",
-        "description": "The Law and Business Organization (LBO) is a University of Hawai'i William S. Richardson School of Law dedicated for students who are curious about business law. Throughout the school year LBO hosts panels with a diverse variety of Hawai'i attorneys who discuss different areas of business law. These panels not only inform students of potential areas of business laws but also serve as networking opportunities. Additionally LBO hosts one event in the Fall and Spring semester. One of these events is an LBO Pau Hana where our organization invites Hawai'i attorneys to talk story with Richardson students. ",
+        "description": "The Law and Business Organization (LBO) is a University of Hawai'i William S. Richardson School of Law dedicated for students who are curious about business law. Throughout the school year LBO hosts panels with a diverse variety of Hawai'i attorneys who discuss different areas of business law. These panels not only inform students of potential areas of business laws but also serve as networking opportunities. Additionally LBO hosts one event in the Fall and Spring semester. One of these events is an LBO Pau Hana where our organization invites Hawai'i attorneys to talk story with Richardson students.",
         "meetingTime": "Every Tuesday at 2 PM Hawaii Time",
         "location": "Building A Room 130",
         "website": "",
@@ -1572,6 +1640,274 @@
         "admins": "hello@hawaii.edu",
         "members": "wassup@hawaii.edu,hello@hawaii.edu",
         "imageLocations": []
+    },
+    {
+        "name": "LIFE (Love Is For Everyone)",
+        "description": "LIFE is a Christian club for students who are interested in having fellowship and fun. This club is committed to providing opportunities for all students to study the bible, get together and have fun while abiding by all established policies of the University. A variety of activities will be conducted ranging from dances and hikes to prayer times and devotionals.",
+        "meetingTime": "n/a",
+        "location": "n/a",
+        "website": "",
+        "contactEmail": "sjpin89@hawaii.edu",
+        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "startDate": "2024-10-08",
+        "expirationDate": "2025-09-30",
+        "interestAreas": "Spiritual/Religious",
+        "admins": "hello@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": []
+    },
+    {
+        "name": "Linguistic Society of Manoa",
+        "description":"The mission of LSM is to promote academic and social activity among the students, staff, and faculty at the University of Hawai'i at Mānoa who are interested in linguistics. We are dedicated to the promotion of linguistics, and to making the study of language and linguistics fun, social, inclusive, and interactive.",
+        "meetingTime": "Twice a semester, information provided by email",
+        "location": "Moore Hall 569",
+        "website": "https://manoa.hawaii.edu/linguistics/linguistic-society-of-manoa/?fbclid=PAY2xjawHG2xZleHRuA2FlbQIxMAABpt4z6O7dEdauRyc15VlZWgvpTR-QCleOyh1ku7J7SaOS74HFdkHV5CZ-zQ_aem_hxP0URYx2uuyrUIYPw7isg",
+        "contactEmail": "kbialo@hawaii.edu",
+        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "startDate": "2024-09-27",
+        "expirationDate": "2025-09-30",
+        "interestAreas": "Academic/Professional",
+        "admins": "wassup@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": [
+            "https://th.bing.com/th/id/OIP.0exjZJREPmy4qT39W62SaAHaFj?rs=1&pid=ImgDetMain"
+        ]
+    },
+    {
+        "name": "LOTUS (Lord of the Universe Society)",
+        "description":"The mission of LSM is to promote academic and social activity among the students, staff, and faculty at the University of Hawai'i at Mānoa who are interested in linguistics. We are dedicated to the promotion of linguistics, and to making the study of language and linguistics fun, social, inclusive, and interactive.",
+        "meetingTime": "n/a",
+        "location": "n/a",
+        "website": "",
+        "contactEmail": "venkatar@hawaii.edu",
+        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "startDate": "2024-10-08",
+        "expirationDate": "2025-09-30",
+        "interestAreas": "Religious/Spiritual",
+        "admins": "wassup@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": []
+    },
+    {
+        "name": "Manoa Academy of Gamers",
+        "description":"To organize a safe physical space dedicated to the diversity of students at the University of Hawai'i at Mānoa (UHM) who may identify themselves as 'gamers'. To promote activities (directly related to playing games or activities around games) structured around campus culture that are inclusive of a variety of communities presently unrepresented at UHM. To acknowledge that gaming and college life can be mutually beneficial to students' success in assimilating into college life at UHM.",
+        "meetingTime": "Information provided on socials",
+        "location": "UHE iLab",
+        "website": "",
+        "contactEmail": "ayee9@hawaii.edu",
+        "logo": "https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "startDate": "2024-10-15",
+        "expirationDate": "2025-09-30",
+        "interestAreas": "Leisure/Recreational",
+        "admins": "hello@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": [
+            "https://th.bing.com/th/id/OIP.8LC0nU1I3ItzDdLrnbjYIgHaEL?rs=1&pid=ImgDetMain",
+            "https://bloximages.newyork1.vip.townnews.com/manoanow.org/content/tncms/assets/v3/editorial/5/35/5353d782-cafd-11e9-8ed7-5bd091db5203/5d68d9727f515.image.jpg?crop=1763%2C926%2C0%2C124&resize=1200%2C630&order=crop%2Cresize"
+        ]
+    },
+    {
+        "name": "Manoa Economics Association",
+        "description":"The Manoa Economic Association (MEA) aims to support economics students at the University of Hawaii at Manoa (UH Manoa) in overcoming barriers to success by providing comprehensive resources for academic and professional development. MEA is dedicated to fostering a vibrant community that supports economics students in their pursuit of higher education, career advancement, networking opportunities, and research endeavors.",
+        "meetingTime": "n/a",
+        "location": "n/a",
+        "website": "",
+        "contactEmail": "cachob@hawaii.edu",
+        "logo":"https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "startDate": "2024-10-15",
+        "expirationDate": "2025-09-30",
+        "interestAreas": "Academic/Professional",
+        "admins": "wassup@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": []
+    },
+    {
+        "name": "Manoa Scholars Club",
+        "description":"The purpose of the Mānoa Scholars Club is to give students—both incoming and continuing New Warrior Scholars—the opportunity to represent the best and brightest at UH Mānoa both academically and in character. Students who have a stronger commitment to their university are more likely to retain and enhance their success. Many of the scholars were active members in their high schools and community and would like to carry that same sense of pride and commitment as a University of Hawai'i at Mānoa student.",
+        "meetingTime": "n/a",
+        "location": "QLC 001",
+        "website": "https://manoascholarsclub.weebly.com/?c=mkt_w_chnl:aff_geo:all_prtnr:sas_subprtnr:1538097_camp:brand_adtype:txtlnk_ag:weebly_lptype:hp_var:358504&sscid=c1k8_jgdor&utm_source=ShareASale",
+        "contactEmail": "lkubo4@hawaii.edu",
+        "logo":"https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "startDate": "2024-09-27",
+        "expirationDate": "2025-09-30",
+        "interestAreas": "Academic/Professional",
+        "admins": "wassup@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": []
+    },
+    {
+        "name": "Manoa Student Ambassadors",
+        "description":"The Mānoa Student Ambassadors proudly promotes the University of Hawai'i at Mānoa. We connect current students with prospective students, parents, alumni, and friends, sharing insights about student life, support services, and programs. As ambassadors, we participate in marketing campaigns and events like Welina Mānoa and Discover Mānoa, showcasing our experiences as Rainbow Warriors and helping others discover all that UH Mānoa has to offer.",
+        "meetingTime": "n/a",
+        "location": "n/a",
+        "website": "",
+        "contactEmail": "tilitile@hawaii.edu",
+        "logo":"https://staradvertiser.wpenginepowered.com/wp-content/uploads/2023/04/WDA-MANOA-132.jpg",
+        "startDate": "2024-10-08",
+        "expirationDate": "2025-09-30",
+        "interestAreas": "Academic/Professional",
+        "admins": "wassup@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": [
+            "https://natsci.manoa.hawaii.edu/sasc/photos/Ambassadors2022-Group.JPG"
+        ]
+    },
+    {
+        "name": "Martial Arts Club",
+        "description":"The Martial Arts Club is for any kind of Martial artist or Martial arts enthusiast who wants to train with and meet other like minded individuals. As in all martial arts, martial arts is about discipline, focus, and helping someone become the best version of themselves by consistently training and bettering themselves. Club activities consist of but are not limited to meetup training sessions, open discussions about similarities and differences in martial arts, drills, practicing/learning forms/katas/sequences and at the end of the day just having fun hanging out and meeting new people at UH. By learning from other martial artists it will not only help improve your overall knowledge but will also hopefully bring about a better understanding of the reasons you do things a certain way or bring to light why there might be a flaw in your technique. Hopefully at the end of the day we can all improve on our abilities and techniques and learn a bunch of new ones as well!",
+        "meetingTime": "n/a",
+        "location": "n/a",
+        "website": "",
+        "contactEmail": "zsteely@hawaii.edu",
+        "logo":"https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "startDate": "2024-10-21",
+        "expirationDate": "2025-09-30",
+        "interestAreas": "Leisure/Sport",
+        "admins": "wassup@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": [
+            "https://static.wixstatic.com/media/1c9d9d_e9d175b222ae445e8f0ea94be738996e~mv2.jpg/v1/crop/x_118,y_290,w_901,h_671/fill/w_432,h_322,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/1c9d9d_e9d175b222ae445e8f0ea94be738996e~mv2.jpg"
+        ]
+    },
+    {
+        "name": "Materials Protection Hawaii AMPP Student Chapter",
+        "description":"Stimulate interest in AMPP, the Association for Materials Protection and Performance, a global community of professionals dedicated to materials protection through the advancement of corrosion control and protective coatings.",
+        "meetingTime": "n/a",
+        "location": "n/a",
+        "website": "",
+        "contactEmail": "by34@hawaii.edu",
+        "logo":"https://ampp.academicworks.com/image_uploads/W1siZiIsImltYWdlX3VwbG9hZHMvMy8zODllMzFjNy00YWNhLTQ1NWItOTk0NC03NTMzNjE2MDgwYTIvTG9nb19Ud29Db2xvcl9WZXJ0aWNhbF9SR0IuanBnIl1d?sha=7eb5ced8ce9fcfd7",
+        "startDate": "2024-12-02",
+        "expirationDate": "2025-09-30",
+        "interestAreas": "Academic/Professional",
+        "admins": "hello@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": [
+            "https://th.bing.com/th/id/OIP.4t4hQJSkyXARNGRRfdtYlwHaE8?rs=1&pid=ImgDetMain"
+        ]
+    },
+    {
+        "name": "Math Club at the University of Hawaii at Manoa",
+        "description":"The Math Club at the University of Hawai'i at Mānoa is dedicated to fostering a vibrant community for students passionate about mathematics. We aim to create a space where members can explore and deepen their understanding of mathematical concepts, collaborate on problem-solving, and engage in stimulating discussions. Through our events, we connect students with professors and professionals who demonstrate the practical applications of mathematics in various fields, offering insight into how math is used in research, industry, and beyond.",
+        "meetingTime": "Every Monday at 4 PM",
+        "location": "Keller 301",
+        "website": "",
+        "contactEmail": "sakuraet@hawaii.edu",
+        "logo":"https://math.hawaii.edu/wordpress/wp-content/uploads/2023/11/Screenshot-2023-11-08-at-5.17.24-PM-672x372.png",
+        "startDate": "2024-10-15",
+        "expirationDate": "2025-09-30",
+        "interestAreas": "",
+        "admins": "hello@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": [
+            "https://th.bing.com/th/id/OIP.Wv_pzPZcQEJgNK_YNLApnwAAAA?w=171&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+        ]
+    },
+    {
+        "name": "Medical Student Mentorship Program (MSMP)",
+        "description":"The purpose of this organization is to pair current medical students at the John A. Burns School of Medicine (JABSOM) with undergraduate students in Hawaii interested in pursuing a career in medicine.",
+        "meetingTime": "n/a",
+        "location": "John A. Burns School of Medicine (JABSOM)",
+        "website": "https://uhmsmp.com/",
+        "contactEmail": "erinjh@hawaii.edu",
+        "logo":"https://manoa.hawaii.edu/undergrad/pac/wp-content/uploads/2021/07/MSMP.png",
+        "startDate": "2024-10-15",
+        "expirationDate": "2025-09-30",
+        "interestAreas": "Academic/Professional",
+        "admins": "hello@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": [
+            "https://uhmsmp.com/wp-content/uploads/2023/09/MSMP-Board-23-24-scaled.jpeg",
+            "https://uhmsmp.com/wp-content/uploads/2022/09/cropped-MSMP-Board-22-23-scaled-1.jpg",
+            "https://www.khon2.com/wp-content/uploads/sites/8/2019/11/11-8-uh-nursing.jpg?w=1280&h=720&crop=1"
+        ]
+    },
+    {
+        "name": "Medical Student Pride Alliance",
+        "description":"The purpose of the Medical Student Pride Alliance (MSPA) is to support sexual and gender minority (SGM) diversity efforts within JABSOM and the community by promoting education, safe spaces, awareness, and ongoing discussion of SGM health.",
+        "meetingTime": "n/a",
+        "location": "n/a",
+        "website": "https://www.medpride.org/",
+        "contactEmail": "rich808@hawaii.edu",
+        "logo":"https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "startDate": "2024-09-27",
+        "expirationDate": "2025-09-30",
+        "interestAreas": "Academic/Professional",
+        "admins": "wassup@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": [
+            "https://images.squarespace-cdn.com/content/v1/612bfd25a84af13ad0ada0f8/ab93d91e-d9d0-45f3-a7d0-ead7d9cf8aa4/Copy+of+MSPA+Logo+extended.png?format=1500w"
+        ]
+    },
+    {
+        "name": "Midshipmen Association",
+        "description":"To support the Midshipmen of the Naval ROTC at UH Manoa",
+        "meetingTime": "n/a",
+        "location": "n/a",
+        "website": "",
+        "contactEmail": "hiram28@hawaii.edu",
+        "logo":"https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "startDate": "2024-12-02",
+        "expirationDate": "2025-09-30",
+        "interestAreas": "Academic/Professional",
+        "admins": "wassup@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": [
+            "https://d1ldvf68ux039x.cloudfront.net/thumbs/photos/2407/8514337/1000w_q95.jpg"
+        ]
+    },
+    {
+        "name": "Moku O Lo'e Student Association",
+        "description":"The mission of  Moku o Lo`e Student Association is to generate a strong student community that enhances professional development, interdisciplinary collaborations, and academic growth.",
+        "meetingTime": "n/a",
+        "location": "n/a",
+        "website": "https://natsci.manoa.hawaii.edu/sasc/post/?permalink=the-moku-o-loe-student-association---himb-opportunity-information-session",
+        "contactEmail": "seaenna@hawaii.edu",
+        "logo":"https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "startDate": "2024-12-10",
+        "expirationDate": "2025-09-30",
+        "interestAreas": "Academic/Professional",
+        "admins": "wassup@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": [
+            "https://biodiversity-reu.manoa.hawaii.edu/cms-data/gallery/blog/2016reu/visiting-moku-o-loe/unnamed-7-sq.jpg"
+        ]
+    },
+    {
+        "name": "Molecular Cell Biology Club at UH Manoa",
+        "description":"The Molecular Cell Biology Club at the University of Hawai'i at Mānoa serves to foster student interest in the field of cell biology, promote extra-curricular educational opportunities, and support student interactions with peers and professionals who have similar interests.",
+        "meetingTime": "See socials or Nat Sci website for more information",
+        "location": "n/a",
+        "website": "https://natsci.manoa.hawaii.edu/sasc/post/?permalink=molecular-cell-biology-club",
+        "contactEmail": "kmmiyamo@hawaii.edu",
+        "logo":"https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image.png",
+        "startDate": "2024-09-27",
+        "expirationDate": "2025-09-30",
+        "interestAreas": "Academic/Professional",
+        "admins": "wassup@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": [
+            "https://th.bing.com/th/id/R.a450d986c404c5c2cdbfcb42d8196fca?rik=XcY4VPWiAJwoZw&pid=ImgRaw&r=0"
+        ]
+    },
+    {
+        "name": "Mortar Board National Honor Society Hui Po'okela Chapter at the University Of Hawai'i at Mānoa",
+        "description":"Mortar Board Senior National Honor Society is one of the oldest organizations at the University of Hawai'i at Mānoa. This is a national collegiate honor society for students in their senior year. Each chapter is typically comprised of only a handful of carefully selected applicants for the year. Potential members are chosen based on how they measure in accord with Mortar Board's key values: scholarship, leadership, and service. Those who excel in said values are then carefully examined through a series of interviews hosted by the chapter's current members. Once in Mortar Board, you will engage in various community service and fundraising activities. This honor society is more than just prestige, but rather, an opportunity for every undergraduate senior to make a local impact in their campus and community before they graduate. Once in Mortar Board, every member will engage in various community service and fundraising activities. We not only help support the University of Hawai'i and the O'ahu community but above all, we are making a global impact by building and growing the best leaders of tomorrow.",
+        "meetingTime": "n/a",
+        "location": "n/a",
+        "website": "https://mortarboardmanoa.weebly.com/?c=mkt_w_chnl:aff_geo:all_prtnr:sas_subprtnr:1538097_camp:brand_adtype:txtlnk_ag:weebly_lptype:hp_var:358504&sscid=c1k8_jgnxx&utm_source=ShareASale",
+        "contactEmail": "Nicoleou@hawaii.edu",
+        "logo":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx6tlBlSw84479CzlM1UZ5c4VllNrjqJSuaA&s",
+        "startDate": "2024-10-15",
+        "expirationDate": "2025-09-30",
+        "interestAreas": "Academic/Professional",
+        "admins": "wassup@hawaii.edu",
+        "members": "wassup@hawaii.edu,hello@hawaii.edu",
+        "imageLocations": [
+            "https://th.bing.com/th/id/OIP.3ZPjxMHzECafKhY0srp7TgHaE8?rs=1&pid=ImgDetMain",
+            "https://th.bing.com/th/id/OIP.TKA0Q7M6gshAvrw8pRei8AHaGa?rs=1&pid=ImgDetMain"
+        ]
     }
   ]
 }
