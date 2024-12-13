@@ -56,6 +56,14 @@ const NavBar: React.FC = () => {
                 >
                   Club List
                 </Nav.Link>
+                <Nav.Link
+                  href="/my-clubs"
+                  className={`text-white ${
+                    pathName === '/my-clubs' ? 'fw-bold' : ''
+                  }`}
+                >
+                  My Clubs
+                </Nav.Link>
                 {role === 'SUPER_ADMIN' && (
                   <Nav.Link
                     href="/admin"
