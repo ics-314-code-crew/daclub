@@ -1,2 +1,0 @@
--- AlterTable
-ALTER TABLE "Club" ADD COLUMN     "status" TEXT NOT NULL DEFAULT 'ACTIVE';

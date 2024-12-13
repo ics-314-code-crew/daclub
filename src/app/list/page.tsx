@@ -33,10 +33,7 @@ const ListPage: React.FC = () => {
         throw new Error('Failed to fetch clubs');
       }
       const data = await response.json();
-      const today = new Date();
-      const activeClubs = data.filter((club: Club) => new Date(club.expirationDate) > today);
-      setFilteredClubs(activeClubs);
-      // eslint-disable-next-line max-len
+      setFilteredClubs(data);
     } catch (error) {
       console.error('Error with fetching clubs:', error);
     } finally {
@@ -66,6 +63,7 @@ const ListPage: React.FC = () => {
   if (status === 'unauthenticated') {
     redirect('/auth/signin');
   }
+
   return (
     <main
       style={{
