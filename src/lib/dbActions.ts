@@ -50,20 +50,20 @@ export async function getClubById(id: number) {
 
   return club
     ? {
-        name: club.name,
-        description: club.description || '',
-        meetingTime: club.meetingTime || '',
-        location: club.location || '',
-        website: club.website || null,
-        contactEmail: club.contactEmail || null,
-        logo: club.logo || '',
-        admins: club.admins || '',
-        interestAreas: club.interestAreas || '',
-        startDate: club.startDate.toISOString().split('T')[0],
-        expirationDate: club.expirationDate.toISOString().split('T')[0],
-        members: club.members || '',
-        imageLocations: club.imageLocations || [],
-      }
+      name: club.name,
+      description: club.description || '',
+      meetingTime: club.meetingTime || '',
+      location: club.location || '',
+      website: club.website || null,
+      contactEmail: club.contactEmail || null,
+      logo: club.logo || '',
+      admins: club.admins || '',
+      interestAreas: club.interestAreas || '',
+      startDate: club.startDate.toISOString().split('T')[0],
+      expirationDate: club.expirationDate.toISOString().split('T')[0],
+      members: club.members || '',
+      imageLocations: club.imageLocations || [],
+    }
     : null;
 }
 
@@ -84,7 +84,6 @@ export async function addClub(club: {
   startDate: Date;
   expirationDate: Date;
   imageLocations: string[];
-  createdAt: Date;
 }) {
   await prisma.club.create({
     data: {
@@ -124,7 +123,6 @@ async function addNotification(clubId: number, message: string) {
   });
 }
 
-
 /**
  * Deletes a notification from the database.
  * @param notificationId, the identifier of the notification to be deleted.
@@ -138,24 +136,24 @@ export async function deleteNotification(notificationId: number) {
 export async function updateClub(
   id: number,
   data: Omit<
-    {
-      name: string;
-      description: string;
-      meetingTime: string;
-      location: string;
-      website?: string | null;
-      contactEmail?: string | null;
-      logo: string;
-      admins?: string | null;
-      interestAreas: string;
-      startDate: string;
-      expirationDate: string;
-      imageLocations?: string[];
-      createdAt: Date;
-      edited: boolean;
-      read: boolean;
-    },
-    'admins'
+  {
+    name: string;
+    description: string;
+    meetingTime: string;
+    location: string;
+    website?: string | null;
+    contactEmail?: string | null;
+    logo: string;
+    admins?: string | null;
+    interestAreas: string;
+    startDate: string;
+    expirationDate: string;
+    imageLocations?: string[];
+    createdAt: Date;
+    edited: boolean;
+    read: boolean;
+  },
+  'admins'
   > & { admins?: string | null },
 ) {
   const { admins, imageLocations, ...rest } = data;

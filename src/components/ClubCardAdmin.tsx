@@ -2,10 +2,9 @@
 
 import { useSession } from 'next-auth/react';
 import { Club } from '@prisma/client';
-import { Card, Image, Button } from 'react-bootstrap';
 import Link from 'next/link';
+import { Card, Image, Button } from 'react-bootstrap';
 import styles from './ClubCard.module.css';
-import { useState } from 'react';
 
 const ClubCardAdmin = ({ club }: { club: Club }) => {
   const { status } = useSession();

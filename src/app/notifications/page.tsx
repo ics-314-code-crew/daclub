@@ -2,31 +2,27 @@
 
 import { useEffect, useState } from 'react';
 import { Card, Button } from 'react-bootstrap';
-import { useSession } from 'next-auth/react';
 import { deleteNotification } from '@/lib/dbActions';
 
 interface Notification {
   id: number;
   message: string;
   read: boolean;
-  name: string;
   createdAt: Date;
-  updatedAt: Date;
 }
 
 const NotificationsPage = () => {
   const [notifications, setNotifications] = useState<Notification[]>([]);
   const [loading, setLoading] = useState(true);
-  const { data: session } = useSession();
 
   useEffect(() => {
     const fetchNotifications = async () => {
       try {
-        const response = await fetch('/api/search?editedOnly=true');
+        const response = await fetch('/api/notifications');
         if (!response.ok) {
           throw new Error('Failed to fetch notifications');
         }
-        const data: Notification[] = await response.json();
+        const data = await response.json();
         setNotifications(data);
       } catch (error) {
         console.error('Error fetching notifications:', error);
@@ -39,31 +35,26 @@ const NotificationsPage = () => {
   }, []);
 
   const markAsRead = async (id: number) => {
-  try {
-    await fetch(`/api/notifications/${id}/mark-as-read`, { method: 'POST' });
-    setNotifications((prevNotifications) => prevNotifications.filter((notification) => notification.id !== id));
-  } catch (error) {
-    console.error('Failed to mark as read', error);
+    try {
+      await fetch(`/api/notifications/${id}/mark-as-read`, { method: 'POST' });
+      setNotifications((prevNotifications) => prevNotifications.filter((notification) => notification.id !== id));
+    } catch (error) {
+      console.error('Failed to mark as read', error);
+    }
+  };
+
+  const deleteNotif = async (id: number) => {
+    try {
+      await deleteNotification(id);
+      setNotifications((prevNotifications) => prevNotifications.filter((notification) => notification.id !== id));
+    } catch (error) {
+      console.error('Failed to delete notification', error);
+    }
+  };
+
+  if (loading) {
+    return <p>Loading...</p>;
   }
-};
-
-  // const deleteNotif = async (id: number) => {
-  //   try {
-  //     const notifId = session?.notification?.id;
-  //     if (notifId) {
-  //       await deleteNotification(notifId);
-  //       setNotifications((prevNotifications) => prevNotifications.filter((notification) => notification.id !== id));
-  //     } else {
-  //       console.error('User ID is undefined');
-  //     }
-  //   } catch (error) {
-  //     console.error('Failed to delete notification', error);
-  //   }
-  // };
-
-  // if (loading) {
-  //   return <p>Loading...</p>;
-  // }
 
   return (
     <main className="p-4">
@@ -71,11 +62,11 @@ const NotificationsPage = () => {
         notifications.map((notification) => (
           <Card key={notification.id} className="mb-4">
             <Card.Header>
-              <h2>{notification.name}</h2>
+              <h2>{notification.message}</h2>
               <Button
                 variant="outline-secondary"
                 onClick={() => {
-                  // deleteNotif(notification.id);
+                  deleteNotif(notification.id);
                   markAsRead(notification.id);
                 }}
               >
@@ -92,4 +83,3 @@ const NotificationsPage = () => {
 };
 
 export default NotificationsPage;
-

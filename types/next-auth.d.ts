@@ -16,6 +16,7 @@ declare module 'next-auth' {
       clubId: number;
       createdAt: Date;
       editedAt: Date;
+      read: boolean;
     }
   }
 }

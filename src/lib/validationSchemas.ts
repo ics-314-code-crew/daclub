@@ -108,9 +108,8 @@ export const EditClubSchema = Yup.object({
   read: Yup.boolean(),
 });
 
-
 export const AddNotification = Yup.object({
   clubId: Yup.number().required('Club ID is required'),
   message: Yup.string().required('Message is required'),
   read: Yup.boolean(),
-})
+});

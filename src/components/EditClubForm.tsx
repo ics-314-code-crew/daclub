@@ -83,8 +83,8 @@ const EditClubForm = ({ clubId }: { clubId: string }) => {
     try {
       const formattedData = {
         ...data,
-        imageLocations: data.imageLocations 
-          ? data.imageLocations.split(',').map((url) => url.trim()) 
+        imageLocations: data.imageLocations
+          ? data.imageLocations.split(',').map((url) => url.trim())
           : [],
         edited: true,
         createdAt: new Date(),

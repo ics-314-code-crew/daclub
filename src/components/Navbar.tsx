@@ -12,7 +12,7 @@ const NavBar: React.FC = () => {
   const userWithRole = session?.user as { email: string; role: string };
   const role = userWithRole?.role;
   const pathName = usePathname();
-  const [notifications, setNotifications] = useState<string[]>([]);
+  const [, setNotifications] = useState<string[]>([]);
 
   useEffect(() => {
     // Fetch notifications logic here (this should be replaced with actual logic)
@@ -97,9 +97,11 @@ const NavBar: React.FC = () => {
             {session ? (
               <NavDropdown
                 title={
-                  <span className="text-white">
-                    {`${role === 'SUPER_ADMIN' ? '(Da Club Admin) ' : ''}${currentUser}`}
-                  </span>
+                  (
+                    <span className="text-white">
+                      {`${role === 'SUPER_ADMIN' ? '(Da Club Admin) ' : ''}${currentUser}`}
+                    </span>
+                  )
                 }
                 id="user-dropdown"
                 align="end"
