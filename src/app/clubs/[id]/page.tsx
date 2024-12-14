@@ -7,7 +7,6 @@ type ClubPageProps = {
 
 const ClubPage = async ({ params }: ClubPageProps) => {
   const { id } = params;
-
   const clubId = parseInt(id, 10);
 
   if (Number.isNaN(clubId)) {
@@ -32,6 +31,7 @@ const ClubPage = async ({ params }: ClubPageProps) => {
       location: true,
       admins: true,
       members: true,
+      contactEmail: true,
       imageLocations: true,
       interestAreas: true,
     },
@@ -102,9 +102,15 @@ const ClubPage = async ({ params }: ClubPageProps) => {
             <p>{club.description || 'Not specified'}</p>
             <h5>Interest Areas:</h5>
             <p>{club.interestAreas || 'Not specified'}</p>
+            {club.contactEmail && (
+              <>
+                <h5>Club Contact(s):</h5>
+                <p>{club.contactEmail || 'Not specified'}</p>
+              </>
+            )}
             {club.admins && (
               <>
-                <h5>Admin(s):</h5>
+                <h5>Club Admin(s):</h5>
                 <p>{club.admins || 'Not specified'}</p>
               </>
             )}
