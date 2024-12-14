@@ -7,36 +7,26 @@ const hawaiiEmailValidationRequired = Yup.string()
 
 const hawaiiEmailValidationNotRequired = Yup.string().notRequired();
 
-const passwordValidation = Yup.string()
-  .min(6, 'Must be at least 6 characters')
-  .required('Password is required');
+const passwordValidation = Yup.string().min(6, 'Must be at least 6 characters').required('Password is required');
 
 const adminsValidationNotRequired = Yup.string()
-  .test(
-    'valid-hawaii-emails',
-    'All admin emails must end with @hawaii.edu',
-    (value) => {
-      if (!value || value.trim() === '') {
-        return true; // Skip validation if the field is empty
-      }
-      const emails = value.split(',').map((email) => email.trim());
-      return emails.every((email) => /^[^\s@]+@hawaii\.edu$/.test(email));
-    },
-  )
+  .test('valid-hawaii-emails', 'All admin emails must end with @hawaii.edu', (value) => {
+    if (!value || value.trim() === '') {
+      return true; // Skip validation if the field is empty
+    }
+    const emails = value.split(',').map((email) => email.trim());
+    return emails.every((email) => /^[^\s@]+@hawaii\.edu$/.test(email));
+  })
   .notRequired();
 
 const membersValidationNotRequired = Yup.string()
-  .test(
-    'valid-member-emails',
-    'All member emails must end with @hawaii.edu',
-    (value) => {
-      if (!value || value.trim() === '') {
-        return true; // Skip validation if the field is empty
-      }
-      const emails = value.split(',').map((email) => email.trim());
-      return emails.every((email) => /^[^\s@]+@hawaii\.edu$/.test(email));
-    },
-  )
+  .test('valid-member-emails', 'All member emails must end with @hawaii.edu', (value) => {
+    if (!value || value.trim() === '') {
+      return true; // Skip validation if the field is empty
+    }
+    const emails = value.split(',').map((email) => email.trim());
+    return emails.every((email) => /^[^\s@]+@hawaii\.edu$/.test(email));
+  })
   .notRequired();
 
 const nameValidation = Yup.string().required('This field is required');
@@ -65,10 +55,9 @@ export const SignUpSchema = Yup.object({
 });
 
 export const EditUserSchema = Yup.object({
-  email: Yup.string().email().notRequired(),
-  firstName: Yup.string().notRequired(),
-  lastName: Yup.string().notRequired(),
-  profileImage: Yup.string().url('Must be a valid URL').notRequired().nullable(),
+  id: Yup.number().required('ID is required'),
+  email: hawaiiEmailValidationRequired,
+  role: Yup.mixed().oneOf(['USER', 'SUPER_ADMIN'], 'Invalid role'),
 });
 
 export const AddClubSchema = Yup.object({
@@ -84,10 +73,7 @@ export const AddClubSchema = Yup.object({
   startDate: Yup.date().required('Start date is required'),
   expirationDate: Yup.date().required('Expiration date is required'),
   imageLocations: Yup.string()
-    .matches(
-      /^(\s*https?:\/\/\S+\s*,?\s*)*$/,
-      'Images must be a comma-separated list of valid URLs',
-    )
+    .matches(/^(\s*https?:\/\/\S+\s*,?\s*)*$/, 'Images must be a comma-separated list of valid URLs')
     .notRequired(),
 });
 
@@ -117,11 +103,15 @@ export const EditClubSchema = Yup.object({
     ),
   members: membersValidationNotRequired,
   imageLocations: Yup.string()
-    .matches(
-      /^(\s*https?:\/\/\S+\s*,?\s*)*$/,
-      'Images must be a comma-separated list of valid URLs',
-    )
+    .matches(/^(\s*https?:\/\/\S+\s*,?\s*)*$/, 'Images must be a comma-separated list of valid URLs')
     .notRequired(),
+  read: Yup.boolean(),
+});
+
+export const AddNotification = Yup.object({
+  clubId: Yup.number().required('Club ID is required'),
+  message: Yup.string().required('Message is required'),
+  read: Yup.boolean(),
 });
 
 export const EditClubDateSchema = Yup.object({

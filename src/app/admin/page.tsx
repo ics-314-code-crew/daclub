@@ -19,8 +19,7 @@ const AdminPage = async () => {
   const clubsWithLinks = clubs.map((club) => ({
     ...club,
     link: club.website || 'https://manoa.hawaii.edu/',
-  }))
-    .sort((a, b) => a.name.localeCompare(b.name));
+  }));
 
   return (
     <main

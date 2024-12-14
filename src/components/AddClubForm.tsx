@@ -61,7 +61,6 @@ const AddClubForm: React.FC = () => {
         imageLocations: data.imageLocations
           ? data.imageLocations.split(',').map((url) => url.trim())
           : [],
-        createdAt: new Date(),
       };
 
       await addClub(processedData);

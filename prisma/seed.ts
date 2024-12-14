@@ -38,6 +38,7 @@ async function main() {
 
   config.defaultClubsData.forEach(async (data) => {
     console.log(`  Adding club: ${data.name}`);
+    console.log(data);
     await prisma.club.upsert({
       where: { name: data.name },
       update: {},
