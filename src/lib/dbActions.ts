@@ -185,6 +185,28 @@ export async function updateClub(
 }
 
 /**
+ * Updates a club's start date expiration date.
+ * @param id, the club identifier.
+ */
+export async function updateClubDate(
+  id: number,
+  data: {
+    startDate: string;
+    expirationDate: string;
+  },
+) {
+  await prisma.club.update({
+    where: { id },
+    data: {
+      startDate: new Date(data.startDate),
+      expirationDate: new Date(data.expirationDate),
+    },
+  });
+
+  redirect('/my-clubs');
+}
+
+/**
  * Changes a user's password.
  * @param credentials, the user credentials.
  */

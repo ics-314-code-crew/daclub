@@ -58,14 +58,25 @@
     gap: 0.5rem;
     margin-top: auto;
   }
-  
+  .cardExpiredFooter {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background-color: grey;
+  }
   
   .editButton {
     font-size: 0.9rem;
     font-weight: bold;
     width: 100%;
   }
-  
+  .renewButton {
+    font-size: 0.9rem;
+    font-weight: bold;
+    width: 100%;
+  }
   .toast {
     position: absolute;
     bottom: 10px;
@@ -73,5 +84,9 @@
     z-index: 1050;
     background-color: #28a745;
     color: white;
+  }
+
+  .expiredOverlay {
+    background-color: grey;
   }
   

@@ -67,16 +67,14 @@ body {
   color: red;
 }
 
-#notificationCard {
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  overflow: hidden;
-  transition:
-    transform 0.2s ease-in-out,
-    box-shadow 0.2s ease-in-out;
-}
-
-#notificationCard:hover {
-  transform: scale(1.03);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+.expiredOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
