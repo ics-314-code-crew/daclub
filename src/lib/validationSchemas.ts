@@ -123,3 +123,20 @@ export const EditClubSchema = Yup.object({
     )
     .notRequired(),
 });
+
+export const EditClubDateSchema = Yup.object({
+  startDate: Yup.string()
+    .required('Start date is required')
+    .test(
+      'valid-date',
+      'Start date must be a valid date in YYYY-MM-DD format',
+      (value) => !Number.isNaN(Date.parse(value || '')),
+    ),
+  expirationDate: Yup.string()
+    .required('Expiration date is required')
+    .test(
+      'valid-date',
+      'Expiration date must be a valid date in YYYY-MM-DD format',
+      (value) => !Number.isNaN(Date.parse(value || '')),
+    ),
+});

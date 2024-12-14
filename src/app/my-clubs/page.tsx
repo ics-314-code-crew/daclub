@@ -34,9 +34,9 @@ const ListPage: React.FC = () => {
           throw new Error('Failed to fetch clubs');
         }
         const data = await response.json();
-        const today = new Date();
-        const activeClubs = data.filter((club: Club) => new Date(club.expirationDate) > today);
-        const myClubs = activeClubs.filter((club: Club) => club.admins.includes(currentUserEmail));
+        // const today = new Date();
+        // const activeClubs = data.filter((club: Club) => new Date(club.expirationDate) > today);
+        const myClubs = data.filter((club: Club) => club.admins.includes(currentUserEmail));
         setFilteredClubs(myClubs);
       } catch (error) {
         console.error('Error with fetching clubs:', error);

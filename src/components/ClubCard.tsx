@@ -2,10 +2,10 @@
 
 import { useState } from 'react';
 import { Club } from '@prisma/client';
-import { Card, Image, Button, OverlayTrigger, Tooltip, Toast } from 'react-bootstrap';
+import { Card, Image, Button, OverlayTrigger, Tooltip, Toast, Badge } from 'react-bootstrap';
 import styles from './ClubCard.module.css';
 
-const ClubCard = ({ club, userEmail }: { club: Club; userEmail: string }) => {
+const ClubCard = ({ club, userEmail }: { club: Club; userEmail: string; }) => {
   const adminEmails = club.admins ? club.admins.split(',').map((email) => email.trim()) : [];
   const canEdit = adminEmails.includes(userEmail);
 
@@ -20,10 +20,15 @@ const ClubCard = ({ club, userEmail }: { club: Club; userEmail: string }) => {
   };
 
   const isGuest = userEmail === 'Guest';
-
+  const isExpired = new Date(club.expirationDate) < new Date();
   return (
     <div className={styles.cardContainer}>
-      <Card className={styles.card}>
+      <Card className={`${styles.card} ${isExpired ? styles.expiredOverlay : ''}`}>
+        {isExpired && (
+          <div>
+            <Badge pill bg="danger">Expired</Badge>
+          </div>
+        )}
         {!isGuest ? (
           <Card.Link href={`/clubs/${club.id}`} className={styles.cardLink}>
             <div className={styles.imageContainer}>
@@ -52,8 +57,18 @@ const ClubCard = ({ club, userEmail }: { club: Club; userEmail: string }) => {
           </div>
         )}
         {!isGuest && (
-          <Card.Footer className={styles.cardFooter}>
-            {canEdit && (
+          <Card.Footer className={`${styles.cardFooter} ${isExpired ? styles.cardExpiredFooter : ''}`}>
+            { canEdit && isExpired && (
+              <>
+                <p className={styles.expiredText}>This club has expired. Please renew it to relist.</p>
+                <a href={`/editDate/${club.id}`} className={styles.cardLink}>
+                  <Button variant="outline-primary" className={styles.renewButton}>
+                    Renew Club
+                  </Button>
+                </a>
+              </>
+            )}
+            {canEdit && !isExpired && (
               <a href={`/edit/${club.id}`} className={styles.cardLink}>
                 <Button variant="outline-primary" className={styles.editButton}>
                   Edit Club
