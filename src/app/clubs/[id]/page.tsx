@@ -116,7 +116,7 @@ const ClubPage = async ({ params }: ClubPageProps) => {
             )}
             {club.members && (
               <>
-                <h5>Members(s):</h5>
+                <h5>Members:</h5>
                 <p>{club.members || 'Not specified'}</p>
               </>
             )}

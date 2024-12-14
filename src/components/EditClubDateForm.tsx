@@ -16,10 +16,6 @@ type ClubDateForm = {
   expirationDate: string;
 };
 
-type IteratableClubFormData = ClubDateForm;
-
-type OnSubmitClubFormData = ClubDateForm;
-
 const EditClubDateForm = ({ clubId }: { clubId: string }) => {
   const { status } = useSession();
   const [isLoading, setIsLoading] = useState(true);
@@ -40,7 +36,7 @@ const EditClubDateForm = ({ clubId }: { clubId: string }) => {
         if (club) {
           Object.keys(club).forEach((key) => {
             if (key === 'startDate' || key === 'expirationDate') {
-              setValue(key as keyof IteratableClubFormData, club[key]);
+              setValue(key as keyof ClubDateForm, club[key]);
             }
           });
         }
@@ -62,7 +58,7 @@ const EditClubDateForm = ({ clubId }: { clubId: string }) => {
     redirect('/auth/signin');
   }
 
-  const onSubmit = async (data: OnSubmitClubFormData) => {
+  const onSubmit = async (data: ClubDateForm) => {
     try {
       await updateClubDate(Number(clubId), data);
       swal('Success', 'Club has been updated.', 'success', {
