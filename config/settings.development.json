@@ -1826,6 +1826,21 @@
         "https://th.bing.com/th/id/OIP.3ZPjxMHzECafKhY0srp7TgHaE8?rs=1&pid=ImgDetMain",
         "https://th.bing.com/th/id/OIP.TKA0Q7M6gshAvrw8pRei8AHaGa?rs=1&pid=ImgDetMain"
       ]
+    },
+    {
+      "name": "Multi-'ōlelo",
+      "description":"Multiʻōlelo is a transmedia multilingual platform aiming to curate language-related matters in multiple languages from multiple voices. Multiʻōlelo promotes multilingual, multicultural perspectives and encourages different forms of scholarship for public access and interaction.",
+      "meetingTime": "n/a",
+      "location": "n/a",
+      "website": "https://multiolelo.com",
+      "contactEmail": "larkinrt@hawaii.edu",
+      "logo": "https://yt3.googleusercontent.com/ytc/AIdro_nrRwxTe7EnK3Hz29IqtqS3rlDc3Ef-FlRN6cx30idAIw=s160-c-k-c0x00ffffff-no-rj",
+      "startDate": "2024-10-15",
+      "expirationDate": "2025-09-30",
+      "interestAreas": "Ethnic/Cultural",
+      "admins": "wassup@hawaii.edu",
+      "members": "wassup@hawaii.edu,hello@hawaii.edu",
+      "imageLocations": []
     }
   ]
 }
