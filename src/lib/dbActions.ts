@@ -3,7 +3,6 @@
 import { hash } from 'bcrypt';
 import { redirect } from 'next/navigation';
 import { prisma } from './prisma';
-import cron from 'node-cron';
 
 /**
  * Creates a new user in the database.
@@ -51,20 +50,20 @@ export async function getClubById(id: number) {
 
   return club
     ? {
-        name: club.name,
-        description: club.description || '',
-        meetingTime: club.meetingTime || '',
-        location: club.location || '',
-        website: club.website || null,
-        contactEmail: club.contactEmail || null,
-        logo: club.logo || '',
-        admins: club.admins || '',
-        interestAreas: club.interestAreas || '',
-        startDate: club.startDate.toISOString().split('T')[0],
-        expirationDate: club.expirationDate.toISOString().split('T')[0],
-        members: club.members || '',
-        imageLocations: club.imageLocations || [],
-      }
+      name: club.name,
+      description: club.description || '',
+      meetingTime: club.meetingTime || '',
+      location: club.location || '',
+      website: club.website || null,
+      contactEmail: club.contactEmail || null,
+      logo: club.logo || '',
+      admins: club.admins || '',
+      interestAreas: club.interestAreas || '',
+      startDate: club.startDate.toISOString().split('T')[0],
+      expirationDate: club.expirationDate.toISOString().split('T')[0],
+      members: club.members || '',
+      imageLocations: club.imageLocations || [],
+    }
     : null;
 }
 
@@ -137,24 +136,24 @@ export async function deleteNotification(notificationId: number) {
 export async function updateClub(
   id: number,
   data: Omit<
-    {
-      name: string;
-      description: string;
-      meetingTime: string;
-      location: string;
-      website?: string | null;
-      contactEmail?: string | null;
-      logo: string;
-      admins?: string | null;
-      interestAreas: string;
-      startDate: string;
-      expirationDate: string;
-      imageLocations?: string[];
-      createdAt: Date;
-      edited: boolean;
-      read: boolean;
-    },
-    'admins'
+  {
+    name: string;
+    description: string;
+    meetingTime: string;
+    location: string;
+    website?: string | null;
+    contactEmail?: string | null;
+    logo: string;
+    admins?: string | null;
+    interestAreas: string;
+    startDate: string;
+    expirationDate: string;
+    imageLocations?: string[];
+    createdAt: Date;
+    edited: boolean;
+    read: boolean;
+  },
+  'admins'
   > & { admins?: string | null },
 ) {
   const { admins, imageLocations, ...rest } = data;
@@ -199,65 +198,4 @@ export async function changePassword(credentials: { email: string; password: str
   });
 
   redirect('/about');
-}
-
-/**
- * Checks for clubs nearing expiration and generates notifications for admins.
- * @param daysBefore Number of days before expiration to notify admins.
- */
-export async function notifyExpiringClubs(daysBefore: number = 7) {
-  const upcomingExpirationDate = new Date();
-  upcomingExpirationDate.setDate(upcomingExpirationDate.getDate() + daysBefore);
-
-  try {
-    // Find clubs that are about to expire
-    const expiringClubs = await prisma.club.findMany({
-      where: {
-        expirationDate: {
-          lte: upcomingExpirationDate, // Find clubs expiring within the given range
-        },
-      },
-      select: {
-        id: true,
-        name: true,
-      },
-    });
-
-    // Create notifications for expiring clubs
-    for (const club of expiringClubs) {
-      await prisma.notification.create({
-        data: {
-          clubId: club.id,
-          message: `The club "${club.name}" is about to expire.`,
-          createdAt: new Date(),
-        },
-      });
-    }
-
-    console.log(`Generated notifications for ${expiringClubs.length} expiring clubs.`);
-  } catch (error) {
-    console.error('Error generating notifications for expiring clubs:', error);
-  }
-}
-
-/**
- * Initializes cron jobs for the application.
- * This logic should run only on the server.
- */
-export async function initializeCronJobs() {
-  // Ensure this only runs on the server-side
-  if (typeof window === 'undefined') {
-    // Schedule a daily job at midnight to check for expiring clubs
-    cron.schedule('0 0 * * *', async () => {
-      console.log('Running daily expiration check...');
-      try {
-        await notifyExpiringClubs(7); // Notify admins 7 days before expiration
-        console.log('Daily expiration check completed.');
-      } catch (error) {
-        console.error('Error in daily expiration check:', error);
-      }
-    });
-
-    console.log('Cron jobs initialized.');
-  }
 }
