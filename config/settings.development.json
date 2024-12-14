@@ -1076,16 +1076,13 @@
       "location": "Building A Room 153",
       "website": "",
       "contactEmail": "chloemcc@hawaii.edu",
-      "logo": "https://lh5.googleusercontent.com/543kFTzUCIwUE0G_uNy_gBhgZnmullUutZti_vZm5MpYSUYU8zr_lhzKa7JIgN0I9sHY9zC5SlNn3PofVsd9EaV0Q2JhXL0ZA84Xfrir8UJ_3dSzqIixodplV4UlZWjljQ=w1280",
+      "logo": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ac/20/b7/ac20b70b-9adc-758b-c613-caa389ae86e0/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/1200x600wa.png",
       "startDate": "2024-11-04",
       "expirationDate": "2025-09-30",
       "interestAreas": "Leisure/Recreational",
       "admins": "john@hawaii.edu",
       "members": "wassup@hawaii.edu,hello@hawaii.edu",
-      "imageLocations": [
-        "https://lh6.googleusercontent.com/x8xf0jLOmwNYaB-ct8e9KHGKMsb_mTopj7fRKJ421nNq4iR92gaK5IaPMXFpePY4WOgzaMAO5kYnDQfdBqVyfIKTcQYGSDCY7718tFDUEan-Qz1eKBgA-u9YAvP3iVgcgQ=w1280",
-        "https://lh3.googleusercontent.com/3g4aVm3tijUXhhqKcMHW5gnhXEzPWdvvin2tC4-ByfNivwA2jnbC2ymIGxDh2BLeBoKT1XHlJlF-rH5q4QXy2OzaWrtRofVEr-leJW_Spg93TRo4Jg9VukfGCa-sysRggQ=w1280"
-      ]
+      "imageLocations": []
     },
     {
       "name": "Graduate Arts Council",
@@ -1359,7 +1356,7 @@
       "location": "Building A Room 9",
       "website": "",
       "contactEmail": "rlin2@hawaii.edu",
-      "logo": "hhttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyn7qzCFteTrAS5nOv6kUiHu5dGkAAryC00A&s",
+      "logo": "https://upload.wikimedia.org/wikipedia/en/8/80/ITE_Logo.png",
       "startDate": "2024-12-02",
       "expirationDate": "2025-09-30",
       "interestAreas": "Academic/Professional",

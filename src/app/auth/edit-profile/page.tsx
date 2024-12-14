@@ -1,5 +1,3 @@
-// Edit Profile Form
-
 'use client';
 
 import { useEffect } from 'react';
@@ -49,7 +47,6 @@ const EditUserProfile = () => {
     },
   });
 
-  // if feild form is empty when submit it will fill it with the current user data
   useEffect(() => {
     const fetchUserData = async () => {
       if (session?.user?.id) {
@@ -185,23 +182,8 @@ const EditUserProfile = () => {
                   <Row>
                     <Col className="d-flex justify-content-between">
                       <Button type="submit" variant="primary" className="px-4">
-                        Save changes to profile
+                        Save
                       </Button>
-                      <Button
-                        type="button"
-                        variant="warning"
-                        onClick={() => reset()}
-                        className="px-4"
-                      >
-                        Reset
-                      </Button>
-                      {/* <Button
-                        type="button"
-                        variant="danger"
-                        onClick={() => revertToDefault()}
-                      >
-                        Return to default
-                      </Button> */}
                     </Col>
                   </Row>
                 </Form>
